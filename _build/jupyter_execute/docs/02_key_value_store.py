@@ -28,7 +28,7 @@
 # The first step in using GDN is to establish a connection to a local region. When this code executes, it initializes the server connection to the region URL you sepcified. You can create an API key from the GUI or REST API.
 # 
 
-# In[1]:
+# In[ ]:
 
 
 import json

@@ -7,7 +7,7 @@
 # 
 # A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.
 
-# In[1]:
+# In[ ]:
 
 
 from c8 import C8Client
@@ -193,7 +193,7 @@ register = graph.create_edge_definition(
     )
 
 
-# In[2]:
+# In[ ]:
 
 
 #Step5: Read Data
@@ -203,7 +203,7 @@ docs = [document for document in cursor]
 pp.pprint(docs)
 
 
-# In[3]:
+# In[ ]:
 
 
 print("5b. GRAPH_TRAVERSAL: Find inbound calls FROM: {}".format(person))
@@ -212,7 +212,7 @@ docs = [document for document in cursor]
 pp.pprint(docs)
 
 
-# In[4]:
+# In[ ]:
 
 
 # Step6: Delete Data

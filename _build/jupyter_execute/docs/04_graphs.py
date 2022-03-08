@@ -18,7 +18,7 @@
 # Contains the _rev field. GDN supports MVCC (Multiple Version Concurrency Control) and is capable of storing each document in multiple revisions. Latest revision of a document is indicated by this field. The field is populated by GDN and is not required as input unless you want to validate a document against its current revision.
 # Here is an example of a valid document:
 
-# In[1]:
+# In[ ]:
 
 
 {
@@ -39,7 +39,7 @@
 
 # Edge documents (edges) are similar to standard documents but with two additional required fields _from and _to. Values of these fields must be the handles of "from" and "to" vertex documents linked by the edge document in question. Here is an example of a valid edge document:
 
-# In[2]:
+# In[ ]:
 
 
 {
@@ -73,7 +73,7 @@
 # - you have imported the json driver, no? run the next cell!
 # 
 
-# In[3]:
+# In[ ]:
 
 
 # Run this Cell so that you can output any C8QL results in JSON Format!
@@ -82,7 +82,7 @@ import json
 
 # ## Step 04-A - Connect to GDN
 
-# In[4]:
+# In[ ]:
 
 
 from c8 import C8Client

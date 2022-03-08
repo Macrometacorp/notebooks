@@ -17,7 +17,7 @@
 # 
 # To install pyC8, simply run the following code in the cell below
 
-# In[1]:
+# In[ ]:
 
 
 # Run this code to install pyC8
@@ -29,7 +29,7 @@ get_ipython().system('pip install pyC8')
 # 
 # The first step in using GDN is to establish a connection to a local region. When this code executes, it initializes the server connection to the region URL you sepcified. You can create an API key from the GUI or REST API.
 
-# In[2]:
+# In[ ]:
 
 
 from c8 import C8Client

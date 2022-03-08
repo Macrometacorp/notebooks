@@ -354,30 +354,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span>
-
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyC8 in /usr/local/lib/python3.9/site-packages (0.16.9)
-Requirement already satisfied: six in /usr/local/lib/python3.9/site-packages (from pyC8) (1.16.0)
-Requirement already satisfied: websocket-client==0.57.0 in /usr/local/lib/python3.9/site-packages (from pyC8) (0.57.0)
-Requirement already satisfied: requests==2.20.1 in /usr/local/lib/python3.9/site-packages (from pyC8) (2.20.1)
-Requirement already satisfied: pandas&gt;=0.24.2 in /usr/local/lib/python3.9/site-packages (from pyC8) (1.4.1)
-Requirement already satisfied: urllib3&lt;1.25,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests==2.20.1-&gt;pyC8) (1.24.3)
-Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests==2.20.1-&gt;pyC8) (3.0.4)
-Requirement already satisfied: idna&lt;2.8,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests==2.20.1-&gt;pyC8) (2.7)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests==2.20.1-&gt;pyC8) (2021.10.8)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.9/site-packages (from pandas&gt;=0.24.2-&gt;pyC8) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/site-packages (from pandas&gt;=0.24.2-&gt;pyC8) (2021.3)
-Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/site-packages (from pandas&gt;=0.24.2-&gt;pyC8) (1.22.3)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">DEPRECATION: Configuring installation scheme with distutils config files is deprecated and will no longer work in the near future. If you are using a Homebrew or Linuxbrew Python, please see discussion at https://github.com/Homebrew/homebrew-core/issues/76621</span>
-
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="step-01-b-connect-to-gdn">
@@ -392,61 +368,6 @@ Requirement already satisfied: numpy&gt;=1.18.5 in /usr/local/lib/python3.9/site
 
 <span class="c1"># OR Using token</span>
 <span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443, token=&quot;XXXX&quot;)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">C8AuthenticationError</span><span class="g g-Whitespace">                     </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">email</span><span class="o">=</span><span class="s1">&#39;[email]&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;[xxxx]&#39;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                         <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
-
-<span class="nn">File /usr/local/lib/python3.9/site-packages/c8/client.py:47,</span> in <span class="ni">C8Client.__init__</span><span class="nt">(self, protocol, host, port, geofabric, stream_port, email, password, http_client, token, apikey)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span> <span class="bp">self</span><span class="o">.</span><span class="n">_http_client</span> <span class="o">=</span> <span class="n">http_client</span>
-<span class="g g-Whitespace">     </span><span class="mi">46</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">:</span>  
-<span class="ne">---&gt; </span><span class="mi">47</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_tenant</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tenant</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fabric</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tenant</span><span class="o">.</span><span class="n">useFabric</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_fabricname</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_token</span><span class="p">:</span>
-
-<span class="nn">File /usr/local/lib/python3.9/site-packages/c8/client.py:125,</span> in <span class="ni">C8Client.tenant</span><span class="nt">(self, email, password, verify, token, apikey)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">def</span> <span class="nf">tenant</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">apikey</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="sd">&quot;&quot;&quot;Connect to a fabric and return the fabric API wrapper.</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span><span class="sd">     :param email: Email for basic authentication.</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">123</span><span class="sd">         to True and the connection to C8Db fails.</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">125</span>     <span class="n">connection</span> <span class="o">=</span> <span class="n">TenantConnection</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_url</span><span class="p">,</span> 
-<span class="g g-Whitespace">    </span><span class="mi">126</span>                                   <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>                                   <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span>                                   <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>                                   <span class="n">apikey</span><span class="o">=</span><span class="n">apikey</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>                                   <span class="n">http_client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_http_client</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="n">tenant</span> <span class="o">=</span> <span class="n">Tenant</span><span class="p">(</span><span class="n">connection</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="c1"># TODO : handle verify</span>
-
-<span class="nn">File /usr/local/lib/python3.9/site-packages/c8/connection.py:217,</span> in <span class="ni">TenantConnection.__init__</span><span class="nt">(self, url, email, password, token, apikey, http_client)</span>
-<span class="g g-Whitespace">    </span><span class="mi">215</span> <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">apikey</span><span class="p">,</span> <span class="n">http_client</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">217</span>     <span class="nb">super</span><span class="p">(</span><span class="n">TenantConnection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span> <span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">,</span> <span class="n">apikey</span><span class="o">=</span><span class="n">apikey</span><span class="p">,</span> <span class="n">http_client</span><span class="o">=</span><span class="n">http_client</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fqfabric_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tenant_name</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fabric_name</span>
-
-<span class="nn">File /usr/local/lib/python3.9/site-packages/c8/connection.py:62,</span> in <span class="ni">Connection.__init__</span><span class="nt">(self, url, email, password, token, apikey, http_client)</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span>      <span class="bp">self</span><span class="o">.</span><span class="n">_auth_token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_apikey</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">password</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">62</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_auth_token</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tenant_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_auth_token</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_header</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_auth_token</span><span class="p">}</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tenant_name</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_token</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="p">:</span>
-
-<span class="nn">File /usr/local/lib/python3.9/site-packages/c8/connection.py:112,</span> in <span class="ni">Connection._get_auth_token</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="k">raise</span> <span class="n">C8TokenNotFoundError</span><span class="p">(</span><span class="s2">&quot;Failed to get Authentication Token for URL: </span><span class="si">{}</span><span class="s2"> Tenant: </span><span class="si">{}</span><span class="s2"> and Email: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tenant_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">112</span>     <span class="k">raise</span> <span class="n">C8AuthenticationError</span><span class="p">(</span><span class="s2">&quot;Failed to Authenticate the C8DB user for URL: </span><span class="si">{}</span><span class="s2"> and Email: </span><span class="si">{}</span><span class="s2">. Error: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_email</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">return</span> <span class="n">token</span><span class="p">,</span> <span class="n">tenant</span>
-
-<span class="ne">C8AuthenticationError</span>: Failed to Authenticate the C8DB user for URL: https://api-gdn.paas.macrometa.io:443 and Email: [email]. Error: {&quot;code&quot;:401,&quot;error&quot;:true,&quot;errorMessage&quot;:&quot;forbidden&quot;,&quot;errorNum&quot;:11}
 </pre></div>
 </div>
 </div>

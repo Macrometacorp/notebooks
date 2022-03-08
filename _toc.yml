@@ -5,9 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: markdown
-- file: docs/01_connect_gdn
-- file: docs/02_key_value_store.ipynb
-- file: docs/03_docs_store.ipynb
-- file: docs/04_graphs.ipynb
-- file: docs/05_graph_traversals.ipynb
+- file: 01_connect_gdn
+- file: 02_key_value_store.ipynb
+- file: 03_docs_store.ipynb
+- file: 04_graphs.ipynb
+- file: 05_graph_traversals.ipynb
 - file: markdown-notebooks

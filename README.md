@@ -12,7 +12,7 @@ pip install jupyter-book
 
 ```bash
 cd <path_to_docs-cookbook>/docs-cookbook
-git checkout vz-quick-start
+git checkout main
 jupyter-book build --all docs-cookbook
 ```
 

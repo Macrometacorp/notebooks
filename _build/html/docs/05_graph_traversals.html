@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workbook 05 - Graph Traverals &#8212; Quick start guide</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="../markdown-notebooks.html" />
+    <link rel="prev" title="Workbook 04 - Quick Start with Graphs" href="04_graphs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quick start guide</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_connect_gdn.html">
+   Workbook 01 - Connecting to GDN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_key_value_store.html">
+   Workbook 02 - Quick Start with Key Value Store
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_docs_store.html">
+   Workbook 03 - Quick Start with Documents Store
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_graphs.html">
+   Workbook 04 - Quick Start with Graphs
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Workbook 05 - Graph Traverals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/05_graph_traversals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/05_graph_traversals.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/docs/05_graph_traversals.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/docs/docs/05_graph_traversals.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workbook 05 - Graph Traverals</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overview">
+   Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-05-graph-traverals">
+<h1>Workbook 05 - Graph Traverals<a class="headerlink" href="#workbook-05-graph-traverals" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+
+<span class="c1"># Variables - Queries</span>
+<span class="n">global_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;[email]&quot;</span> <span class="c1"># &lt;-- Email goes here</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;[xxxxx]&quot;</span> <span class="c1"># &lt;-- password goes here</span>
+<span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
+<span class="n">collection_people</span> <span class="o">=</span> <span class="s2">&quot;CDRpeople&quot;</span>
+<span class="n">collection_calls</span> <span class="o">=</span> <span class="s2">&quot;CDRcalls&quot;</span>
+<span class="n">collection_cellsites</span> <span class="o">=</span> <span class="s2">&quot;CDRcellsites&quot;</span>
+<span class="n">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;CDRgraphdocs&quot;</span>
+<span class="n">read_people</span> <span class="o">=</span> <span class="s2">&quot;FOR person IN CDRpeople RETURN person&quot;</span>
+<span class="n">read_calls</span> <span class="o">=</span> <span class="s2">&quot;FOR call IN CDRcalls RETURN call&quot;</span>
+<span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;Lou Feaveer&quot;</span>
+<span class="n">graph_traversal1</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN CDRpeople FILTER c.full_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 INBOUND c CDRcalls RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN CDRpeople FILTER c.full_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c CDRcalls RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+
+<span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Initialize the C8 Data Fabric client.</span>
+<span class="c1"># Step1: Open connection to GDN. You will be routed to closest region.</span>
+<span class="c1">#print(&quot;1. CONNECT: federation: {},  user: {}&quot;.format(global_url, email))</span>
+<span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443)</span>
+
+<span class="c1"># For the &quot;mytenant&quot; tenant, connect to &quot;test&quot; fabric as tenant admin.</span>
+<span class="c1"># This returns an API wrapper for the &quot;test&quot; fabric on tenant &#39;mytenant&#39;</span>
+<span class="c1"># Note that the &#39;mytenant&#39; tenant should already exist.</span>
+<span class="c1">#tenant = client.tenant(email, password)</span>
+<span class="c1">#fabric = tenant.useFabric(&#39;_system&#39;)</span>
+
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;alan@macrometa.com&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AKScorpio74GDN!&#39;</span><span class="p">,</span>
+                        <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Step2: Create collections if not exists</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2a. CREATE_PEOPLE_VERTEX_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_people</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">):</span>
+    <span class="n">peopleCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">peopleCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2b. CREATE_CALLS_EDGE_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">):</span>
+    <span class="n">callsCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">callsCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Step3: Insert data into collections.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_PEOPLE_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_people</span><span class="p">))</span>
+
+<span class="c1"># insert documents into the collection</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kiel Dummer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kiel&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Burbank&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;40317 5th Crossing&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Pernell Winspare&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Pernell&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Winspare&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;596 Packers Pass&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;718-208-8096&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;718-208-8096&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ava Kermath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ava&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kermath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;2 Doe Crossing Junction&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;765-623-5328&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tremain McGrah&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tremain&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;McGrah&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Torrance&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;079 Russell Street&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;859-783-3227&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;859-783-3227&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vidovik Boddam&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vidovik&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Boddam&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3 Brentwood Crossing&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;703-265-1313&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;703-265-1313&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Oralie Goward&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Oralie&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Goward&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;922 Columbus Park&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;617-815-8610&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;617-815-8610&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lou Feaveer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Feaveer&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Jose&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;55223 Hooker Crossing&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Peria King&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;first_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Peria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;last_name&quot;</span><span class="p">:</span> <span class="s2">&quot;King&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Stockton&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;8 Troy Plaza&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+<span class="n">peopleCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_CALL_RECORDS_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;called_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/757-697-9065&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/716-463-8993&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/4/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_time&quot;</span><span class="p">:</span> <span class="s2">&quot;13:33&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_duration&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+    <span class="s2">&quot;cell_site&quot;</span><span class="p">:</span> <span class="mi">4044703906</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;called_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/716-463-8993&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/713-707-8699&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_time&quot;</span><span class="p">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_duration&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="s2">&quot;cell_site&quot;</span><span class="p">:</span> <span class="mi">2289973823</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;called_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/765-623-5328&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/713-707-8699&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_time&quot;</span><span class="p">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;call_duration&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="s2">&quot;cell_site&quot;</span><span class="p">:</span> <span class="mi">2289973823</span>
+  <span class="p">}</span>
+    <span class="p">]</span>
+<span class="n">callsCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+
+<span class="c1">#Step4: Create a graph</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. CREATE_GRAPH...CDRgraph&quot;</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">)</span>
+<span class="n">register</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">create_edge_definition</span><span class="p">(</span>
+        <span class="n">edge_collection</span><span class="o">=</span><span class="n">collection_calls</span><span class="p">,</span>
+        <span class="n">from_vertex_collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection_people</span><span class="p">],</span>
+        <span class="n">to_vertex_collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection_people</span><span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Step5: Read Data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find outbound calls TO: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">graph_traversal1</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find inbound calls FROM: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">graph_traversal2</span><span class="p">)</span>
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+<span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step6: Delete Data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6. DELETE_DATA...&quot;</span><span class="p">)</span>
+<span class="c1">#callsCol.truncate()</span>
+<span class="c1">#peopleCol.truncate()</span>
+<span class="c1">#client.delete_graph(graph, drop_collections=False)</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">delete_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">,</span> <span class="n">drop_collections</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-completed">
+<h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
+<p>TBC…</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="04_graphs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Workbook 04 - Quick Start with Graphs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../markdown-notebooks.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

@@ -20,7 +20,8 @@ jupyter-book build --all docs-xbook
 
 ### Run jupyter book locally
 
-To run your book locally, you can open the generated HTML files in your browser. Eenter the absolute path to the file in your browser navigation bar adding `file://` at the beginning (e.g. file:///Users/xxxxx/docs-xbook/_build/index.html).
+To run your book locally, you can open the generated HTML files in your browser. 
+Eenter the absolute path to the file in your browser navigation bar adding `file://` at the beginning (e.g. `file:///Users/xxxxx/docs-xbook/_build/index.html`).
 
 ### Publish jupyter book
 

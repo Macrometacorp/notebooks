@@ -220,6 +220,14 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-page-https-macrometacorp-github-io-docs-cookbook">
+   <strong>
+    GitHub page:
+   </strong>
+   https://macrometacorp.github.io/docs-cookbook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
@@ -267,6 +275,14 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github-page-https-macrometacorp-github-io-docs-cookbook">
+   <strong>
+    GitHub page:
+   </strong>
+   https://macrometacorp.github.io/docs-cookbook
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#setup">
    Setup
   </a>
@@ -304,6 +320,9 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="docs-cookbook">
 <h1>docs-cookbook<a class="headerlink" href="#docs-cookbook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="github-page-https-macrometacorp-github-io-docs-cookbook">
+<h2><strong>GitHub page:</strong> <a class="reference external" href="https://macrometacorp.github.io/docs-cookbook">https://macrometacorp.github.io/docs-cookbook</a><a class="headerlink" href="#github-page-https-macrometacorp-github-io-docs-cookbook" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="install-jupyter-book">
@@ -329,18 +348,19 @@ jupyter-book build --all docs-cookbook
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Move the build output directory <code class="docutils literal notranslate"><span class="pre">_build</span></code> to the <code class="docutils literal notranslate"><span class="pre">gh-page</span></code> repo</p></li>
+<li><p>Check generated <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory, make sure it is generated/updated</p></li>
 </ul>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;path_to_docs-cookbook&gt;/docs-cookbook
 git checkout main
-mv ./_build /tmp
-git checkout main
-mv /tmp/_build ./
+ls _build/ 
 </pre></div>
 </div>
 <ul class="simple">
-<li></li>
+<li><p>Publish the jupyter book</p></li>
 </ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ghp-import -n -p -f _build/html
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="references">

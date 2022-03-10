@@ -216,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/master?urlpath=tree/05_graph_traversals.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/05_graph_traversals.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -224,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/master/05_graph_traversals.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/05_graph_traversals.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -246,6 +246,51 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overview">
    Overview
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-a-importing-libraries">
+   Step 05-A Importing Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-b-connecting-to-gdn">
+   Step 05-B - Connecting to GDN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-c-creating-collections">
+   Step 05-C - Creating Collections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-d-inserting-data-people">
+   Step 05-D - Inserting Data - “People”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-e-inserting-data-calls-records">
+   Step 05-E - Inserting Data - “Calls Records”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-f-creating-a-graph">
+   Step 05-F - Creating a Graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-outbound-calls">
+   Step 05-G - Execute a Traversal - “Find outbound calls”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-inbound-calls">
+   Step 05-H - Execute a Traversal - “Find inbound calls”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-i-delete-data-and-collections">
+   Step 05-I - Delete Data and Collections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -279,6 +324,51 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-a-importing-libraries">
+   Step 05-A Importing Libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-b-connecting-to-gdn">
+   Step 05-B - Connecting to GDN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-c-creating-collections">
+   Step 05-C - Creating Collections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-d-inserting-data-people">
+   Step 05-D - Inserting Data - “People”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-e-inserting-data-calls-records">
+   Step 05-E - Inserting Data - “Calls Records”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-f-creating-a-graph">
+   Step 05-F - Creating a Graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-outbound-calls">
+   Step 05-G - Execute a Traversal - “Find outbound calls”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-inbound-calls">
+   Step 05-H - Execute a Traversal - “Find inbound calls”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-05-i-delete-data-and-collections">
+   Step 05-I - Delete Data and Collections
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#section-completed">
    Section Completed!
   </a>
@@ -297,6 +387,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
+</div>
+<div class="section" id="step-05-a-importing-libraries">
+<h2>Step 05-A Importing Libraries<a class="headerlink" href="#step-05-a-importing-libraries" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
@@ -304,8 +397,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="c1"># Variables - Queries</span>
 <span class="n">global_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
-<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;[email]&quot;</span> <span class="c1"># &lt;-- Email goes here</span>
-<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;[xxxxx]&quot;</span> <span class="c1"># &lt;-- password goes here</span>
+<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span> <span class="c1"># &lt;-- Email goes here</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span> <span class="c1"># &lt;-- password goes here</span>
 <span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
 <span class="n">collection_people</span> <span class="o">=</span> <span class="s2">&quot;CDRpeople&quot;</span>
 <span class="n">collection_calls</span> <span class="o">=</span> <span class="s2">&quot;CDRcalls&quot;</span>
@@ -314,12 +407,21 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">read_people</span> <span class="o">=</span> <span class="s2">&quot;FOR person IN CDRpeople RETURN person&quot;</span>
 <span class="n">read_calls</span> <span class="o">=</span> <span class="s2">&quot;FOR call IN CDRcalls RETURN call&quot;</span>
 <span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;Lou Feaveer&quot;</span>
+<span class="c1">#person = &quot;Peria King&quot;</span>
 <span class="n">graph_traversal1</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN CDRpeople FILTER c.full_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 INBOUND c CDRcalls RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
 <span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN CDRpeople FILTER c.full_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c CDRcalls RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
 
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="c1"># Initialize the C8 Data Fabric client.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-05-b-connecting-to-gdn">
+<h2>Step 05-B - Connecting to GDN<a class="headerlink" href="#step-05-b-connecting-to-gdn" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the C8 Data Fabric client.</span>
 <span class="c1"># Step1: Open connection to GDN. You will be routed to closest region.</span>
 <span class="c1">#print(&quot;1. CONNECT: federation: {},  user: {}&quot;.format(global_url, email))</span>
 <span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443)</span>
@@ -332,11 +434,18 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;alan@macrometa.com&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AKScorpio74GDN!&#39;</span><span class="p">,</span>
+                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;alankevans@gmail.com&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AlansDemo1!&#39;</span><span class="p">,</span>
                         <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
-
-
-<span class="c1"># Step2: Create collections if not exists</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-05-c-creating-collections">
+<h2>Step 05-C - Creating Collections<a class="headerlink" href="#step-05-c-creating-collections" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step2: Create collections if not exists</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2a. CREATE_PEOPLE_VERTEX_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_people</span><span class="p">))</span>
 <span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">):</span>
     <span class="n">peopleCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">)</span>
@@ -348,8 +457,16 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">callsCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">callsCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Step3: Insert data into collections.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-05-d-inserting-data-people">
+<h2>Step 05-D - Inserting Data - “People”<a class="headerlink" href="#step-05-d-inserting-data-people" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step3: Insert data into collections.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_PEOPLE_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_people</span><span class="p">))</span>
 
 <span class="c1"># insert documents into the collection</span>
@@ -436,8 +553,16 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="p">}</span>
 <span class="p">]</span>
 <span class="n">peopleCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_CALL_RECORDS_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-05-e-inserting-data-calls-records">
+<h2>Step 05-E - Inserting Data - “Calls Records”<a class="headerlink" href="#step-05-e-inserting-data-calls-records" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_CALL_RECORDS_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">{</span>
     <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
@@ -471,8 +596,16 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="p">}</span>
     <span class="p">]</span>
 <span class="n">callsCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
-
-<span class="c1">#Step4: Create a graph</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-05-f-creating-a-graph">
+<h2>Step 05-F - Creating a Graph<a class="headerlink" href="#step-05-f-creating-a-graph" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Step4: Create a graph</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. CREATE_GRAPH...CDRgraph&quot;</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">)</span>
 <span class="n">register</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">create_edge_definition</span><span class="p">(</span>
@@ -484,6 +617,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="step-05-g-execute-a-traversal-find-outbound-calls">
+<h2>Step 05-G - Execute a Traversal - “Find outbound calls”<a class="headerlink" href="#step-05-g-execute-a-traversal-find-outbound-calls" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Step5: Read Data</span>
@@ -495,6 +631,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="step-05-h-execute-a-traversal-find-inbound-calls">
+<h2>Step 05-H - Execute a Traversal - “Find inbound calls”<a class="headerlink" href="#step-05-h-execute-a-traversal-find-inbound-calls" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find inbound calls FROM: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
@@ -505,15 +644,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="step-05-i-delete-data-and-collections">
+<h2>Step 05-I - Delete Data and Collections<a class="headerlink" href="#step-05-i-delete-data-and-collections" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step6: Delete Data</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6. DELETE_DATA...&quot;</span><span class="p">)</span>
-<span class="c1">#callsCol.truncate()</span>
-<span class="c1">#peopleCol.truncate()</span>
-<span class="c1">#client.delete_graph(graph, drop_collections=False)</span>
+<span class="n">callsCol</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
+<span class="n">peopleCol</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
+<span class="c1">#client.delete_graph(graph, drop_collections=True)</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">delete_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">,</span> <span class="n">drop_collections</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">delete_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">,</span> <span class="n">drop_collections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

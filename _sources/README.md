@@ -1,5 +1,7 @@
 # docs-cookbook
 
+### **GitHub page:** https://macrometacorp.github.io/docs-cookbook
+
 ## Setup
 
 ### Install jupyter book
@@ -24,17 +26,19 @@ jupyter-book build --all docs-cookbook
 pip install ghp-import
 ```
 
-* Move the build output directory `_build` to the `gh-page` repo
+* Check generated `_build` directory, make sure it is generated/updated
 
 ```bash
 cd <path_to_docs-cookbook>/docs-cookbook
 git checkout main
-mv ./_build /tmp
-git checkout main
-mv /tmp/_build ./
+ls _build/ 
 ```
 
-* 
+* Publish the jupyter book
+
+```bash
+ghp-import -n -p -f _build/html
+```
 
 ## References
 

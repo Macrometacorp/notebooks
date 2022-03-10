@@ -216,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/master?urlpath=tree/02_key_value_store.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/02_key_value_store.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -224,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/master/02_key_value_store.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/02_key_value_store.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -408,7 +408,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;[email]&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;[xxxx]&#39;</span><span class="p">,</span>
+                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
                         <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
 
 <span class="c1"># OR Using token</span>
@@ -431,6 +431,11 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="k">else</span><span class="p">:</span>
     <span class="n">client</span><span class="o">.</span><span class="n">create_collection_kv</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">collection_name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Created!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collection Created!
 </pre></div>
 </div>
 </div>
@@ -469,6 +474,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KV Pairs Inserted
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="step-02-d-get-a-value">
@@ -484,6 +494,17 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+    &quot;_id&quot;: &quot;students/John&quot;,
+    &quot;_key&quot;: &quot;John&quot;,
+    &quot;_rev&quot;: &quot;_d0kYLba--_&quot;,
+    &quot;expireAt&quot;: 0,
+    &quot;value&quot;: &quot;Science&quot;
+}
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="step-02-e-get-key-value-count">
@@ -492,6 +513,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of kv pairs in your collection: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">get_kv_count</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of kv pairs in your collection:  4
 </pre></div>
 </div>
 </div>
@@ -513,6 +539,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updated the specified KV pair
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="step-02-g-delete-a-key-value">
@@ -522,6 +553,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete entry for a key</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deleted Entry for the specified Key: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">delete_entry_for_key</span><span class="p">(</span><span class="n">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted Entry for the specified Key:  True
 </pre></div>
 </div>
 </div>
@@ -546,6 +582,28 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted Entries for the following list of keys:
+[
+    {
+        &quot;_id&quot;: &quot;students/Monika&quot;,
+        &quot;_key&quot;: &quot;Monika&quot;,
+        &quot;_rev&quot;: &quot;_d0kYLba--I&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;students/Alex&quot;,
+        &quot;_key&quot;: &quot;Alex&quot;,
+        &quot;_rev&quot;: &quot;_d0kYLba--F&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;students/Alice&quot;,
+        &quot;_key&quot;: &quot;Alice&quot;,
+        &quot;_rev&quot;: &quot;_d0kYLba--C&quot;
+    }
+]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="step-02-i-delete-a-collection">
@@ -554,6 +612,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">delete_collection_kv</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collection Deleted:  True
 </pre></div>
 </div>
 </div>

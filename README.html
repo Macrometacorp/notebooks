@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>docs-cookbook &#8212; Quick start guide</title>
+    <title>docs-xbook &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -220,11 +220,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-page-https-macrometacorp-github-io-docs-cookbook">
+  <a class="reference internal nav-link" href="#github-page-https-macrometacorp-github-io-docs-xbook">
    <strong>
     GitHub page:
    </strong>
-   https://macrometacorp.github.io/docs-cookbook
+   https://macrometacorp.github.io/docs-xbook/
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -240,6 +240,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#build-jupyter-book">
      Build jupyter book
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-jupyter-book-locally">
+     Run jupyter book locally
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -264,7 +269,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>docs-cookbook</h1>
+                <h1>docs-xbook</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -275,11 +280,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#github-page-https-macrometacorp-github-io-docs-cookbook">
+  <a class="reference internal nav-link" href="#github-page-https-macrometacorp-github-io-docs-xbook">
    <strong>
     GitHub page:
    </strong>
-   https://macrometacorp.github.io/docs-cookbook
+   https://macrometacorp.github.io/docs-xbook/
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -295,6 +300,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#build-jupyter-book">
      Build jupyter book
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-jupyter-book-locally">
+     Run jupyter book locally
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -318,10 +328,10 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="docs-cookbook">
-<h1>docs-cookbook<a class="headerlink" href="#docs-cookbook" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="github-page-https-macrometacorp-github-io-docs-cookbook">
-<h2><strong>GitHub page:</strong> <a class="reference external" href="https://macrometacorp.github.io/docs-cookbook">https://macrometacorp.github.io/docs-cookbook</a><a class="headerlink" href="#github-page-https-macrometacorp-github-io-docs-cookbook" title="Permalink to this headline">¶</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="docs-xbook">
+<h1>docs-xbook<a class="headerlink" href="#docs-xbook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="github-page-https-macrometacorp-github-io-docs-xbook">
+<h2><strong>GitHub page:</strong> <a class="reference external" href="https://macrometacorp.github.io/docs-xbook/">https://macrometacorp.github.io/docs-xbook/</a><a class="headerlink" href="#github-page-https-macrometacorp-github-io-docs-xbook" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
@@ -333,11 +343,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="build-jupyter-book">
 <h3>Build jupyter book<a class="headerlink" href="#build-jupyter-book" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;path_to_docs-cookbook&gt;/docs-cookbook
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;path_to_docs-xbook&gt;/docs-xbook
 git checkout main
-jupyter-book build --all docs-cookbook
+jupyter-book build --all docs-xbook
 </pre></div>
 </div>
+</div>
+<div class="section" id="run-jupyter-book-locally">
+<h3>Run jupyter book locally<a class="headerlink" href="#run-jupyter-book-locally" title="Permalink to this headline">¶</a></h3>
+<p>To run your book locally, you can open the generated HTML files in your browser.
+Eenter the absolute path to the file in your browser navigation bar adding <code class="docutils literal notranslate"><span class="pre">file://</span></code> at the beginning (e.g. <code class="docutils literal notranslate"><span class="pre">file:///Users/xxxxx/docs-xbook/_build/index.html</span></code>).</p>
 </div>
 <div class="section" id="publish-jupyter-book">
 <h3>Publish jupyter book<a class="headerlink" href="#publish-jupyter-book" title="Permalink to this headline">¶</a></h3>
@@ -350,7 +365,7 @@ jupyter-book build --all docs-cookbook
 <ul class="simple">
 <li><p>Check generated <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory, make sure it is generated/updated</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;path_to_docs-cookbook&gt;/docs-cookbook
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;path_to_docs-xbook&gt;/docs-xbook
 git checkout main
 ls _build/ 
 </pre></div>

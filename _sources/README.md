@@ -1,6 +1,6 @@
-# docs-cookbook
+# docs-xbook
 
-### **GitHub page:** https://macrometacorp.github.io/docs-cookbook
+### **GitHub page:** https://macrometacorp.github.io/docs-xbook/
 
 ## Setup
 
@@ -13,10 +13,15 @@ pip install jupyter-book
 ### Build jupyter book
 
 ```bash
-cd <path_to_docs-cookbook>/docs-cookbook
+cd <path_to_docs-xbook>/docs-xbook
 git checkout main
-jupyter-book build --all docs-cookbook
+jupyter-book build --all docs-xbook
 ```
+
+### Run jupyter book locally
+
+To run your book locally, you can open the generated HTML files in your browser. 
+Eenter the absolute path to the file in your browser navigation bar adding `file://` at the beginning (e.g. `file:///Users/xxxxx/docs-xbook/_build/index.html`).
 
 ### Publish jupyter book
 
@@ -29,7 +34,7 @@ pip install ghp-import
 * Check generated `_build` directory, make sure it is generated/updated
 
 ```bash
-cd <path_to_docs-cookbook>/docs-cookbook
+cd <path_to_docs-xbook>/docs-xbook
 git checkout main
 ls _build/ 
 ```

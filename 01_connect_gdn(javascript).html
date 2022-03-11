@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workbook 01 - Connecting to GDN &#8212; Quick start guide</title>
+    <title>Workbook 01 - Connecting to GDN(Javascript) &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Workbook 01 - Connecting to GDN(Javascript)" href="01_connect_gdn%28javascript%29.html" />
-    <link rel="prev" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Workbook 02 - Quick Start with Key Value Store" href="02_key_value_store.html" />
+    <link rel="prev" title="Workbook 01 - Connecting to GDN" href="01_connect_gdn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,13 +109,13 @@ const thebe_selector_output = ".output, .cell_output"
    Markdown Files
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_connect_gdn.html">
    Workbook 01 - Connecting to GDN
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="01_connect_gdn%28javascript%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Workbook 01 - Connecting to GDN(Javascript)
   </a>
  </li>
@@ -199,7 +199,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/01_connect_gdn.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/01_connect_gdn(javascript).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -219,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Macrometacorp/docs-cookbook/issues/new?title=Issue%20on%20page%20%2F01_connect_gdn.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Macrometacorp/docs-cookbook/issues/new?title=Issue%20on%20page%20%2F01_connect_gdn(javascript).html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -240,7 +240,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/01_connect_gdn.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/01_connect_gdn(javascript).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -248,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/01_connect_gdn.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/01_connect_gdn(javascript).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -307,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workbook 01 - Connecting to GDN</h1>
+                <h1>Workbook 01 - Connecting to GDN(Javascript)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -356,8 +356,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-01-connecting-to-gdn">
-<h1>Workbook 01 - Connecting to GDN<a class="headerlink" href="#workbook-01-connecting-to-gdn" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-01-connecting-to-gdn-javascript">
+<h1>Workbook 01 - Connecting to GDN(Javascript)<a class="headerlink" href="#workbook-01-connecting-to-gdn-javascript" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
@@ -365,17 +365,44 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>tenant name is [email protected] and</p></li>
 <li><p>user password is xxxxx.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>#/* run this once, then reload, and then skip this
+!npm install -g --unsafe-perm ijavascript
+!ijsinstall --install=global  # as fake comment */
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="step-01-a-driver-download">
 <h2>Step 01-A - Driver download<a class="headerlink" href="#step-01-a-driver-download" title="Permalink to this headline">¶</a></h2>
-<p>pyC8 requires Python 3.5+. Python 3.6 or higher is recommended</p>
-<p>To install pyC8, simply run the following code in the cell below</p>
+<p>With Yarn or NPM</p>
+<p>To install jsc8, simply run the following code in the cell below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this code to install pyC8</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Run this code to install jsc8</span>
+<span class="kd">var</span> <span class="p">{</span> <span class="nx">spawn</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;child_process&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">sh</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
+    <span class="nx">$$</span><span class="p">.</span><span class="k">async</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">sp</span> <span class="o">=</span> <span class="nx">spawn</span><span class="p">(</span><span class="nx">cmd</span><span class="p">,</span> <span class="p">{</span> <span class="nx">cwd</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="nx">stdio</span><span class="o">:</span> <span class="s1">&#39;pipe&#39;</span><span class="p">,</span> <span class="nx">shell</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">encoding</span><span class="o">:</span> <span class="s1">&#39;utf-8&#39;</span> <span class="p">});</span>
+    <span class="nx">sp</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="nx">data</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
+    <span class="nx">sp</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="nx">data</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
+    <span class="nx">sp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">$$</span><span class="p">.</span><span class="nx">done</span><span class="p">());</span>
+<span class="p">};</span>
+<span class="nx">sh</span><span class="p">(</span><span class="s1">&#39;npm install jsc8&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>up to date, audited 30 packages in 2s
 
-<span class="o">!</span>pip install pyC8
-<span class="c1">#!pip install websocket-client</span>
+
+1 package is looking for funding
+  run `npm fund` for details
+
+
+found 0 vulnerabilities
 </pre></div>
 </div>
 </div>
@@ -386,14 +413,19 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The first step in using GDN is to establish a connection to a local region. When this code executes, it initializes the server connection to the region URL you sepcified. You can create an API key from the GUI or REST API.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                        <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
 
+<span class="c1">// ----- simple way  ----- </span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
+<span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">))</span>
 
-<span class="c1"># OR Using token</span>
-<span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443, token=&quot;XXXX&quot;)</span>
+<span class="c1">// ----- with token -----</span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, token: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
+
+<span class="c1">// ----- with apikey-----</span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
 </pre></div>
 </div>
 </div>
@@ -404,7 +436,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Note: If you have already run the following cell to create your API Key, running it again will produce an error. you might like to remove the current API Key buy jumping to the section “## Remove an API Key” and then returning to this cell to create the API Key again.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Create API Key: &quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">create_api_key</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">))</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">createApiKey</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created API Key: &quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while creating API key&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -414,11 +450,25 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 01-D - Get Accessible Resources<a class="headerlink" href="#step-01-d-get-accessible-resources" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetch List of accessible databases and streams</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="c1">// Fetch List of accessible databases</span>
+        <span class="kd">const</span> <span class="nx">databaseList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleDatabases</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Databases: &quot;</span><span class="p">,</span> <span class="nx">databaseList</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accesible databases&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+    <span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accessible Databases: &quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">list_accessible_databases</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accessible Streams of a db: &quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">list_accessible_streams</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">,</span> <span class="s1">&#39;_system&#39;</span><span class="p">))</span>
+<span class="cm">/*</span>
+<span class="cm">    try {</span>
+<span class="cm">        // Fetch List of accessible streams</span>
+<span class="cm">        const streamsList = await client.listAccessibleStreams(&#39;id1&#39;, &#39;_system&#39;)</span>
+<span class="cm">        console.log(&quot;Accessible Streams of a db: &quot;, streamsList)</span>
+<span class="cm">    } catch(e) {</span>
+<span class="cm">        console.error(&quot;Error while listing accesible streams&quot;, e)</span>
+<span class="cm">    }</span>
+<span class="cm">*/</span>
+<span class="p">})();</span>
 </pre></div>
 </div>
 </div>
@@ -439,33 +489,33 @@ const thebe_selector_output = ".output, .cell_output"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "javascript"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "javascript",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'javascript'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="markdown.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="01_connect_gdn.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Markdown Files</p>
+            <p class="prev-next-title">Workbook 01 - Connecting to GDN</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="01_connect_gdn%28javascript%29.html" title="next page">
+    <a class='right-next' id="next-link" href="02_key_value_store.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Workbook 01 - Connecting to GDN(Javascript)</p>
+        <p class="prev-next-title">Workbook 02 - Quick Start with Key Value Store</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

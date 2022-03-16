@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workbook 03 - Quick Start with Documents Store &#8212; Quick start guide</title>
+    <title>Workbook 03 - Quick Start with Documents Store(Javascript) &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Workbook 03 - Quick Start with Documents Store(Javascript)" href="03_docs_store%28javascript%29.html" />
-    <link rel="prev" title="Workbook 02 - Quick Start with Key Value Store(Javascript)" href="02_key_value_store%28javascript%29.html" />
+    <link rel="next" title="Workbook 04 - Quick Start with Graphs" href="04_graphs.html" />
+    <link rel="prev" title="Workbook 03 - Quick Start with Documents Store" href="03_docs_store.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -129,13 +129,13 @@ const thebe_selector_output = ".output, .cell_output"
    Workbook 02 - Quick Start with Key Value Store(Javascript)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_docs_store.html">
    Workbook 03 - Quick Start with Documents Store
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="03_docs_store%28javascript%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Workbook 03 - Quick Start with Documents Store(Javascript)
   </a>
  </li>
@@ -219,7 +219,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/03_docs_store.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/03_docs_store(javascript).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -239,7 +239,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Macrometacorp/docs-cookbook/issues/new?title=Issue%20on%20page%20%2F03_docs_store.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Macrometacorp/docs-cookbook/issues/new?title=Issue%20on%20page%20%2F03_docs_store(javascript).html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -260,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/03_docs_store.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/03_docs_store(javascript).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/03_docs_store.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/03_docs_store(javascript).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -342,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workbook 03 - Quick Start with Documents Store</h1>
+                <h1>Workbook 03 - Quick Start with Documents Store(Javascript)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,26 +406,26 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-03-quick-start-with-documents-store">
-<h1>Workbook 03 - Quick Start with Documents Store<a class="headerlink" href="#workbook-03-quick-start-with-documents-store" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-03-quick-start-with-documents-store-javascript">
+<h1>Workbook 03 - Quick Start with Documents Store(Javascript)<a class="headerlink" href="#workbook-03-quick-start-with-documents-store-javascript" title="Permalink to this headline">¶</a></h1>
 <p>Documents in GDN are JSON objects. These objects can be nested (to any depth) and may contain lists. Each document has a unique primary key which identifies it within its collection. Furthermore, each document is uniquely identified by its document handle across all collections. Different revisions of the same document (identified by its handle) can be distinguished by their document revision. Any transaction only ever sees a single revision of a document.</p>
 <p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;_id&quot;</span> <span class="p">:</span> <span class="s2">&quot;myusers/3456789&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;_key&quot;</span> <span class="p">:</span> <span class="s2">&quot;3456789&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;_rev&quot;</span> <span class="p">:</span> <span class="s2">&quot;14253647&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;firstName&quot;</span> <span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;lastName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;address&quot;</span> <span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;street&quot;</span> <span class="p">:</span> <span class="s2">&quot;Road To Nowhere 1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;city&quot;</span> <span class="p">:</span> <span class="s2">&quot;Gotham&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;_id&quot;</span> <span class="o">:</span> <span class="s2">&quot;myusers/3456789&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;_key&quot;</span> <span class="o">:</span> <span class="s2">&quot;3456789&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;_rev&quot;</span> <span class="o">:</span> <span class="s2">&quot;14253647&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;firstName&quot;</span> <span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;lastName&quot;</span> <span class="o">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;address&quot;</span> <span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;street&quot;</span> <span class="o">:</span> <span class="s2">&quot;Road To Nowhere 1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;city&quot;</span> <span class="o">:</span> <span class="s2">&quot;Gotham&quot;</span>
   <span class="p">},</span>
-  <span class="s2">&quot;hobbies&quot;</span> <span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;swimming&quot;</span><span class="p">,</span> <span class="n">howFavorite</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span>
-    <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;biking&quot;</span><span class="p">,</span> <span class="n">howFavorite</span><span class="p">:</span> <span class="mi">6</span><span class="p">},</span>
-    <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="s2">&quot;programming&quot;</span><span class="p">,</span> <span class="n">howFavorite</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+  <span class="s2">&quot;hobbies&quot;</span> <span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;swimming&quot;</span><span class="p">,</span> <span class="nx">howFavorite</span><span class="o">:</span> <span class="mf">10</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;biking&quot;</span><span class="p">,</span> <span class="nx">howFavorite</span><span class="o">:</span> <span class="mf">6</span><span class="p">},</span>
+    <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;programming&quot;</span><span class="p">,</span> <span class="nx">howFavorite</span><span class="o">:</span> <span class="mf">4</span><span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span>
 </pre></div>
@@ -450,8 +450,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this Cell so that you can output any C8QL results in JSON Format!</span>
-<span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>#/* run this once to install javascript kernal and jsc8 in google colab, then reload, and then skip this
+!npm install jsc8
+!npm install -g --unsafe-perm ijavascript
+!ijsinstall --install=global  # */
 </pre></div>
 </div>
 </div>
@@ -461,14 +463,16 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 03-A - Connect to GDN<a class="headerlink" href="#step-03-a-connect-to-gdn" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                        <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
 
-<span class="c1"># OR Using token</span>
+<span class="c1">// Simple Way</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span><span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">,</span> <span class="nx">token</span><span class="o">:</span> <span class="s2">&quot;XXXX&quot;</span><span class="p">,</span> <span class="nx">fabricName</span><span class="o">:</span> <span class="s1">&#39;_system&#39;</span><span class="p">});</span>
+<span class="c1">// ----- OR -----</span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
 
-<span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443, token=&quot;XXXX&quot;)</span>
+<span class="c1">// To use advanced options</span>
+<span class="c1">// const client = new jsc8(&quot;https://gdn.paas.macrometa.io&quot;); </span>
+<span class="c1">// client.login(email, password).then(result =&gt; console.log(&quot;Login successfully&quot;, result)).catch(err =&gt; console.error(&quot;Error while login&quot;, err.message))</span>
 </pre></div>
 </div>
 </div>
@@ -479,18 +483,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To get details of fabric,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># you might not need this, but if you wanted to select a </span>
-<span class="c1"># specific GeoFabric you can find out whats available by executing this code!</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// you might not need this, but if you wanted to select a </span>
+<span class="c1">// specific GeoFabric you can find out whats available by executing this code!</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">getGeoFabricMetaData</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">)</span>
 
-<span class="c1"># -- use this line of code for an unformated response --</span>
-<span class="c1">#print(client.get_fabric_details())</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">fabrics</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabrics</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric details&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="c1"># -- use these lines of code for a formated response (easier to read) -- </span>
-<span class="n">fabrics</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_fabric_details</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">fabrics</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="nx">getGeoFabricMetaData</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -502,14 +509,24 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The below example shows the steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;employees&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">collection_name</span> <span class="o">=</span> <span class="s2">&quot;employees&quot;</span><span class="p">;</span>
 
-<span class="c1"># Create a new collection if it does not exist</span>
-<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection exists&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">collection_name</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Created!&quot;</span><span class="p">)</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">createCollection</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
+  <span class="k">try</span><span class="p">{</span>
+    <span class="c1">// Create a new collection if it does not exist</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">)</span>
+        <span class="k">return</span> 
+    <span class="p">}</span>
+    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="k">return</span> <span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">createCollection</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -520,16 +537,19 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s add a hash_index called emails to our collection employees. Please refer to reference guide for details on other available index types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple Approach</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Simple Approach</span>
+                
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">addHashIndex</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Add Hash Index&quot;</span><span class="p">)</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">hashIndex</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">addHashIndex</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">],</span> <span class="p">{</span><span class="nx">unique</span><span class="o">:</span><span class="kc">true</span><span class="p">})</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Index created: &quot;</span><span class="p">,</span> <span class="nx">hashIndex</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while adding Hash Index&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="c1">#print(&quot;Add Hash Index&quot;, client.add_hash_index(&#39;employees&#39;, fields=[&#39;firstname&#39;, &#39;lastname&#39;], unique=True)</span>
-<span class="c1">#)                      </span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Add Hash Index&quot;</span><span class="p">)</span>
-
-<span class="n">hash_index</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">add_hash_index</span><span class="p">(</span><span class="s1">&#39;employees&#39;</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;firstname&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">],</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">hash_index</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="nx">addHashIndex</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -540,17 +560,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s insert documents to the employees collection as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#client.insert_document(collection_name=&#39;employees&#39;, document={&#39;_key&#39;:&#39;Alan&#39;, &#39;firstname&#39;: &#39;Alan&#39;, &#39;lastname&#39;:&#39;Evans&#39;, &#39;email&#39;:&#39;[email protected]&#39;})</span>
-
-<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Kirk&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Solo&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Kirk&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Solo&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">}</span>
 <span class="p">]</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">insert_document</span><span class="p">(</span><span class="n">collection_name</span><span class="o">=</span><span class="s1">&#39;employees&#39;</span><span class="p">,</span> <span class="n">document</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">insertDocument</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">docs</span><span class="p">)</span>
+<span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="nx">insertDocument</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -562,13 +582,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The query “FOR employee IN employees RETURN employee” is equivalent to SQL’s SELECT query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;FOR employee IN employees RETURN employee&#39;</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">c8Queries</span><span class="p">()</span> <span class="p">{</span>
 
-<span class="c1">#cursor = client.execute_query(&quot;for d in tutorial_coll return d&quot;)</span>
-<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+  <span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span>
+    <span class="s2">&quot;FOR employee IN employees RETURN employee&quot;</span>
+  <span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span>
+<span class="p">}</span>
 
-
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="nx">c8Queries</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -577,15 +599,26 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="step-03-g-get-realtime-updates">
 <h2>Step 03-G - Get realtime updates<a class="headerlink" href="#step-03-g-get-realtime-updates" title="Permalink to this headline">¶</a></h2>
 <p>Example for real-time updates from a collection in fabric:</p>
-<p>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, sellect collections, find the collection named “employees” and select “enable Stream”</p>
-<p>Now run the cell below, return to the Macrometa Dashboard and modeify and save fields in the collection. you should see the real time updates below as soon as you hit save!.</p>
-<p>the websocket will time out after 60sec if no updates are seen, so you might need to re run the cell code if youy see a timed out messege below. :)</p>
+<p>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, select collections, find the collection named “employees” and select “enable Stream”</p>
+<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. you should see the real time updates below as soon as you hit save!.</p>
+<p>the websocket will time out after 60sec if no updates are seen, so you might need to re run the cell code if you see a timed out message below. :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback_fn</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">){</span>
+  <span class="k">await</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connection open on &quot;</span><span class="p">,</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">on_change</span><span class="p">(</span><span class="s2">&quot;employees&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback_fn</span><span class="p">)</span>     
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">realTimeListener</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">listener</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">onCollectionChange</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span>
+
+  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;message=&gt;&quot;</span><span class="p">,</span> <span class="nx">msg</span><span class="p">));</span>
+  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">);</span>
+    <span class="p">});</span>
+  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;connection closed&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="nx">realTimeListener</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -606,33 +639,33 @@ const thebe_selector_output = ".output, .cell_output"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "javascript"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "javascript",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'javascript'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="02_key_value_store%28javascript%29.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="03_docs_store.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workbook 02 - Quick Start with Key Value Store(Javascript)</p>
+            <p class="prev-next-title">Workbook 03 - Quick Start with Documents Store</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="03_docs_store%28javascript%29.html" title="next page">
+    <a class='right-next' id="next-link" href="04_graphs.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Workbook 03 - Quick Start with Documents Store(Javascript)</p>
+        <p class="prev-next-title">Workbook 04 - Quick Start with Graphs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

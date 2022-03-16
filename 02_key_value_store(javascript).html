@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workbook 02 - Quick Start with Key Value Store &#8212; Quick start guide</title>
+    <title>Workbook 02 - Quick Start with Key Value Store(Javascript) &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Workbook 02 - Quick Start with Key Value Store(Javascript)" href="02_key_value_store%28javascript%29.html" />
-    <link rel="prev" title="Workbook 01 - Connecting to GDN(Javascript)" href="01_connect_gdn%28javascript%29.html" />
+    <link rel="next" title="Workbook 03 - Quick Start with Documents Store" href="03_docs_store.html" />
+    <link rel="prev" title="Workbook 02 - Quick Start with Key Value Store" href="02_key_value_store.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,13 +119,13 @@ const thebe_selector_output = ".output, .cell_output"
    Workbook 01 - Connecting to GDN(Javascript)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_key_value_store.html">
    Workbook 02 - Quick Start with Key Value Store
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="02_key_value_store%28javascript%29.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Workbook 02 - Quick Start with Key Value Store(Javascript)
   </a>
  </li>
@@ -204,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/02_key_value_store.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/02_key_value_store(javascript).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -224,7 +224,7 @@ const thebe_selector_output = ".output, .cell_output"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/Macrometacorp/docs-cookbook/issues/new?title=Issue%20on%20page%20%2F02_key_value_store.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/Macrometacorp/docs-cookbook/issues/new?title=Issue%20on%20page%20%2F02_key_value_store(javascript).html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/02_key_value_store.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Macrometacorp/docs-cookbook/main?urlpath=tree/02_key_value_store(javascript).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -253,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/02_key_value_store.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-cookbook/blob/main/02_key_value_store(javascript).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workbook 02 - Quick Start with Key Value Store</h1>
+                <h1>Workbook 02 - Quick Start with Key Value Store(Javascript)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -411,9 +411,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-02-quick-start-with-key-value-store">
-<h1>Workbook 02 - Quick Start with Key Value Store<a class="headerlink" href="#workbook-02-quick-start-with-key-value-store" title="Permalink to this headline">¶</a></h1>
-<p>Macrometa GDN is a geodistributed real-time coordination-free materialized views engine that supports multiple data models. You can use GDN as a geo-replicated real-time key-value datastore or database.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-02-quick-start-with-key-value-store-javascript">
+<h1>Workbook 02 - Quick Start with Key Value Store(Javascript)<a class="headerlink" href="#workbook-02-quick-start-with-key-value-store-javascript" title="Permalink to this headline">¶</a></h1>
+<p>Macrometa GDN is a geo distributed real-time coordination-free materialized views engine that supports multiple data models. You can use GDN as a geo-replicated real-time key-value datastore or database.</p>
 <p>If you are new to Macrometa GDN, start by reading the essentials of Macrometa GDN.</p>
 <p>Each document stored in a collection (or table) contains a primary key _key. The rest of the document is considered a value. The collection behaves like a simple key-value (KV) store if it has no secondary indexes.</p>
 <p>The key-value store has no query languages. The permissible operations are key look-ups (single &amp; batch) and key-value pair insertions, updates and deletions. If you don’t specify a sharding attribute, we use _key to shard the data. The simplicity of this model makes a key-value store fast, easy to use, scalable, portable, and flexible.</p>
@@ -424,25 +424,36 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Lets Assume</p>
 <ul class="simple">
 <li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed the pyc8 drivers as explained in section 01</p></li>
+<li><p>you have installed the jsc8 drivers as explained in section 01</p></li>
 <li><p>you have generated an API Key as explained in section 01</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>#/* run this once to install javascript kernal and jsc8 in google colab, then reload, and then skip this
+!npm install jsc8
+!npm install -g --unsafe-perm ijavascript
+!ijsinstall --install=global  # */
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="step-02-a-connect-to-gdn">
 <h2>Step 02-A - Connect to GDN<a class="headerlink" href="#step-02-a-connect-to-gdn" title="Permalink to this headline">¶</a></h2>
 <p>The first step in using GDN is to establish a connection to a local region. When this code executes, it initializes the server connection to the region URL you sepcified. You can create an API key from the GUI or REST API.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
 
-<span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
-                        <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+<span class="c1">// Simple Way</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span><span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">,</span> <span class="nx">token</span><span class="o">:</span> <span class="s2">&quot;XXXX&quot;</span><span class="p">,</span> <span class="nx">fabricName</span><span class="o">:</span> <span class="s1">&#39;_system&#39;</span><span class="p">});</span>
 
-<span class="c1"># OR Using token</span>
+<span class="c1">// ----- OR -----</span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
 
-<span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443, token=&quot;XXXX&quot;)</span>
+<span class="c1">// To use advanced options</span>
+<span class="c1">// const client = new jsc8(&quot;https://gdn.paas.macrometa.io&quot;); </span>
+<span class="c1">// client.login(email, password).then(result =&gt; console.log(&quot;Login successfully&quot;, result)).catch(err =&gt; console.error(&quot;Error while login&quot;, err.message))</span>
 </pre></div>
 </div>
 </div>
@@ -452,19 +463,23 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 02-B - Create a Collection<a class="headerlink" href="#step-02-b-create-a-collection" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s2">&quot;students&quot;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">collection_name</span> <span class="o">=</span> <span class="s2">&quot;students&quot;</span><span class="p">;</span>
 
-<span class="c1"># Create a new collection if it does not exist</span>
-<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection exists&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">client</span><span class="o">.</span><span class="n">create_collection_kv</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">collection_name</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Created!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collection Created!
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">createCollection</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
+  <span class="k">try</span><span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">)</span>
+        <span class="k">return</span> 
+    <span class="p">}</span>
+    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span> 
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="k">return</span> <span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">createCollection</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -475,36 +490,34 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Insert key-value pairs into the collection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Science&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;expireAt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="s2">&quot;_key&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;Science&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expireAt&quot;</span><span class="o">:</span> <span class="mf">0</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Maths&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;expireAt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="s2">&quot;_key&quot;</span><span class="o">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;Maths&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expireAt&quot;</span><span class="o">:</span> <span class="mf">0</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;Alex&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Physics&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;expireAt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="s2">&quot;_key&quot;</span><span class="o">:</span> <span class="s2">&quot;Alex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;Physics&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expireAt&quot;</span><span class="o">:</span> <span class="mf">0</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;Monika&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Chemistry&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;expireAt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="s2">&quot;_key&quot;</span><span class="o">:</span> <span class="s2">&quot;Monika&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;Chemistry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expireAt&quot;</span><span class="o">:</span> <span class="mf">0</span>
   <span class="p">}</span>
 <span class="p">]</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">insert_key_value_pair</span><span class="p">(</span><span class="n">collection_name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KV Pairs Inserted&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KV Pairs Inserted
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">insertKVPairs</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertKVPairs</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">insertKVPairs</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;KV pairs inserted&quot;</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting KV pairs&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -515,22 +528,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Get value for a given key.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(&quot;Value for the provided key: &quot;,client.get_value_for_key(collection_name, &quot;Monika&quot;))</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">getValueForKey</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">monikaKV</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getValueForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="s2">&quot;Monika&quot;</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value for the provided key Monika: &quot;</span><span class="p">,</span> <span class="nx">monikaKV</span><span class="p">)</span>
+        
+    <span class="kd">const</span> <span class="nx">johnKV</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getValueForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">)</span>
 
-<span class="n">value</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_value_for_key</span><span class="p">(</span><span class="n">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value for the provided key John: &quot;</span><span class="p">,</span> <span class="nx">johnKV</span><span class="p">)</span>
+<span class="p">}</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
-    &quot;_id&quot;: &quot;students/John&quot;,
-    &quot;_key&quot;: &quot;John&quot;,
-    &quot;_rev&quot;: &quot;_d0kYLba--_&quot;,
-    &quot;expireAt&quot;: 0,
-    &quot;value&quot;: &quot;Science&quot;
-}
+<span class="nx">getValueForKey</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -541,12 +548,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Get key-value count from a given collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of kv pairs in your collection: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">get_kv_count</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of kv pairs in your collection:  4
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">client</span><span class="p">.</span><span class="nx">getKVCount</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Number of kv pairs in your collection: &quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">count</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching kv count &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -557,19 +559,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Update value for a given key</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update value for a key</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;Biology&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;expireAt&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Update value for a key</span>
+<span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;_key&quot;</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;Biology&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;expireAt&quot;</span><span class="o">:</span> <span class="mf">0</span>
 <span class="p">}</span>
-<span class="n">client</span><span class="o">.</span><span class="n">insert_key_value_pair</span><span class="p">(</span><span class="n">collection_name</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Updated the specified KV pair&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Updated the specified KV pair
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">insertKeyValuePair</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertKVPairs</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Updated the specified KV pair&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating KV pair&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">insertKeyValuePair</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -580,13 +585,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Delete key-value pairs from a collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete entry for a key</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deleted Entry for the specified Key: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">delete_entry_for_key</span><span class="p">(</span><span class="n">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted Entry for the specified Key:  True
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Delete entry for a key</span>
+
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteEntryForKey</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteEntryForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted Entry for the specified Key John&quot;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting KV pair&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">deleteEntryForKey</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -597,39 +607,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Delete entry for multiple key-value pairs from a collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Delete entry for multiple keys</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Delete entry for multiple keys</span>
 
-<span class="c1"># -- Simple line of code --</span>
+<span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteEntryForKeys</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="kd">const</span> <span class="nx">values2</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteEntryForKeys</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Monika&quot;</span><span class="p">,</span> <span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">])</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted Entries for the specified Key: &quot;</span><span class="p">,</span> <span class="nx">values2</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting KV pair&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span class="c1">#print(&quot;Deleted Entries for the list of keys: &quot;,client.delete_entry_for_keys(collection_name, [&quot;Monika&quot;, &quot;Alex&quot;, &quot;Alice&quot;]))</span>
-
-<span class="c1"># -- Elegant lines of code for easier reading --</span>
-
-<span class="n">value2</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_entry_for_keys</span><span class="p">(</span><span class="n">collection_name</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Monika&quot;</span><span class="p">,</span> <span class="s2">&quot;Alex&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Deleted Entries for the following list of keys:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">value2</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Deleted Entries for the following list of keys:
-[
-    {
-        &quot;_id&quot;: &quot;students/Monika&quot;,
-        &quot;_key&quot;: &quot;Monika&quot;,
-        &quot;_rev&quot;: &quot;_d0kYLba--I&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;students/Alex&quot;,
-        &quot;_key&quot;: &quot;Alex&quot;,
-        &quot;_rev&quot;: &quot;_d0kYLba--F&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;students/Alice&quot;,
-        &quot;_key&quot;: &quot;Alice&quot;,
-        &quot;_rev&quot;: &quot;_d0kYLba--C&quot;
-    }
-]
+<span class="nx">deleteEntryForKeys</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -637,15 +626,19 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="step-02-i-delete-a-collection">
 <h2>Step 02-I - Delete a Collection<a class="headerlink" href="#step-02-i-delete-a-collection" title="Permalink to this headline">¶</a></h2>
-<p>Delete the key-vlaue collection</p>
+<p>Delete the key-value collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">delete_collection_kv</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collection Deleted:  True
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteKVCollection</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">)</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting collection &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">deleteKVCollection</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -653,7 +646,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="workbook-completed">
 <h2>Workbook Completed!<a class="headerlink" href="#workbook-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations you should have successfuly create a collection, inserted values, updated a value, deleted an entry, delted all entries and finally deleted the collection.</p>
+<p>Congratulations you should have successfully create a collection, inserted values, updated a value, deleted an entry, deleted all entries and finally deleted the collection.</p>
 <p>Dont forget you can log into your GDN account and check the console to see what is happening from the dashboard at the same time!</p>
 </div>
 </div>
@@ -667,33 +660,33 @@ const thebe_selector_output = ".output, .cell_output"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "javascript"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "javascript",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'javascript'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="01_connect_gdn%28javascript%29.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="02_key_value_store.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workbook 01 - Connecting to GDN(Javascript)</p>
+            <p class="prev-next-title">Workbook 02 - Quick Start with Key Value Store</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="02_key_value_store%28javascript%29.html" title="next page">
+    <a class='right-next' id="next-link" href="03_docs_store.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Workbook 02 - Quick Start with Key Value Store(Javascript)</p>
+        <p class="prev-next-title">Workbook 03 - Quick Start with Documents Store</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

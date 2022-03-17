@@ -15,7 +15,7 @@ parts:
   - file: 06_building_restql_apis(Python)
 - caption: Intermediate
   chapters:
-  - file: 05_graph_traversals.ipynb
+  - file: 05_graph_traversals(Python)
 - caption: Advanced
   chapters:
   - file: markdown-notebooks

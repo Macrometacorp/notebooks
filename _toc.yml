@@ -12,7 +12,6 @@ parts:
   - file: 02_key_value_store(Python)
   - file: 03_docs_store(Python)
   - file: 04_graphs(Python)
-  - file: 05_graph_traversals(Phython)
   - file: 06_building_restql_apis(Python)
 - caption: Intermediate
   chapters:

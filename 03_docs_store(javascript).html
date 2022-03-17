@@ -146,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="04_graphs%28javascript%29.html">
-   Workbook 04 - Quick Start with Graphs
+   Workbook 04 - Quick Start with Graphs(Javascript)
   </a>
  </li>
 </ul>
@@ -444,9 +444,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Lets Assume</p>
 <ul class="simple">
 <li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed the pyc8 drivers as explained in section 01</p></li>
+<li><p>you have installed the jsc8 drivers as explained in section 01</p></li>
 <li><p>you have generated an API Key as explained in section 01</p></li>
-<li><p>you have imported the json driver, no? run the next cell!</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,21 +482,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To get details of fabric,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// you might not need this, but if you wanted to select a </span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// you might not need this, but if you wanted to select a</span>
 <span class="c1">// specific GeoFabric you can find out whats available by executing this code!</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">getGeoFabricMetaData</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">);</span>
 
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">fabrics</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabrics</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric details&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
-    <span class="p">}</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">fabrics</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabrics</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric details&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">getGeoFabricMetaData</span><span class="p">()</span>
+<span class="nx">getGeoFabricMetaData</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -513,20 +512,20 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">createCollection</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
-  <span class="k">try</span><span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// Create a new collection if it does not exist</span>
-    <span class="k">if</span><span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">)</span>
-        <span class="k">return</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span> 
+    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-    <span class="k">return</span> <span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">createCollection</span><span class="p">()</span>
+<span class="nx">createCollection</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -537,19 +536,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s add a hash_index called emails to our collection employees. Please refer to reference guide for details on other available index types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Simple Approach</span>
-                
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">addHashIndex</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Add Hash Index&quot;</span><span class="p">)</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">hashIndex</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">addHashIndex</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">fields</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">],</span> <span class="p">{</span><span class="nx">unique</span><span class="o">:</span><span class="kc">true</span><span class="p">})</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Index created: &quot;</span><span class="p">,</span> <span class="nx">hashIndex</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while adding Hash Index&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
-    <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">addHashIndex</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Add Hash Index&quot;</span><span class="p">);</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">hashIndex</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">addHashIndex</span><span class="p">(</span>
+      <span class="nx">collection_name</span><span class="p">,</span>
+      <span class="p">(</span><span class="nx">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;firstname&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">]),</span>
+      <span class="p">{</span> <span class="nx">unique</span><span class="o">:</span> <span class="kc">true</span> <span class="p">}</span>
+    <span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Index created: &quot;</span><span class="p">,</span> <span class="nx">hashIndex</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while adding Hash Index&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">addHashIndex</span><span class="p">()</span>
+<span class="nx">addHashIndex</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -561,16 +562,33 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Kirk&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Solo&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">}</span>
-<span class="p">]</span>
+  <span class="p">{</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span>
+    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span>
+    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Kirk&quot;</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;[email protected]&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Han&quot;</span><span class="p">,</span>
+    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Han&quot;</span><span class="p">,</span>
+    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Solo&quot;</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;[email protected]&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Bruce&quot;</span><span class="p">,</span>
+    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Bruce&quot;</span><span class="p">,</span>
+    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Wayne&quot;</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;[email protected]&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">insertDocument</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">docs</span><span class="p">)</span>
+  <span class="k">return</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">docs</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">insertDocument</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+<span class="nx">insertDocument</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -583,7 +601,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">c8Queries</span><span class="p">()</span> <span class="p">{</span>
-
   <span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span>
     <span class="s2">&quot;FOR employee IN employees RETURN employee&quot;</span>
   <span class="p">);</span>
@@ -604,18 +621,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>the websocket will time out after 60sec if no updates are seen, so you might need to re run the cell code if you see a timed out message below. :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">){</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Connection open on &quot;</span><span class="p">,</span> <span class="nx">collection</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">realTimeListener</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">listener</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">onCollectionChange</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span>
 
-  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">,(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;message=&gt;&quot;</span><span class="p">,</span> <span class="nx">msg</span><span class="p">));</span>
-  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;open&#39;</span><span class="p">,()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">);</span>
-    <span class="p">});</span>
-  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;connection closed&quot;</span><span class="p">));</span>
+  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">msg</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;message=&gt;&quot;</span><span class="p">,</span> <span class="nx">msg</span><span class="p">));</span>
+  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">);</span>
+  <span class="p">});</span>
+  <span class="nx">listener</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;close&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;connection closed&quot;</span><span class="p">));</span>
 <span class="p">}</span>
 
 <span class="nx">realTimeListener</span><span class="p">();</span>

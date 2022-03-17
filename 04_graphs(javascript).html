@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workbook 04 - Quick Start with Graphs &#8212; Quick start guide</title>
+    <title>Workbook 04 - Quick Start with Graphs(Javascript) &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -146,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Workbook 04 - Quick Start with Graphs
+   Workbook 04 - Quick Start with Graphs(Javascript)
   </a>
  </li>
 </ul>
@@ -342,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workbook 04 - Quick Start with Graphs</h1>
+                <h1>Workbook 04 - Quick Start with Graphs(Javascript)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,8 +406,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-04-quick-start-with-graphs">
-<h1>Workbook 04 - Quick Start with Graphs<a class="headerlink" href="#workbook-04-quick-start-with-graphs" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-04-quick-start-with-graphs-javascript">
+<h1>Workbook 04 - Quick Start with Graphs(Javascript)<a class="headerlink" href="#workbook-04-quick-start-with-graphs-javascript" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>Today’s applications are required to be highly responsive and always online. They need to be deployed in datacenters closer to their users and can access data instantly across the globe.</p>
@@ -420,20 +420,20 @@ Contains the _rev field. GDN supports MVCC (Multiple Version Concurrency Control
 Here is an example of a valid document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="p">{</span>
-        <span class="s1">&#39;_id&#39;</span><span class="o">:</span> <span class="s1">&#39;students/bruce&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_key&#39;</span><span class="o">:</span> <span class="s1">&#39;bruce&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_rev&#39;</span><span class="o">:</span> <span class="s1">&#39;_Wm3dzEi--_&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;address&#39;</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s1">&#39;street&#39;</span> <span class="o">:</span> <span class="s1">&#39;1007 Mountain Dr.&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;NJ&#39;</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;is_rich&#39;</span><span class="o">:</span> <span class="nx">True</span><span class="p">,</span>
-        <span class="s1">&#39;friends&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span> <span class="s1">&#39;gordon&#39;</span><span class="p">]</span>
-    <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;_id&#39;</span><span class="o">:</span> <span class="s1">&#39;students/bruce&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_key&#39;</span><span class="o">:</span> <span class="s1">&#39;bruce&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_rev&#39;</span><span class="o">:</span> <span class="s1">&#39;_Wm3dzEi--_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;first_name&#39;</span><span class="o">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;last_name&#39;</span><span class="o">:</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;street&#39;</span> <span class="o">:</span> <span class="s1">&#39;1007 Mountain Dr.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="o">:</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;state&#39;</span><span class="o">:</span> <span class="s1">&#39;NJ&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;is_rich&#39;</span><span class="o">:</span> <span class="nx">True</span><span class="p">,</span>
+    <span class="s1">&#39;friends&#39;</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span> <span class="s1">&#39;gordon&#39;</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -441,14 +441,14 @@ Here is an example of a valid document:</p>
 <p>Edge documents (edges) are similar to standard documents but with two additional required fields _from and _to. Values of these fields must be the handles of “from” and “to” vertex documents linked by the edge document in question. Here is an example of a valid edge document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>    <span class="p">{</span>
-        <span class="s1">&#39;_id&#39;</span><span class="o">:</span> <span class="s1">&#39;friends/001&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_key&#39;</span><span class="o">:</span> <span class="s1">&#39;001&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_rev&#39;</span><span class="o">:</span> <span class="s1">&#39;_Wm3dyle--_&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_from&#39;</span><span class="o">:</span> <span class="s1">&#39;students/john&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_to&#39;</span><span class="o">:</span> <span class="s1">&#39;students/jane&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;closeness&#39;</span><span class="o">:</span> <span class="mf">9.5</span>
-    <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;_id&#39;</span><span class="o">:</span> <span class="s1">&#39;friends/001&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_key&#39;</span><span class="o">:</span> <span class="s1">&#39;001&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_rev&#39;</span><span class="o">:</span> <span class="s1">&#39;_Wm3dyle--_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_from&#39;</span><span class="o">:</span> <span class="s1">&#39;students/john&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_to&#39;</span><span class="o">:</span> <span class="s1">&#39;students/jane&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;closeness&#39;</span><span class="o">:</span> <span class="mf">9.5</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -507,21 +507,21 @@ Here is an example of a valid document:</p>
 <p>To get details of fabric,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// you might not need this, but if you wanted to select a </span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// you might not need this, but if you wanted to select a</span>
 <span class="c1">// specific GeoFabric you can find out whats available by executing this code!</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">getGeoFabricMetaData</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">);</span>
 
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="kd">const</span> <span class="nx">fabrics</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">()</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabrics</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric details&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span>
-    <span class="p">}</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">fabrics</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabrics</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric details&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">getGeoFabricMetaData</span><span class="p">()</span>
+<span class="nx">getGeoFabricMetaData</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -537,20 +537,20 @@ Here is an example of a valid document:</p>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">createCollection</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
-  <span class="k">try</span><span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// Create a new collection if it does not exist</span>
-    <span class="k">if</span><span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">)</span>
-        <span class="k">return</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span> 
+    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">return</span> <span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">createCollection</span><span class="p">()</span>
+<span class="nx">createCollection</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -565,24 +565,24 @@ Here is an example of a valid document:</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">edge_name</span><span class="o">=</span><span class="s1">&#39;school&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">edge_name</span> <span class="o">=</span> <span class="s2">&quot;school&quot;</span><span class="p">;</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">createEdgeCollection</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
-  <span class="k">try</span><span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// Create a new collection if it does not exist</span>
-    <span class="k">if</span><span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">edge_name</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Graph exists with name &quot;</span><span class="p">,</span> <span class="nx">edge_name</span><span class="p">)</span>
-        <span class="k">return</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">edge_name</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Graph exists with name &quot;</span><span class="p">,</span> <span class="nx">edge_name</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">edge_name</span><span class="p">,</span> <span class="p">{},</span> <span class="kc">true</span><span class="p">)</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created Edge Collection! &quot;</span><span class="p">,</span> <span class="nx">edge_name</span><span class="p">)</span>
-  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">edge_name</span><span class="p">,</span> <span class="p">{},</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created Edge Collection! &quot;</span><span class="p">,</span> <span class="nx">edge_name</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">createEdgeCollection</span><span class="p">()</span>
+<span class="nx">createEdgeCollection</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -594,16 +594,33 @@ Here is an example of a valid document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Jenny&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Jenney&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Jones&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Billy&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="o">:</span><span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="o">:</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="o">:</span><span class="s1">&#39;Evans&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="o">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">}</span>
-<span class="p">]</span>
+  <span class="p">{</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Jenny&quot;</span><span class="p">,</span>
+    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Jenney&quot;</span><span class="p">,</span>
+    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Jones&quot;</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;[email protected]&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Billy&quot;</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;[email protected]&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Alan&quot;</span><span class="p">,</span>
+    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Alan&quot;</span><span class="p">,</span>
+    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Evans&quot;</span><span class="p">,</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;[email protected]&quot;</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">];</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">insertDocument</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">docs</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">docs</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="nx">insertDocument</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+<span class="nx">insertDocument</span><span class="p">()</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">))</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
@@ -615,20 +632,20 @@ Here is an example of a valid document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">createGraph</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span><span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// Create a new collection if it does not exist</span>
-    <span class="k">if</span><span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasGraph</span><span class="p">(</span><span class="s1">&#39;school&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Graph exists with name school&quot;</span><span class="p">)</span>
-        <span class="k">return</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasGraph</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Graph exists with name school&quot;</span><span class="p">);</span>
+      <span class="k">return</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">);</span> 
+    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Graph Created&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
-    <span class="k">return</span> <span class="s2">&quot;Graph creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">&quot;Graph creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">createGraph</span><span class="p">()</span>
+<span class="nx">createGraph</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>

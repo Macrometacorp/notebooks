@@ -125,13 +125,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="02_key_value_store%28javascript%29.html">
+   Workbook 02 - Quick Start with Key Value Store(Javascript)
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="03_docs_store%28Python%29.html">
    Workbook 03 - Quick Start with Documents Store
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="03_docs_store%28javascript%29.html">
+   Workbook 03 - Quick Start with Documents Store(Javascript)
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="04_graphs%28Python%29.html">
    Workbook 04 - Quick Start with Graphs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_graphs%28javascript%29.html">
+   Workbook 04 - Quick Start with Graphs(Javascript)
   </a>
  </li>
  <li class="toctree-l1">
@@ -149,6 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="05_graph_traversals%28Python%29.html">
    Workbook 05 - Graph Traverals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_graph_traversals%28javascript%29.html">
+   Workbook 05 - Graph Traversals(Javascript)
   </a>
  </li>
 </ul>
@@ -412,7 +432,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span>
     <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
 <span class="p">});</span>
-<span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">e</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">))</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 
 <span class="c1">// ----- with token -----</span>
 <span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, token: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
@@ -433,7 +453,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="k">return</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="nx">createApiKey</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created API Key: &quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while creating API key&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">))</span>
+<span class="nx">createApiKey</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created API Key: &quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while creating API key&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -443,25 +463,25 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 01-D - Get Accessible Resources<a class="headerlink" href="#step-01-d-get-accessible-resources" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="c1">// Fetch List of accessible databases</span>
-        <span class="kd">const</span> <span class="nx">databaseList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleDatabases</span><span class="p">(</span><span class="s1">&#39;id1&#39;</span><span class="p">)</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Databases: &quot;</span><span class="p">,</span> <span class="nx">databaseList</span><span class="p">)</span>
-    <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accesible databases&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
-    <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">getResources</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// Fetch List of accessible databases</span>
+    <span class="kd">const</span> <span class="nx">databaseList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleDatabases</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Databases: &quot;</span><span class="p">,</span> <span class="nx">databaseList</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accessible databases&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
 
-<span class="cm">/*</span>
-<span class="cm">    try {</span>
-<span class="cm">        // Fetch List of accessible streams</span>
-<span class="cm">        const streamsList = await client.listAccessibleStreams(&#39;id1&#39;, &#39;_system&#39;)</span>
-<span class="cm">        console.log(&quot;Accessible Streams of a db: &quot;, streamsList)</span>
-<span class="cm">    } catch(e) {</span>
-<span class="cm">        console.error(&quot;Error while listing accesible streams&quot;, e)</span>
-<span class="cm">    }</span>
-<span class="cm">*/</span>
-<span class="p">})();</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// Fetch List of accessible streams</span>
+    <span class="kd">const</span> <span class="nx">streamsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleStreams</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">,</span> <span class="s2">&quot;_system&quot;</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Streams of a db: &quot;</span><span class="p">,</span> <span class="nx">streamsList</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accessible streams&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">getResources</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>

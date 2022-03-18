@@ -15,11 +15,11 @@ parts:
   - file: 03_docs_store(javascript).ipynb
   - file: 04_graphs(Python)
   - file: 04_graphs(javascript).ipynb
-  - file: 06_building_restql_apis(Python)
 - caption: Intermediate
   chapters:
   - file: 05_graph_traversals(Python)
   - file: 05_graph_traversals(javascript).ipynb
+  - file: 06_building_restql_apis(Python)
 - caption: Advanced
   chapters:
   - file: markdown-notebooks

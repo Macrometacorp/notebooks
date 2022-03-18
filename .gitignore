@@ -3,3 +3,4 @@ node_modules
 .ipynb_checkpoints
 gdnsl.yaml
 .idea
+venv/

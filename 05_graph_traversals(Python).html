@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workbook 05 - Graph Traverals &#8212; Quick start guide</title>
+    <title>Tutorial 05 - Graph Traverals &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Workbook 05 - Graph Traversals(Javascript)" href="05_graph_traversals%28javascript%29.html" />
-    <link rel="prev" title="Workbook 06 - Building RESTQL APIs" href="06_building_restql_apis%28Python%29.html" />
+    <link rel="prev" title="Tutorial 06 - Building RESTQL APIs" href="06_building_restql_apis%28Python%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -94,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Welcome to your Macrometa Work Book &amp; Tutotials
   </a>
  </li>
 </ul>
@@ -151,7 +151,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="06_building_restql_apis%28Python%29.html">
-   Workbook 06 - Building RESTQL APIs
+   Tutorial 06 - Building RESTQL APIs
   </a>
  </li>
 </ul>
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Workbook 05 - Graph Traverals
+   Tutorial 05 - Graph Traverals
   </a>
  </li>
  <li class="toctree-l1">
@@ -298,8 +298,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-a-importing-libraries">
-   Step 05-A Importing Libraries
+  <a class="reference internal nav-link" href="#step-05-a-importing-libraries-define-variables">
+   Step 05-A - Importing Libraries &amp; Define Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -313,8 +313,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-d-inserting-data-people">
-   Step 05-D - Inserting Data - “People”
+  <a class="reference internal nav-link" href="#step-05-d-inserting-data-singles">
+   Step 05-D - Inserting Data - “Singles”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -357,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workbook 05 - Graph Traverals</h1>
+                <h1>Tutorial 05 - Graph Traverals</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -373,8 +373,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-a-importing-libraries">
-   Step 05-A Importing Libraries
+  <a class="reference internal nav-link" href="#step-05-a-importing-libraries-define-variables">
+   Step 05-A - Importing Libraries &amp; Define Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -388,8 +388,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-d-inserting-data-people">
-   Step 05-D - Inserting Data - “People”
+  <a class="reference internal nav-link" href="#step-05-d-inserting-data-singles">
+   Step 05-D - Inserting Data - “Singles”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -431,34 +431,40 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-05-graph-traverals">
-<h1>Workbook 05 - Graph Traverals<a class="headerlink" href="#workbook-05-graph-traverals" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tutorial-05-graph-traverals">
+<h1>Tutorial 05 - Graph Traverals<a class="headerlink" href="#tutorial-05-graph-traverals" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
+<p>In this tutorial we will build a simple dating application, and then use graph traversals to see who has liked whom.</p>
 </div>
-<div class="section" id="step-05-a-importing-libraries">
-<h2>Step 05-A Importing Libraries<a class="headerlink" href="#step-05-a-importing-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-a-importing-libraries-define-variables">
+<h2>Step 05-A - Importing Libraries &amp; Define Variables<a class="headerlink" href="#step-05-a-importing-libraries-define-variables" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
+<span class="kn">import</span> <span class="nn">json</span>
 
 <span class="c1"># Variables - Queries</span>
-<span class="n">global_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+<span class="n">global_url</span> <span class="o">=</span> <span class="s2">&quot;verizon.5g.macrometa.io&quot;</span>
 <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span> <span class="c1"># &lt;-- Email goes here</span>
 <span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span> <span class="c1"># &lt;-- password goes here</span>
 <span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
-<span class="n">collection_people</span> <span class="o">=</span> <span class="s2">&quot;CDRpeople&quot;</span>
-<span class="n">collection_calls</span> <span class="o">=</span> <span class="s2">&quot;CDRcalls&quot;</span>
-<span class="n">collection_cellsites</span> <span class="o">=</span> <span class="s2">&quot;CDRcellsites&quot;</span>
-<span class="n">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;CDRgraphdocs&quot;</span>
-<span class="n">read_people</span> <span class="o">=</span> <span class="s2">&quot;FOR person IN CDRpeople RETURN person&quot;</span>
-<span class="n">read_calls</span> <span class="o">=</span> <span class="s2">&quot;FOR call IN CDRcalls RETURN call&quot;</span>
-<span class="n">person</span> <span class="o">=</span> <span class="s2">&quot;Lou Feaveer&quot;</span>
-<span class="c1">#person = &quot;Peria King&quot;</span>
-<span class="n">graph_traversal1</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN CDRpeople FILTER c.full_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 INBOUND c CDRcalls RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
-<span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN CDRpeople FILTER c.full_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c CDRcalls RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="n">collection_singles</span> <span class="o">=</span> <span class="s2">&quot;Singles&quot;</span>
+<span class="n">collection_likes</span> <span class="o">=</span> <span class="s2">&quot;Likes&quot;</span>
+
+<span class="n">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;Hopefulls_graph&quot;</span>
+<span class="n">read_singles</span> <span class="o">=</span> <span class="s2">&quot;FOR singles IN Singles RETURN singles&quot;</span>
+<span class="n">read_likes</span> <span class="o">=</span> <span class="s2">&quot;FOR likes IN Likes RETURN like&quot;</span>
+
+<span class="n">Hopefulls_Client</span> <span class="o">=</span> <span class="s2">&quot;SanJoseLou&quot;</span>
+<span class="n">Hopefulls_Client2</span> <span class="o">=</span> <span class="s2">&quot;StocktonPeria&quot;</span>
+
+
+<span class="n">graph_traversal1</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Singles FILTER c.hopefulls_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 INBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hopefulls_Client</span><span class="p">)</span>
+
+<span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Singles FILTER c.hopefulls_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hopefulls_Client</span><span class="p">)</span>
 
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
@@ -470,9 +476,11 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 05-B - Connecting to GDN<a class="headerlink" href="#step-05-b-connecting-to-gdn" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;verizon.5g.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;alan@macrometa.com&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AlansDemo1!&#39;</span><span class="p">,</span>
-                        <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CONNECTION SETUP  ------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tenant: </span><span class="si">{}</span><span class="s2">, geofabric:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="n">geo_fabric</span><span class="p">))</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">global_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                <span class="n">geofabric</span><span class="o">=</span><span class="n">geo_fabric</span><span class="p">)</span>    
 </pre></div>
 </div>
 </div>
@@ -483,30 +491,29 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create collections if not exists</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2a. CREATE_PEOPLE_VERTEX_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_people</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">):</span>
-    <span class="n">peopleCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2a. CREATE_SINGLES_VERTEX_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_singles</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_singles</span><span class="p">):</span>
+    <span class="n">singlesCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_singles</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">peopleCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_people</span><span class="p">)</span>
+    <span class="n">singlesCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_singles</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2b. CREATE_CALLS_EDGE_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">):</span>
-    <span class="n">callsCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2b. CREATE_LIKES_EDGE_COLLECTION: region: </span><span class="si">{}</span><span class="s2">,  collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_likes</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_likes</span><span class="p">):</span>
+    <span class="n">likesCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="n">collection_likes</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">callsCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_calls</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">likesCol</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_likes</span><span class="p">,</span> <span class="n">edge</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="step-05-d-inserting-data-people">
-<h2>Step 05-D - Inserting Data - “People”<a class="headerlink" href="#step-05-d-inserting-data-people" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-d-inserting-data-singles">
+<h2>Step 05-D - Inserting Data - “Singles”<a class="headerlink" href="#step-05-d-inserting-data-singles" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert data into collections.</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_PEOPLE_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_people</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_SINGLES_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_singles</span><span class="p">))</span>
 
-<span class="c1"># insert documents into the collection</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Kiel Dummer&quot;</span><span class="p">,</span>
@@ -515,8 +522,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Burbank&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;40317 5th Crossing&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Pernell Winspare&quot;</span><span class="p">,</span>
@@ -525,8 +532,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;596 Packers Pass&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;718-208-8096&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;718-208-8096&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Ava Kermath&quot;</span><span class="p">,</span>
@@ -535,8 +542,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;2 Doe Crossing Junction&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;765-623-5328&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tremain McGrah&quot;</span><span class="p">,</span>
@@ -545,8 +552,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Torrance&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;079 Russell Street&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;859-783-3227&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;859-783-3227&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;TorranceTremain&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;TorranceTremain&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Vidovik Boddam&quot;</span><span class="p">,</span>
@@ -555,8 +562,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3 Brentwood Crossing&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;703-265-1313&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;703-265-1313&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Oralie Goward&quot;</span><span class="p">,</span>
@@ -565,8 +572,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;922 Columbus Park&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;617-815-8610&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;617-815-8610&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lou Feaveer&quot;</span><span class="p">,</span>
@@ -575,8 +582,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Jose&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;55223 Hooker Crossing&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="s2">&quot;full_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Peria King&quot;</span><span class="p">,</span>
@@ -585,11 +592,11 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Stockton&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;8 Troy Plaza&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span>
   <span class="p">}</span>
 <span class="p">]</span>
-<span class="n">peopleCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="n">singlesCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -599,40 +606,37 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 05-E - Inserting Data - “Calls Records”<a class="headerlink" href="#step-05-e-inserting-data-calls-records" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_CALL_RECORDS_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_LIKES_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">{</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;called_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/757-697-9065&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/716-463-8993&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/4/2020&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_time&quot;</span><span class="p">:</span> <span class="s2">&quot;13:33&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_duration&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
-    <span class="s2">&quot;cell_site&quot;</span><span class="p">:</span> <span class="mi">4044703906</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;singles_liked&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;Singles/BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;Singles/SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/4/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_time&quot;</span><span class="p">:</span> <span class="s2">&quot;13:33&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_amount&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;called_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/716-463-8993&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/713-707-8699&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_time&quot;</span><span class="p">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_duration&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-    <span class="s2">&quot;cell_site&quot;</span><span class="p">:</span> <span class="mi">2289973823</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;singles_liked&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;Singles/SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;Singles/StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_time&quot;</span><span class="p">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_amount&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;calling_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;called_nbr&quot;</span><span class="p">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/765-623-5328&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;CDRpeople/713-707-8699&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_time&quot;</span><span class="p">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;call_duration&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-    <span class="s2">&quot;cell_site&quot;</span><span class="p">:</span> <span class="mi">2289973823</span>
+    <span class="s2">&quot;hopefulls_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;singles_liked&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;Singles/BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;Singles/StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_date&quot;</span><span class="p">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_time&quot;</span><span class="p">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;liked_amount&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
   <span class="p">}</span>
     <span class="p">]</span>
-<span class="n">callsCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
+<span class="n">likesCol</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -643,12 +647,12 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a graph</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. CREATE_GRAPH...CDRgraph&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. CREATE_GRAPH...Hopefulls_graph&quot;</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">)</span>
 <span class="n">register</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">create_edge_definition</span><span class="p">(</span>
-        <span class="n">edge_collection</span><span class="o">=</span><span class="n">collection_calls</span><span class="p">,</span>
-        <span class="n">from_vertex_collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection_people</span><span class="p">],</span>
-        <span class="n">to_vertex_collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection_people</span><span class="p">]</span>
+        <span class="n">edge_collection</span><span class="o">=</span><span class="n">collection_likes</span><span class="p">,</span>
+        <span class="n">from_vertex_collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection_singles</span><span class="p">],</span>
+        <span class="n">to_vertex_collections</span><span class="o">=</span><span class="p">[</span><span class="n">collection_singles</span><span class="p">]</span>
     <span class="p">)</span>
 </pre></div>
 </div>
@@ -660,7 +664,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read Data</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find outbound calls TO: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find Singles who liked: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hopefulls_Client2</span><span class="p">))</span>
 <span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">graph_traversal1</span><span class="p">)</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
 <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
@@ -673,7 +677,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 05-H - Execute a Traversal - “Find inbound calls”<a class="headerlink" href="#step-05-h-execute-a-traversal-find-inbound-calls" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find inbound calls FROM: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find Singles whol were liked from: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hopefulls_Client</span><span class="p">))</span>
 <span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">graph_traversal2</span><span class="p">)</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
 <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
@@ -688,10 +692,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Delete Data</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6. DELETE_DATA...&quot;</span><span class="p">)</span>
-<span class="n">callsCol</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
-<span class="n">peopleCol</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
-<span class="c1">#client.delete_graph(graph, drop_collections=True)</span>
-
+<span class="n">likesCol</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
+<span class="n">singlesCol</span><span class="o">.</span><span class="n">truncate</span><span class="p">()</span>
 <span class="n">client</span><span class="o">.</span><span class="n">delete_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">,</span> <span class="n">drop_collections</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -700,7 +702,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>TBC…</p>
+<p>Congratulations! you have completed this tutorial.</p>
 </div>
 </div>
 
@@ -733,7 +735,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Workbook 06 - Building RESTQL APIs</p>
+            <p class="prev-next-title">Tutorial 06 - Building RESTQL APIs</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="05_graph_traversals%28javascript%29.html" title="next page">

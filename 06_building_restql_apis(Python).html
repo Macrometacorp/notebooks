@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workbook 06 - Building RESTQL APIs &#8212; Quick start guide</title>
+    <title>Tutorial 06 - Building RESTQL APIs &#8212; Quick start guide</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Workbook 05 - Graph Traverals" href="05_graph_traversals%28Python%29.html" />
+    <link rel="next" title="Tutorial 05 - Graph Traverals" href="05_graph_traversals%28Python%29.html" />
     <link rel="prev" title="Workbook 04 - Quick Start with Graphs(Javascript)" href="04_graphs%28javascript%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -94,7 +94,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to your Jupyter Book
+   Welcome to your Macrometa Work Book &amp; Tutotials
   </a>
  </li>
 </ul>
@@ -151,7 +151,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Workbook 06 - Building RESTQL APIs
+   Tutorial 06 - Building RESTQL APIs
   </a>
  </li>
 </ul>
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="05_graph_traversals%28Python%29.html">
-   Workbook 05 - Graph Traverals
+   Tutorial 05 - Graph Traverals
   </a>
  </li>
  <li class="toctree-l1">
@@ -321,20 +321,86 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#step-06-f-create-rest-apis-restqls">
    Step 06-F - Create Rest APIs (RESTQLs)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-f1-defining-our-queries">
+     Step 06-F1 - Defining our Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-f1-creating-the-restql-apis">
+     Step 06-F1 - Creating the RESTQL APIs
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-06-g-execute-restqls">
    Step 06-G - Execute RESTQLs
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g1-test-the-insertrecord-restql">
+     Step 06-G1 - Test the “insertRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g2-test-the-updaterecord-restql">
+     Step 06-G2 - Test the “updateRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g3-test-the-getrecords-restql">
+     Step 06-G3 - Test the “getRecords” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g4-test-the-countrecords-restql">
+     Step 06-G4 - Test the “countRecords” RESTQL
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-h-delete-restqls">
-   Step 06-H - Delete RESTQLs
+  <a class="reference internal nav-link" href="#step-06-h-updating-a-restql-api">
+   Step 06-H - Updating a RESTQL API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h1-test-that-we-can-query-gdn-and-see-the-document">
+     Step 06-H1 - Test that we can query GDN and see the document
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h2-updating-a-restql-api">
+     Step 06-H2 - Updating a RESTQL API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h3-testing-the-updated-restql-api">
+     Step 06-H3 - Testing the updated RESTQL API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h4-checking-the-data-in-the-collection">
+     Step 06-H4 - Checking the data in the collection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-06-i-deleting-a-record-using-a-restql-api">
+   Step 06-I - Deleting a record using a RESTQL API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-i-delete-the-collection">
-   Step 06-I - Delete the Collection
+  <a class="reference internal nav-link" href="#step-06-j-delete-restqls">
+   Step 06-J - Delete RESTQLs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-06-k-delete-the-collection">
+   Step 06-K - Delete the Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -352,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Workbook 06 - Building RESTQL APIs</h1>
+                <h1>Tutorial 06 - Building RESTQL APIs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -391,20 +457,86 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#step-06-f-create-rest-apis-restqls">
    Step 06-F - Create Rest APIs (RESTQLs)
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-f1-defining-our-queries">
+     Step 06-F1 - Defining our Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-f1-creating-the-restql-apis">
+     Step 06-F1 - Creating the RESTQL APIs
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#step-06-g-execute-restqls">
    Step 06-G - Execute RESTQLs
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g1-test-the-insertrecord-restql">
+     Step 06-G1 - Test the “insertRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g2-test-the-updaterecord-restql">
+     Step 06-G2 - Test the “updateRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g3-test-the-getrecords-restql">
+     Step 06-G3 - Test the “getRecords” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-g4-test-the-countrecords-restql">
+     Step 06-G4 - Test the “countRecords” RESTQL
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-h-delete-restqls">
-   Step 06-H - Delete RESTQLs
+  <a class="reference internal nav-link" href="#step-06-h-updating-a-restql-api">
+   Step 06-H - Updating a RESTQL API
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h1-test-that-we-can-query-gdn-and-see-the-document">
+     Step 06-H1 - Test that we can query GDN and see the document
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h2-updating-a-restql-api">
+     Step 06-H2 - Updating a RESTQL API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h3-testing-the-updated-restql-api">
+     Step 06-H3 - Testing the updated RESTQL API
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-06-h4-checking-the-data-in-the-collection">
+     Step 06-H4 - Checking the data in the collection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-06-i-deleting-a-record-using-a-restql-api">
+   Step 06-I - Deleting a record using a RESTQL API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-i-delete-the-collection">
-   Step 06-I - Delete the Collection
+  <a class="reference internal nav-link" href="#step-06-j-delete-restqls">
+   Step 06-J - Delete RESTQLs
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-06-k-delete-the-collection">
+   Step 06-K - Delete the Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -421,8 +553,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-06-building-restql-apis">
-<h1>Workbook 06 - Building RESTQL APIs<a class="headerlink" href="#workbook-06-building-restql-apis" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tutorial-06-building-restql-apis">
+<h1>Tutorial 06 - Building RESTQL APIs<a class="headerlink" href="#tutorial-06-building-restql-apis" title="Permalink to this headline">¶</a></h1>
 <p>Query as API (aka RESTQL) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
 <div class="section" id="step-06-a-import-libraries-to-workbook">
 <h2>Step 06-A - Import Libraries to Workbook<a class="headerlink" href="#step-06-a-import-libraries-to-workbook" title="Permalink to this headline">¶</a></h2>
@@ -439,9 +571,9 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 06-B - Define Login Credentials<a class="headerlink" href="#step-06-b-define-login-credentials" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
-<span class="n">guest_mail</span> <span class="o">=</span> <span class="s2">&quot;alankevans@gmail.com&quot;</span>
-<span class="n">guest_password</span> <span class="o">=</span> <span class="s2">&quot;AlansDemo1!&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;verizon.5g.macrometa.io&quot;</span>
+<span class="n">guest_mail</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span>
+<span class="n">guest_password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
 <span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
 </pre></div>
 </div>
@@ -452,9 +584,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 06-C - Define Variables and assign Values for Workbook<a class="headerlink" href="#step-06-c-define-variables-and-assign-values-for-workbook" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s2">&quot;person&quot;</span>
-
-<span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;abc&#39;} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;abc&#39;} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
 <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
 
 <span class="n">insert_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;insertRecord&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}}</span> 
@@ -469,7 +599,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="step-06-d-connect-to-gdn">
 <h2>Step 06-D - Connect to GDN<a class="headerlink" href="#step-06-d-connect-to-gdn" title="Permalink to this headline">¶</a></h2>
-<p>…</p>
+<p>Now that you have added your login credentials, lets connect to GDN</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CONNECTION SETUP  ------&quot;</span><span class="p">)</span>
@@ -481,31 +611,22 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ------- CONNECTION SETUP  ------
-tenant: alankevans@gmail.com, geofabric:_system
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="step-06-e-create-a-geo-replicated-collection">
 <h2>Step 06-E - Create a Geo Replicated Collection<a class="headerlink" href="#step-06-e-create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
-<p>Let’s insert documents to the employees collection as shown below.</p>
+<p>Before we create the RESTQL APIs lets create a collection that we can work with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CREATE GEO-REPLICATED COLLECTION  ------&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s2">&quot;person&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CREATE GEO-REPLICATED COLLECTION  ------&quot;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection exists&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">employees</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">)</span>
+    
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Created collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ------- CREATE GEO-REPLICATED COLLECTION  ------
-Created collection: person
 </pre></div>
 </div>
 </div>
@@ -513,8 +634,27 @@ Created collection: person
 </div>
 <div class="section" id="step-06-f-create-rest-apis-restqls">
 <h2>Step 06-F - Create Rest APIs (RESTQLs)<a class="headerlink" href="#step-06-f-create-rest-apis-restqls" title="Permalink to this headline">¶</a></h2>
-<p>8QL is C8’s query language. You can execute C8QL query on our newly created collection employees to get its contents.</p>
-<p>The query “FOR employee IN employees RETURN employee” is equivalent to SQL’s SELECT query.</p>
+<div class="section" id="step-06-f1-defining-our-queries">
+<h3>Step 06-F1 - Defining our Queries<a class="headerlink" href="#step-06-f1-defining-our-queries" title="Permalink to this headline">¶</a></h3>
+<p>In this section we are going to define five RESTQL Query APIs</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;abc&#39;} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
+
+<span class="n">insert_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;insertRecord&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}}</span> 
+<span class="n">get_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;getRecords&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;FOR doc IN </span><span class="si">%s</span><span class="s2"> RETURN doc&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+<span class="n">update_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateRecord&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;UPDATE &#39;abc&#39; WITH { </span><span class="se">\&quot;</span><span class="s2">lastname</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">cena</span><span class="se">\&quot;</span><span class="s2"> } IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span> <span class="p">}}</span>
+<span class="n">delete_data</span><span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deleteRecord&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;REMOVE &#39;abc&#39; IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+<span class="n">get_count</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;countRecords&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;RETURN COUNT(FOR doc IN </span><span class="si">%s</span><span class="s2"> RETURN 1)&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-f1-creating-the-restql-apis">
+<h3>Step 06-F1 - Creating the RESTQL APIs<a class="headerlink" href="#step-06-f1-creating-the-restql-apis" title="Permalink to this headline">¶</a></h3>
+<p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CREATE RESTQLs  ------&quot;</span><span class="p">)</span>
@@ -523,77 +663,19 @@ Created collection: person
 <span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">update_data</span><span class="p">)</span>  <span class="c1"># name: updateRecord</span>
 <span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">delete_data</span><span class="p">)</span>  <span class="c1"># name: deleteRecord</span>
 <span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">get_count</span><span class="p">)</span>  <span class="c1"># name: countRecords</span>
-    <span class="c1">#print(&quot;Created RESTQLs:{}&quot;.format(client.get_restqls()))</span>
   
-<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_restqls</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Created RESTQLs...&quot;</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_restqls</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ------- CREATE RESTQLs  ------
-[
-    {
-        &quot;_key&quot;: &quot;alan_macrometa.com.alansdemo.alan_macrometa.com._system.insertRecord&quot;,
-        &quot;fabric&quot;: &quot;alan_macrometa.com._system&quot;,
-        &quot;name&quot;: &quot;insertRecord&quot;,
-        &quot;parameter&quot;: {
-            &quot;email&quot;: &quot;&quot;,
-            &quot;firstname&quot;: &quot;&quot;,
-            &quot;lastname&quot;: &quot;&quot;,
-            &quot;zipcode&quot;: &quot;&quot;
-        },
-        &quot;tenant&quot;: &quot;alan_macrometa.com&quot;,
-        &quot;type&quot;: &quot;c8ql&quot;,
-        &quot;userid&quot;: &quot;alan_macrometa.com.alansdemo&quot;,
-        &quot;value&quot;: &quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;abc&#39;} IN person&quot;
-    },
-    {
-        &quot;_key&quot;: &quot;alan_macrometa.com.alansdemo.alan_macrometa.com._system.getRecords&quot;,
-        &quot;fabric&quot;: &quot;alan_macrometa.com._system&quot;,
-        &quot;name&quot;: &quot;getRecords&quot;,
-        &quot;tenant&quot;: &quot;alan_macrometa.com&quot;,
-        &quot;type&quot;: &quot;c8ql&quot;,
-        &quot;userid&quot;: &quot;alan_macrometa.com.alansdemo&quot;,
-        &quot;value&quot;: &quot;FOR doc IN person RETURN doc&quot;
-    },
-    {
-        &quot;_key&quot;: &quot;alan_macrometa.com.alansdemo.alan_macrometa.com._system.updateRecord&quot;,
-        &quot;fabric&quot;: &quot;alan_macrometa.com._system&quot;,
-        &quot;name&quot;: &quot;updateRecord&quot;,
-        &quot;tenant&quot;: &quot;alan_macrometa.com&quot;,
-        &quot;type&quot;: &quot;c8ql&quot;,
-        &quot;userid&quot;: &quot;alan_macrometa.com.alansdemo&quot;,
-        &quot;value&quot;: &quot;UPDATE &#39;abc&#39; WITH { \&quot;lastname\&quot;: \&quot;cena\&quot; } IN person&quot;
-    },
-    {
-        &quot;_key&quot;: &quot;alan_macrometa.com.alansdemo.alan_macrometa.com._system.deleteRecord&quot;,
-        &quot;fabric&quot;: &quot;alan_macrometa.com._system&quot;,
-        &quot;name&quot;: &quot;deleteRecord&quot;,
-        &quot;tenant&quot;: &quot;alan_macrometa.com&quot;,
-        &quot;type&quot;: &quot;c8ql&quot;,
-        &quot;userid&quot;: &quot;alan_macrometa.com.alansdemo&quot;,
-        &quot;value&quot;: &quot;REMOVE &#39;abc&#39; IN person&quot;
-    },
-    {
-        &quot;_key&quot;: &quot;alan_macrometa.com.alansdemo.alan_macrometa.com._system.countRecords&quot;,
-        &quot;fabric&quot;: &quot;alan_macrometa.com._system&quot;,
-        &quot;name&quot;: &quot;countRecords&quot;,
-        &quot;tenant&quot;: &quot;alan_macrometa.com&quot;,
-        &quot;type&quot;: &quot;c8ql&quot;,
-        &quot;userid&quot;: &quot;alan_macrometa.com.alansdemo&quot;,
-        &quot;value&quot;: &quot;RETURN COUNT(FOR doc IN person RETURN 1)&quot;
-    }
-]
-Created RESTQLs...
-</pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="step-06-g-execute-restqls">
 <h2>Step 06-G - Execute RESTQLs<a class="headerlink" href="#step-06-g-execute-restqls" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a RESTQL Query API first.</strong></p>
+<div class="section" id="step-06-g1-test-the-insertrecord-restql">
+<h3>Step 06-G1 - Test the “insertRecord” RESTQL<a class="headerlink" href="#step-06-g1-test-the-insertrecord-restql" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- EXECUTE RESTQLs ------&quot;</span><span class="p">)</span>
@@ -602,34 +684,151 @@ Created RESTQLs...
     <span class="s2">&quot;insertRecord&quot;</span><span class="p">,</span>
     <span class="p">{</span><span class="s2">&quot;bindVars&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;john&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;doe&quot;</span><span class="p">,</span>
                     <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;john.doe@macrometa.io&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;511037&quot;</span><span class="p">}})</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get data....&quot;</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Update data....&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-g2-test-the-updaterecord-restql">
+<h3>Step 06-G2 - Test the “updateRecord” RESTQL<a class="headerlink" href="#step-06-g2-test-the-updaterecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Update data....&quot;</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span><span class="s2">&quot;updateRecord&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get data....&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-g3-test-the-getrecords-restql">
+<h3>Step 06-G3 - Test the “getRecords” RESTQL<a class="headerlink" href="#step-06-g3-test-the-getrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get data....&quot;</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count records....&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-g4-test-the-countrecords-restql">
+<h3>Step 06-G4 - Test the “countRecords” RESTQL<a class="headerlink" href="#step-06-g4-test-the-countrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count records....&quot;</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span><span class="s2">&quot;countRecords&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delete data....&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-h-updating-a-restql-api">
+<h2>Step 06-H - Updating a RESTQL API<a class="headerlink" href="#step-06-h-updating-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-06-h1-test-that-we-can-query-gdn-and-see-the-document">
+<h3>Step 06-H1 - Test that we can query GDN and see the document<a class="headerlink" href="#step-06-h1-test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
+<p>A common requirment when building an application is to make a change to an API and update it.</p>
+<p>To demonstrate this, lets first query the database using the “execute_query” method we learnt in an earlier section</p>
+<p>Once run, we should see the document in the cell output in JSON format so we can read it easily.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get docs in </span><span class="se">\&quot;</span><span class="s2">person</span><span class="se">\&quot;</span><span class="s2"> collection&quot;</span><span class="p">)</span>
+
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;FOR doc IN person RETURN doc&#39;</span><span class="p">)</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-h2-updating-a-restql-api">
+<h3>Step 06-H2 - Updating a RESTQL API<a class="headerlink" href="#step-06-h2-updating-a-restql-api" title="Permalink to this headline">¶</a></h3>
+<p>The follow cell show us how to add a new parameter to the Query, in this example we are going to add a the parameter “phone” to the query.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;INSERT </span><span class="se">{{</span><span class="s2">&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;phone&#39;: @phone</span><span class="se">}}</span><span class="s2"> IN </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
+
+<span class="n">insert_data</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span> <span class="p">}</span> <span class="p">}</span> 
+
+<span class="n">query_name</span> <span class="o">=</span> <span class="s2">&quot;insertRecord&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">update_restql</span><span class="p">(</span><span class="n">query_name</span><span class="p">,</span> <span class="n">insert_data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-h3-testing-the-updated-restql-api">
+<h3>Step 06-H3 - Testing the updated RESTQL API<a class="headerlink" href="#step-06-h3-testing-the-updated-restql-api" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have updated the Query, lets add a new record using it to test that it works.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insert data with updated query worker&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span>
+    <span class="n">query_name</span><span class="p">,</span>
+    <span class="p">{</span><span class="s2">&quot;bindVars&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;john&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;doe&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;john.doe@macrometa.io&quot;</span><span class="p">,</span> <span class="s2">&quot;zipcode&quot;</span><span class="p">:</span> <span class="s2">&quot;511037&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">:</span> <span class="s2">&quot;213-555-9578&quot;</span><span class="p">}})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-h4-checking-the-data-in-the-collection">
+<h3>Step 06-H4 - Checking the data in the collection<a class="headerlink" href="#step-06-h4-checking-the-data-in-the-collection" title="Permalink to this headline">¶</a></h3>
+<p>Now lets check that the data has been updated in the record by using the “execute_query” method - we should see two documents.</p>
+<ol class="simple">
+<li><p>the original document without a phone number, and</p></li>
+<li><p>a second document, but now with a phone numnber added</p></li>
+</ol>
+<p><strong>Hint: If you would like to return to “Step 06-G4 - Test the “countRecords” RESTQL” and re run the code, you should see the count value increase by 1</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get docs in </span><span class="se">\&quot;</span><span class="s2">person</span><span class="se">\&quot;</span><span class="s2"> collection, after executing the updated query&quot;</span><span class="p">)</span>
+
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;FOR doc IN person RETURN doc&#39;</span><span class="p">)</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-06-i-deleting-a-record-using-a-restql-api">
+<h2>Step 06-I - Deleting a record using a RESTQL API<a class="headerlink" href="#step-06-i-deleting-a-record-using-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delete data....&quot;</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span><span class="s2">&quot;deleteRecord&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ------- EXECUTE RESTQLs ------
-Insert data....
-Get data....
-Update data....
-Get data....
-Count records....
-Delete data....
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="step-06-h-delete-restqls">
-<h2>Step 06-H - Delete RESTQLs<a class="headerlink" href="#step-06-h-delete-restqls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-06-j-delete-restqls">
+<h2>Step 06-J - Delete RESTQLs<a class="headerlink" href="#step-06-j-delete-restqls" title="Permalink to this headline">¶</a></h2>
+<p>We might want to delete our RESQL APIs completely.</p>
+<p>For each RESTQL we want to remove we use the “delete_restql” method as shown in the cell below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- DELETE RESTQLs ------&quot;</span><span class="p">)</span>
@@ -643,27 +842,14 @@ Delete data....
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ------- DELETE RESTQLs ------
-
- ------- DONE  ------
-</pre></div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="step-06-i-delete-the-collection">
-<h2>Step 06-I - Delete the Collection<a class="headerlink" href="#step-06-i-delete-the-collection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-06-k-delete-the-collection">
+<h2>Step 06-K - Delete the Collection<a class="headerlink" href="#step-06-k-delete-the-collection" title="Permalink to this headline">¶</a></h2>
+<p>Now let us remove the collection we added during this Tutorial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">delete_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
-
-<span class="n">client</span><span class="o">.</span><span class="n">update_restql</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">insertrecord</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collection Deleted:  True
 </pre></div>
 </div>
 </div>
@@ -671,7 +857,10 @@ Delete data....
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>TBC…</p>
+<p>Congratulations!, another tutorial completed.</p>
+<p><strong>Note: To use the created RESTQL APIs you should use the API reference documentation for detailed insutructions.</strong></p>
+<p>e.g. /_fabric/{fabric}/_api/restql/{name}</p>
+<p>where {name} is the name of your RESTQL API e.g. “insertRecord”</p>
 </div>
 </div>
 
@@ -710,7 +899,7 @@ Delete data....
     <a class='right-next' id="next-link" href="05_graph_traversals%28Python%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Workbook 05 - Graph Traverals</p>
+        <p class="prev-next-title">Tutorial 05 - Graph Traverals</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

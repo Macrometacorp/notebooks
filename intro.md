@@ -1,4 +1,4 @@
-# Welcome to your Macrometa Work Book & Tutotials
+# Welcome to your Macrometa X-Book
 
 The Work Book has been created to take you on a journey of descovery.
 

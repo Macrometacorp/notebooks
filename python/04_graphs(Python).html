@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Py05 - Graph Traverals" href="05_graph_traversals%28Python%29.html" />
+    <link rel="next" title="Py05 - Graph Traversals" href="05_graph_traversals%28Python%29.html" />
     <link rel="prev" title="Py03 - Quick Start with Documents Store" href="03_docs_store%28Python%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -136,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_graph_traversals%28Python%29.html">
-     Py05 - Graph Traverals
+     Py05 - Graph Traversals
     </a>
    </li>
    <li class="toctree-l2">
@@ -432,8 +432,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Py04 - Quick Start with Graphs<a class="headerlink" href="#py04-quick-start-with-graphs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>Today’s applications are required to be highly responsive and always online. They need to be deployed in datacenters closer to their users and can access data instantly across the globe.</p>
-<p>Macrometa global data network (GDN) is a fully managed realtime materialzed view engine that provides access to data instantly to Apps &amp; APIs in a simple &amp; single interface.</p>
+<p>Today’s applications are required to be highly responsive and always online. They need to be deployed in data centers closer to their users and can access data instantly across the globe.</p>
+<p>Macrometa global data network (GDN) is a fully managed realtime materialized view engine that provides access to data instantly to Apps &amp; APIs in a simple &amp; single interface.</p>
 <p>This article is an introduction to working with documents in GDN with pyC8 and jsC8 drivers.</p>
 <p>In the drivers, a document is a dictionary/object that is JSON serializable with the following properties:</p>
 <p>Contains the _key field, which identifies the document uniquely within a specific collection.
@@ -442,20 +442,20 @@ Contains the _rev field. GDN supports MVCC (Multiple Version Concurrency Control
 Here is an example of a valid document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="p">{</span>
-        <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="s1">&#39;students/bruce&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_key&#39;</span><span class="p">:</span> <span class="s1">&#39;bruce&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_rev&#39;</span><span class="p">:</span> <span class="s1">&#39;_Wm3dzEi--_&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;last_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s1">&#39;street&#39;</span> <span class="p">:</span> <span class="s1">&#39;1007 Mountain Dr.&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;NJ&#39;</span>
-        <span class="p">},</span>
-        <span class="s1">&#39;is_rich&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s1">&#39;friends&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span> <span class="s1">&#39;gordon&#39;</span><span class="p">]</span>
-    <span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="s1">&#39;students/bruce&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_key&#39;</span><span class="p">:</span> <span class="s1">&#39;bruce&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_rev&#39;</span><span class="p">:</span> <span class="s1">&#39;_Wm3dzEi--_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;first_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;last_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Wayne&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;street&#39;</span> <span class="p">:</span> <span class="s1">&#39;1007 Mountain Dr.&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;city&#39;</span><span class="p">:</span> <span class="s1">&#39;Gotham&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="s1">&#39;NJ&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;is_rich&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;friends&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;robin&#39;</span><span class="p">,</span> <span class="s1">&#39;gordon&#39;</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -463,14 +463,14 @@ Here is an example of a valid document:</p>
 <p>Edge documents (edges) are similar to standard documents but with two additional required fields _from and _to. Values of these fields must be the handles of “from” and “to” vertex documents linked by the edge document in question. Here is an example of a valid edge document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="p">{</span>
-        <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="s1">&#39;friends/001&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_key&#39;</span><span class="p">:</span> <span class="s1">&#39;001&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_rev&#39;</span><span class="p">:</span> <span class="s1">&#39;_Wm3dyle--_&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_from&#39;</span><span class="p">:</span> <span class="s1">&#39;students/john&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;_to&#39;</span><span class="p">:</span> <span class="s1">&#39;students/jane&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;closeness&#39;</span><span class="p">:</span> <span class="mf">9.5</span>
-    <span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="s1">&#39;friends/001&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_key&#39;</span><span class="p">:</span> <span class="s1">&#39;001&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_rev&#39;</span><span class="p">:</span> <span class="s1">&#39;_Wm3dyle--_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_from&#39;</span><span class="p">:</span> <span class="s1">&#39;students/john&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;_to&#39;</span><span class="p">:</span> <span class="s1">&#39;students/jane&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;closeness&#39;</span><span class="p">:</span> <span class="mf">9.5</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -527,10 +527,10 @@ Here is an example of a valid document:</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">)</span>
 
-<span class="c1"># -- use this line of code for an unformated response --</span>
+<span class="c1"># -- use this line of code for an unformatted response --</span>
 <span class="c1">#print(client.get_fabric_details())</span>
 
-<span class="c1"># -- use these lines of code for a formated response (easier to read) -- </span>
+<span class="c1"># -- use these lines of code for a formatted response (easier to read) -- </span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="n">fabrics</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_fabric_details</span><span class="p">()</span>
@@ -569,12 +569,7 @@ Here is an example of a valid document:</p>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple Approach</span>
-<span class="c1">#client = C8Client(protocol=&#39;https&#39;, host=&#39;gdn.paas.macrometa.io&#39;, port=443,</span>
-<span class="c1">#                        email=&#39;[email protected]&#39;, password=&quot;xxxxxx&quot;,</span>
-<span class="c1">#                        geofabric=&#39;_system&#39;)</span>
-
-<span class="n">edge_name</span><span class="o">=</span><span class="s1">&#39;school&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_name</span><span class="o">=</span><span class="s1">&#39;school&#39;</span>
 
 <span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">edge_name</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Graph exists&quot;</span><span class="p">)</span>
@@ -662,7 +657,7 @@ Here is an example of a valid document:</p>
     <a class='right-next' id="next-link" href="05_graph_traversals%28Python%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Py05 - Graph Traverals</p>
+        <p class="prev-next-title">Py05 - Graph Traversals</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

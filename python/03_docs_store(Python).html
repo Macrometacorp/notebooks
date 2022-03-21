@@ -136,7 +136,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05_graph_traversals%28Python%29.html">
-     Py05 - Graph Traverals
+     Py05 - Graph Traversals
     </a>
    </li>
    <li class="toctree-l2">
@@ -503,53 +503,13 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get geo fabric details...&quot;</span><span class="p">)</span>
 
-<span class="c1"># -- use this line of code for an unformated response --</span>
+<span class="c1"># -- use this line of code for an unformatted response --</span>
 <span class="c1">#print(client.get_fabric_details())</span>
 
-<span class="c1"># -- use these lines of code for a formated response (easier to read) -- </span>
+<span class="c1"># -- use these lines of code for a formatted response (easier to read) -- </span>
 <span class="n">fabrics</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_fabric_details</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">fabrics</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Get geo fabric details...
-[
-    {
-        &quot;name&quot;: &quot;_system&quot;,
-        &quot;options&quot;: {
-            &quot;associated_regions&quot;: [
-                &quot;verizon-us-vmdallas&quot;,
-                &quot;verizon-us-dallas&quot;,
-                &quot;verizon-us-awsashburn&quot;,
-                &quot;verizon-us-awscolumbus&quot;,
-                &quot;verizon-us-awssanjose&quot;,
-                &quot;verizon-us-denver&quot;,
-                &quot;verizon-us-boston&quot;,
-                &quot;verizon-us-sanfrancisco&quot;
-            ],
-            &quot;clusters&quot;: [
-                &quot;verizon-us-dallas&quot;,
-                &quot;verizon-us-sanfrancisco&quot;,
-                &quot;verizon-us-denver&quot;,
-                &quot;verizon-us-awssanjose&quot;,
-                &quot;verizon-us-awscolumbus&quot;,
-                &quot;verizon-us-awsashburn&quot;,
-                &quot;verizon-us-boston&quot;,
-                &quot;verizon-us-vmdallas&quot;
-            ],
-            &quot;dcList&quot;: &quot;verizon-us-dallas,verizon-us-sanfrancisco,verizon-us-denver,verizon-us-awssanjose,verizon-us-awscolumbus,verizon-us-awsashburn,verizon-us-boston,verizon-us-vmdallas&quot;,
-            &quot;dynamo_local_tables&quot;: false,
-            &quot;metadata&quot;: null,
-            &quot;name&quot;: &quot;alan_macrometa.com._system&quot;,
-            &quot;realTime&quot;: true,
-            &quot;spotDc&quot;: &quot;&quot;,
-            &quot;status&quot;: &quot;available&quot;,
-            &quot;tenant&quot;: &quot;alan_macrometa.com&quot;
-        }
-    }
-]
 </pre></div>
 </div>
 </div>
@@ -569,11 +529,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="k">else</span><span class="p">:</span>
     <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">collection_name</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Created!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collection Created!
 </pre></div>
 </div>
 </div>
@@ -618,30 +573,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-    {
-        &quot;_key&quot;: &quot;James&quot;,
-        &quot;firstname&quot;: &quot;James&quot;,
-        &quot;lastname&quot;: &quot;Kirk&quot;,
-        &quot;email&quot;: &quot;[email protected]&quot;
-    },
-    {
-        &quot;_key&quot;: &quot;Han&quot;,
-        &quot;firstname&quot;: &quot;Han&quot;,
-        &quot;lastname&quot;: &quot;Solo&quot;,
-        &quot;email&quot;: &quot;[email protected]&quot;
-    },
-    {
-        &quot;_key&quot;: &quot;Bruce&quot;,
-        &quot;firstname&quot;: &quot;Bruce&quot;,
-        &quot;lastname&quot;: &quot;Wayne&quot;,
-        &quot;email&quot;: &quot;[email protected]&quot;
-    }
-]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="step-03-f-query-documents-using-c8ql">
@@ -658,58 +589,20 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-    {
-        &quot;_id&quot;: &quot;employees/James&quot;,
-        &quot;_key&quot;: &quot;James&quot;,
-        &quot;_rev&quot;: &quot;_d1-L-jm--_&quot;,
-        &quot;email&quot;: &quot;[email protected]&quot;,
-        &quot;firstname&quot;: &quot;James&quot;,
-        &quot;lastname&quot;: &quot;Kirk&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;employees/Han&quot;,
-        &quot;_key&quot;: &quot;Han&quot;,
-        &quot;_rev&quot;: &quot;_d1-L-jm--C&quot;,
-        &quot;email&quot;: &quot;[email protected]&quot;,
-        &quot;firstname&quot;: &quot;Han&quot;,
-        &quot;lastname&quot;: &quot;Solo&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;employees/Bruce&quot;,
-        &quot;_key&quot;: &quot;Bruce&quot;,
-        &quot;_rev&quot;: &quot;_d1-L-jm--F&quot;,
-        &quot;email&quot;: &quot;[email protected]&quot;,
-        &quot;firstname&quot;: &quot;Bruce&quot;,
-        &quot;lastname&quot;: &quot;Wayne&quot;
-    }
-]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="step-03-g-get-realtime-updates">
 <h2>Step 03-G - Get realtime updates<a class="headerlink" href="#step-03-g-get-realtime-updates" title="Permalink to this headline">¶</a></h2>
 <p>Example for real-time updates from a collection in fabric:</p>
-<p><strong>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, sellect collections, find the collection named “employees” and select “enable Stream”</strong></p>
-<p>Now run the cell below, return to the Macrometa Dashboard and modeify and save fields in the collection. you should see the real time updates below as soon as you hit save!.</p>
-<p>the websocket will time out after 60sec if no updates are seen, so you might need to re run the cell code if youy see a timed out messege below. :)</p>
+<p><strong>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, select collections, find the collection named “employees” and select “enable Stream”</strong></p>
+<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. you should see the real time updates below as soon as you hit save!.</p>
+<p>the websocket will time out after 60sec if no updates are seen, so you might need to re run the cell code if you see a timed out message below. :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback_fn</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
 
 <span class="n">client</span><span class="o">.</span><span class="n">on_change</span><span class="p">(</span><span class="s2">&quot;employees&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">callback_fn</span><span class="p">)</span>     
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pyC8 Realtime: Begin monitoring realtime updates for wss://api-verizon.5g.macrometa.io/_ws/ws/v2/consumer/persistent/alan_macrometa.com/c8local._system/employees/alan_macrometa.com-_system-subscription-384
-b&#39;{&quot;_key&quot;:&quot;James&quot;,&quot;_rev&quot;:&quot;_d1-L9Ju--_&quot;,&quot;email&quot;:&quot;[email protected]&quot;,&quot;firstname&quot;:&quot;Alan&quot;,&quot;lastname&quot;:&quot;Kirk&quot;}&#39;
-b&#39;{&quot;_key&quot;:&quot;James&quot;,&quot;_rev&quot;:&quot;_d1-MCy---_&quot;,&quot;email&quot;:&quot;[email protected]&quot;,&quot;firstname&quot;:&quot;Alan&quot;,&quot;lastname&quot;:&quot;Evans&quot;}&#39;
-The read operation timed out
 </pre></div>
 </div>
 </div>

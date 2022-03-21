@@ -4,22 +4,25 @@
 format: jb-book
 root: intro
 parts:
-- caption: Basic
+- caption: Beginner
   chapters:
-  - file: markdown
-  - file: 01_connect_gdn(Python)
-  - file: 01_connect_gdn(javascript)
-  - file: 02_key_value_store(Python)
-  - file: 02_key_value_store(javascript).ipynb
-  - file: 03_docs_store(Python)
-  - file: 03_docs_store(javascript).ipynb
-  - file: 04_graphs(Python)
-  - file: 04_graphs(javascript).ipynb
-- caption: Intermediate
-  chapters:
-  - file: 05_graph_traversals(Python)
-  - file: 05_graph_traversals(javascript).ipynb
-  - file: 06_building_restql_apis(Python)
+  - file: python/beginner_toc
+    sections:
+       - file: 01_connect_gdn(Python)
+       - file: 02_key_value_store(Python)
+       - file: 03_docs_store(Python)
+       - file: 04_graphs(Python)
+       - file: 05_graph_traversals(Python)
+       - file: 06_building_restql_apis(Python)
+  - file: javascript/beginner_toc
+    sections:
+      - file: javascript/01_connect_gdn(javascript)
+      - file: javascript/02_key_value_store(javascript).ipynb
+      - file: javascript/03_docs_store(javascript).ipynb
+      - file: javascript/04_graphs(javascript).ipynb
+      - file: javascript/05_graph_traversals(javascript).ipynb
+      - file: javascript/06_building_restql_apis(javascript)
 - caption: Advanced
   chapters:
+  - file: markdown
   - file: markdown-notebooks

@@ -335,8 +335,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-e-inserting-data-calls-records">
-   Step 05-E - Inserting Data - “Calls Records”
+  <a class="reference internal nav-link" href="#step-05-e-inserting-data-who-likes-whom">
+   Step 05-E - Inserting Data - “Who Likes Whom”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -345,13 +345,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-outbound-calls">
-   Step 05-G - Execute a Traversal - “Find outbound calls”
+  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-singles-who-liked-lou">
+   Step 05-G - Execute a Traversal - “Find Singles who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-inbound-calls">
-   Step 05-H - Execute a Traversal - “Find inbound calls”
+  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-singles-who-lou-liked">
+   Step 05-H - Execute a Traversal - “Find Singles who Lou Liked?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -410,8 +410,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-e-inserting-data-calls-records">
-   Step 05-E - Inserting Data - “Calls Records”
+  <a class="reference internal nav-link" href="#step-05-e-inserting-data-who-likes-whom">
+   Step 05-E - Inserting Data - “Who Likes Whom”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -420,13 +420,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-outbound-calls">
-   Step 05-G - Execute a Traversal - “Find outbound calls”
+  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-singles-who-liked-lou">
+   Step 05-G - Execute a Traversal - “Find Singles who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-inbound-calls">
-   Step 05-H - Execute a Traversal - “Find inbound calls”
+  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-singles-who-lou-liked">
+   Step 05-H - Execute a Traversal - “Find Singles who Lou Liked?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -453,7 +453,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
-<p>In this tutorial we will build a simple dating application, and then use graph traversals to see who has liked whom.</p>
+<p>In this tutorial we will build a simple dating application caled “Hopefulls”, and then use graph traversals to see who has liked whom.</p>
 </div>
 <div class="section" id="step-05-a-importing-libraries-define-variables">
 <h2>Step 05-A - Importing Libraries &amp; Define Variables<a class="headerlink" href="#step-05-a-importing-libraries-define-variables" title="Permalink to this headline">¶</a></h2>
@@ -619,8 +619,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-e-inserting-data-calls-records">
-<h2>Step 05-E - Inserting Data - “Calls Records”<a class="headerlink" href="#step-05-e-inserting-data-calls-records" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-e-inserting-data-who-likes-whom">
+<h2>Step 05-E - Inserting Data - “Who Likes Whom”<a class="headerlink" href="#step-05-e-inserting-data-who-likes-whom" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_LIKES_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_calls</span><span class="p">))</span>
@@ -676,8 +676,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-g-execute-a-traversal-find-outbound-calls">
-<h2>Step 05-G - Execute a Traversal - “Find outbound calls”<a class="headerlink" href="#step-05-g-execute-a-traversal-find-outbound-calls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-g-execute-a-traversal-find-singles-who-liked-lou">
+<h2>Step 05-G - Execute a Traversal - “Find Singles who liked Lou?”<a class="headerlink" href="#step-05-g-execute-a-traversal-find-singles-who-liked-lou" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read Data</span>
@@ -690,8 +690,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-h-execute-a-traversal-find-inbound-calls">
-<h2>Step 05-H - Execute a Traversal - “Find inbound calls”<a class="headerlink" href="#step-05-h-execute-a-traversal-find-inbound-calls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-h-execute-a-traversal-find-singles-who-lou-liked">
+<h2>Step 05-H - Execute a Traversal - “Find Singles who Lou Liked?”<a class="headerlink" href="#step-05-h-execute-a-traversal-find-singles-who-lou-liked" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find Singles whol were liked from: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hopefulls_Client</span><span class="p">))</span>

@@ -21,7 +21,7 @@ bibtex_bibfiles:
 
 launch_buttons:
   notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
-  binderhub_url             : https://mybinder.org
+  binderhub_url             : ""
   colab_url                 : https://colab.research.google.com
 
 # Information about where the book exists on the web

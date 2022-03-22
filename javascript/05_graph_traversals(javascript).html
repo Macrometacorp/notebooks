@@ -314,8 +314,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-a-importing-libraries">
-   Step 05-A Importing Libraries
+  <a class="reference internal nav-link" href="#step-05-a-importing-libraries-define-variables">
+   Step 05-A Importing Libraries &amp; Define Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -329,13 +329,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-d-inserting-data-people">
-   Step 05-D - Inserting Data - “People”
+  <a class="reference internal nav-link" href="#step-05-d-inserting-data-singles">
+   Step 05-D - Inserting Data - “Singles”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-e-inserting-data-calls-records">
-   Step 05-E - Inserting Data - “Calls Records”
+  <a class="reference internal nav-link" href="#step-05-e-inserting-data-who-likes-whom">
+   Step 05-E - Inserting Data - “Who Likes Whom”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -344,13 +344,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-outbound-calls">
-   Step 05-G - Execute a Traversal - “Find outbound calls”
+  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-singles-who-liked-lou">
+   Step 05-G - Execute a Traversal - “Find Singles who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-inbound-calls">
-   Step 05-H - Execute a Traversal - “Find inbound calls”
+  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-singles-who-lou-liked">
+   Step 05-H - Execute a Traversal - “Find Singles who Lou Liked?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -394,8 +394,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-a-importing-libraries">
-   Step 05-A Importing Libraries
+  <a class="reference internal nav-link" href="#step-05-a-importing-libraries-define-variables">
+   Step 05-A Importing Libraries &amp; Define Variables
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -409,13 +409,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-d-inserting-data-people">
-   Step 05-D - Inserting Data - “People”
+  <a class="reference internal nav-link" href="#step-05-d-inserting-data-singles">
+   Step 05-D - Inserting Data - “Singles”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-e-inserting-data-calls-records">
-   Step 05-E - Inserting Data - “Calls Records”
+  <a class="reference internal nav-link" href="#step-05-e-inserting-data-who-likes-whom">
+   Step 05-E - Inserting Data - “Who Likes Whom”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -424,13 +424,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-outbound-calls">
-   Step 05-G - Execute a Traversal - “Find outbound calls”
+  <a class="reference internal nav-link" href="#step-05-g-execute-a-traversal-find-singles-who-liked-lou">
+   Step 05-G - Execute a Traversal - “Find Singles who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-inbound-calls">
-   Step 05-H - Execute a Traversal - “Find inbound calls”
+  <a class="reference internal nav-link" href="#step-05-h-execute-a-traversal-find-singles-who-lou-liked">
+   Step 05-H - Execute a Traversal - “Find Singles who Lou Liked?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -457,6 +457,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
+<p>In this tutorial we will build a simple dating application caled “Hopefulls”, and then use graph traversals to see who has liked whom.</p>
 </div>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
@@ -477,8 +478,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-a-importing-libraries">
-<h2>Step 05-A Importing Libraries<a class="headerlink" href="#step-05-a-importing-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-a-importing-libraries-define-variables">
+<h2>Step 05-A Importing Libraries &amp; Define Variables<a class="headerlink" href="#step-05-a-importing-libraries-define-variables" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variables - Queries</span>
@@ -486,16 +487,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kd">const</span> <span class="nx">email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span><span class="p">;</span> <span class="c1">// &lt;-- Email goes here</span>
 <span class="kd">const</span> <span class="nx">password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span><span class="p">;</span> <span class="c1">// &lt;-- password goes here</span>
 <span class="kd">const</span> <span class="nx">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">collection_people</span> <span class="o">=</span> <span class="s2">&quot;CDRpeople&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">collection_calls</span> <span class="o">=</span> <span class="s2">&quot;CDRcalls&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">collection_cellsites</span> <span class="o">=</span> <span class="s2">&quot;CDRcellsites&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;CDRgraphdocs&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">read_people</span> <span class="o">=</span> <span class="s2">&quot;FOR person IN CDRpeople RETURN person&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">read_calls</span> <span class="o">=</span> <span class="s2">&quot;FOR call IN CDRcalls RETURN call&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="s2">&quot;Lou Feaveer&quot;</span><span class="p">;</span>
-<span class="c1">// const person = &quot;Peria King&quot;</span>
-<span class="kd">const</span> <span class="nx">graph_traversal1</span> <span class="o">=</span> <span class="sb">`FOR c IN CDRpeople FILTER c.full_name == \&quot;</span><span class="si">${</span><span class="nx">person</span><span class="si">}</span><span class="sb">\&quot; FOR v IN 1..1 INBOUND c CDRcalls RETURN v`</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">graph_traversal2</span> <span class="o">=</span> <span class="sb">`FOR c IN CDRpeople FILTER c.full_name == \&quot;</span><span class="si">${</span><span class="nx">person</span><span class="si">}</span><span class="sb">\&quot; FOR v IN 1..1 OUTBOUND c CDRcalls RETURN v`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">collection_singles</span> <span class="o">=</span> <span class="s2">&quot;Singles&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">collection_likes</span> <span class="o">=</span> <span class="s2">&quot;Likes&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;Hopefulls_graph&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">read_singles</span> <span class="o">=</span> <span class="s2">&quot;FOR singles IN Singles RETURN singles&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">read_likes</span> <span class="o">=</span> <span class="s2">&quot;FOR likes IN Likes RETURN like&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">Hopefulls_Client</span> <span class="o">=</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">Hopefulls_Client2</span> <span class="o">=</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">graph_traversal1</span> <span class="o">=</span> <span class="sb">`FOR c IN Singles FILTER c.hopefulls_user_name == \&quot;</span><span class="si">${</span><span class="nx">Hopefulls_Client</span><span class="si">}</span><span class="sb">\&quot; FOR v IN 1..1 INBOUND c Likes RETURN v`</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">graph_traversal2</span> <span class="o">=</span> <span class="sb">`FOR c IN Singles FILTER c.hopefulls_user_name == \&quot;</span><span class="si">${</span><span class="nx">Hopefulls_Client</span><span class="si">}</span><span class="sb">\&quot; FOR v IN 1..1 OUTBOUND c Likes RETURN v`</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -534,19 +536,19 @@ const thebe_selector_output = ".output, .cell_output"
 
   <span class="k">try</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-      <span class="sb">`Creating the CREATE_PEOPLE_VERTEX_COLLECTION </span><span class="si">${</span><span class="nx">collection_people</span><span class="si">}</span><span class="sb">...`</span>
+      <span class="sb">`Creating the CREATE_SINGLES_VERTEX_COLLECTION </span><span class="si">${</span><span class="nx">collection_singles</span><span class="si">}</span><span class="sb">...`</span>
     <span class="p">);</span>
-    <span class="kd">let</span> <span class="nx">exists_coll</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_people</span><span class="p">);</span>
+    <span class="kd">let</span> <span class="nx">exists_coll</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_singles</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">exists_coll</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_people</span><span class="p">);</span>
+      <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_singles</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
-      <span class="sb">`Creating the CREATE_CALLS_EDGE_COLLECTION </span><span class="si">${</span><span class="nx">collection_calls</span><span class="si">}</span><span class="sb">...`</span>
+      <span class="sb">`Creating the CREATE_LIKES_EDGE_COLLECTION </span><span class="si">${</span><span class="nx">collection_likes</span><span class="si">}</span><span class="sb">...`</span>
     <span class="p">);</span>
-    <span class="nx">exists_coll</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_calls</span><span class="p">);</span>
+    <span class="nx">exists_coll</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_likes</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">exists_coll</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_calls</span><span class="p">,</span> <span class="p">{},</span> <span class="kc">true</span><span class="p">);</span>
+      <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_likes</span><span class="p">,</span> <span class="p">{},</span> <span class="kc">true</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
@@ -559,8 +561,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-d-inserting-data-people">
-<h2>Step 05-D - Inserting Data - “People”<a class="headerlink" href="#step-05-d-inserting-data-people" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-d-inserting-data-singles">
+<h2>Step 05-D - Inserting Data - “Singles”<a class="headerlink" href="#step-05-d-inserting-data-singles" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">people_data</span> <span class="o">=</span> <span class="p">[</span>
@@ -571,8 +573,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Burbank&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;40317 5th Crossing&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Pernell Winspare&quot;</span><span class="p">,</span>
@@ -581,8 +583,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;596 Packers Pass&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;718-208-8096&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;718-208-8096&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Ava Kermath&quot;</span><span class="p">,</span>
@@ -591,8 +593,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;2 Doe Crossing Junction&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Tremain McGrah&quot;</span><span class="p">,</span>
@@ -601,8 +603,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Torrance&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;079 Russell Street&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;859-783-3227&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;859-783-3227&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;TorranceTremain&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;TorranceTremain&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Vidovik Boddam&quot;</span><span class="p">,</span>
@@ -611,8 +613,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;3 Brentwood Crossing&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;703-265-1313&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;703-265-1313&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Oralie Goward&quot;</span><span class="p">,</span>
@@ -621,8 +623,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;922 Columbus Park&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;617-815-8610&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;617-815-8610&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Lou Feaveer&quot;</span><span class="p">,</span>
@@ -631,8 +633,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;San Jose&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;55223 Hooker Crossing&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
     <span class="nx">full_name</span><span class="o">:</span> <span class="s2">&quot;Peria King&quot;</span><span class="p">,</span>
@@ -641,14 +643,14 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="nx">city</span><span class="o">:</span> <span class="s2">&quot;Stockton&quot;</span><span class="p">,</span>
     <span class="nx">state</span><span class="o">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="nx">address</span><span class="o">:</span> <span class="s2">&quot;8 Troy Plaza&quot;</span><span class="p">,</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">];</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">insertDocumentMany</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_PEOPLE_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocumentMany</span><span class="p">(</span><span class="nx">collection_people</span><span class="p">,</span> <span class="nx">people_data</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_SINGLES_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocumentMany</span><span class="p">(</span><span class="nx">collection_singles</span><span class="p">,</span> <span class="nx">people_data</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">insertDocumentMany</span><span class="p">();</span>
@@ -657,46 +659,43 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-e-inserting-data-calls-records">
-<h2>Step 05-E - Inserting Data - “Calls Records”<a class="headerlink" href="#step-05-e-inserting-data-calls-records" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-e-inserting-data-who-likes-whom">
+<h2>Step 05-E - Inserting Data - “Who Likes Whom”<a class="headerlink" href="#step-05-e-inserting-data-who-likes-whom" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">callsData</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;757-697-9065&quot;</span><span class="p">,</span>
-    <span class="nx">called_nbr</span><span class="o">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
-    <span class="nx">_from</span><span class="o">:</span> <span class="s2">&quot;CDRpeople/757-697-9065&quot;</span><span class="p">,</span>
-    <span class="nx">_to</span><span class="o">:</span> <span class="s2">&quot;CDRpeople/716-463-8993&quot;</span><span class="p">,</span>
-    <span class="nx">call_date</span><span class="o">:</span> <span class="s2">&quot;1/4/2020&quot;</span><span class="p">,</span>
-    <span class="nx">call_time</span><span class="o">:</span> <span class="s2">&quot;13:33&quot;</span><span class="p">,</span>
-    <span class="nx">call_duration</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
-    <span class="nx">cell_site</span><span class="o">:</span> <span class="mf">4044703906</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="nx">singles_liked</span><span class="o">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="nx">_from</span><span class="o">:</span> <span class="s2">&quot;Singles/BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="nx">_to</span><span class="o">:</span> <span class="s2">&quot;Singles/SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="nx">liked_date</span><span class="o">:</span> <span class="s2">&quot;1/4/2020&quot;</span><span class="p">,</span>
+    <span class="nx">liked_time</span><span class="o">:</span> <span class="s2">&quot;13:33&quot;</span><span class="p">,</span>
+    <span class="nx">liked_amount</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;716-463-8993&quot;</span><span class="p">,</span>
-    <span class="nx">called_nbr</span><span class="o">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
-    <span class="nx">_from</span><span class="o">:</span> <span class="s2">&quot;CDRpeople/716-463-8993&quot;</span><span class="p">,</span>
-    <span class="nx">_to</span><span class="o">:</span> <span class="s2">&quot;CDRpeople/713-707-8699&quot;</span><span class="p">,</span>
-    <span class="nx">call_date</span><span class="o">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
-    <span class="nx">call_time</span><span class="o">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
-    <span class="nx">call_duration</span><span class="o">:</span> <span class="mf">18</span><span class="p">,</span>
-    <span class="nx">cell_site</span><span class="o">:</span> <span class="mf">2289973823</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="nx">singles_liked</span><span class="o">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="nx">_from</span><span class="o">:</span> <span class="s2">&quot;Singles/SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="nx">_to</span><span class="o">:</span> <span class="s2">&quot;Singles/StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="nx">liked_date</span><span class="o">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
+    <span class="nx">liked_time</span><span class="o">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
+    <span class="nx">liked_amount</span><span class="o">:</span> <span class="mf">18</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="nx">calling_nbr</span><span class="o">:</span> <span class="s2">&quot;765-623-5328&quot;</span><span class="p">,</span>
-    <span class="nx">called_nbr</span><span class="o">:</span> <span class="s2">&quot;713-707-8699&quot;</span><span class="p">,</span>
-    <span class="nx">_from</span><span class="o">:</span> <span class="s2">&quot;CDRpeople/765-623-5328&quot;</span><span class="p">,</span>
-    <span class="nx">_to</span><span class="o">:</span> <span class="s2">&quot;CDRpeople/713-707-8699&quot;</span><span class="p">,</span>
-    <span class="nx">call_date</span><span class="o">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
-    <span class="nx">call_time</span><span class="o">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
-    <span class="nx">call_duration</span><span class="o">:</span> <span class="mf">18</span><span class="p">,</span>
-    <span class="nx">cell_site</span><span class="o">:</span> <span class="mf">2289973823</span><span class="p">,</span>
+    <span class="nx">hopefulls_user_name</span><span class="o">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="nx">singles_liked</span><span class="o">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="nx">_from</span><span class="o">:</span> <span class="s2">&quot;Singles/BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="nx">_to</span><span class="o">:</span> <span class="s2">&quot;Singles/StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="nx">liked_date</span><span class="o">:</span> <span class="s2">&quot;1/28/2020&quot;</span><span class="p">,</span>
+    <span class="nx">liked_time</span><span class="o">:</span> <span class="s2">&quot;3:02&quot;</span><span class="p">,</span>
+    <span class="nx">liked_amount</span><span class="o">:</span> <span class="mf">18</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">];</span>
 
 <span class="k">async</span> <span class="kd">function</span> <span class="nx">insertDocumentMany</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_CALL_RECORDS_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocumentMany</span><span class="p">(</span><span class="nx">collection_calls</span><span class="p">,</span> <span class="nx">callsData</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_LIKES_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertDocumentMany</span><span class="p">(</span><span class="nx">collection_likes</span><span class="p">,</span> <span class="nx">callsData</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nx">insertDocumentMany</span><span class="p">();</span>
@@ -717,9 +716,9 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">(</span><span class="nx">collection_graph</span><span class="p">,</span> <span class="p">{</span>
     <span class="nx">edgeDefinitions</span><span class="o">:</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="nx">collection</span><span class="o">:</span> <span class="nx">collection_calls</span><span class="p">,</span>
-        <span class="kr">from</span><span class="o">:</span> <span class="p">[</span><span class="nx">collection_people</span><span class="p">],</span>
-        <span class="nx">to</span><span class="o">:</span> <span class="p">[</span><span class="nx">collection_people</span><span class="p">],</span>
+        <span class="nx">collection</span><span class="o">:</span> <span class="nx">collection_likes</span><span class="p">,</span>
+        <span class="kr">from</span><span class="o">:</span> <span class="p">[</span><span class="nx">collection_singles</span><span class="p">],</span>
+        <span class="nx">to</span><span class="o">:</span> <span class="p">[</span><span class="nx">collection_singles</span><span class="p">],</span>
       <span class="p">},</span>
     <span class="p">],</span>
   <span class="p">});</span>
@@ -734,12 +733,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-g-execute-a-traversal-find-outbound-calls">
-<h2>Step 05-G - Execute a Traversal - “Find outbound calls”<a class="headerlink" href="#step-05-g-execute-a-traversal-find-outbound-calls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-g-execute-a-traversal-find-singles-who-liked-lou">
+<h2>Step 05-G - Execute a Traversal - “Find Singles who liked Lou?”<a class="headerlink" href="#step-05-g-execute-a-traversal-find-singles-who-liked-lou" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">readData</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`5a. GRAPH_TRAVERSAL: Find outbound calls TO: </span><span class="si">${</span><span class="nx">person</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="sb">`5a. GRAPH_TRAVERSAL: Find Singles who liked: </span><span class="si">${</span><span class="nx">Hopefulls_Client2</span><span class="si">}</span><span class="sb">`</span>
+  <span class="p">);</span>
   <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">graph_traversal1</span><span class="p">);</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 <span class="p">}</span>
@@ -752,12 +753,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-05-h-execute-a-traversal-find-inbound-calls">
-<h2>Step 05-H - Execute a Traversal - “Find inbound calls”<a class="headerlink" href="#step-05-h-execute-a-traversal-find-inbound-calls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-05-h-execute-a-traversal-find-singles-who-lou-liked">
+<h2>Step 05-H - Execute a Traversal - “Find Singles who Lou Liked?”<a class="headerlink" href="#step-05-h-execute-a-traversal-find-singles-who-lou-liked" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">readData</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`5b. GRAPH_TRAVERSAL: Find inbound calls FROM: </span><span class="si">${</span><span class="nx">person</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
+    <span class="sb">`5b. GRAPH_TRAVERSAL: Find Singles whole were liked from: </span><span class="si">${</span><span class="nx">Hopefulls_Client</span><span class="si">}</span><span class="sb">`</span>
+  <span class="p">);</span>
   <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="nx">graph_traversal2</span><span class="p">);</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
 <span class="p">}</span>

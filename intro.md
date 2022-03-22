@@ -1,11 +1,18 @@
-# Welcome to your Jupyter Book
+# Welcome to your Macrometa X-Book
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+The Work Book has been created to take you on a journey of descovery.
 
-Check out the content pages bundled with this sample book to see more.
+Together we will expereince the art of the possible with Macrometa GDN, 
+through a series of short tutorials spanning basic concepts of how to
+connect to Macrometa GDN and create a collection, creating and updating 
+RESTQL APIS, to more advanced concepts like distributed systems and Complex
+Event Processing!
+
+Hope you enjoy!
+
+from,
+the Macrometa Team
+
 
 ```{tableofcontents}
 ```

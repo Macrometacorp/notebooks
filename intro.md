@@ -1,4 +1,4 @@
-# Welcome to your Macrometa X-Book
+# Welcome to your Macrometa GDN - XBook
 
 The Work Book has been created to take you on a journey of descovery.
 

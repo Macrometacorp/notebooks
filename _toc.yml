@@ -14,6 +14,7 @@ parts:
        - file: python/04_graphs(Python)
        - file: python/05_graph_traversals(Python)
        - file: python/06_building_restql_apis(Python)
+       - file: python/07_working_with_fabrics(Python)
   - file: javascript/beginner_toc
     sections:
       - file: javascript/01_connect_gdn(javascript)

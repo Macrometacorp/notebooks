@@ -1,0 +1,1003 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workbook 07 - Working with Fabrics &#8212; GDN - XBook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-moc-blue.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GDN - XBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to your Macrometa GDN - XBook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Beginner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="beginner_toc.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_connect_gdn%28Python%29.html">
+     Py01 - Connecting to GDN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_key_value_store%28Python%29.html">
+     Py02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_docs_store%28Python%29.html">
+     Py03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_graphs%28Python%29.html">
+     Py04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_graph_traversals%28Python%29.html">
+     Py05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_building_restql_apis%28Python%29.html">
+     Py06 - Building RESTQL APIs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../javascript/beginner_toc.html">
+   Javascript
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/01_connect_gdn%28javascript%29.html">
+     JS01 - Connecting to GDN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/02_key_value_store%28javascript%29.html">
+     JS02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/03_docs_store%28javascript%29.html">
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/04_graphs%28javascript%29.html">
+     JS04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/05_graph_traversals%28javascript%29.html">
+     JS05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/06_building_restql_apis%28javascript%29.html">
+     JS06 - Building RESTQL APIs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advance_tutorials.html">
+   Advanced Tutorials TBD
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/python/07_working_with_fabrics(Python).ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Macrometacorp/docs-xbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/Macrometacorp/docs-xbook/issues/new?title=Issue%20on%20page%20%2Fpython/07_working_with_fabrics(Python).html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-xbook/blob/main/python/07_working_with_fabrics(Python).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workbook 07 - Working with Fabrics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-a-import-libraries-to-workbook">
+     Step 07-A - Import Libraries to Workbook
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-b-create-and-define-login-details">
+     Step 07-B - Create and Define Login details
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-c-connect-to-gdn-as-admin">
+     Step 07-C - Connect to GDN as Admin
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-d-list-all-fabrics-accessable-by-admin">
+     Step 07-D - List all Fabrics accessable by Admin
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-e-list-all-details-of-datacenters">
+     Step 07-E - List all details of Datacenters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-f-create-a-new-user-called-johndoe">
+     Step 07-F - Create a new user called “johndoe”
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-g-list-details-of-the-new-user">
+     Step 07-G - List details of the new user
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-h-list-permissions-of-the-new-user">
+     Step 07-H - List permissions of the new user
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-i-create-a-new-fabric">
+     Step 07-I - Create a new Fabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-j-check-permissions-of-new-user-on-new-fabric">
+     Step 07-J - Check permissions of new user on new fabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-read-write">
+     Step 07-K - Change permissions of new user to “read/write”
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
+     Step 07-K - Change permissions of new user to “none” for the “_system” fabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-l-check-permissions-of-new-user-after-changes">
+     Step 07-L - Check permissions of new user after changes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+     Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-m-check-the-datacenters-for-the-new-geofabric">
+     Step 07-M - Check the Datacenters for the new geofabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection">
+     Step 07-N - Let’s test our new fabric with a collection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n1-first-create-the-collection">
+   Step 07-N1 - First create the collection
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n2-let-s-add-some-records">
+   Step 07-N2 - Let’s add some records
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n3-let-s-build-a-restql-called-getrecords">
+   Step 07-N3 - Let’s build a RESTQL called “getRecords”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n3-let-s-check-our-restql-is-saved">
+   Step 07-N3 - Let’s check our RESTQL is saved
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n4-let-s-execute-the-restql-getrecords">
+   Step 07-N4 - Let’s execute the RESTQL “getRecords”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-o-ok-time-to-tidy-up">
+   Step 07-O - OK, time to tidy up!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#section-completed">
+     Section Completed!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Workbook 07 - Working with Fabrics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Workbook 07 - Working with Fabrics
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-a-import-libraries-to-workbook">
+     Step 07-A - Import Libraries to Workbook
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-b-create-and-define-login-details">
+     Step 07-B - Create and Define Login details
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-c-connect-to-gdn-as-admin">
+     Step 07-C - Connect to GDN as Admin
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-d-list-all-fabrics-accessable-by-admin">
+     Step 07-D - List all Fabrics accessable by Admin
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-e-list-all-details-of-datacenters">
+     Step 07-E - List all details of Datacenters
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-f-create-a-new-user-called-johndoe">
+     Step 07-F - Create a new user called “johndoe”
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-g-list-details-of-the-new-user">
+     Step 07-G - List details of the new user
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-h-list-permissions-of-the-new-user">
+     Step 07-H - List permissions of the new user
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-i-create-a-new-fabric">
+     Step 07-I - Create a new Fabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-j-check-permissions-of-new-user-on-new-fabric">
+     Step 07-J - Check permissions of new user on new fabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-read-write">
+     Step 07-K - Change permissions of new user to “read/write”
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
+     Step 07-K - Change permissions of new user to “none” for the “_system” fabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-l-check-permissions-of-new-user-after-changes">
+     Step 07-L - Check permissions of new user after changes
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+     Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-m-check-the-datacenters-for-the-new-geofabric">
+     Step 07-M - Check the Datacenters for the new geofabric
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection">
+     Step 07-N - Let’s test our new fabric with a collection
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n1-first-create-the-collection">
+   Step 07-N1 - First create the collection
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n2-let-s-add-some-records">
+   Step 07-N2 - Let’s add some records
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n3-let-s-build-a-restql-called-getrecords">
+   Step 07-N3 - Let’s build a RESTQL called “getRecords”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n3-let-s-check-our-restql-is-saved">
+   Step 07-N3 - Let’s check our RESTQL is saved
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n4-let-s-execute-the-restql-getrecords">
+   Step 07-N4 - Let’s execute the RESTQL “getRecords”
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-o-ok-time-to-tidy-up">
+   Step 07-O - OK, time to tidy up!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#section-completed">
+     Section Completed!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="workbook-07-working-with-fabrics">
+<h1>Workbook 07 - Working with Fabrics<a class="headerlink" href="#workbook-07-working-with-fabrics" title="Permalink to this headline">¶</a></h1>
+<p><strong>This tutorial is designed for developers working with the pyc8 Python driver</strong></p>
+<p>Each :doc:<code class="docutils literal notranslate"><span class="pre">tenant</span> <span class="pre">&lt;tenant&gt;</span></code> on the C8 Data Fabric server can have an arbitrary number of fabrics. Each fabric has its own set of :doc:<code class="docutils literal notranslate"><span class="pre">collections</span> <span class="pre">&lt;collection&gt;</span></code>, :doc:<code class="docutils literal notranslate"><span class="pre">graphs</span> <span class="pre">&lt;graph&gt;</span></code> and :doc:<code class="docutils literal notranslate"><span class="pre">streams</span> <span class="pre">&lt;stream&gt;</span></code>.</p>
+<p>For each tenant, there is a special fabric named _system, which cannot be dropped and provides operations for managing users, permissions and other fabrics. Most of the operations can only be executed by admin users. See :doc:<code class="docutils literal notranslate"><span class="pre">user</span></code> for more information.</p>
+<p>Each fabric in the C8 Fabric can be replicated to one or more additional edge Locations in the fabric. If a change is made to such a replicated fabric in one edge Location, that change will be automatically propagated to, and visible in, all other Edge Locations to which that fabric has been replicated.</p>
+<p>Each fabric in the C8 Fabric can publish changes in realtime to any clients which are connected to that fabric. Any clients with connections to that fabric will receive changes via a push-based mechanism rather than having to continuously poll the fabric for any changes which may have occurred. This python driver can listen in realtime to changes in fabric by calling the fabric.on_change() method for the fabric referred to by the fabric object.</p>
+<div class="section" id="step-07-a-import-libraries-to-workbook">
+<h2>Step 07-A - Import Libraries to Workbook<a class="headerlink" href="#step-07-a-import-libraries-to-workbook" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-b-create-and-define-login-details">
+<h2>Step 07-B - Create and Define Login details<a class="headerlink" href="#step-07-b-create-and-define-login-details" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;verizon.5g.macrometa.io&quot;</span> <span class="c1"># &lt;--- Use this fed_url if you are working with Verizon 5G Federation</span>
+<span class="c1">#fed_url = &quot;gdn.paas.macrometa.io&quot; # &lt;--- Use this fed_url if you are working on Macrometa Global PaaS</span>
+<span class="n">admin_email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span>
+<span class="n">admin_password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
+<span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-c-connect-to-gdn-as-admin">
+<h2>Step 07-C - Connect to GDN as Admin<a class="headerlink" href="#step-07-c-connect-to-gdn-as-admin" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the C8 Data Fabric client.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CONNECTION SETUP  ------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tenant: </span><span class="si">{}</span><span class="s2">, geofabric:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">admin_email</span><span class="p">,</span> <span class="n">geo_fabric</span><span class="p">))</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">fed_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                <span class="n">email</span><span class="o">=</span><span class="n">admin_email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">admin_password</span><span class="p">,</span>
+                <span class="n">geofabric</span><span class="o">=</span><span class="n">geo_fabric</span><span class="p">)</span>  
+
+<span class="c1"># For the &quot;mytenant&quot; tenant, connect to &quot;_system&quot; fabric as tenant admin.</span>
+<span class="c1"># This returns an API wrapper for the &quot;_system&quot; fabric on tenant &#39;mytenant&#39;</span>
+<span class="c1"># Note that the &#39;mytenant&#39; tenant should already exist.</span>
+
+<span class="n">tenant</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tenant</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">admin_email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">admin_password</span><span class="p">)</span>
+
+<span class="n">sys_fabric</span> <span class="o">=</span> <span class="n">tenant</span><span class="o">.</span><span class="n">useFabric</span><span class="p">(</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-d-list-all-fabrics-accessable-by-admin">
+<h2>Step 07-D - List all Fabrics accessable by Admin<a class="headerlink" href="#step-07-d-list-all-fabrics-accessable-by-admin" title="Permalink to this headline">¶</a></h2>
+<p>At this point in the tutorial this should only show the defualt ‘system’ fabric which will have all the avaiailble datacenters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List all fabrics in the &#39;mytenant&#39; tenant</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">fabrics</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-e-list-all-details-of-datacenters">
+<h2>Step 07-E - List all details of Datacenters<a class="headerlink" href="#step-07-e-list-all-details-of-datacenters" title="Permalink to this headline">¶</a></h2>
+<p>Now lets have a look at those data centers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Returns the list of details of Datacenters</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">dclist</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Tip try changing details to = &quot;True&quot; to see more details..</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-f-create-a-new-user-called-johndoe">
+<h2>Step 07-F - Create a new user called “johndoe”<a class="headerlink" href="#step-07-f-create-a-new-user-called-johndoe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new user.</span>
+<span class="n">tenant</span><span class="o">.</span><span class="n">create_user</span><span class="p">(</span>
+    <span class="n">username</span><span class="o">=</span><span class="s1">&#39;johndoe&#39;</span><span class="p">,</span> 
+    <span class="n">email</span><span class="o">=</span><span class="s1">&#39;johndoe@gmail.com&#39;</span><span class="p">,</span> 
+    <span class="n">password</span><span class="o">=</span><span class="s1">&#39;first_password&#39;</span><span class="p">,</span>
+    <span class="n">active</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">extra</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;team&#39;</span><span class="p">:</span> <span class="s1">&#39;backend&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;engineer&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-g-list-details-of-the-new-user">
+<h2>Step 07-G - List details of the new user<a class="headerlink" href="#step-07-g-list-details-of-the-new-user" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve details of a user.</span>
+<span class="n">tenant</span><span class="o">.</span><span class="n">user</span><span class="p">(</span><span class="s1">&#39;johndoe&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-h-list-permissions-of-the-new-user">
+<h2>Step 07-H - List permissions of the new user<a class="headerlink" href="#step-07-h-list-permissions-of-the-new-user" title="Permalink to this headline">¶</a></h2>
+<p>Lets take a look at the permission of our newly created user, at this point they should be read only or ‘ro’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permissions for all fabrics and collections.</span>
+
+<span class="n">tenant</span><span class="o">.</span><span class="n">permissions</span><span class="p">(</span><span class="s1">&#39;johndoe&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-i-create-a-new-fabric">
+<h2>Step 07-I - Create a new Fabric<a class="headerlink" href="#step-07-i-create-a-new-fabric" title="Permalink to this headline">¶</a></h2>
+<p>While we are still connected as the Admin, we can create a new Fabric.</p>
+<p>The code block below checks to see what the local datacenter is to you using the “localdc()” method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylocal_dc_response</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">localdc</span><span class="p">()</span> <span class="c1">#&lt;--- Returns the datacenter thats closest to you</span>
+
+<span class="n">mylocal_dc_name</span> <span class="o">=</span> <span class="n">mylocal_dc_response</span><span class="p">[</span><span class="s1">&#39;_key&#39;</span><span class="p">]</span> <span class="c1">#&lt;--- Selects the name of that datacenter</span>
+
+<span class="c1">#dcl = [mylocal_dc_name, &#39;gdn-ap-south&#39;, &#39;gdn-ap-northeast&#39;] #&lt;--- Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span>
+
+<span class="n">dcl</span> <span class="o">=</span> <span class="p">[</span><span class="n">mylocal_dc_name</span><span class="p">,</span> <span class="s1">&#39;verizon-us-denver&#39;</span><span class="p">,</span> <span class="s1">&#39;verizon-us-awssanjose&#39;</span><span class="p">]</span> <span class="c1">#&lt;--- Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">has_fabric</span><span class="p">(</span><span class="s1">&#39;demofabric&#39;</span><span class="p">):</span> <span class="c1">#&lt;--- checks the geofabric doesnt already exist</span>
+    <span class="n">demo_fabric</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">create_fabric</span><span class="p">(</span><span class="s1">&#39;demofabric&#39;</span><span class="p">,</span> <span class="n">dclist</span><span class="o">=</span><span class="n">dcl</span><span class="p">)</span> <span class="c1">#&lt;--- create a geofabric</span>
+    
+
+<span class="n">all_fabric_details</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">fabrics_detail</span><span class="p">()</span>  <span class="c1">#&lt;--- get details of new geofabric</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">all_fabric_details</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-j-check-permissions-of-new-user-on-new-fabric">
+<h2>Step 07-J - Check permissions of new user on new fabric<a class="headerlink" href="#step-07-j-check-permissions-of-new-user-on-new-fabric" title="Permalink to this headline">¶</a></h2>
+<p>We have created a new user, and a new geofabric. Wjhen this is first created the user should have no permissions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permission for &quot;test&quot; fabric.</span>
+<span class="n">tenant</span><span class="o">.</span><span class="n">permission</span><span class="p">(</span>
+    <span class="n">username</span><span class="o">=</span><span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+    <span class="n">fabric</span><span class="o">=</span><span class="s1">&#39;demofabric&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-k-change-permissions-of-new-user-to-read-write">
+<h2>Step 07-K - Change permissions of new user to “read/write”<a class="headerlink" href="#step-07-k-change-permissions-of-new-user-to-read-write" title="Permalink to this headline">¶</a></h2>
+<p>Lets change our new users permissions to “read/right” so when we connect at this user they can work with the database and create a collection</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update user permission for &quot;test&quot; fabric.</span>
+<span class="n">tenant</span><span class="o">.</span><span class="n">update_permission</span><span class="p">(</span>
+    <span class="n">username</span><span class="o">=</span><span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+    <span class="n">permission</span><span class="o">=</span><span class="s1">&#39;rw&#39;</span><span class="p">,</span>
+    <span class="n">fabric</span><span class="o">=</span><span class="s1">&#39;demofabric&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
+<h2>Step 07-K - Change permissions of new user to “none” for the “_system” fabric<a class="headerlink" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric" title="Permalink to this headline">¶</a></h2>
+<p>We might also want to reduce the users access to the _system fabric, we can do this as follows…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update user permission for &quot;_system&quot; fabric.</span>
+<span class="n">tenant</span><span class="o">.</span><span class="n">update_permission</span><span class="p">(</span>
+    <span class="n">username</span><span class="o">=</span><span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+    <span class="n">permission</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+    <span class="n">fabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-l-check-permissions-of-new-user-after-changes">
+<h2>Step 07-L - Check permissions of new user after changes<a class="headerlink" href="#step-07-l-check-permissions-of-new-user-after-changes" title="Permalink to this headline">¶</a></h2>
+<p>Ok, so now that we have updated our users permissions, lets take a look to see our changes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permissions for all fabrics and collections.</span>
+
+<span class="n">tenant</span><span class="o">.</span><span class="n">permissions</span><span class="p">(</span><span class="s1">&#39;johndoe&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+<h2>Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric<a class="headerlink" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric" title="Permalink to this headline">¶</a></h2>
+<p>Right, now its time to connect to our new GeoFabric as our new user.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demo_email</span> <span class="o">=</span> <span class="s1">&#39;johndoe@gmail.com&#39;</span>
+<span class="n">demo_password</span> <span class="o">=</span> <span class="s1">&#39;first_password&#39;</span>
+<span class="n">new_geofabric</span> <span class="o">=</span> <span class="s1">&#39;demofabric&#39;</span>
+
+<span class="c1">#local_connected_fed = mylocal_dc_name + &#39;.paas.macrometa.io&#39; # &lt;--- if using Macrometa Global PaaS</span>
+
+<span class="n">local_connected_fed</span> <span class="o">=</span> <span class="n">mylocal_dc_name</span> <span class="o">+</span> <span class="s1">&#39;.5g.macrometa.io&#39;</span> <span class="c1"># &lt;--- if using Verizon Federation</span>
+
+<span class="n">demo_fabric_client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> 
+                              <span class="n">host</span><span class="o">=</span><span class="n">local_connected_fed</span><span class="p">,</span>
+                              <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                              <span class="n">email</span><span class="o">=</span><span class="n">demo_email</span><span class="p">,</span>
+                              <span class="n">password</span><span class="o">=</span><span class="n">demo_password</span><span class="p">,</span>
+                              <span class="n">geofabric</span><span class="o">=</span><span class="n">new_geofabric</span>
+                             <span class="p">)</span>  
+
+<span class="n">demo_tenant</span> <span class="o">=</span> <span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">tenant</span><span class="p">(</span><span class="n">email</span><span class="o">=</span><span class="n">demo_email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">demo_password</span><span class="p">)</span>
+
+<span class="n">demo_fabric</span> <span class="o">=</span> <span class="n">tenant</span><span class="o">.</span><span class="n">useFabric</span><span class="p">(</span><span class="n">new_geofabric</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CONNECTION SETUP  ------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tenant: </span><span class="si">{}</span><span class="s2">, geofabric: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">demo_email</span><span class="p">,</span> <span class="n">new_geofabric</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-m-check-the-datacenters-for-the-new-geofabric">
+<h2>Step 07-M - Check the Datacenters for the new geofabric<a class="headerlink" href="#step-07-m-check-the-datacenters-for-the-new-geofabric" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have connected as our new user, lets see what datacenters we have access to in our geofabric</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">demo_fabric</span><span class="o">.</span><span class="n">dclist</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Tip try changing details to = &quot;True&quot; to see more details..</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-07-n-let-s-test-our-new-fabric-with-a-collection">
+<h2>Step 07-N - Let’s test our new fabric with a collection<a class="headerlink" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n1-first-create-the-collection">
+<h1>Step 07-N1 - First create the collection<a class="headerlink" href="#step-07-n1-first-create-the-collection" title="Permalink to this headline">¶</a></h1>
+<p>You will likely remember this step from an earlier tutorial. First we define a collection name, then we check to see if it exists. If it doesnt exist then we will create it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;employees&#39;</span>
+
+<span class="c1"># Create a new collection if it does not exist</span>
+<span class="k">if</span> <span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection exists&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">collection_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Created!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n2-let-s-add-some-records">
+<h1>Step 07-N2 - Let’s add some records<a class="headerlink" href="#step-07-n2-let-s-add-some-records" title="Permalink to this headline">¶</a></h1>
+<p>A collection is great, but lets add some records to it..</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Kirk&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Solo&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">insert_document</span><span class="p">(</span><span class="n">collection_name</span><span class="o">=</span><span class="s1">&#39;employees&#39;</span><span class="p">,</span> <span class="n">document</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n3-let-s-build-a-restql-called-getrecords">
+<h1>Step 07-N3 - Let’s build a RESTQL called “getRecords”<a class="headerlink" href="#step-07-n3-let-s-build-a-restql-called-getrecords" title="Permalink to this headline">¶</a></h1>
+<p>You likely recall how to create a RESTQL from the earlier tutorial. So lets set up a basic query to show the records in a collection</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># crete restql</span>
+<span class="n">get_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;getRecords&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;FOR doc IN </span><span class="si">%s</span><span class="s2"> RETURN doc&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+
+<span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">get_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n3-let-s-check-our-restql-is-saved">
+<h1>Step 07-N3 - Let’s check our RESTQL is saved<a class="headerlink" href="#step-07-n3-let-s-check-our-restql-is-saved" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all restql</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">get_restqls</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n4-let-s-execute-the-restql-getrecords">
+<h1>Step 07-N4 - Let’s execute the RESTQL “getRecords”<a class="headerlink" href="#step-07-n4-let-s-execute-the-restql-getrecords" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute restql without bindVars</span>
+<span class="n">test_response</span> <span class="o">=</span> <span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">execute_restql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">test_response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="step-07-o-ok-time-to-tidy-up">
+<h1>Step 07-O - OK, time to tidy up!<a class="headerlink" href="#step-07-o-ok-time-to-tidy-up" title="Permalink to this headline">¶</a></h1>
+<p>That was great!, now lets tidy up by removing our fabric, the new user, and the collection we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete restql</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">demo_fabric_client</span><span class="o">.</span><span class="n">delete_restql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#delete new user</span>
+<span class="n">tenant</span><span class="o">.</span><span class="n">delete_user</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;johndoe&#39;</span><span class="p">)</span>
+
+<span class="c1"># delete the fabric</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first connect to the _system fabric</span>
+
+<span class="n">sys_fabric</span> <span class="o">=</span> <span class="n">tenant</span><span class="o">.</span><span class="n">useFabric</span><span class="p">(</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+
+<span class="c1"># now delete the demo geo fabric we created earlier</span>
+<span class="n">sys_fabric</span><span class="o">.</span><span class="n">delete_fabric</span><span class="p">(</span><span class="s1">&#39;demofabric&#39;</span><span class="p">)</span>
+<span class="c1">#print(response) </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="section-completed">
+<h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations!, another tutorial completed.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

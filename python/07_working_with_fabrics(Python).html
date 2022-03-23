@@ -308,129 +308,122 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workbook 07 - Working with Fabrics
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-a-import-libraries-to-workbook">
+   Step 07-A - Import Libraries to Workbook
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-a-import-libraries-to-workbook">
-     Step 07-A - Import Libraries to Workbook
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-b-create-and-define-login-details">
+   Step 07-B - Create and Define Login details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-c-connect-to-gdn-as-admin">
+   Step 07-C - Connect to GDN as Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-d-list-all-fabrics-accessable-by-admin">
+   Step 07-D - List all Fabrics accessable by Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-e-list-all-details-of-datacenters">
+   Step 07-E - List all details of Datacenters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-f-create-a-new-user-called-johndoe">
+   Step 07-F - Create a new user called “johndoe”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-g-list-details-of-the-new-user">
+   Step 07-G - List details of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-h-list-permissions-of-the-new-user">
+   Step 07-H - List permissions of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-i-create-a-new-fabric">
+   Step 07-I - Create a new Fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-j-check-permissions-of-new-user-on-new-fabric">
+   Step 07-J - Check permissions of new user on new fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-read-write">
+   Step 07-K - Change permissions of new user to “read/write”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
+   Step 07-K - Change permissions of new user to “none” for the “_system” fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-l-check-permissions-of-new-user-after-changes">
+   Step 07-L - Check permissions of new user after changes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+   Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-m-check-the-datacenters-for-the-new-geofabric">
+   Step 07-M - Check the Datacenters for the new geofabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection">
+   Step 07-N - Let’s test our new fabric with a collection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n1-first-create-the-collection">
+     Step 07-N1 - First create the collection
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-b-create-and-define-login-details">
-     Step 07-B - Create and Define Login details
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n2-let-s-add-some-records">
+     Step 07-N2 - Let’s add some records
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-c-connect-to-gdn-as-admin">
-     Step 07-C - Connect to GDN as Admin
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n3-let-s-build-a-restql-called-getrecords">
+     Step 07-N3 - Let’s build a RESTQL called “getRecords”
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-d-list-all-fabrics-accessable-by-admin">
-     Step 07-D - List all Fabrics accessable by Admin
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n4-let-s-check-our-restql-is-saved">
+     Step 07-N4 - Let’s check our RESTQL is saved
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-e-list-all-details-of-datacenters">
-     Step 07-E - List all details of Datacenters
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-f-create-a-new-user-called-johndoe">
-     Step 07-F - Create a new user called “johndoe”
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-g-list-details-of-the-new-user">
-     Step 07-G - List details of the new user
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-h-list-permissions-of-the-new-user">
-     Step 07-H - List permissions of the new user
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-i-create-a-new-fabric">
-     Step 07-I - Create a new Fabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-j-check-permissions-of-new-user-on-new-fabric">
-     Step 07-J - Check permissions of new user on new fabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-read-write">
-     Step 07-K - Change permissions of new user to “read/write”
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
-     Step 07-K - Change permissions of new user to “none” for the “_system” fabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-l-check-permissions-of-new-user-after-changes">
-     Step 07-L - Check permissions of new user after changes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
-     Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-m-check-the-datacenters-for-the-new-geofabric">
-     Step 07-M - Check the Datacenters for the new geofabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection">
-     Step 07-N - Let’s test our new fabric with a collection
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n5-let-s-execute-the-restql-getrecords">
+     Step 07-N5 - Let’s execute the RESTQL “getRecords”
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n1-first-create-the-collection">
-   Step 07-N1 - First create the collection
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-o-time-to-tidy-up">
+   Step 07-O - Time to tidy up!
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n2-let-s-add-some-records">
-   Step 07-N2 - Let’s add some records
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n3-let-s-build-a-restql-called-getrecords">
-   Step 07-N3 - Let’s build a RESTQL called “getRecords”
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n3-let-s-check-our-restql-is-saved">
-   Step 07-N3 - Let’s check our RESTQL is saved
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n4-let-s-execute-the-restql-getrecords">
-   Step 07-N4 - Let’s execute the RESTQL “getRecords”
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-o-ok-time-to-tidy-up">
-   Step 07-O - OK, time to tidy up!
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-completed">
-     Section Completed!
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -452,129 +445,122 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Workbook 07 - Working with Fabrics
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-a-import-libraries-to-workbook">
+   Step 07-A - Import Libraries to Workbook
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-a-import-libraries-to-workbook">
-     Step 07-A - Import Libraries to Workbook
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-b-create-and-define-login-details">
+   Step 07-B - Create and Define Login details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-c-connect-to-gdn-as-admin">
+   Step 07-C - Connect to GDN as Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-d-list-all-fabrics-accessable-by-admin">
+   Step 07-D - List all Fabrics accessable by Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-e-list-all-details-of-datacenters">
+   Step 07-E - List all details of Datacenters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-f-create-a-new-user-called-johndoe">
+   Step 07-F - Create a new user called “johndoe”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-g-list-details-of-the-new-user">
+   Step 07-G - List details of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-h-list-permissions-of-the-new-user">
+   Step 07-H - List permissions of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-i-create-a-new-fabric">
+   Step 07-I - Create a new Fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-j-check-permissions-of-new-user-on-new-fabric">
+   Step 07-J - Check permissions of new user on new fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-read-write">
+   Step 07-K - Change permissions of new user to “read/write”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
+   Step 07-K - Change permissions of new user to “none” for the “_system” fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-l-check-permissions-of-new-user-after-changes">
+   Step 07-L - Check permissions of new user after changes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+   Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-m-check-the-datacenters-for-the-new-geofabric">
+   Step 07-M - Check the Datacenters for the new geofabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection">
+   Step 07-N - Let’s test our new fabric with a collection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n1-first-create-the-collection">
+     Step 07-N1 - First create the collection
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-b-create-and-define-login-details">
-     Step 07-B - Create and Define Login details
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n2-let-s-add-some-records">
+     Step 07-N2 - Let’s add some records
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-c-connect-to-gdn-as-admin">
-     Step 07-C - Connect to GDN as Admin
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n3-let-s-build-a-restql-called-getrecords">
+     Step 07-N3 - Let’s build a RESTQL called “getRecords”
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-d-list-all-fabrics-accessable-by-admin">
-     Step 07-D - List all Fabrics accessable by Admin
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n4-let-s-check-our-restql-is-saved">
+     Step 07-N4 - Let’s check our RESTQL is saved
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-e-list-all-details-of-datacenters">
-     Step 07-E - List all details of Datacenters
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-f-create-a-new-user-called-johndoe">
-     Step 07-F - Create a new user called “johndoe”
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-g-list-details-of-the-new-user">
-     Step 07-G - List details of the new user
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-h-list-permissions-of-the-new-user">
-     Step 07-H - List permissions of the new user
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-i-create-a-new-fabric">
-     Step 07-I - Create a new Fabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-j-check-permissions-of-new-user-on-new-fabric">
-     Step 07-J - Check permissions of new user on new fabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-read-write">
-     Step 07-K - Change permissions of new user to “read/write”
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-k-change-permissions-of-new-user-to-none-for-the-system-fabric">
-     Step 07-K - Change permissions of new user to “none” for the “_system” fabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-l-check-permissions-of-new-user-after-changes">
-     Step 07-L - Check permissions of new user after changes
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-l-connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
-     Step 07-L - Connect to GDN as the new user “JohnDoe” on the new GeoFabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-m-check-the-datacenters-for-the-new-geofabric">
-     Step 07-M - Check the Datacenters for the new geofabric
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection">
-     Step 07-N - Let’s test our new fabric with a collection
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-07-n5-let-s-execute-the-restql-getrecords">
+     Step 07-N5 - Let’s execute the RESTQL “getRecords”
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n1-first-create-the-collection">
-   Step 07-N1 - First create the collection
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-07-o-time-to-tidy-up">
+   Step 07-O - Time to tidy up!
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n2-let-s-add-some-records">
-   Step 07-N2 - Let’s add some records
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n3-let-s-build-a-restql-called-getrecords">
-   Step 07-N3 - Let’s build a RESTQL called “getRecords”
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n3-let-s-check-our-restql-is-saved">
-   Step 07-N3 - Let’s check our RESTQL is saved
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-n4-let-s-execute-the-restql-getrecords">
-   Step 07-N4 - Let’s execute the RESTQL “getRecords”
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-07-o-ok-time-to-tidy-up">
-   Step 07-O - OK, time to tidy up!
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#section-completed">
-     Section Completed!
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -841,10 +827,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="step-07-n-let-s-test-our-new-fabric-with-a-collection">
 <h2>Step 07-N - Let’s test our new fabric with a collection<a class="headerlink" href="#step-07-n-let-s-test-our-new-fabric-with-a-collection" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n1-first-create-the-collection">
-<h1>Step 07-N1 - First create the collection<a class="headerlink" href="#step-07-n1-first-create-the-collection" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-07-n1-first-create-the-collection">
+<h3>Step 07-N1 - First create the collection<a class="headerlink" href="#step-07-n1-first-create-the-collection" title="Permalink to this headline">¶</a></h3>
 <p>You will likely remember this step from an earlier tutorial. First we define a collection name, then we check to see if it exists. If it doesnt exist then we will create it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -861,8 +845,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n2-let-s-add-some-records">
-<h1>Step 07-N2 - Let’s add some records<a class="headerlink" href="#step-07-n2-let-s-add-some-records" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-07-n2-let-s-add-some-records">
+<h3>Step 07-N2 - Let’s add some records<a class="headerlink" href="#step-07-n2-let-s-add-some-records" title="Permalink to this headline">¶</a></h3>
 <p>A collection is great, but lets add some records to it..</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -880,8 +864,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n3-let-s-build-a-restql-called-getrecords">
-<h1>Step 07-N3 - Let’s build a RESTQL called “getRecords”<a class="headerlink" href="#step-07-n3-let-s-build-a-restql-called-getrecords" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-07-n3-let-s-build-a-restql-called-getrecords">
+<h3>Step 07-N3 - Let’s build a RESTQL called “getRecords”<a class="headerlink" href="#step-07-n3-let-s-build-a-restql-called-getrecords" title="Permalink to this headline">¶</a></h3>
 <p>You likely recall how to create a RESTQL from the earlier tutorial. So lets set up a basic query to show the records in a collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -894,8 +878,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n3-let-s-check-our-restql-is-saved">
-<h1>Step 07-N3 - Let’s check our RESTQL is saved<a class="headerlink" href="#step-07-n3-let-s-check-our-restql-is-saved" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-07-n4-let-s-check-our-restql-is-saved">
+<h3>Step 07-N4 - Let’s check our RESTQL is saved<a class="headerlink" href="#step-07-n4-let-s-check-our-restql-is-saved" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all restql</span>
@@ -907,8 +891,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="step-07-n4-let-s-execute-the-restql-getrecords">
-<h1>Step 07-N4 - Let’s execute the RESTQL “getRecords”<a class="headerlink" href="#step-07-n4-let-s-execute-the-restql-getrecords" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="step-07-n5-let-s-execute-the-restql-getrecords">
+<h3>Step 07-N5 - Let’s execute the RESTQL “getRecords”<a class="headerlink" href="#step-07-n5-let-s-execute-the-restql-getrecords" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute restql without bindVars</span>
@@ -920,8 +904,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="step-07-o-ok-time-to-tidy-up">
-<h1>Step 07-O - OK, time to tidy up!<a class="headerlink" href="#step-07-o-ok-time-to-tidy-up" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="step-07-o-time-to-tidy-up">
+<h2>Step 07-O - Time to tidy up!<a class="headerlink" href="#step-07-o-time-to-tidy-up" title="Permalink to this headline">¶</a></h2>
 <p>That was great!, now lets tidy up by removing our fabric, the new user, and the collection we created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -952,6 +937,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">sys_fabric</span><span class="o">.</span><span class="n">delete_fabric</span><span class="p">(</span><span class="s1">&#39;demofabric&#39;</span><span class="p">)</span>
 <span class="c1">#print(response) </span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>

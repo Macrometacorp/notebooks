@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyXX - Building an Address Book App &#8212; GDN - XBook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-moc-blue.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GDN - XBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Welcome to your Macrometa GDN - XBook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Beginner
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="beginner_toc.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_connect_gdn%28Python%29.html">
+     Py01 - Connecting to GDN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_key_value_store%28Python%29.html">
+     Py02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_docs_store%28Python%29.html">
+     Py03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_graphs%28Python%29.html">
+     Py04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_graph_traversals%28Python%29.html">
+     Py05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_building_restql_apis%28Python%29.html">
+     Py06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_working_with_fabrics%28Python%29.html">
+     Py07 - Working with Fabrics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../javascript/beginner_toc.html">
+   Javascript
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/01_connect_gdn%28javascript%29.html">
+     JS01 - Connecting to GDN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/02_key_value_store%28javascript%29.html">
+     JS02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/03_docs_store%28javascript%29.html">
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/04_graphs%28javascript%29.html">
+     JS04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/05_graph_traversals%28javascript%29.html">
+     JS05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/06_building_restql_apis%28javascript%29.html">
+     JS06 - Building RESTQL APIs
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../advance_tutorials.html">
+   Advanced Tutorials TBD
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/python/XX_address_book(Python).ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Macrometacorp/docs-xbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/Macrometacorp/docs-xbook/issues/new?title=Issue%20on%20page%20%2Fpython/XX_address_book(Python).html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-xbook/blob/main/python/XX_address_book(Python).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-a-connect-to-gdn">
+   Step XX-A - Connect to GDN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-b-create-a-collection">
+   Step XX-B - Create a Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-c-add-some-data-to-the-collection">
+   Step XX-C - Add some data to the Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-d-lests-check-the-collection">
+   Step XX-D - Lests Check the collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-e-create-our-apps-restql-crud-apis">
+   Step XX-E - Create our Apps RESTQL CRUD APIs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-xx-e1-defining-our-queries">
+     Step XX-E1 - Defining our Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-xx-e2-creating-the-restql-apis">
+     Step XX-E2 - Creating the RESTQL APIs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-f-using-the-nice-front-end-we-built-for-you">
+   Step XX-F - Using the nice Front End we built for you
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>PyXX - Building an Address Book App</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-a-connect-to-gdn">
+   Step XX-A - Connect to GDN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-b-create-a-collection">
+   Step XX-B - Create a Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-c-add-some-data-to-the-collection">
+   Step XX-C - Add some data to the Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-d-lests-check-the-collection">
+   Step XX-D - Lests Check the collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-e-create-our-apps-restql-crud-apis">
+   Step XX-E - Create our Apps RESTQL CRUD APIs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-xx-e1-defining-our-queries">
+     Step XX-E1 - Defining our Queries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-xx-e2-creating-the-restql-apis">
+     Step XX-E2 - Creating the RESTQL APIs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-xx-f-using-the-nice-front-end-we-built-for-you">
+   Step XX-F - Using the nice Front End we built for you
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pyxx-building-an-address-book-app">
+<h1>PyXX - Building an Address Book App<a class="headerlink" href="#pyxx-building-an-address-book-app" title="Permalink to this headline">¶</a></h1>
+<p>Let’s take 5 minutes to create a stateful-serverless backend for a simple Address Book. It’s going to run across the Verizon Federation distributed with local read-write latencies around ?ms.</p>
+<p>We are going to walk through 4 steps:</p>
+<ol class="simple">
+<li><p>Create a collection and add some data to it.</p></li>
+<li><p>Query that data.</p></li>
+<li><p>Save the query (A saved query is called a Query Worker).</p></li>
+<li><p>Execute the Query Worker!</p></li>
+</ol>
+<p>First things first, if you don’t already have an account go create one and mosey on back.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this Cell so that you can output any C8QL results in JSON Format!</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-a-connect-to-gdn">
+<h2>Step XX-A - Connect to GDN<a class="headerlink" href="#step-xx-a-connect-to-gdn" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
+
+<span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;verizon.5g.macrometa.io&quot;</span> <span class="c1"># &lt;--- Use this fed_url if you are working with Verizon 5G Federation</span>
+<span class="c1">#fed_url = &quot;gdn.paas.macrometa.io&quot; # &lt;--- Use this fed_url if you are working on Macrometa Global PaaS</span>
+
+<span class="n">email</span><span class="o">=</span><span class="s1">&#39;alan@macrometa.com&#39;</span>
+<span class="n">password</span><span class="o">=</span><span class="s1">&#39;AlansDemo1!&#39;</span>
+
+<span class="c1">#email=&#39;email&#39;</span>
+<span class="c1">#password=&#39;password&#39;</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">fed_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                        <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                        <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-b-create-a-collection">
+<h2>Step XX-B - Create a Collection<a class="headerlink" href="#step-xx-b-create-a-collection" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by creating a Collection</p>
+<p>Note: The collection addresses that you just created is now distributed to every location in the fabric!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;addresses&#39;</span>
+
+<span class="c1"># Create a new collection if it does not exist</span>
+<span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection exists&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">create_collection</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">collection_name</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Created!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-c-add-some-data-to-the-collection">
+<h2>Step XX-C - Add some data to the Collection<a class="headerlink" href="#step-xx-c-add-some-data-to-the-collection" title="Permalink to this headline">¶</a></h2>
+<p>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span> 
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Joseph&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Smith&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;jsmith2020@gmail.com&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Astrid&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Young&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;missmoneybags@young.co.sg&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Boris&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Balastikov&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;bb@refundit.com&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Sherlock&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Jones&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;pd@elementary.org&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Alpha&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Simpson&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;alf@simpsonrealtech.com&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Jose&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Garcia&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;j.garcia@nebulus.com&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Lee&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Ki&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;Lee.ki@symbol.com&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Mark&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Goldfine&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;mark@tidalwave.com&quot;</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="s2">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;Ramesh&quot;</span><span class="p">,</span> <span class="s2">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;Sriram&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;ramesh@lifely.com&quot;</span> <span class="p">}</span> 
+<span class="p">]</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">insert_document</span><span class="p">(</span><span class="n">collection_name</span><span class="o">=</span><span class="s1">&#39;addresses&#39;</span><span class="p">,</span> <span class="n">document</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-d-lests-check-the-collection">
+<h2>Step XX-D - Lests Check the collection<a class="headerlink" href="#step-xx-d-lests-check-the-collection" title="Permalink to this headline">¶</a></h2>
+<p>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;FOR address IN addresses RETURN address&#39;</span><span class="p">)</span>
+
+<span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-e-create-our-apps-restql-crud-apis">
+<h2>Step XX-E - Create our Apps RESTQL CRUD APIs<a class="headerlink" href="#step-xx-e-create-our-apps-restql-crud-apis" title="Permalink to this headline">¶</a></h2>
+<p>In this section we are going to define five RESTQL Query APIs
+…</p>
+<div class="section" id="step-xx-e1-defining-our-queries">
+<h3>Step XX-E1 - Defining our Queries<a class="headerlink" href="#step-xx-e1-defining-our-queries" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>getAddresses</p></li>
+<li><p>saveContact</p></li>
+<li><p>readContact</p></li>
+<li><p>removeContact</p></li>
+<li><p>updateContact</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
+<span class="n">value2</span> <span class="o">=</span> <span class="s2">&quot;UPDATE @_key WITH {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
+<span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
+
+<span class="n">getAddresses</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;getAddresses&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;FOR doc IN </span><span class="si">%s</span><span class="s2"> RETURN doc&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">getAddresses</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+
+<span class="n">saveContact</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;saveContact&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">}}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">saveContact</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+
+<span class="n">readContact</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;readContact&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;FOR entry IN </span><span class="si">%s</span><span class="s2"> RETURN entry&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">readContact</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+
+<span class="n">deleteContact</span><span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;deleteContact&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;REMOVE @_key IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span><span class="p">}}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">deleteContact</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>  
+
+<span class="n">updateContact</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;updateContact&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">:</span> <span class="n">parameter</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value2</span><span class="p">}}</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">updateContact</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-e2-creating-the-restql-apis">
+<h3>Step XX-E2 - Creating the RESTQL APIs<a class="headerlink" href="#step-xx-e2-creating-the-restql-apis" title="Permalink to this headline">¶</a></h3>
+<p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(&quot;\n ------- CREATE RESTQLs  ------&quot;)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">getAddresses</span><span class="p">)</span> 
+<span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">saveContact</span><span class="p">)</span>  
+<span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">readContact</span><span class="p">)</span>  
+<span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">deleteContact</span><span class="p">)</span>  
+<span class="n">client</span><span class="o">.</span><span class="n">create_restql</span><span class="p">(</span><span class="n">updateContact</span><span class="p">)</span>  
+  
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get_restqls</span><span class="p">(),</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="step-xx-f-using-the-nice-front-end-we-built-for-you">
+<h2>Step XX-F - Using the nice Front End we built for you<a class="headerlink" href="#step-xx-f-using-the-nice-front-end-we-built-for-you" title="Permalink to this headline">¶</a></h2>
+<p>Sweet, so now you have a full functional API for your app. We made a front-end for you to take your new backend for a spin.</p>
+<p>Follow this link and follow the instructions in the GitHub Repo</p>
+<p><a class="reference external" href="https://github.com/Macrometacorp/tutorial-addressbook-restql">https://github.com/Macrometacorp/tutorial-addressbook-restql</a></p>
+<p>On your development machine, run the following commands in a console:</p>
+<ol class="simple">
+<li><p>git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:Macrometacorp/tutorial-addressbook-restql.git</p></li>
+<li><p>cd tutorial-addressbook-restql</p></li>
+<li><p>git fetch</p></li>
+<li><p>npm install</p></li>
+<li><p>npm run start</p></li>
+</ol>
+<p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://gdn.paas.macrometa.io">https://gdn.paas.macrometa.io</a></p>
+<p>Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password and the user will then be asked to select one region in the GUI.</p>
+<p>Deploy on GH Pages:</p>
+<p>npm run deploy</p>
+<p>fork</p>
+<p>enable github pages in repo settings</p>
+<p>run deploy</p>
+</div>
+<div class="section" id="section-completed">
+<h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
+<p>TBC…</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./python"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

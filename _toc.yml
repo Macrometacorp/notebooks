@@ -24,6 +24,6 @@ parts:
       - file: javascript/05_graph_traversals(javascript)
       - file: javascript/06_building_restql_apis(javascript)
 - caption: Advanced
-  - file: XX_address_book(Python)
   chapters:
   - file: advance_tutorials
+  - file: XX_address_book(Python)

@@ -593,8 +593,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 07-B - Create and Define Login details<a class="headerlink" href="#step-07-b-create-and-define-login-details" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;verizon.5g.macrometa.io&quot;</span> <span class="c1"># &lt;--- Use this fed_url if you are working with Verizon 5G Federation</span>
-<span class="c1">#fed_url = &quot;gdn.paas.macrometa.io&quot; # &lt;--- Use this fed_url if you are working on Macrometa Global PaaS</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
 <span class="n">admin_email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span>
 <span class="n">admin_password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
 <span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
@@ -704,9 +703,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="n">mylocal_dc_name</span> <span class="o">=</span> <span class="n">mylocal_dc_response</span><span class="p">[</span><span class="s1">&#39;_key&#39;</span><span class="p">]</span> <span class="c1">#&lt;--- Selects the name of that datacenter</span>
 
-<span class="c1">#dcl = [mylocal_dc_name, &#39;gdn-ap-south&#39;, &#39;gdn-ap-northeast&#39;] #&lt;--- Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span>
-
-<span class="n">dcl</span> <span class="o">=</span> <span class="p">[</span><span class="n">mylocal_dc_name</span><span class="p">,</span> <span class="s1">&#39;verizon-us-denver&#39;</span><span class="p">,</span> <span class="s1">&#39;verizon-us-awssanjose&#39;</span><span class="p">]</span> <span class="c1">#&lt;--- Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span>
+<span class="n">dcl</span> <span class="o">=</span> <span class="p">[</span><span class="n">mylocal_dc_name</span><span class="p">,</span> <span class="s1">&#39;gdn-us-west&#39;</span><span class="p">,</span> <span class="s1">&#39;gdn-eu-west&#39;</span><span class="p">]</span> <span class="c1">#&lt;--- Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span>
 
 <span class="k">if</span> <span class="ow">not</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">has_fabric</span><span class="p">(</span><span class="s1">&#39;demofabric&#39;</span><span class="p">):</span> <span class="c1">#&lt;--- checks the geofabric doesnt already exist</span>
     <span class="n">demo_fabric</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">create_fabric</span><span class="p">(</span><span class="s1">&#39;demofabric&#39;</span><span class="p">,</span> <span class="n">dclist</span><span class="o">=</span><span class="n">dcl</span><span class="p">)</span> <span class="c1">#&lt;--- create a geofabric</span>
@@ -789,9 +786,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">demo_password</span> <span class="o">=</span> <span class="s1">&#39;first_password&#39;</span>
 <span class="n">new_geofabric</span> <span class="o">=</span> <span class="s1">&#39;demofabric&#39;</span>
 
-<span class="c1">#local_connected_fed = mylocal_dc_name + &#39;.paas.macrometa.io&#39; # &lt;--- if using Macrometa Global PaaS</span>
-
-<span class="n">local_connected_fed</span> <span class="o">=</span> <span class="n">mylocal_dc_name</span> <span class="o">+</span> <span class="s1">&#39;.5g.macrometa.io&#39;</span> <span class="c1"># &lt;--- if using Verizon Federation</span>
+<span class="n">local_connected_fed</span> <span class="o">=</span> <span class="n">mylocal_dc_name</span> <span class="o">+</span> <span class="s1">&#39;.paas.macrometa.io&#39;</span> <span class="c1"># using Macrometa Global PaaS</span>
 
 <span class="n">demo_fabric_client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> 
                               <span class="n">host</span><span class="o">=</span><span class="n">local_connected_fed</span><span class="p">,</span>

@@ -431,7 +431,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pyxx-building-an-address-book-app">
 <h1>PyXX - Building an Address Book App<a class="headerlink" href="#pyxx-building-an-address-book-app" title="Permalink to this headline">¶</a></h1>
-<p>Let’s take 5 minutes to create a stateful-serverless backend for a simple Address Book. It’s going to run across the Verizon Federation distributed with local read-write latencies around ?ms.</p>
+<p>Let’s take 5 minutes to create a stateful-serverless backend for a simple Address Book. It’s going to run across the Macrometa Global PaaS Federation distributed with local read-write latencies around ?ms.</p>
 <p>We are going to walk through 4 steps:</p>
 <ol class="simple">
 <li><p>Create a collection and add some data to it.</p></li>
@@ -454,8 +454,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 
-<span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;verizon.5g.macrometa.io&quot;</span> <span class="c1"># &lt;--- Use this fed_url if you are working with Verizon 5G Federation</span>
-<span class="c1">#fed_url = &quot;gdn.paas.macrometa.io&quot; # &lt;--- Use this fed_url if you are working on Macrometa Global PaaS</span>
+<span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span> <span class="c1"># &lt;--- Use this fed_url if you are working on Macrometa Global PaaS</span>
 
 <span class="n">email</span><span class="o">=</span><span class="s1">&#39;alan@macrometa.com&#39;</span>
 <span class="n">password</span><span class="o">=</span><span class="s1">&#39;AlansDemo1!&#39;</span>
@@ -705,7 +704,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>npm install</p></li>
 <li><p>npm run start</p></li>
 </ol>
-<p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://verizon.5g.paas.macrometa.io">https://verizon.5g.paas.macrometa.io</a></p>
+<p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://gdn.paas.macrometa.io">https://gdn.paas.macrometa.io</a></p>
 <p>Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password and the user will then be asked to select one region in the GUI.</p>
 <p>Deploy on GH Pages:</p>
 <p>npm run deploy</p>

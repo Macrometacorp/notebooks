@@ -513,6 +513,57 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+    {
+        &quot;firstName&quot;: &quot;Joseph&quot;,
+        &quot;lastName&quot;: &quot;Smith&quot;,
+        &quot;email&quot;: &quot;jsmith2020@gmail.com&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Astrid&quot;,
+        &quot;lastName&quot;: &quot;Young&quot;,
+        &quot;email&quot;: &quot;missmoneybags@young.co.sg&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Boris&quot;,
+        &quot;lastName&quot;: &quot;Balastikov&quot;,
+        &quot;email&quot;: &quot;bb@refundit.com&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Sherlock&quot;,
+        &quot;lastName&quot;: &quot;Jones&quot;,
+        &quot;email&quot;: &quot;pd@elementary.org&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Alpha&quot;,
+        &quot;lastName&quot;: &quot;Simpson&quot;,
+        &quot;email&quot;: &quot;alf@simpsonrealtech.com&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Jose&quot;,
+        &quot;lastName&quot;: &quot;Garcia&quot;,
+        &quot;email&quot;: &quot;j.garcia@nebulus.com&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Lee&quot;,
+        &quot;lastName&quot;: &quot;Ki&quot;,
+        &quot;email&quot;: &quot;Lee.ki@symbol.com&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Mark&quot;,
+        &quot;lastName&quot;: &quot;Goldfine&quot;,
+        &quot;email&quot;: &quot;mark@tidalwave.com&quot;
+    },
+    {
+        &quot;firstName&quot;: &quot;Ramesh&quot;,
+        &quot;lastName&quot;: &quot;Sriram&quot;,
+        &quot;email&quot;: &quot;ramesh@lifely.com&quot;
+    }
+]
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="step-xx-d-lests-check-the-collection">
@@ -525,6 +576,60 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
+    {
+        &quot;_id&quot;: &quot;addresses/250249882&quot;,
+        &quot;_key&quot;: &quot;250249882&quot;,
+        &quot;_rev&quot;: &quot;_d5zxCD---L&quot;,
+        &quot;email&quot;: &quot;alf@simpsonrealtech.com&quot;,
+        &quot;firstName&quot;: &quot;Alpha&quot;,
+        &quot;lastName&quot;: &quot;Simpson&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;addresses/250249883&quot;,
+        &quot;_key&quot;: &quot;250249883&quot;,
+        &quot;_rev&quot;: &quot;_d5zxCD---O&quot;,
+        &quot;email&quot;: &quot;j.garcia@nebulus.com&quot;,
+        &quot;firstName&quot;: &quot;Jose&quot;,
+        &quot;lastName&quot;: &quot;Garcia&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;addresses/250249884&quot;,
+        &quot;_key&quot;: &quot;250249884&quot;,
+        &quot;_rev&quot;: &quot;_d5zxCD---R&quot;,
+        &quot;email&quot;: &quot;Lee.ki@symbol.com&quot;,
+        &quot;firstName&quot;: &quot;Lee&quot;,
+        &quot;lastName&quot;: &quot;Ki&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;addresses/250249885&quot;,
+        &quot;_key&quot;: &quot;250249885&quot;,
+        &quot;_rev&quot;: &quot;_d5zxCD---U&quot;,
+        &quot;email&quot;: &quot;mark@tidalwave.com&quot;,
+        &quot;firstName&quot;: &quot;Mark&quot;,
+        &quot;lastName&quot;: &quot;Goldfine&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;addresses/250249886&quot;,
+        &quot;_key&quot;: &quot;250249886&quot;,
+        &quot;_rev&quot;: &quot;_d5zxCD---X&quot;,
+        &quot;email&quot;: &quot;ramesh@lifely.com&quot;,
+        &quot;firstName&quot;: &quot;Ramesh&quot;,
+        &quot;lastName&quot;: &quot;Sriram&quot;
+    },
+    {
+        &quot;_id&quot;: &quot;addresses/250266125&quot;,
+        &quot;_key&quot;: &quot;250266125&quot;,
+        &quot;_rev&quot;: &quot;_d50BOrW--_&quot;,
+        &quot;email&quot;: &quot;jsmith2020@gmail.com&quot;,
+        &quot;firstName&quot;: &quot;Joseph&quot;,
+        &quot;lastName&quot;: &quot;Smith&quot;
+    }
+]
 </pre></div>
 </div>
 </div>
@@ -600,7 +705,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>npm install</p></li>
 <li><p>npm run start</p></li>
 </ol>
-<p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://gdn.paas.macrometa.io">https://gdn.paas.macrometa.io</a></p>
+<p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://verizon.5g.paas.macrometa.io">https://verizon.5g.paas.macrometa.io</a></p>
 <p>Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password and the user will then be asked to select one region in the GUI.</p>
 <p>Deploy on GH Pages:</p>
 <p>npm run deploy</p>

@@ -15,6 +15,7 @@ parts:
        - file: python/05_graph_traversals(Python)
        - file: python/06_building_restql_apis(Python)
        - file: python/07_working_with_fabrics(Python)
+       - file: python/XX_address_book(Python)
   - file: javascript/beginner_toc
     sections:
       - file: javascript/01_connect_gdn(javascript)
@@ -26,4 +27,4 @@ parts:
 - caption: Advanced
   chapters:
   - file: advance_tutorials
-  - file: XX_address_book(Python)
+  

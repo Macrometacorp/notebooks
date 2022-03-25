@@ -23,6 +23,9 @@ parts:
     - file: javascript/04_graphs(javascript)
     - file: javascript/05_graph_traversals(javascript)
     - file: javascript/06_building_restql_apis(javascript)
+  - file: cli/beginner_toc
+    sections:
+    - file: cli/05_graph_traversals(CLI)
 - caption: Advanced
   chapters:
   - file: advanced_python/advanced_toc

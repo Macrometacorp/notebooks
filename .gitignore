@@ -4,3 +4,4 @@ node_modules
 gdnsl.yaml
 .idea
 venv/
+.DS_Store/

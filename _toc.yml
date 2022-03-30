@@ -26,6 +26,7 @@ parts:
   - file: cli/beginner_toc
     sections:
       - file: cli/01_connect_gdn(CLI)
+      - file: cli/key_value_store(CLI)
       - file: cli/05_graph_traversals(CLI)
 - caption: Advanced
   chapters:

@@ -701,7 +701,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kd">let</span> <span class="nx">insert_data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;insertRecord&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;abc&#39;} IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="sb">`INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;key101&#39;} IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
     <span class="nx">parameter</span><span class="o">:</span> <span class="nx">parameter</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
@@ -715,14 +715,14 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kd">let</span> <span class="nx">update_data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;updateRecord&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`UPDATE &#39;abc&#39; WITH { \&quot;lastname\&quot;: \&quot;cena\&quot; } IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="sb">`UPDATE &#39;key101&#39; WITH { \&quot;lastname\&quot;: \&quot;cena\&quot; } IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
 
 <span class="kd">let</span> <span class="nx">delete_data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;deleteRecord&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`REMOVE &#39;abc&#39; IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="sb">`REMOVE &#39;key101&#39; IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
 

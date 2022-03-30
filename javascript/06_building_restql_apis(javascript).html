@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="JS07 - Working with Fabrics" href="07_working_with_fabrics%28javascript%29.html" />
+    <link rel="next" title="CLI" href="../cli/beginner_toc.html" />
     <link rel="prev" title="JS05 - Graph Traversals" href="05_graph_traversals%28javascript%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -191,11 +191,6 @@ const thebe_selector_output = ".output, .cell_output"
      JS06 - Building RESTQL APIs
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="07_working_with_fabrics%28javascript%29.html">
-     JS07 - Working with Fabrics
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -208,6 +203,11 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/01_connect_gdn%28CLI%29.html">
+     CLI01 - Connecting to GDN Using the CLI
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../cli/05_graph_traversals%28CLI%29.html">
      CLI05 - Graph Traversals
@@ -701,7 +701,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kd">let</span> <span class="nx">insert_data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;insertRecord&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;key101&#39;} IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="sb">`INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;abc&#39;} IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
     <span class="nx">parameter</span><span class="o">:</span> <span class="nx">parameter</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
@@ -715,14 +715,14 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kd">let</span> <span class="nx">update_data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;updateRecord&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`UPDATE &#39;key101&#39; WITH { \&quot;lastname\&quot;: \&quot;cena\&quot; } IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="sb">`UPDATE &#39;abc&#39; WITH { \&quot;lastname\&quot;: \&quot;cena\&quot; } IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
 
 <span class="kd">let</span> <span class="nx">delete_data</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;deleteRecord&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`REMOVE &#39;key101&#39; IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+    <span class="nx">value</span><span class="o">:</span> <span class="sb">`REMOVE &#39;abc&#39; IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
   <span class="p">},</span>
 <span class="p">};</span>
 
@@ -1068,10 +1068,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">JS05 - Graph Traversals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="07_working_with_fabrics%28javascript%29.html" title="next page">
+    <a class='right-next' id="next-link" href="../cli/beginner_toc.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">JS07 - Working with Fabrics</p>
+        <p class="prev-next-title">CLI</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

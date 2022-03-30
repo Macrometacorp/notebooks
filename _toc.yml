@@ -8,24 +8,25 @@ parts:
   chapters:
   - file: python/beginner_toc
     sections:
-    - file: python/01_connect_gdn(Python)
-    - file: python/02_key_value_store(Python)
-    - file: python/03_docs_store(Python)
-    - file: python/04_graphs(Python)
-    - file: python/05_graph_traversals(Python)
-    - file: python/06_building_restql_apis(Python)
-    - file: python/07_working_with_fabrics(Python)
+      - file: python/01_connect_gdn(Python)
+      - file: python/02_key_value_store(Python)
+      - file: python/03_docs_store(Python)
+      - file: python/04_graphs(Python)
+      - file: python/05_graph_traversals(Python)
+      - file: python/06_building_restql_apis(Python)
+      - file: python/07_working_with_fabrics(Python)
   - file: javascript/beginner_toc
     sections:
-    - file: javascript/01_connect_gdn(javascript)
-    - file: javascript/02_key_value_store(javascript)
-    - file: javascript/03_docs_store(javascript)
-    - file: javascript/04_graphs(javascript)
-    - file: javascript/05_graph_traversals(javascript)
-    - file: javascript/06_building_restql_apis(javascript)
+      - file: javascript/01_connect_gdn(javascript)
+      - file: javascript/02_key_value_store(javascript)
+      - file: javascript/03_docs_store(javascript)
+      - file: javascript/04_graphs(javascript)
+      - file: javascript/05_graph_traversals(javascript)
+      - file: javascript/06_building_restql_apis(javascript)
   - file: cli/beginner_toc
     sections:
-    - file: cli/05_graph_traversals(CLI)
+      - file: cli/01_connect_gdn(CLI)
+      - file: cli/05_graph_traversals(CLI)
 - caption: Advanced
   chapters:
   - file: advanced_python/advanced_toc

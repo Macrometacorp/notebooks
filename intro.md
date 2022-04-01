@@ -38,7 +38,10 @@ If you need help you can join our community slack channel here
 
 Macrometa GDN is a first-of-its-kind Edge Cloud. It is a converged platform that includes a Multi-Model NoSQL database, pub/sub, event processing, and serverless global data platform for building geo-distributed and real-time applications.
 
+
 ![map](map.png)
+
+
 
 Macrometa’s Global Data Network (GDN) allows organizations to tier, cache, process, and serve data with a global P90 roundtrip response time of 50ms. With 175+ points of presence (PoPs) around the world, Macrometa brings data and consistency closer to users while maintaining a coordination-free architecture.
 

@@ -18,7 +18,7 @@ Hope you enjoy it!
 
 from, **the Macrometa Team**
 
-![smallocto](octo10.png)
+![smallocto](Octo10.png)
 
 ---
 

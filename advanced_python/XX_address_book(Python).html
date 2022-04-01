@@ -93,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Macrometa GDN - XBook
+   Macrometa GDN - XBook
   </a>
  </li>
 </ul>
@@ -188,11 +188,6 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/06_building_restql_apis%28javascript%29.html">
      JS06 - Building RESTQL APIs
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../javascript/07_working_with_fabrics%28javascript%29.html">
-     JS07 - Working with Fabrics
     </a>
    </li>
   </ul>
@@ -500,7 +495,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 
 <span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
-
 <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span>
 <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span>
 
@@ -533,7 +527,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="step-xx-c-add-some-data-to-the-collection">
 <h2>Step XX-C - Add some data to the Collection<a class="headerlink" href="#step-xx-c-add-some-data-to-the-collection" title="Permalink to this headline">¶</a></h2>
-<p>…</p>
+<p>ok, so rather than puting records in one at a time, here is a nice set of records in a doc that you can populate your new collection with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span> 
@@ -554,62 +548,11 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-    {
-        &quot;firstName&quot;: &quot;Joseph&quot;,
-        &quot;lastName&quot;: &quot;Smith&quot;,
-        &quot;email&quot;: &quot;jsmith2020@gmail.com&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Astrid&quot;,
-        &quot;lastName&quot;: &quot;Young&quot;,
-        &quot;email&quot;: &quot;missmoneybags@young.co.sg&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Boris&quot;,
-        &quot;lastName&quot;: &quot;Balastikov&quot;,
-        &quot;email&quot;: &quot;bb@refundit.com&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Sherlock&quot;,
-        &quot;lastName&quot;: &quot;Jones&quot;,
-        &quot;email&quot;: &quot;pd@elementary.org&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Alpha&quot;,
-        &quot;lastName&quot;: &quot;Simpson&quot;,
-        &quot;email&quot;: &quot;alf@simpsonrealtech.com&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Jose&quot;,
-        &quot;lastName&quot;: &quot;Garcia&quot;,
-        &quot;email&quot;: &quot;j.garcia@nebulus.com&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Lee&quot;,
-        &quot;lastName&quot;: &quot;Ki&quot;,
-        &quot;email&quot;: &quot;Lee.ki@symbol.com&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Mark&quot;,
-        &quot;lastName&quot;: &quot;Goldfine&quot;,
-        &quot;email&quot;: &quot;mark@tidalwave.com&quot;
-    },
-    {
-        &quot;firstName&quot;: &quot;Ramesh&quot;,
-        &quot;lastName&quot;: &quot;Sriram&quot;,
-        &quot;email&quot;: &quot;ramesh@lifely.com&quot;
-    }
-]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="step-xx-d-lests-check-the-collection">
 <h2>Step XX-D - Lests Check the collection<a class="headerlink" href="#step-xx-d-lests-check-the-collection" title="Permalink to this headline">¶</a></h2>
-<p>…</p>
+<p>We are just going to take a look at the collection to make sure we populated it with data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;FOR address IN addresses RETURN address&#39;</span><span class="p">)</span>
@@ -617,60 +560,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[
-    {
-        &quot;_id&quot;: &quot;addresses/250249882&quot;,
-        &quot;_key&quot;: &quot;250249882&quot;,
-        &quot;_rev&quot;: &quot;_d5zxCD---L&quot;,
-        &quot;email&quot;: &quot;alf@simpsonrealtech.com&quot;,
-        &quot;firstName&quot;: &quot;Alpha&quot;,
-        &quot;lastName&quot;: &quot;Simpson&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;addresses/250249883&quot;,
-        &quot;_key&quot;: &quot;250249883&quot;,
-        &quot;_rev&quot;: &quot;_d5zxCD---O&quot;,
-        &quot;email&quot;: &quot;j.garcia@nebulus.com&quot;,
-        &quot;firstName&quot;: &quot;Jose&quot;,
-        &quot;lastName&quot;: &quot;Garcia&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;addresses/250249884&quot;,
-        &quot;_key&quot;: &quot;250249884&quot;,
-        &quot;_rev&quot;: &quot;_d5zxCD---R&quot;,
-        &quot;email&quot;: &quot;Lee.ki@symbol.com&quot;,
-        &quot;firstName&quot;: &quot;Lee&quot;,
-        &quot;lastName&quot;: &quot;Ki&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;addresses/250249885&quot;,
-        &quot;_key&quot;: &quot;250249885&quot;,
-        &quot;_rev&quot;: &quot;_d5zxCD---U&quot;,
-        &quot;email&quot;: &quot;mark@tidalwave.com&quot;,
-        &quot;firstName&quot;: &quot;Mark&quot;,
-        &quot;lastName&quot;: &quot;Goldfine&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;addresses/250249886&quot;,
-        &quot;_key&quot;: &quot;250249886&quot;,
-        &quot;_rev&quot;: &quot;_d5zxCD---X&quot;,
-        &quot;email&quot;: &quot;ramesh@lifely.com&quot;,
-        &quot;firstName&quot;: &quot;Ramesh&quot;,
-        &quot;lastName&quot;: &quot;Sriram&quot;
-    },
-    {
-        &quot;_id&quot;: &quot;addresses/250266125&quot;,
-        &quot;_key&quot;: &quot;250266125&quot;,
-        &quot;_rev&quot;: &quot;_d50BOrW--_&quot;,
-        &quot;email&quot;: &quot;jsmith2020@gmail.com&quot;,
-        &quot;firstName&quot;: &quot;Joseph&quot;,
-        &quot;lastName&quot;: &quot;Smith&quot;
-    }
-]
 </pre></div>
 </div>
 </div>
@@ -735,7 +624,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="step-xx-f-using-the-nice-front-end-we-built-for-you">
 <h2>Step XX-F - Using the nice Front End we built for you<a class="headerlink" href="#step-xx-f-using-the-nice-front-end-we-built-for-you" title="Permalink to this headline">¶</a></h2>
-<p>Sweet, so now you have a full functional API for your app. We made a front-end for you to take your new backend for a spin.</p>
+<p>Sweet, so now you have a fully functional API for your app. We made a front-end for you to take your new backend for a spin.</p>
 <p>Follow this link and follow the instructions in the GitHub Repo</p>
 <p><a class="reference external" href="https://github.com/Macrometacorp/tutorial-addressbook-restql">https://github.com/Macrometacorp/tutorial-addressbook-restql</a></p>
 <p>On your development machine, run the following commands in a console:</p>
@@ -746,17 +635,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>npm install</p></li>
 <li><p>npm run start</p></li>
 </ol>
+<p>Make sure you enable github page in settings</p>
 <p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://gdn.paas.macrometa.io">https://gdn.paas.macrometa.io</a></p>
-<p>Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password and the user will then be asked to select one region in the GUI.</p>
+<p>Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password you used with this tutorial, and you will then be asked to select one region in the GUI.</p>
 <p>Deploy on GH Pages:</p>
 <p>npm run deploy</p>
-<p>fork</p>
-<p>enable github pages in repo settings</p>
-<p>run deploy</p>
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>TBC…</p>
+<p>Congratulations, another Tutorial Completed!</p>
 </div>
 </div>
 

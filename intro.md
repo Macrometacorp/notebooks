@@ -18,6 +18,8 @@ Hope you enjoy it!
 
 from, **the Macrometa Team**
 
+![smallocto](octo10.png)
+
 ---
 
 ## How do I get started?
@@ -38,6 +40,7 @@ Macrometa GDN is a first-of-its-kind Edge Cloud. It is a converged platform that
 
 
 ![map](map.png)
+
 
 
 Macrometa’s Global Data Network (GDN) allows organizations to tier, cache, process, and serve data with a global P90 roundtrip response time of 50ms. With 175+ points of presence (PoPs) around the world, Macrometa brings data and consistency closer to users while maintaining a coordination-free architecture.
@@ -75,5 +78,3 @@ After finishing this eBook you will know:
 - and much much more as we add more tutorials
 
 ---
-
-![temp](temp.png)

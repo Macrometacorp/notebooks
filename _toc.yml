@@ -23,6 +23,7 @@ parts:
       - file: javascript/04_graphs(javascript)
       - file: javascript/05_graph_traversals(javascript)
       - file: javascript/06_building_restql_apis(javascript)
+      - file: javascript/07_working_with_fabrics(javascript)
   - file: cli/beginner_toc
     sections:
       - file: cli/01_connect_gdn(CLI)

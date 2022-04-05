@@ -8,6 +8,7 @@ parts:
   chapters:
   - file: python/beginner_toc
     sections:
+      - file: python/00_working_with_pyc8(Python)  
       - file: python/01_connect_gdn(Python)
       - file: python/02_key_value_store(Python)
       - file: python/03_docs_store(Python)

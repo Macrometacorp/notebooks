@@ -363,6 +363,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-libraries-to-workbook">
    1. Import Libraries to Workbook
   </a>
@@ -500,6 +505,11 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-libraries-to-workbook">
    1. Import Libraries to Workbook
   </a>
@@ -632,6 +642,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p>For each tenant, there is a special fabric named _system, which cannot be dropped and provides operations for managing users, permissions and other fabrics. Most of the operations can only be executed by admin users. See :doc:<code class="docutils literal notranslate"><span class="pre">user</span></code> for more information.</p>
 <p>Each fabric in the C8 Fabric can be replicated to one or more additional edge Locations in the fabric. If a change is made to such a replicated fabric in one edge Location, that change will be automatically propagated to, and visible in, all other Edge Locations to which that fabric has been replicated.</p>
 <p>Each fabric in the C8 Fabric can publish changes in realtime to any clients which are connected to that fabric. Any clients with connections to that fabric will receive changes via a push-based mechanism rather than having to continuously poll the fabric for any changes which may have occurred. This python driver can listen in realtime to changes in fabric by calling the fabric.on_change() method for the fabric referred to by the fabric object.</p>
+<div class="section" id="pre-requisite">
+<h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
+<p>Let’s assume your</p>
+<ul class="simple">
+<li><p>tenant name is [email protected] and</p></li>
+<li><p>user password is xxxxx.</p></li>
+</ul>
+<p>if you need to install pyc8, you can run the cell below, otherwise you may skip it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pyC8
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="import-libraries-to-workbook">
 <h2>1. Import Libraries to Workbook<a class="headerlink" href="#import-libraries-to-workbook" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">

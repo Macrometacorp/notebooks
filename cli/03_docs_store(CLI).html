@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CLI03 - Quick Start with Documents Store &#8212; GDN - XBook</title>
+    <title>JS03 - Quick Start with Documents Store &#8212; GDN - XBook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CLI05 - Graph Traversals" href="05_graph_traversals%28CLI%29.html" />
+    <link rel="next" title="JS04 - Quick Start with Graphs" href="04_graphs%28CLI%29.html" />
     <link rel="prev" title="CLI02 - Quick Start with Key Value Store" href="02_key_value_store%28CLI%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -225,7 +225,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     CLI03 - Quick Start with Documents Store
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_graphs%28CLI%29.html">
+     JS04 - Quick Start with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -236,6 +241,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="06_building_restql_apis%28CLI%29.html">
      CLI06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_working_with_fabrics%28CLI%29.html">
+     CLI07 - Working with Fabrics
     </a>
    </li>
   </ul>
@@ -368,18 +378,38 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-gdn">
+   1. Connect to GDN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-geofabric-details">
-   1. Get GeoFabric Details
+   2. Get GeoFabric Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-collection">
-   2. Create Collection
+   3. Create Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#describe-collection">
-   3. Describe Collection
+  <a class="reference internal nav-link" href="#create-index">
+   4. Create Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insert-documents">
+   5. Insert Documents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-documents-using-c8ql">
+   6. Query documents using C8QL
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -397,7 +427,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>CLI03 - Quick Start with Documents Store</h1>
+                <h1>JS03 - Quick Start with Documents Store</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -408,18 +438,38 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-gdn">
+   1. Connect to GDN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-geofabric-details">
-   1. Get GeoFabric Details
+   2. Get GeoFabric Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-collection">
-   2. Create Collection
+   3. Create Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#describe-collection">
-   3. Describe Collection
+  <a class="reference internal nav-link" href="#create-index">
+   4. Create Index
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#insert-documents">
+   5. Insert Documents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#query-documents-using-c8ql">
+   6. Query documents using C8QL
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -436,39 +486,148 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="cli03-quick-start-with-documents-store">
-<h1>CLI03 - Quick Start with Documents Store<a class="headerlink" href="#cli03-quick-start-with-documents-store" title="Permalink to this headline">¶</a></h1>
-<p>The GDN CLI has limited support for working with document based collections, however additional capabilities are on the roadmap.</p>
-<p>Presently, document collections can be mainulated at the collection level but individual documents are not accessible.</p>
-<div class="section" id="get-geofabric-details">
-<h2>1. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">¶</a></h2>
-<p>List the available GeoFabrics and display metadata on the _system fabric by running the following commands.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="js03-quick-start-with-documents-store">
+<h1>JS03 - Quick Start with Documents Store<a class="headerlink" href="#js03-quick-start-with-documents-store" title="Permalink to this headline">¶</a></h1>
+<p>Documents in GDN are JSON objects. These objects can be nested (to any depth) and may contain lists. Each document has a unique primary key which identifies it within its collection. Furthermore, each document is uniquely identified by its document handle across all collections. Different revisions of the same document (identified by its handle) can be distinguished by their document revision. Any transaction only ever sees a single revision of a document.</p>
+<p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl fabric list
-gdnsl fabric describe _system
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="s2">&quot;_id&quot;</span> : <span class="s2">&quot;myusers/3456789&quot;</span>,
+  <span class="s2">&quot;_key&quot;</span> : <span class="s2">&quot;3456789&quot;</span>,
+  <span class="s2">&quot;_rev&quot;</span> : <span class="s2">&quot;14253647&quot;</span>,
+  <span class="s2">&quot;firstName&quot;</span> : <span class="s2">&quot;John&quot;</span>,
+  <span class="s2">&quot;lastName&quot;</span> : <span class="s2">&quot;Doe&quot;</span>,
+  <span class="s2">&quot;address&quot;</span> : <span class="o">{</span>
+    <span class="s2">&quot;street&quot;</span> : <span class="s2">&quot;Road To Nowhere 1&quot;</span>,
+    <span class="s2">&quot;city&quot;</span> : <span class="s2">&quot;Gotham&quot;</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;hobbies&quot;</span> : <span class="o">[</span>
+    <span class="o">{</span>name: <span class="s2">&quot;swimming&quot;</span>, howFavorite: <span class="m">10</span><span class="o">}</span>,
+    <span class="o">{</span>name: <span class="s2">&quot;biking&quot;</span>, howFavorite: <span class="m">6</span><span class="o">}</span>,
+    <span class="o">{</span>name: <span class="s2">&quot;programming&quot;</span>, howFavorite: <span class="m">4</span><span class="o">}</span>
+  <span class="o">]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>All documents contain special attributes:</p>
+<ul class="simple">
+<li><p>the document handle is stored as a string in _id,</p></li>
+<li><p>the document’s primary key in _key and</p></li>
+<li><p>the document revision in _rev.</p></li>
+</ul>
+<p>The value of the _key attribute can be specified by the user when creating a document. _id and _key values are immutable once the document has been created. The _rev value is maintained by GDN automatically.</p>
+<div class="section" id="pre-requisite">
+<h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
+<p>Lets Assume</p>
+<ul class="simple">
+<li><p>you have already made a tenant account, and have a username and password</p></li>
+<li><p>you have installed the Macrometa CLI as explained in section 01</p></li>
+<li><p>you have generated an API Key as explained in section 01</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g gdnsl
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="connect-to-gdn">
+<h2>1. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Login credentials</span>
+<span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
+<span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
+<span class="nv">api_key</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span>
+<span class="c1"># You can either use LOCAL or ALL also Please enter the name of the regions. For multiple regions enter comma-separated names. For example: region1, region2.</span>
+<span class="nv">regions</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
+
+<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
+<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
+<span class="s2">apikey: </span><span class="nv">$api_key</span><span class="s2"></span>
+<span class="s2">regions:</span>
+<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
+
+<span class="nb">echo</span> <span class="s2">&quot;------- CONNECTION SETUP  ------&quot;</span>
+<span class="c1"># if you are running this from terminal then you can ignore above step and run below command</span>
+<span class="c1"># gdnsl init</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-geofabric-details">
+<h2>2. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">¶</a></h2>
+<p>To get details of fabric,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># you might not need this, but if you wanted to select a</span>
+<span class="c1"># specific GeoFabric you can find out whats available by executing this code!</span>
+
+gdnsl fabric list
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="create-collection">
-<h2>2. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">¶</a></h2>
-<p>Create a collection called employees by running the following command.</p>
+<h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">¶</a></h2>
+<p>We can now create collection in the fabric. To do this, first you connect to fabric and then create a collection called employees.</p>
+<p>The below example shows the steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl collection create employees
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">collection_name</span><span class="o">=</span><span class="s1">&#39;employees&#39;</span>
+<span class="nb">echo</span> <span class="s2">&quot; ------- CREATE GEO-REPLICATED COLLECTION  ------&quot;</span>
+gdnsl collection create <span class="nv">$collection_name</span> --type doc 
+<span class="nb">echo</span> <span class="s2">&quot;Created collection: </span><span class="nv">$collection_name</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="describe-collection">
-<h2>3. Describe Collection<a class="headerlink" href="#describe-collection" title="Permalink to this headline">¶</a></h2>
-<p>Display collection metadata by running the following command.</p>
+<div class="section" id="create-index">
+<h2>4. Create Index<a class="headerlink" href="#create-index" title="Permalink to this headline">¶</a></h2>
+<p>Let’s add a hash_index called emails to our collection employees. Please refer to reference guide for details on other available index types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl collection describe employees
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; ------- Add Hash Index ------&quot;</span>
+gdnsl index create --type <span class="nb">hash</span> --fields <span class="s2">&quot;firstname, lastname&quot;</span> --unique <span class="nv">$collection_name</span>
+<span class="nb">echo</span> <span class="s2">&quot;Index created on: </span><span class="nv">$collection_name</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="insert-documents">
+<h2>5. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">¶</a></h2>
+<p>Let’s insert documents to the employees collection as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl import <span class="nv">$collection_name</span> --json <span class="s2">&quot;[{\&quot;_key\&quot;:\&quot;James\&quot;,\&quot;firstname\&quot;:\&quot;James\&quot;,\&quot;lastname\&quot;:\&quot;Kirk\&quot;,\&quot;email\&quot;:\&quot;[email protected]\&quot;},{\&quot;_key\&quot;:\&quot;Han\&quot;,\&quot;firstname\&quot;:\&quot;Han\&quot;,\&quot;lastname\&quot;:\&quot;Solo\&quot;,\&quot;email\&quot;:\&quot;[email protected]\&quot;},{\&quot;_key\&quot;:\&quot;Bruce\&quot;,\&quot;firstname\&quot;:\&quot;Bruce\&quot;,\&quot;lastname\&quot;:\&quot;Wayne\&quot;,\&quot;email\&quot;:\&quot;[email protected]\&quot;}]&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;Documents inserted&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="query-documents-using-c8ql">
+<h2>6. Query documents using C8QL<a class="headerlink" href="#query-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
+<p>8QL is C8’s query language. You can execute C8QL query on our newly created collection employees to get its contents.</p>
+<p>The query “FOR employee IN employees RETURN employee” is equivalent to SQL’s SELECT query.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl query <span class="s2">&quot;FOR employee IN employees RETURN employee&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -476,6 +635,7 @@ gdnsl fabric describe _system
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
+<p>TBC…</p>
 </div>
 </div>
 
@@ -511,10 +671,10 @@ gdnsl fabric describe _system
             <p class="prev-next-title">CLI02 - Quick Start with Key Value Store</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="05_graph_traversals%28CLI%29.html" title="next page">
+    <a class='right-next' id="next-link" href="04_graphs%28CLI%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CLI05 - Graph Traversals</p>
+        <p class="prev-next-title">JS04 - Quick Start with Graphs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

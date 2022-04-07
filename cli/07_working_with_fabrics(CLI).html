@@ -1,0 +1,1031 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLI07 - Working with Fabrics &#8212; GDN - XBook</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python" href="../advanced_python/advanced_toc.html" />
+    <link rel="prev" title="CLI06 - Building RESTQL APIs" href="06_building_restql_apis%28CLI%29.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo-moc-blue.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">GDN - XBook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Macrometa GDN - XBook
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Beginner
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../python/beginner_toc.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/00_working_with_pyc8%28Python%29.html">
+     Py00 - Working with PyC8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/01_connect_gdn%28Python%29.html">
+     Py01 - Connecting to GDN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/02_key_value_store%28Python%29.html">
+     Py02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/03_docs_store%28Python%29.html">
+     Py03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/04_graphs%28Python%29.html">
+     Py04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/05_graph_traversals%28Python%29.html">
+     Py05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/06_building_restql_apis%28Python%29.html">
+     Py06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/07_working_with_fabrics%28Python%29.html">
+     Py07 - Working with Fabrics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../javascript/beginner_toc.html">
+   Javascript
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/01_connect_gdn%28javascript%29.html">
+     JS01 - Connecting to GDN
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/02_key_value_store%28javascript%29.html">
+     JS02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/03_docs_store%28javascript%29.html">
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/04_graphs%28javascript%29.html">
+     JS04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/05_graph_traversals%28javascript%29.html">
+     JS05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/06_building_restql_apis%28javascript%29.html">
+     JS06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../javascript/07_working_with_fabrics%28javascript%29.html">
+     JS07 - Working with Fabrics
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="beginner_toc.html">
+   CLI
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_connect_gdn%28CLI%29.html">
+     CLI01 - Connecting to GDN Using the CLI
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_key_value_store%28CLI%29.html">
+     CLI02 - Quick Start with Key Value Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_docs_store%28CLI%29.html">
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_graphs%28CLI%29.html">
+     JS04 - Quick Start with Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_graph_traversals%28CLI%29.html">
+     CLI05 - Graph Traversals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_building_restql_apis%28CLI%29.html">
+     CLI06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     CLI07 - Working with Fabrics
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Advanced
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../advanced_python/advanced_toc.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../advanced_python/XX_address_book%28Python%29.html">
+     PyXX - Building an Address Book App
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/cli/07_working_with_fabrics(CLI).ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Macrometacorp/docs-xbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/Macrometacorp/docs-xbook/issues/new?title=Issue%20on%20page%20%2Fcli/07_working_with_fabrics(CLI).html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/Macrometacorp/docs-xbook/blob/main/cli/07_working_with_fabrics(CLI).ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-and-define-login-details">
+   1. Create and Define Login details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-gdn-as-admin">
+   2. Connect to GDN as Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-all-fabrics-accessable-by-admin">
+   3. List all Fabrics accessable by Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-all-details-of-datacenters">
+   4. List all details of Datacenters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-user-called-johndoe">
+   5. Create a new user called “johndoe”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-details-of-the-new-user">
+   6. List details of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-permissions-of-the-new-user">
+   7.  List permissions of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-fabric">
+   8. Create a new Fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-permissions-of-new-user-on-new-fabric">
+   9. Check permissions of new user on new fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-permissions-of-new-user-to-read-write">
+   10. Change permissions of new user to “read/write”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-permissions-of-new-user-to-none-for-the-system-fabric">
+   11. Change permissions of new user to “none” for the “_system” fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-permissions-of-new-user-after-changes">
+   12. Check permissions of new user after changes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+   13. Connect to GDN as the new user “JohnDoe” on the new GeoFabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-datacenters-for-the-new-geofabric">
+   14. Check the Datacenters for the new geofabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-test-our-new-fabric-with-a-collection">
+   15. Let’s test our new fabric with a collection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-create-the-collection">
+     15.1. First create the collection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-add-some-records">
+     15.2. Let’s add some records
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-build-a-restql-called-getrecords">
+     15.3. Let’s build a RESTQL called “getRecords”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-check-our-restql-is-saved">
+     15.4. Let’s check our RESTQL is saved
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-execute-the-restql-getrecords">
+     15.5. Let’s execute the RESTQL “getRecords”
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   16. Time to tidy up!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>CLI07 - Working with Fabrics</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-and-define-login-details">
+   1. Create and Define Login details
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-gdn-as-admin">
+   2. Connect to GDN as Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-all-fabrics-accessable-by-admin">
+   3. List all Fabrics accessable by Admin
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-all-details-of-datacenters">
+   4. List all details of Datacenters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-user-called-johndoe">
+   5. Create a new user called “johndoe”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-details-of-the-new-user">
+   6. List details of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-permissions-of-the-new-user">
+   7.  List permissions of the new user
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-a-new-fabric">
+   8. Create a new Fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-permissions-of-new-user-on-new-fabric">
+   9. Check permissions of new user on new fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-permissions-of-new-user-to-read-write">
+   10. Change permissions of new user to “read/write”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-permissions-of-new-user-to-none-for-the-system-fabric">
+   11. Change permissions of new user to “none” for the “_system” fabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-permissions-of-new-user-after-changes">
+   12. Check permissions of new user after changes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+   13. Connect to GDN as the new user “JohnDoe” on the new GeoFabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#check-the-datacenters-for-the-new-geofabric">
+   14. Check the Datacenters for the new geofabric
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-test-our-new-fabric-with-a-collection">
+   15. Let’s test our new fabric with a collection
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-create-the-collection">
+     15.1. First create the collection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-add-some-records">
+     15.2. Let’s add some records
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-build-a-restql-called-getrecords">
+     15.3. Let’s build a RESTQL called “getRecords”
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-check-our-restql-is-saved">
+     15.4. Let’s check our RESTQL is saved
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-execute-the-restql-getrecords">
+     15.5. Let’s execute the RESTQL “getRecords”
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   16. Time to tidy up!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#section-completed">
+   Section Completed!
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="cli07-working-with-fabrics">
+<h1>CLI07 - Working with Fabrics<a class="headerlink" href="#cli07-working-with-fabrics" title="Permalink to this headline">¶</a></h1>
+<p><strong>This tutorial is designed for developers working with the CLI</strong></p>
+<p>Each :doc:<code class="docutils literal notranslate"><span class="pre">tenant</span> <span class="pre">&lt;tenant&gt;</span></code> on the C8 Data Fabric server can have an arbitrary number of fabrics. Each fabric has its own set of :doc:<code class="docutils literal notranslate"><span class="pre">collections</span> <span class="pre">&lt;collection&gt;</span></code>, :doc:<code class="docutils literal notranslate"><span class="pre">graphs</span> <span class="pre">&lt;graph&gt;</span></code> and :doc:<code class="docutils literal notranslate"><span class="pre">streams</span> <span class="pre">&lt;stream&gt;</span></code>.</p>
+<p>For each tenant, there is a special fabric named _system, which cannot be dropped and provides operations for managing users, permissions and other fabrics. Most of the operations can only be executed by admin users. See :doc:<code class="docutils literal notranslate"><span class="pre">user</span></code> for more information.</p>
+<p>Each fabric in the C8 Fabric can be replicated to one or more additional edge Locations in the fabric. If a change is made to such a replicated fabric in one edge Location, that change will be automatically propagated to, and visible in, all other Edge Locations to which that fabric has been replicated.</p>
+<p>Each fabric in the C8 Fabric can publish changes in realtime to any clients which are connected to that fabric. Any clients with connections to that fabric will receive changes via a push-based mechanism rather than having to continuously poll the fabric for any changes which may have occurred. This python driver can listen in realtime to changes in fabric by calling the fabric.on_change() method for the fabric referred to by the fabric object.</p>
+<div class="section" id="pre-requisite">
+<h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
+<p>Lets Assume</p>
+<ul class="simple">
+<li><p>you have already made a tenant account, and have a username and password</p></li>
+<li><p>you have installed the Macrometa CLI as explained in section 01</p></li>
+<li><p>you have generated an API Key as explained in section 01</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g gdnsl
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-and-define-login-details">
+<h2>1. Create and Define Login details<a class="headerlink" href="#create-and-define-login-details" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Login credentials</span>
+<span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
+<span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
+<span class="nv">api_key</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span>
+<span class="c1"># You can either use LOCAL or ALL also Please enter the name of the regions. For multiple regions enter comma-separated names. For example: region1, region2.</span>
+<span class="nv">regions</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="connect-to-gdn-as-admin">
+<h2>2. Connect to GDN as Admin<a class="headerlink" href="#connect-to-gdn-as-admin" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
+
+<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
+<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
+<span class="s2">apikey: </span><span class="nv">$api_key</span><span class="s2"></span>
+<span class="s2">regions:</span>
+<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
+
+<span class="nb">echo</span> <span class="s2">&quot;------- CONNECTION SETUP  ------&quot;</span>
+<span class="c1"># if you are running this from terminal then you can ignore above step and run below command</span>
+<span class="c1"># gdnsl init</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="list-all-fabrics-accessable-by-admin">
+<h2>3. List all Fabrics accessable by Admin<a class="headerlink" href="#list-all-fabrics-accessable-by-admin" title="Permalink to this headline">¶</a></h2>
+<p>At this point in the tutorial this should only show the defualt ‘system’ fabric which will have all the avaiailble datacenters</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List all fabrics in the &#39;mytenant&#39; tenant</span>
+gdnsl fabric list --all
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="list-all-details-of-datacenters">
+<h2>4. List all details of Datacenters<a class="headerlink" href="#list-all-details-of-datacenters" title="Permalink to this headline">¶</a></h2>
+<p>Now lets have a look at those data centers</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Returns the list of details of Datacenters</span>
+gdnsl account --all-regions
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-new-user-called-johndoe">
+<h2>5. Create a new user called “johndoe”<a class="headerlink" href="#create-a-new-user-called-johndoe" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new user.</span>
+gdnsl user --fabric <span class="s1">&#39;_system&#39;</span> --email <span class="s1">&#39;johndoe@gmail.com&#39;</span> --username <span class="s1">&#39;johndoe&#39;</span> --password <span class="s1">&#39;first_password&#39;</span> --active --param <span class="s1">&#39;team = backend&#39;</span> --param <span class="s2">&quot;title = engineer&quot;</span> --create
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="list-details-of-the-new-user">
+<h2>6. List details of the new user<a class="headerlink" href="#list-details-of-the-new-user" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve details of a user.</span>
+gdnsl user --fabric <span class="s1">&#39;_system&#39;</span> --list --username johndoe --output json
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="list-permissions-of-the-new-user">
+<h2>7.  List permissions of the new user<a class="headerlink" href="#list-permissions-of-the-new-user" title="Permalink to this headline">¶</a></h2>
+<p>Lets take a look at the permission of our newly created user, at this point they should be read only or ‘ro’</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permissions for all fabrics and collections.</span>
+gdnsl user get --username johndoe
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-new-fabric">
+<h2>8. Create a new Fabric<a class="headerlink" href="#create-a-new-fabric" title="Permalink to this headline">¶</a></h2>
+<p>While we are still connected as the Admin, we can create a new Fabric.</p>
+<p>The code block below checks to see what the local datacenter is to you using the “localdc()” method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;----- Local region details -----&quot;</span>
+gdnsl account --local-region --output json
+<span class="nb">echo</span> <span class="s2">&quot;  ----- creating fabric  -----&quot;</span>
+gdnsl fabric create demofabric --datacenter gdn-eu-west --datacenter gdn-us-west --datacenter gdn-ap-west  <span class="c1"># instead of gdn-eu-west you can pass one of your local datacenter </span>
+<span class="nb">echo</span> <span class="s2">&quot;  ----- List of all fabrics -----&quot;</span>
+gdnsl fabric list
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-permissions-of-new-user-on-new-fabric">
+<h2>9. Check permissions of new user on new fabric<a class="headerlink" href="#check-permissions-of-new-user-on-new-fabric" title="Permalink to this headline">¶</a></h2>
+<p>We have created a new user, and a new geofabric. Wjhen this is first created the user should have no permissions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permission for &quot;test&quot; fabric.</span>
+gdnsl user get --username johndoe --db-name demofabric
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="change-permissions-of-new-user-to-read-write">
+<h2>10. Change permissions of new user to “read/write”<a class="headerlink" href="#change-permissions-of-new-user-to-read-write" title="Permalink to this headline">¶</a></h2>
+<p>Lets change our new users permissions to “read/right” so when we connect at this user they can work with the database and create a collection</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the database access level to Administrate for a demofabric fabric. </span>
+gdnsl user <span class="nb">set</span>  --username  johndoe --db-name demofabric --permissions rw
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="change-permissions-of-new-user-to-none-for-the-system-fabric">
+<h2>11. Change permissions of new user to “none” for the “_system” fabric<a class="headerlink" href="#change-permissions-of-new-user-to-none-for-the-system-fabric" title="Permalink to this headline">¶</a></h2>
+<p>We might also want to reduce the users access to the _system fabric, we can do this as follows…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update user permission for &quot;_system&quot; fabric.</span>
+gdnsl user <span class="nb">set</span>  --username  johndoe --db-name _system --permissions none
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-permissions-of-new-user-after-changes">
+<h2>12. Check permissions of new user after changes<a class="headerlink" href="#check-permissions-of-new-user-after-changes" title="Permalink to this headline">¶</a></h2>
+<p>Ok, so now that we have updated our users permissions, lets take a look to see our changes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permissions for all fabrics and collections.</span>
+gdnsl user get --username johndoe
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
+<h2>13. Connect to GDN as the new user “JohnDoe” on the new GeoFabric<a class="headerlink" href="#connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric" title="Permalink to this headline">¶</a></h2>
+<p>Right, now its time to connect to our new GeoFabric as our new user.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#before running this please login to fedration and generate the API key for new user</span>
+<span class="nv">demo_email</span><span class="o">=</span><span class="s1">&#39;johndoe@gmail.com&#39;</span>
+<span class="nv">demo_password</span><span class="o">=</span><span class="s1">&#39;first_password&#39;</span>
+<span class="nv">new_geofabric</span><span class="o">=</span><span class="s1">&#39;demofabric&#39;</span>
+<span class="nv">demo_api_key</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
+
+<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
+<span class="s2">email: </span><span class="nv">$demo_email</span><span class="s2"></span>
+<span class="s2">apikey: </span><span class="nv">$demo_api_key</span><span class="s2"></span>
+<span class="s2">regions:</span>
+<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
+
+<span class="nb">echo</span> <span class="s2">&quot; ------- CONNECTION SETUP  ------&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;tenant: </span><span class="nv">$demo_email</span><span class="s2">, geofabric: </span><span class="nv">$new_geofabric</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-the-datacenters-for-the-new-geofabric">
+<h2>14. Check the Datacenters for the new geofabric<a class="headerlink" href="#check-the-datacenters-for-the-new-geofabric" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have connected as our new user, lets see what datacenters we have access to in our geofabric</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl account --all-regions
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-test-our-new-fabric-with-a-collection">
+<h2>15. Let’s test our new fabric with a collection<a class="headerlink" href="#let-s-test-our-new-fabric-with-a-collection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="first-create-the-collection">
+<h3>15.1. First create the collection<a class="headerlink" href="#first-create-the-collection" title="Permalink to this headline">¶</a></h3>
+<p>You will likely remember this step from an earlier tutorial. First we define a collection name, then we check to see if it exists. If it doesnt exist then we will create it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">collection_name</span><span class="o">=</span><span class="s1">&#39;employees&#39;</span>
+<span class="nb">echo</span> <span class="s2">&quot; ------- CREATE GEO-REPLICATED COLLECTION  ------&quot;</span>
+gdnsl collection create <span class="nv">$collection_name</span> --type doc 
+<span class="nb">echo</span> <span class="s2">&quot;Created collection: </span><span class="nv">$collection_name</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-add-some-records">
+<h3>15.2. Let’s add some records<a class="headerlink" href="#let-s-add-some-records" title="Permalink to this headline">¶</a></h3>
+<p>A collection is great, but lets add some records to it..</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Insert data to collection: </span><span class="nv">$collection_name</span><span class="s2">&quot;</span>
+
+gdnsl import <span class="nv">$collection_name</span> --json <span class="s2">&quot;[{\&quot;_key\&quot;:\&quot;James\&quot;,\&quot;firstname\&quot;:\&quot;James\&quot;,\&quot;lastname\&quot;:\&quot;Kirk\&quot;,\&quot;email\&quot;:\&quot;[email protected]\&quot;},{\&quot;_key\&quot;:\&quot;Han\&quot;,\&quot;firstname\&quot;:\&quot;Han\&quot;,\&quot;lastname\&quot;:\&quot;Solo\&quot;,\&quot;email\&quot;:\&quot;[email protected]\&quot;},{\&quot;_key\&quot;:\&quot;Bruce\&quot;,\&quot;firstname\&quot;:\&quot;Bruce\&quot;,\&quot;lastname\&quot;:\&quot;Wayne\&quot;,\&quot;email\&quot;:\&quot;[email protected]\&quot;}]&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-build-a-restql-called-getrecords">
+<h3>15.3. Let’s build a RESTQL called “getRecords”<a class="headerlink" href="#let-s-build-a-restql-called-getrecords" title="Permalink to this headline">¶</a></h3>
+<p>You likely recall how to create a RESTQL from the earlier tutorial. So lets set up a basic query to show the records in a collection</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># crete restql</span>
+gdnsl query-worker create getRecords --value  <span class="s2">&quot;FOR doc IN </span><span class="nv">$collection_name</span><span class="s2"> RETURN doc&quot;</span> <span class="c1"># name: getRecords</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-check-our-restql-is-saved">
+<h3>15.4. Let’s check our RESTQL is saved<a class="headerlink" href="#let-s-check-our-restql-is-saved" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># get all restql</span>
+gdnsl query-worker list
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="let-s-execute-the-restql-getrecords">
+<h3>15.5. Let’s execute the RESTQL “getRecords”<a class="headerlink" href="#let-s-execute-the-restql-getrecords" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute restql without bindVars</span>
+<span class="nb">echo</span> <span class="s2">&quot;Get data....&quot;</span>
+gdnsl query-worker run getRecords
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-to-tidy-up">
+<h2>16. Time to tidy up!<a class="headerlink" href="#time-to-tidy-up" title="Permalink to this headline">¶</a></h2>
+<p>That was great!, now lets tidy up by removing our fabric, the new user, and the collection we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete restql</span>
+<span class="nb">echo</span> <span class="s2">&quot;Delete RESTQL....&quot;</span>
+gdnsl query-worker delete getRecords
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete new user</span>
+gdnsl user --fabric demofabric --username johndoe1 --delete 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete the fabric</span>
+<span class="c1"># first connect to the _system fabric</span>
+<span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
+
+<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
+<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
+<span class="s2">apikey: </span><span class="nv">$api_key</span><span class="s2"></span>
+<span class="s2">regions:</span>
+<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
+
+<span class="nb">echo</span> <span class="s2">&quot;------- CONNECTION SETUP  ------&quot;</span>
+gdnsl fabric delete demofabric
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="section-completed">
+<h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations!, another tutorial completed.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "bash"
+        },
+        kernelOptions: {
+            kernelName: "bash",
+            path: "./cli"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'bash'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="06_building_restql_apis%28CLI%29.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">CLI06 - Building RESTQL APIs</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../advanced_python/advanced_toc.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

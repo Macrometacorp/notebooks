@@ -225,7 +225,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../cli/03_docs_store%28CLI%29.html">
-     CLI03 - Quick Start with Documents Store
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/04_graphs%28CLI%29.html">
+     JS04 - Quick Start with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -236,6 +241,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../cli/06_building_restql_apis%28CLI%29.html">
      CLI06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/07_working_with_fabrics%28CLI%29.html">
+     CLI07 - Working with Fabrics
     </a>
    </li>
   </ul>
@@ -373,38 +383,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-a-connect-to-gdn">
-   Step 03-A - Connect to GDN
+  <a class="reference internal nav-link" href="#connect-to-gdn">
+   1. Connect to GDN
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-b-get-geofabric-details">
-   Step 03-B - Get GeoFabric Details
+  <a class="reference internal nav-link" href="#get-geofabric-details">
+   2. Get GeoFabric Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-c-create-collection">
-   Step 03-C - Create Collection
+  <a class="reference internal nav-link" href="#create-collection">
+   3. Create Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-d-create-index">
-   Step 03-D - Create Index
+  <a class="reference internal nav-link" href="#create-index">
+   4. Create Index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-e-insert-documents">
-   Step 03-E - Insert Documents
+  <a class="reference internal nav-link" href="#insert-documents">
+   5. Insert Documents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-f-query-documents-using-c8ql">
-   Step 03-F - Query documents using C8QL
+  <a class="reference internal nav-link" href="#query-documents-using-c8ql">
+   6. Query documents using C8QL
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-g-get-realtime-updates">
-   Step 03-G - Get realtime updates
+  <a class="reference internal nav-link" href="#get-realtime-updates">
+   7. Get realtime updates
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -438,38 +448,38 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-a-connect-to-gdn">
-   Step 03-A - Connect to GDN
+  <a class="reference internal nav-link" href="#connect-to-gdn">
+   1. Connect to GDN
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-b-get-geofabric-details">
-   Step 03-B - Get GeoFabric Details
+  <a class="reference internal nav-link" href="#get-geofabric-details">
+   2. Get GeoFabric Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-c-create-collection">
-   Step 03-C - Create Collection
+  <a class="reference internal nav-link" href="#create-collection">
+   3. Create Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-d-create-index">
-   Step 03-D - Create Index
+  <a class="reference internal nav-link" href="#create-index">
+   4. Create Index
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-e-insert-documents">
-   Step 03-E - Insert Documents
+  <a class="reference internal nav-link" href="#insert-documents">
+   5. Insert Documents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-f-query-documents-using-c8ql">
-   Step 03-F - Query documents using C8QL
+  <a class="reference internal nav-link" href="#query-documents-using-c8ql">
+   6. Query documents using C8QL
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-03-g-get-realtime-updates">
-   Step 03-G - Get realtime updates
+  <a class="reference internal nav-link" href="#get-realtime-updates">
+   7. Get realtime updates
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -538,8 +548,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-a-connect-to-gdn">
-<h2>Step 03-A - Connect to GDN<a class="headerlink" href="#step-03-a-connect-to-gdn" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="connect-to-gdn">
+<h2>1. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
@@ -557,8 +567,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-b-get-geofabric-details">
-<h2>Step 03-B - Get GeoFabric Details<a class="headerlink" href="#step-03-b-get-geofabric-details" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-geofabric-details">
+<h2>2. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">¶</a></h2>
 <p>To get details of fabric,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,8 +592,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-c-create-collection">
-<h2>Step 03-C - Create Collection<a class="headerlink" href="#step-03-c-create-collection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-collection">
+<h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">¶</a></h2>
 <p>We can now create collection in the fabric. To do this, first you connect to fabric and then create a collection called employees.</p>
 <p>The below example shows the steps.</p>
 <div class="cell docutils container">
@@ -611,8 +621,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-d-create-index">
-<h2>Step 03-D - Create Index<a class="headerlink" href="#step-03-d-create-index" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-index">
+<h2>4. Create Index<a class="headerlink" href="#create-index" title="Permalink to this headline">¶</a></h2>
 <p>Let’s add a hash_index called emails to our collection employees. Please refer to reference guide for details on other available index types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -636,8 +646,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-e-insert-documents">
-<h2>Step 03-E - Insert Documents<a class="headerlink" href="#step-03-e-insert-documents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="insert-documents">
+<h2>5. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">¶</a></h2>
 <p>Let’s insert documents to the employees collection as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -674,8 +684,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-f-query-documents-using-c8ql">
-<h2>Step 03-F - Query documents using C8QL<a class="headerlink" href="#step-03-f-query-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="query-documents-using-c8ql">
+<h2>6. Query documents using C8QL<a class="headerlink" href="#query-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
 <p>8QL is C8’s query language. You can execute C8QL query on our newly created collection employees to get its contents.</p>
 <p>The query “FOR employee IN employees RETURN employee” is equivalent to SQL’s SELECT query.</p>
 <div class="cell docutils container">
@@ -693,8 +703,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-03-g-get-realtime-updates">
-<h2>Step 03-G - Get realtime updates<a class="headerlink" href="#step-03-g-get-realtime-updates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-realtime-updates">
+<h2>7. Get realtime updates<a class="headerlink" href="#get-realtime-updates" title="Permalink to this headline">¶</a></h2>
 <p>Example for real-time updates from a collection in fabric:</p>
 <p>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, select collections, find the collection named “employees” and select “enable Stream”</p>
 <p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. you should see the real time updates below as soon as you hit save!.</p>

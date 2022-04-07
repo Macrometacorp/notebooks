@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CLI03 - Quick Start with Documents Store" href="03_docs_store%28CLI%29.html" />
+    <link rel="next" title="JS03 - Quick Start with Documents Store" href="03_docs_store%28CLI%29.html" />
     <link rel="prev" title="CLI01 - Connecting to GDN Using the CLI" href="01_connect_gdn%28CLI%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -225,7 +225,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_docs_store%28CLI%29.html">
-     CLI03 - Quick Start with Documents Store
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_graphs%28CLI%29.html">
+     JS04 - Quick Start with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -236,6 +241,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="06_building_restql_apis%28CLI%29.html">
      CLI06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_working_with_fabrics%28CLI%29.html">
+     CLI07 - Working with Fabrics
     </a>
    </li>
   </ul>
@@ -373,43 +383,43 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-a-create-a-collection">
-   Step 02-A - Create a Collection
+  <a class="reference internal nav-link" href="#create-a-collection">
+   1. Create a Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-b-insert-key-value-pairs">
-   Step 02-B - Insert Key Value Pairs
+  <a class="reference internal nav-link" href="#insert-key-value-pairs">
+   2. Insert Key Value Pairs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-c-get-a-value">
-   Step 02-C - Get a Value
+  <a class="reference internal nav-link" href="#get-a-value">
+   3. Get a Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-d-get-key-value-count">
-   Step 02-D - Get Key-Value Count
+  <a class="reference internal nav-link" href="#get-key-value-count">
+   4. Get Key-Value Count
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-e-update-value">
-   Step 02-E - Update Value
+  <a class="reference internal nav-link" href="#update-value">
+   5. Update Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-f-delete-a-key-value">
-   Step 02-F - Delete a Key-Value
+  <a class="reference internal nav-link" href="#delete-a-key-value">
+   6. Delete a Key-Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-g-delete-a-key-value">
-   Step 02-G - Delete a Key-Value
+  <a class="reference internal nav-link" href="#id1">
+   7. Delete a Key-Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-h-delete-a-collection">
-   Step 02-H - Delete a Collection
+  <a class="reference internal nav-link" href="#delete-a-collection">
+   8. Delete a Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -443,43 +453,43 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-a-create-a-collection">
-   Step 02-A - Create a Collection
+  <a class="reference internal nav-link" href="#create-a-collection">
+   1. Create a Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-b-insert-key-value-pairs">
-   Step 02-B - Insert Key Value Pairs
+  <a class="reference internal nav-link" href="#insert-key-value-pairs">
+   2. Insert Key Value Pairs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-c-get-a-value">
-   Step 02-C - Get a Value
+  <a class="reference internal nav-link" href="#get-a-value">
+   3. Get a Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-d-get-key-value-count">
-   Step 02-D - Get Key-Value Count
+  <a class="reference internal nav-link" href="#get-key-value-count">
+   4. Get Key-Value Count
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-e-update-value">
-   Step 02-E - Update Value
+  <a class="reference internal nav-link" href="#update-value">
+   5. Update Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-f-delete-a-key-value">
-   Step 02-F - Delete a Key-Value
+  <a class="reference internal nav-link" href="#delete-a-key-value">
+   6. Delete a Key-Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-g-delete-a-key-value">
-   Step 02-G - Delete a Key-Value
+  <a class="reference internal nav-link" href="#id1">
+   7. Delete a Key-Value
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-02-h-delete-a-collection">
-   Step 02-H - Delete a Collection
+  <a class="reference internal nav-link" href="#delete-a-collection">
+   8. Delete a Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -511,9 +521,16 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>you have already made a tenant account, and have a username and password</p></li>
 <li><p>you have installed and configured the Macrometa CLI as explained in section 01</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g gdnsl
+</pre></div>
 </div>
-<div class="section" id="step-02-a-create-a-collection">
-<h2>Step 02-A - Create a Collection<a class="headerlink" href="#step-02-a-create-a-collection" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+</div>
+<div class="section" id="create-a-collection">
+<h2>1. Create a Collection<a class="headerlink" href="#create-a-collection" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl kv create students
@@ -522,8 +539,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-02-b-insert-key-value-pairs">
-<h2>Step 02-B - Insert Key Value Pairs<a class="headerlink" href="#step-02-b-insert-key-value-pairs" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="insert-key-value-pairs">
+<h2>2. Insert Key Value Pairs<a class="headerlink" href="#insert-key-value-pairs" title="Permalink to this headline">¶</a></h2>
 <p>Insert key-value pairs into the collection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,8 +554,8 @@ gdnsl kv <span class="nb">set</span> students --key Monika --value Chemistry --t
 </div>
 </div>
 </div>
-<div class="section" id="step-02-c-get-a-value">
-<h2>Step 02-C - Get a Value<a class="headerlink" href="#step-02-c-get-a-value" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-a-value">
+<h2>3. Get a Value<a class="headerlink" href="#get-a-value" title="Permalink to this headline">¶</a></h2>
 <p>Get value for a given key.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -549,8 +566,8 @@ gdnsl kv get students --key John
 </div>
 </div>
 </div>
-<div class="section" id="step-02-d-get-key-value-count">
-<h2>Step 02-D - Get Key-Value Count<a class="headerlink" href="#step-02-d-get-key-value-count" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-key-value-count">
+<h2>4. Get Key-Value Count<a class="headerlink" href="#get-key-value-count" title="Permalink to this headline">¶</a></h2>
 <p>Get key-value count from a given collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -561,8 +578,8 @@ gdnsl kv get students --count
 </div>
 </div>
 </div>
-<div class="section" id="step-02-e-update-value">
-<h2>Step 02-E - Update Value<a class="headerlink" href="#step-02-e-update-value" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="update-value">
+<h2>5. Update Value<a class="headerlink" href="#update-value" title="Permalink to this headline">¶</a></h2>
 <p>Update value for a given key</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,8 +591,8 @@ gdnsl kv <span class="nb">set</span> students --key John --value Biology --ttl <
 </div>
 </div>
 </div>
-<div class="section" id="step-02-f-delete-a-key-value">
-<h2>Step 02-F - Delete a Key-Value<a class="headerlink" href="#step-02-f-delete-a-key-value" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="delete-a-key-value">
+<h2>6. Delete a Key-Value<a class="headerlink" href="#delete-a-key-value" title="Permalink to this headline">¶</a></h2>
 <p>Delete key-value pairs from a collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -586,8 +603,8 @@ gdnsl kv delete students --key John
 </div>
 </div>
 </div>
-<div class="section" id="step-02-g-delete-a-key-value">
-<h2>Step 02-G - Delete a Key-Value<a class="headerlink" href="#step-02-g-delete-a-key-value" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>7. Delete a Key-Value<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Delete entry for multiple key-value pairs from a collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,8 +615,8 @@ gdnsl kv delete students --keyarray <span class="s2">&quot;Monika, Alex, Alice&q
 </div>
 </div>
 </div>
-<div class="section" id="step-02-h-delete-a-collection">
-<h2>Step 02-H - Delete a Collection<a class="headerlink" href="#step-02-h-delete-a-collection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="delete-a-collection">
+<h2>8. Delete a Collection<a class="headerlink" href="#delete-a-collection" title="Permalink to this headline">¶</a></h2>
 <p>Delete the key-value collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,7 +669,7 @@ gdnsl kv delete cities
     <a class='right-next' id="next-link" href="03_docs_store%28CLI%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CLI03 - Quick Start with Documents Store</p>
+        <p class="prev-next-title">JS03 - Quick Start with Documents Store</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

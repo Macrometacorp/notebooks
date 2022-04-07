@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python" href="../advanced_python/advanced_toc.html" />
+    <link rel="next" title="CLI07 - Working with Fabrics" href="07_working_with_fabrics%28CLI%29.html" />
     <link rel="prev" title="CLI05 - Graph Traversals" href="05_graph_traversals%28CLI%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -225,7 +225,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_docs_store%28CLI%29.html">
-     CLI03 - Quick Start with Documents Store
+     JS03 - Quick Start with Documents Store
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_graphs%28CLI%29.html">
+     JS04 - Quick Start with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -236,6 +241,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      CLI06 - Building RESTQL APIs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07_working_with_fabrics%28CLI%29.html">
+     CLI07 - Working with Fabrics
     </a>
    </li>
   </ul>
@@ -368,99 +378,97 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-a-define-login-credentials">
-   Step 06-A - Define Login Credentials
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-b-connect-to-gdn">
-   Step 06-B - Connect to GDN
+  <a class="reference internal nav-link" href="#define-login-credentials">
+   1. Define Login Credentials
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-c-create-a-geo-replicated-collection">
-   Step 06-C - Create a Geo Replicated Collection
+  <a class="reference internal nav-link" href="#connect-to-gdn">
+   2. Connect to GDN
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-d-create-rest-apis-restqls">
-   Step 06-D - Create Rest APIs (RESTQLs)
+  <a class="reference internal nav-link" href="#create-a-geo-replicated-collection">
+   3. Create a Geo Replicated Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-rest-apis-restqls">
+   4. Create Rest APIs (RESTQLs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#execute-restqls">
+   5. Execute RESTQLs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-d1-creating-the-restql-apis">
-     Step 06-D1 - Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#test-the-insertrecord-restql">
+     5.1. Test the “insertRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-the-updaterecord-restql">
+     5.2. Test the “updateRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-the-getrecords-restql">
+     5.3. Test the “getRecords” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-the-countrecords-restql">
+     5.4. Test the “countRecords” RESTQL
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-e-execute-restqls">
-   Step 06-E - Execute RESTQLs
+  <a class="reference internal nav-link" href="#updating-a-restql-api">
+   6. Updating a RESTQL API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e1-test-the-insertrecord-restql">
-     Step 06-E1 - Test the “insertRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-that-we-can-query-gdn-and-see-the-document">
+     6.1. Test that we can query GDN and see the document
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e2-test-the-updaterecord-restql">
-     Step 06-E2 - Test the “updateRecord” RESTQL
+    <a class="reference internal nav-link" href="#id1">
+     6.2. Updating a RESTQL API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e3-test-the-getrecords-restql">
-     Step 06-E3 - Test the “getRecords” RESTQL
+    <a class="reference internal nav-link" href="#testing-the-updated-restql-api">
+     6.4. Testing the updated RESTQL API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e4-test-the-countrecords-restql">
-     Step 06-E4 - Test the “countRecords” RESTQL
+    <a class="reference internal nav-link" href="#checking-the-data-in-the-collection">
+     6.5. Checking the data in the collection
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-f-updating-a-restql-api">
-   Step 06-F - Updating a RESTQL API
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f1-test-that-we-can-query-gdn-and-see-the-document">
-     Step 06-F1 - Test that we can query GDN and see the document
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f2-updating-a-restql-api">
-     Step 06-F2 - Updating a RESTQL API
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f3-testing-the-updated-restql-api">
-     Step 06-F3 - Testing the updated RESTQL API
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f4-checking-the-data-in-the-collection">
-     Step 06-F4 - Checking the data in the collection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-g-deleting-a-record-using-a-restql-api">
-   Step 06-G - Deleting a record using a RESTQL API
+  <a class="reference internal nav-link" href="#deleting-a-record-using-a-restql-api">
+   7.  Deleting a record using a RESTQL API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-h-delete-restqls">
-   Step 06-H - Delete RESTQLs
+  <a class="reference internal nav-link" href="#delete-restqls">
+   8. Delete RESTQLs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-i-delete-the-collection">
-   Step 06-I - Delete the Collection
+  <a class="reference internal nav-link" href="#delete-the-collection">
+   9. - Delete the Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -489,99 +497,97 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-a-define-login-credentials">
-   Step 06-A - Define Login Credentials
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-b-connect-to-gdn">
-   Step 06-B - Connect to GDN
+  <a class="reference internal nav-link" href="#define-login-credentials">
+   1. Define Login Credentials
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-c-create-a-geo-replicated-collection">
-   Step 06-C - Create a Geo Replicated Collection
+  <a class="reference internal nav-link" href="#connect-to-gdn">
+   2. Connect to GDN
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-d-create-rest-apis-restqls">
-   Step 06-D - Create Rest APIs (RESTQLs)
+  <a class="reference internal nav-link" href="#create-a-geo-replicated-collection">
+   3. Create a Geo Replicated Collection
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-rest-apis-restqls">
+   4. Create Rest APIs (RESTQLs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#execute-restqls">
+   5. Execute RESTQLs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-d1-creating-the-restql-apis">
-     Step 06-D1 - Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#test-the-insertrecord-restql">
+     5.1. Test the “insertRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-the-updaterecord-restql">
+     5.2. Test the “updateRecord” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-the-getrecords-restql">
+     5.3. Test the “getRecords” RESTQL
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-the-countrecords-restql">
+     5.4. Test the “countRecords” RESTQL
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-e-execute-restqls">
-   Step 06-E - Execute RESTQLs
+  <a class="reference internal nav-link" href="#updating-a-restql-api">
+   6. Updating a RESTQL API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e1-test-the-insertrecord-restql">
-     Step 06-E1 - Test the “insertRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-that-we-can-query-gdn-and-see-the-document">
+     6.1. Test that we can query GDN and see the document
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e2-test-the-updaterecord-restql">
-     Step 06-E2 - Test the “updateRecord” RESTQL
+    <a class="reference internal nav-link" href="#id1">
+     6.2. Updating a RESTQL API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e3-test-the-getrecords-restql">
-     Step 06-E3 - Test the “getRecords” RESTQL
+    <a class="reference internal nav-link" href="#testing-the-updated-restql-api">
+     6.4. Testing the updated RESTQL API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-e4-test-the-countrecords-restql">
-     Step 06-E4 - Test the “countRecords” RESTQL
+    <a class="reference internal nav-link" href="#checking-the-data-in-the-collection">
+     6.5. Checking the data in the collection
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-f-updating-a-restql-api">
-   Step 06-F - Updating a RESTQL API
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f1-test-that-we-can-query-gdn-and-see-the-document">
-     Step 06-F1 - Test that we can query GDN and see the document
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f2-updating-a-restql-api">
-     Step 06-F2 - Updating a RESTQL API
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f3-testing-the-updated-restql-api">
-     Step 06-F3 - Testing the updated RESTQL API
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-06-f4-checking-the-data-in-the-collection">
-     Step 06-F4 - Checking the data in the collection
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-g-deleting-a-record-using-a-restql-api">
-   Step 06-G - Deleting a record using a RESTQL API
+  <a class="reference internal nav-link" href="#deleting-a-record-using-a-restql-api">
+   7.  Deleting a record using a RESTQL API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-h-delete-restqls">
-   Step 06-H - Delete RESTQLs
+  <a class="reference internal nav-link" href="#delete-restqls">
+   8. Delete RESTQLs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#step-06-i-delete-the-collection">
-   Step 06-I - Delete the Collection
+  <a class="reference internal nav-link" href="#delete-the-collection">
+   9. - Delete the Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -601,8 +607,24 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="cli06-building-restql-apis">
 <h1>CLI06 - Building RESTQL APIs<a class="headerlink" href="#cli06-building-restql-apis" title="Permalink to this headline">¶</a></h1>
 <p>Query as API (aka RESTQL) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
-<div class="section" id="step-06-a-define-login-credentials">
-<h2>Step 06-A - Define Login Credentials<a class="headerlink" href="#step-06-a-define-login-credentials" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pre-requisite">
+<h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
+<p>Lets Assume</p>
+<ul class="simple">
+<li><p>you have already made a tenant account, and have a username and password</p></li>
+<li><p>you have installed the Macrometa CLI as explained in section 01</p></li>
+<li><p>you have generated an API Key as explained in section 01</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g gdnsl
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="define-login-credentials">
+<h2>1. Define Login Credentials<a class="headerlink" href="#define-login-credentials" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Login credentials</span>
@@ -616,8 +638,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-06-b-connect-to-gdn">
-<h2>Step 06-B - Connect to GDN<a class="headerlink" href="#step-06-b-connect-to-gdn" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="connect-to-gdn">
+<h2>2. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">¶</a></h2>
 <p>Now that you have added your login credentials, lets connect to GDN</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,8 +659,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="step-06-c-create-a-geo-replicated-collection">
-<h2>Step 06-C - Create a Geo Replicated Collection<a class="headerlink" href="#step-06-c-create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-a-geo-replicated-collection">
+<h2>3. Create a Geo Replicated Collection<a class="headerlink" href="#create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
 <p>Before we create the RESTQL APIs lets create a collection that we can work with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -652,10 +674,8 @@ gdnsl collection create <span class="nv">$collection_name</span> --type doc
 </div>
 </div>
 </div>
-<div class="section" id="step-06-d-create-rest-apis-restqls">
-<h2>Step 06-D - Create Rest APIs (RESTQLs)<a class="headerlink" href="#step-06-d-create-rest-apis-restqls" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="step-06-d1-creating-the-restql-apis">
-<h3>Step 06-D1 - Creating the RESTQL APIs<a class="headerlink" href="#step-06-d1-creating-the-restql-apis" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-rest-apis-restqls">
+<h2>4. Create Rest APIs (RESTQLs)<a class="headerlink" href="#create-rest-apis-restqls" title="Permalink to this headline">¶</a></h2>
 <p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -671,12 +691,11 @@ gdnsl query-worker create countRecords --value  <span class="s2">&quot;RETURN CO
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="step-06-e-execute-restqls">
-<h2>Step 06-E - Execute RESTQLs<a class="headerlink" href="#step-06-e-execute-restqls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="execute-restqls">
+<h2>5. Execute RESTQLs<a class="headerlink" href="#execute-restqls" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a RESTQL Query API first.</strong></p>
-<div class="section" id="step-06-e1-test-the-insertrecord-restql">
-<h3>Step 06-E1 - Test the “insertRecord” RESTQL<a class="headerlink" href="#step-06-e1-test-the-insertrecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-insertrecord-restql">
+<h3>5.1. Test the “insertRecord” RESTQL<a class="headerlink" href="#test-the-insertrecord-restql" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; ------- EXECUTE RESTQLs ------&quot;</span>
@@ -690,8 +709,8 @@ gdnsl query-worker run getRecords
 </div>
 </div>
 </div>
-<div class="section" id="step-06-e2-test-the-updaterecord-restql">
-<h3>Step 06-E2 - Test the “updateRecord” RESTQL<a class="headerlink" href="#step-06-e2-test-the-updaterecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-updaterecord-restql">
+<h3>5.2. Test the “updateRecord” RESTQL<a class="headerlink" href="#test-the-updaterecord-restql" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Update data....&quot;</span>
@@ -702,8 +721,8 @@ gdnsl query-worker run updateRecord
 </div>
 </div>
 </div>
-<div class="section" id="step-06-e3-test-the-getrecords-restql">
-<h3>Step 06-E3 - Test the “getRecords” RESTQL<a class="headerlink" href="#step-06-e3-test-the-getrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-getrecords-restql">
+<h3>5.3. Test the “getRecords” RESTQL<a class="headerlink" href="#test-the-getrecords-restql" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Get data....&quot;</span>
@@ -713,8 +732,8 @@ gdnsl query-worker run getRecords
 </div>
 </div>
 </div>
-<div class="section" id="step-06-e4-test-the-countrecords-restql">
-<h3>Step 06-E4 - Test the “countRecords” RESTQL<a class="headerlink" href="#step-06-e4-test-the-countrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-countrecords-restql">
+<h3>5.4. Test the “countRecords” RESTQL<a class="headerlink" href="#test-the-countrecords-restql" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Count records....&quot;</span>
@@ -725,10 +744,10 @@ gdnsl query-worker run countRecords
 </div>
 </div>
 </div>
-<div class="section" id="step-06-f-updating-a-restql-api">
-<h2>Step 06-F - Updating a RESTQL API<a class="headerlink" href="#step-06-f-updating-a-restql-api" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="step-06-f1-test-that-we-can-query-gdn-and-see-the-document">
-<h3>Step 06-F1 - Test that we can query GDN and see the document<a class="headerlink" href="#step-06-f1-test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="updating-a-restql-api">
+<h2>6. Updating a RESTQL API<a class="headerlink" href="#updating-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="test-that-we-can-query-gdn-and-see-the-document">
+<h3>6.1. Test that we can query GDN and see the document<a class="headerlink" href="#test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
 <p>A common requirement when building an application is to make a change to an API and update it.</p>
 <p>To demonstrate this, lets first query the database using the “execute_query” method we learnt in an earlier section</p>
 <p>Once run, we should see the document in the cell output in JSON format so we can read it easily.</p>
@@ -742,8 +761,8 @@ gdnsl query <span class="s2">&quot;FOR doc IN person RETURN doc&quot;</span>
 </div>
 </div>
 </div>
-<div class="section" id="step-06-f2-updating-a-restql-api">
-<h3>Step 06-F2 - Updating a RESTQL API<a class="headerlink" href="#step-06-f2-updating-a-restql-api" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>6.2. Updating a RESTQL API<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The follow cell show us how to add a new parameter to the Query, in this example we are going to add a the parameter “phone” to the query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,8 +772,8 @@ gdnsl query <span class="s2">&quot;FOR doc IN person RETURN doc&quot;</span>
 </div>
 </div>
 </div>
-<div class="section" id="step-06-f3-testing-the-updated-restql-api">
-<h3>Step 06-F3 - Testing the updated RESTQL API<a class="headerlink" href="#step-06-f3-testing-the-updated-restql-api" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="testing-the-updated-restql-api">
+<h3>6.4. Testing the updated RESTQL API<a class="headerlink" href="#testing-the-updated-restql-api" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have updated the Query, lets add a new record using it to test that it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -765,8 +784,8 @@ gdnsl query-worker run insertRecord --param <span class="s2">&quot;firstname=joh
 </div>
 </div>
 </div>
-<div class="section" id="step-06-f4-checking-the-data-in-the-collection">
-<h3>Step 06-F4 - Checking the data in the collection<a class="headerlink" href="#step-06-f4-checking-the-data-in-the-collection" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="checking-the-data-in-the-collection">
+<h3>6.5. Checking the data in the collection<a class="headerlink" href="#checking-the-data-in-the-collection" title="Permalink to this headline">¶</a></h3>
 <p>Now lets check that the data has been updated in the record by using the “execute_query” method - we should see two documents.</p>
 <ol class="simple">
 <li><p>the original document without a phone number, and</p></li>
@@ -784,8 +803,8 @@ gdnsl query <span class="s2">&quot;FOR doc IN person RETURN doc&quot;</span>
 </div>
 </div>
 </div>
-<div class="section" id="step-06-g-deleting-a-record-using-a-restql-api">
-<h2>Step 06-G - Deleting a record using a RESTQL API<a class="headerlink" href="#step-06-g-deleting-a-record-using-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deleting-a-record-using-a-restql-api">
+<h2>7.  Deleting a record using a RESTQL API<a class="headerlink" href="#deleting-a-record-using-a-restql-api" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Delete data....&quot;</span>
@@ -795,8 +814,8 @@ gdnsl query-worker run deleteRecord
 </div>
 </div>
 </div>
-<div class="section" id="step-06-h-delete-restqls">
-<h2>Step 06-H - Delete RESTQLs<a class="headerlink" href="#step-06-h-delete-restqls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="delete-restqls">
+<h2>8. Delete RESTQLs<a class="headerlink" href="#delete-restqls" title="Permalink to this headline">¶</a></h2>
 <p>We might want to delete our RESTQL APIs completely.</p>
 <p>For each RESTQL we want to remove we use the “delete_restql” method as shown in the cell below</p>
 <div class="cell docutils container">
@@ -813,8 +832,8 @@ gdnsl query-worker delete deleteRecord
 </div>
 </div>
 </div>
-<div class="section" id="step-06-i-delete-the-collection">
-<h2>Step 06-I - Delete the Collection<a class="headerlink" href="#step-06-i-delete-the-collection" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="delete-the-collection">
+<h2>9. - Delete the Collection<a class="headerlink" href="#delete-the-collection" title="Permalink to this headline">¶</a></h2>
 <p>Now let us remove the collection we added during this Tutorial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -865,10 +884,10 @@ gdnsl query-worker delete deleteRecord
             <p class="prev-next-title">CLI05 - Graph Traversals</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../advanced_python/advanced_toc.html" title="next page">
+    <a class='right-next' id="next-link" href="07_working_with_fabrics%28CLI%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python</p>
+        <p class="prev-next-title">CLI07 - Working with Fabrics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

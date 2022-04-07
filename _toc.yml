@@ -29,8 +29,11 @@ parts:
     sections:
       - file: cli/01_connect_gdn(CLI)
       - file: cli/02_key_value_store(CLI)
+      - file: cli/03_docs_store(CLI)
+      - file: cli/04_graphs(CLI)
       - file: cli/05_graph_traversals(CLI)
       - file: cli/06_building_restql_apis(CLI)
+      - file: cli/07_working_with_fabrics(CLI)
 - caption: Advanced
   chapters:
   - file: advanced_python/advanced_toc

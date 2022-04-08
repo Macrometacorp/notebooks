@@ -173,17 +173,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/02_key_value_store%28javascript%29.html">
-     JS02 - Quick Start with Key Value Store
+     JS02 - Key Value Store
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/03_docs_store%28javascript%29.html">
-     JS03 - Quick Start with Documents Store
+     JS03 - Documents Store
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/04_graphs%28javascript%29.html">
-     JS04 - Quick Start with Graphs
+     JS04 - Working with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/06_building_restql_apis%28javascript%29.html">
-     JS06 - Building RESTQL APIs
+     JS06 - Building Query Workers
     </a>
    </li>
    <li class="toctree-l2">
@@ -717,7 +717,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-a-geo-replicated-collection">
 <h2>5. Create a Geo Replicated Collection<a class="headerlink" href="#create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
-<p>Before we create the RESTQL APIs lets create a collection that we can work with</p>
+<p>Before we create the Query Workers lets create a collection that we can work with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s2">&quot;person&quot;</span>
@@ -756,7 +756,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="creating-the-query-worker-apis">
 <h3>6.2. Creating the Query Worker APIs<a class="headerlink" href="#creating-the-query-worker-apis" title="Permalink to this headline">¶</a></h3>
-<p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
+<p>The Following Code will create a set of Query Workers in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CREATE RESTQLs  ------&quot;</span><span class="p">)</span>
@@ -898,7 +898,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>the original document without a phone number, and</p></li>
 <li><p>a second document, but now with a phone number added</p></li>
 </ol>
-<p><strong>Hint: If you would like to return to the steo “countRecords” and re run the code, you should see the count value increase by 1</strong></p>
+<p><strong>Hint: If you would like to return to the step “countRecords” and re run the code, you should see the count value increase by 1</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get docs in </span><span class="se">\&quot;</span><span class="s2">person</span><span class="se">\&quot;</span><span class="s2"> collection, after executing the updated query&quot;</span><span class="p">)</span>
@@ -930,7 +930,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="delete-all-query-workers">
 <h2>10. Delete all Query Workers<a class="headerlink" href="#delete-all-query-workers" title="Permalink to this headline">¶</a></h2>
 <p>We might want to delete our RESTQL APIs completely.</p>
-<p>For each RESTQL we want to remove we use the “delete_restql” method as shown in the cell below</p>
+<p>For each Query Worker we want to remove we use the “delete_restql” method as shown in the cell below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- DELETE RESTQLs ------&quot;</span><span class="p">)</span>

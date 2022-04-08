@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS06 - Building RESTQL APIs &#8212; GDN - XBook</title>
+    <title>JS06 - Building Query Workers &#8212; GDN - XBook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -173,17 +173,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_key_value_store%28javascript%29.html">
-     JS02 - Quick Start with Key Value Store
+     JS02 - Key Value Store
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_docs_store%28javascript%29.html">
-     JS03 - Quick Start with Documents Store
+     JS03 - Documents Store
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_graphs%28javascript%29.html">
-     JS04 - Quick Start with Graphs
+     JS04 - Working with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -193,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     JS06 - Building RESTQL APIs
+     JS06 - Building Query Workers
     </a>
    </li>
    <li class="toctree-l2">
@@ -378,6 +378,11 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-libraries-to-workbook">
    1. Import Libraries to Workbook
   </a>
@@ -403,8 +408,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-rest-apis-restqls">
-   6. Create Rest APIs (RESTQLs)
+  <a class="reference internal nav-link" href="#create-query-workers">
+   6. Create Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -413,42 +418,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-restql-apis">
-     6.2. Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#creating-the-query-worker-apis">
+     6.2. Creating the Query Worker APIs
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-restqls">
-   7. Execute RESTQLs
+  <a class="reference internal nav-link" href="#execute-query-workers">
+   7. Execute Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-insertrecord-restql">
-     7.1. Test the “insertRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-insertrecord-query-worker">
+     7.1. Test the “insertRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-updaterecord-restql">
-     7.2. Test the “updateRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-updaterecord-query-worker">
+     7.2. Test the “updateRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-getrecords-restql">
-     7.3. Test the “getRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-getrecords-query-worker">
+     7.3. Test the “getRecords” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-countrecords-restql">
-     7.4. Test the “countRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-countrecords-query-worker">
+     7.4. Test the “countRecords” Query Worker
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-a-restql-api">
-   8. Updating a RESTQL API
+  <a class="reference internal nav-link" href="#updating-a-query-worker-api">
+   8. Updating a Query Worker API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -458,12 +463,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     8.2. Updating a RESTQL API
+     8.2. Updating a Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-updated-restql-api">
-     8.3. Testing the updated RESTQL API
+    <a class="reference internal nav-link" href="#testing-the-updated-query-worker-api">
+     8.3. Testing the updated Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -474,13 +479,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deleting-a-record-using-a-restql-api">
-   8.5. Deleting a record using a RESTQL API
+  <a class="reference internal nav-link" href="#deleting-a-record-using-a-query-worker-api">
+   8.5. Deleting a record using a Query Worker API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delete-restqls">
-   9. Delete RESTQLs
+  <a class="reference internal nav-link" href="#delete-query-workers">
+   9. Delete Query Workers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -503,7 +508,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>JS06 - Building RESTQL APIs</h1>
+                <h1>JS06 - Building Query Workers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -513,6 +518,11 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requisite">
+   Pre-requisite
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#import-libraries-to-workbook">
    1. Import Libraries to Workbook
@@ -539,8 +549,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-rest-apis-restqls">
-   6. Create Rest APIs (RESTQLs)
+  <a class="reference internal nav-link" href="#create-query-workers">
+   6. Create Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -549,42 +559,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-restql-apis">
-     6.2. Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#creating-the-query-worker-apis">
+     6.2. Creating the Query Worker APIs
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-restqls">
-   7. Execute RESTQLs
+  <a class="reference internal nav-link" href="#execute-query-workers">
+   7. Execute Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-insertrecord-restql">
-     7.1. Test the “insertRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-insertrecord-query-worker">
+     7.1. Test the “insertRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-updaterecord-restql">
-     7.2. Test the “updateRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-updaterecord-query-worker">
+     7.2. Test the “updateRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-getrecords-restql">
-     7.3. Test the “getRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-getrecords-query-worker">
+     7.3. Test the “getRecords” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-countrecords-restql">
-     7.4. Test the “countRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-countrecords-query-worker">
+     7.4. Test the “countRecords” Query Worker
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-a-restql-api">
-   8. Updating a RESTQL API
+  <a class="reference internal nav-link" href="#updating-a-query-worker-api">
+   8. Updating a Query Worker API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -594,12 +604,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     8.2. Updating a RESTQL API
+     8.2. Updating a Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-updated-restql-api">
-     8.3. Testing the updated RESTQL API
+    <a class="reference internal nav-link" href="#testing-the-updated-query-worker-api">
+     8.3. Testing the updated Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -610,13 +620,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deleting-a-record-using-a-restql-api">
-   8.5. Deleting a record using a RESTQL API
+  <a class="reference internal nav-link" href="#deleting-a-record-using-a-query-worker-api">
+   8.5. Deleting a record using a Query Worker API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delete-restqls">
-   9. Delete RESTQLs
+  <a class="reference internal nav-link" href="#delete-query-workers">
+   9. Delete Query Workers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -638,9 +648,28 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="js06-building-restql-apis">
-<h1>JS06 - Building RESTQL APIs<a class="headerlink" href="#js06-building-restql-apis" title="Permalink to this headline">¶</a></h1>
-<p>Query as API (aka RESTQL) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="js06-building-query-workers">
+<h1>JS06 - Building Query Workers<a class="headerlink" href="#js06-building-query-workers" title="Permalink to this headline">¶</a></h1>
+<p>Query as API (aka Query Workers) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
+<div class="section" id="pre-requisite">
+<h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
+<p>Lets Assume</p>
+<ul class="simple">
+<li><p>you have already made a tenant account, and have a username and password</p></li>
+<li><p>you have installed the jsc8 drivers as explained in section 01</p></li>
+<li><p>you have generated an API Key as explained in section 01</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>#/* run this once to install javascript kernal and jsc8 in google colab, then reload, and then skip this
+!npm install jsc8
+!npm install -g --unsafe-perm ijavascript
+!ijsinstall --install=global  # */
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="import-libraries-to-workbook">
 <h2>1. Import Libraries to Workbook<a class="headerlink" href="#import-libraries-to-workbook" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
@@ -700,7 +729,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-a-geo-replicated-collection">
 <h2>5. Create a Geo Replicated Collection<a class="headerlink" href="#create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
-<p>Before we create the RESTQL APIs lets create a collection that we can work with</p>
+<p>Before we create the Query Workers lets create a collection that we can work with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CREATE GEO-REPLICATED COLLECTION  ------&quot;</span><span class="p">);</span>
@@ -725,11 +754,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="create-rest-apis-restqls">
-<h2>6. Create Rest APIs (RESTQLs)<a class="headerlink" href="#create-rest-apis-restqls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-query-workers">
+<h2>6. Create Query Workers<a class="headerlink" href="#create-query-workers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="defining-our-queries">
 <h3>6.1. Defining our Queries<a class="headerlink" href="#defining-our-queries" title="Permalink to this headline">¶</a></h3>
-<p>In this section we are going to define five RESTQL Query APIs</p>
+<p>In this section we are going to define five Query Worker APIs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">parameter</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="nx">zipcode</span><span class="o">:</span> <span class="s2">&quot;&quot;</span> <span class="p">};</span>
@@ -772,9 +801,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="creating-the-restql-apis">
-<h3>6.2. Creating the RESTQL APIs<a class="headerlink" href="#creating-the-restql-apis" title="Permalink to this headline">¶</a></h3>
-<p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
+<div class="section" id="creating-the-query-worker-apis">
+<h3>6.2. Creating the Query Worker APIs<a class="headerlink" href="#creating-the-query-worker-apis" title="Permalink to this headline">¶</a></h3>
+<p>The Following Code will create a set of Query Worker APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">createRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -817,11 +846,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="execute-restqls">
-<h2>7. Execute RESTQLs<a class="headerlink" href="#execute-restqls" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a RESTQL Query API first.</strong></p>
-<div class="section" id="test-the-insertrecord-restql">
-<h3>7.1. Test the “insertRecord” RESTQL<a class="headerlink" href="#test-the-insertrecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="execute-query-workers">
+<h2>7. Execute Query Workers<a class="headerlink" href="#execute-query-workers" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a Query Worker API first.</strong></p>
+<div class="section" id="test-the-insertrecord-query-worker">
+<h3>7.1. Test the “insertRecord” Query Worker<a class="headerlink" href="#test-the-insertrecord-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">executeRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -845,8 +874,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="test-the-updaterecord-restql">
-<h3>7.2. Test the “updateRecord” RESTQL<a class="headerlink" href="#test-the-updaterecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-updaterecord-query-worker">
+<h3>7.2. Test the “updateRecord” Query Worker<a class="headerlink" href="#test-the-updaterecord-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">executeRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -866,8 +895,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="test-the-getrecords-restql">
-<h3>7.3. Test the “getRecords” RESTQL<a class="headerlink" href="#test-the-getrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-getrecords-query-worker">
+<h3>7.3. Test the “getRecords” Query Worker<a class="headerlink" href="#test-the-getrecords-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">executeRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -883,8 +912,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="test-the-countrecords-restql">
-<h3>7.4. Test the “countRecords” RESTQL<a class="headerlink" href="#test-the-countrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-countrecords-query-worker">
+<h3>7.4. Test the “countRecords” Query Worker<a class="headerlink" href="#test-the-countrecords-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">executeRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -901,8 +930,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="updating-a-restql-api">
-<h2>8. Updating a RESTQL API<a class="headerlink" href="#updating-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="updating-a-query-worker-api">
+<h2>8. Updating a Query Worker API<a class="headerlink" href="#updating-a-query-worker-api" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="test-that-we-can-query-gdn-and-see-the-document">
 <h3>8.1. Test that we can query GDN and see the document<a class="headerlink" href="#test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
 <p>A common requirement when building an application is to make a change to an API and update it.</p>
@@ -926,7 +955,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id1">
-<h3>8.2. Updating a RESTQL API<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3>8.2. Updating a Query Worker API<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The follow cell show us how to add a new parameter to the Query, in this example we are going to add a the parameter “phone” to the query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -952,8 +981,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="testing-the-updated-restql-api">
-<h3>8.3. Testing the updated RESTQL API<a class="headerlink" href="#testing-the-updated-restql-api" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="testing-the-updated-query-worker-api">
+<h3>8.3. Testing the updated Query Worker API<a class="headerlink" href="#testing-the-updated-query-worker-api" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have updated the Query, lets add a new record using it to test that it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -983,7 +1012,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>the original document without a phone number, and</p></li>
 <li><p>a second document, but now with a phone number added</p></li>
 </ol>
-<p><strong>Hint: If you would like to return to “Step 06-G4 - Test the “countRecords” RESTQL” and re run the code, you should see the count value increase by 1</strong></p>
+<p>Hint: If you would like to return to the step “countRecords” and re run the code, you should see the count value increase by 1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span>
@@ -1004,8 +1033,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="deleting-a-record-using-a-restql-api">
-<h2>8.5. Deleting a record using a RESTQL API<a class="headerlink" href="#deleting-a-record-using-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deleting-a-record-using-a-query-worker-api">
+<h2>8.5. Deleting a record using a Query Worker API<a class="headerlink" href="#deleting-a-record-using-a-query-worker-api" title="Permalink to this headline">¶</a></h2>
+<p>We might want to delete our Query Worker APIs completely.</p>
+<p>For each Query Worker we want to remove we use the “delete_restql” method as shown in the cell below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">executeRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -1020,10 +1051,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="delete-restqls">
-<h2>9. Delete RESTQLs<a class="headerlink" href="#delete-restqls" title="Permalink to this headline">¶</a></h2>
-<p>We might want to delete our RESTQL APIs completely.</p>
-<p>For each RESTQL we want to remove we use the “deleteRestql” method as shown in the cell below</p>
+<div class="section" id="delete-query-workers">
+<h2>9. Delete Query Workers<a class="headerlink" href="#delete-query-workers" title="Permalink to this headline">¶</a></h2>
+<p>We might want to delete our Query Worker APIs completely.</p>
+<p>For each Query Worker we want to remove we use the “deleteRestql” method as shown in the cell below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteRestQL</span><span class="p">()</span> <span class="p">{</span>
@@ -1065,9 +1096,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
 <p>Congratulations!, another tutorial completed.</p>
-<p><strong>Note: To use the created RESTQL APIs you should use the API reference documentation for detailed instructions.</strong></p>
+<p><strong>Note: To use the created Query Worker APIs you should use the API reference documentation for detailed instructions.</strong></p>
 <p>e.g. /_fabric/{fabric}/_api/restql/{name}</p>
-<p>where {name} is the name of your RESTQL API e.g. “insertRecord”</p>
+<p>where {name} is the name of your Query Worker API e.g. “insertRecord”</p>
 </div>
 </div>
 

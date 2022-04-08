@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Py06 - Building RESTQL APIs &#8212; GDN - XBook</title>
+    <title>Py06 - Building Query Workers &#8212; GDN - XBook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Py07 - Working with Fabrics" href="07_working_with_fabrics%28Python%29.html" />
+    <link rel="next" title="Py07 - GeoFabrics" href="07_working_with_fabrics%28Python%29.html" />
     <link rel="prev" title="Py05 - Graph Traversals" href="05_graph_traversals%28Python%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -126,17 +126,17 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02_key_value_store%28Python%29.html">
-     Py02 - Quick Start with Key Value Store
+     Py02 - Key Value Store
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03_docs_store%28Python%29.html">
-     Py03 - Quick Start with Documents Store
+     Py03 - Documents Store
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04_graphs%28Python%29.html">
-     Py04 - Quick Start with Graphs
+     Py04 - Working with Graphs
     </a>
    </li>
    <li class="toctree-l2">
@@ -146,12 +146,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Py06 - Building RESTQL APIs
+     Py06 - Building Query Workers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07_working_with_fabrics%28Python%29.html">
-     Py07 - Working with Fabrics
+     Py07 - GeoFabrics
     </a>
    </li>
   </ul>
@@ -408,8 +408,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-rest-apis-restqls">
-   6. Create Rest APIs (RESTQLs)
+  <a class="reference internal nav-link" href="#create-query-workers">
+   6. Create Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -418,42 +418,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-restql-apis">
-     6.2. Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#creating-the-query-worker-apis">
+     6.2. Creating the Query Worker APIs
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-restqls">
-   7. Execute RESTQLs
+  <a class="reference internal nav-link" href="#execute-query-workers">
+   7. Execute Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-insertrecord-restql">
-     7.1. Test the “insertRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-insertrecord-query-worker">
+     7.1. Test the “insertRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-updaterecord-restql">
-     7.2. Test the “updateRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-updaterecord-query-worker">
+     7.2. Test the “updateRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-getrecords-restql">
-     7.3. Test the “getRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-getrecords-query-worker">
+     7.3. Test the “getRecords” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-countrecords-restql">
-     7.4. Test the “countRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-countrecords-query-worker">
+     7.4. Test the “countRecords” Query Worker
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-a-restql-api">
-   8. Updating a RESTQL API
+  <a class="reference internal nav-link" href="#updating-a-query-worker-api">
+   8. Updating a Query Worker API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -463,12 +463,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     8.2. Updating a RESTQL API
+     8.2. Updating a Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-updated-restql-api">
-     8.3. Testing the updated RESTQL API
+    <a class="reference internal nav-link" href="#testing-the-updated-query-worker-api">
+     8.3. Testing the updated Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -479,13 +479,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deleting-a-record-using-a-restql-api">
-   9. Deleting a record using a RESTQL API
+  <a class="reference internal nav-link" href="#deleting-a-record-using-a-query-worker-api">
+   9. Deleting a record using a Query Worker API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delete-all-restqls">
-   10. Delete all RESTQLs
+  <a class="reference internal nav-link" href="#delete-all-query-workers">
+   10. Delete all Query Workers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -508,7 +508,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Py06 - Building RESTQL APIs</h1>
+                <h1>Py06 - Building Query Workers</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -549,8 +549,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-rest-apis-restqls">
-   6. Create Rest APIs (RESTQLs)
+  <a class="reference internal nav-link" href="#create-query-workers">
+   6. Create Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -559,42 +559,42 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-restql-apis">
-     6.2. Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#creating-the-query-worker-apis">
+     6.2. Creating the Query Worker APIs
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-restqls">
-   7. Execute RESTQLs
+  <a class="reference internal nav-link" href="#execute-query-workers">
+   7. Execute Query Workers
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-insertrecord-restql">
-     7.1. Test the “insertRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-insertrecord-query-worker">
+     7.1. Test the “insertRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-updaterecord-restql">
-     7.2. Test the “updateRecord” RESTQL
+    <a class="reference internal nav-link" href="#test-the-updaterecord-query-worker">
+     7.2. Test the “updateRecord” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-getrecords-restql">
-     7.3. Test the “getRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-getrecords-query-worker">
+     7.3. Test the “getRecords” Query Worker
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#test-the-countrecords-restql">
-     7.4. Test the “countRecords” RESTQL
+    <a class="reference internal nav-link" href="#test-the-countrecords-query-worker">
+     7.4. Test the “countRecords” Query Worker
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-a-restql-api">
-   8. Updating a RESTQL API
+  <a class="reference internal nav-link" href="#updating-a-query-worker-api">
+   8. Updating a Query Worker API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -604,12 +604,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id1">
-     8.2. Updating a RESTQL API
+     8.2. Updating a Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#testing-the-updated-restql-api">
-     8.3. Testing the updated RESTQL API
+    <a class="reference internal nav-link" href="#testing-the-updated-query-worker-api">
+     8.3. Testing the updated Query Worker API
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -620,13 +620,13 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deleting-a-record-using-a-restql-api">
-   9. Deleting a record using a RESTQL API
+  <a class="reference internal nav-link" href="#deleting-a-record-using-a-query-worker-api">
+   9. Deleting a record using a Query Worker API
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delete-all-restqls">
-   10. Delete all RESTQLs
+  <a class="reference internal nav-link" href="#delete-all-query-workers">
+   10. Delete all Query Workers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -648,9 +648,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="py06-building-restql-apis">
-<h1>Py06 - Building RESTQL APIs<a class="headerlink" href="#py06-building-restql-apis" title="Permalink to this headline">¶</a></h1>
-<p>Query as API (aka RESTQL) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="py06-building-query-workers">
+<h1>Py06 - Building Query Workers<a class="headerlink" href="#py06-building-query-workers" title="Permalink to this headline">¶</a></h1>
+<p>Query as API (aka Query Workers) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
@@ -734,11 +734,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="create-rest-apis-restqls">
-<h2>6. Create Rest APIs (RESTQLs)<a class="headerlink" href="#create-rest-apis-restqls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-query-workers">
+<h2>6. Create Query Workers<a class="headerlink" href="#create-query-workers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="defining-our-queries">
 <h3>6.1. Defining our Queries<a class="headerlink" href="#defining-our-queries" title="Permalink to this headline">¶</a></h3>
-<p>In this section we are going to define five RESTQL Query APIs</p>
+<p>In this section we are going to define five Query Worker APIs</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;key101&#39;} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
@@ -754,8 +754,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="creating-the-restql-apis">
-<h3>6.2. Creating the RESTQL APIs<a class="headerlink" href="#creating-the-restql-apis" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="creating-the-query-worker-apis">
+<h3>6.2. Creating the Query Worker APIs<a class="headerlink" href="#creating-the-query-worker-apis" title="Permalink to this headline">¶</a></h3>
 <p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,11 +773,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="execute-restqls">
-<h2>7. Execute RESTQLs<a class="headerlink" href="#execute-restqls" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a RESTQL Query API first.</strong></p>
-<div class="section" id="test-the-insertrecord-restql">
-<h3>7.1. Test the “insertRecord” RESTQL<a class="headerlink" href="#test-the-insertrecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="execute-query-workers">
+<h2>7. Execute Query Workers<a class="headerlink" href="#execute-query-workers" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a Query Worker API first.</strong></p>
+<div class="section" id="test-the-insertrecord-query-worker">
+<h3>7.1. Test the “insertRecord” Query Worker<a class="headerlink" href="#test-the-insertrecord-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- EXECUTE RESTQLs ------&quot;</span><span class="p">)</span>
@@ -796,8 +796,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="test-the-updaterecord-restql">
-<h3>7.2. Test the “updateRecord” RESTQL<a class="headerlink" href="#test-the-updaterecord-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-updaterecord-query-worker">
+<h3>7.2. Test the “updateRecord” Query Worker<a class="headerlink" href="#test-the-updaterecord-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Update data....&quot;</span><span class="p">)</span>
@@ -809,8 +809,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="test-the-getrecords-restql">
-<h3>7.3. Test the “getRecords” RESTQL<a class="headerlink" href="#test-the-getrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-getrecords-query-worker">
+<h3>7.3. Test the “getRecords” Query Worker<a class="headerlink" href="#test-the-getrecords-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get data....&quot;</span><span class="p">)</span>
@@ -822,8 +822,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="test-the-countrecords-restql">
-<h3>7.4. Test the “countRecords” RESTQL<a class="headerlink" href="#test-the-countrecords-restql" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="test-the-countrecords-query-worker">
+<h3>7.4. Test the “countRecords” Query Worker<a class="headerlink" href="#test-the-countrecords-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Count records....&quot;</span><span class="p">)</span>
@@ -836,8 +836,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="updating-a-restql-api">
-<h2>8. Updating a RESTQL API<a class="headerlink" href="#updating-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="updating-a-query-worker-api">
+<h2>8. Updating a Query Worker API<a class="headerlink" href="#updating-a-query-worker-api" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="test-that-we-can-query-gdn-and-see-the-document">
 <h3>8.1. Test that we can query GDN and see the document<a class="headerlink" href="#test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
 <p>A common requirement when building an application is to make a change to an API and update it.</p>
@@ -858,8 +858,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="id1">
-<h3>8.2. Updating a RESTQL API<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>The follow cell show us how to add a new parameter to the Query, in this example we are going to add a the parameter “phone” to the query.</p>
+<h3>8.2. Updating a Query Worker API<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The following cell show us how to add a new parameter to the Query, in this example we are going to add a the parameter “phone” to the query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;INSERT </span><span class="se">{{</span><span class="s2">&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;phone&#39;: @phone</span><span class="se">}}</span><span class="s2"> IN </span><span class="si">{</span><span class="n">collection_name</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -875,8 +875,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="testing-the-updated-restql-api">
-<h3>8.3. Testing the updated RESTQL API<a class="headerlink" href="#testing-the-updated-restql-api" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="testing-the-updated-query-worker-api">
+<h3>8.3. Testing the updated Query Worker API<a class="headerlink" href="#testing-the-updated-query-worker-api" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have updated the Query, lets add a new record using it to test that it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -898,7 +898,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>the original document without a phone number, and</p></li>
 <li><p>a second document, but now with a phone number added</p></li>
 </ol>
-<p><strong>Hint: If you would like to return to “Step 06-G4 - Test the “countRecords” RESTQL” and re run the code, you should see the count value increase by 1</strong></p>
+<p><strong>Hint: If you would like to return to the steo “countRecords” and re run the code, you should see the count value increase by 1</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get docs in </span><span class="se">\&quot;</span><span class="s2">person</span><span class="se">\&quot;</span><span class="s2"> collection, after executing the updated query&quot;</span><span class="p">)</span>
@@ -914,8 +914,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="deleting-a-record-using-a-restql-api">
-<h2>9. Deleting a record using a RESTQL API<a class="headerlink" href="#deleting-a-record-using-a-restql-api" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deleting-a-record-using-a-query-worker-api">
+<h2>9. Deleting a record using a Query Worker API<a class="headerlink" href="#deleting-a-record-using-a-query-worker-api" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Delete data....&quot;</span><span class="p">)</span>
@@ -927,8 +927,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="delete-all-restqls">
-<h2>10. Delete all RESTQLs<a class="headerlink" href="#delete-all-restqls" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="delete-all-query-workers">
+<h2>10. Delete all Query Workers<a class="headerlink" href="#delete-all-query-workers" title="Permalink to this headline">¶</a></h2>
 <p>We might want to delete our RESTQL APIs completely.</p>
 <p>For each RESTQL we want to remove we use the “delete_restql” method as shown in the cell below</p>
 <div class="cell docutils container">
@@ -960,9 +960,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
 <p>Congratulations!, another tutorial completed.</p>
-<p><strong>Note: To use the created RESTQL APIs you should use the API reference documentation for detailed instructions.</strong></p>
+<p><strong>Note: To use the created Query Worker APIs you should use the API reference documentation for detailed instructions.</strong></p>
 <p>e.g. /_fabric/{fabric}/_api/restql/{name}</p>
-<p>where {name} is the name of your RESTQL API e.g. “insertRecord”</p>
+<p>where {name} is the name of your Query Worker API e.g. “insertRecord”</p>
 </div>
 </div>
 
@@ -1001,7 +1001,7 @@ const thebe_selector_output = ".output, .cell_output"
     <a class='right-next' id="next-link" href="07_working_with_fabrics%28Python%29.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Py07 - Working with Fabrics</p>
+        <p class="prev-next-title">Py07 - GeoFabrics</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

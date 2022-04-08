@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PyXX - Building an Address Book App &#8212; GDN - XBook</title>
+    <title>PyXX - Address Book App &#8212; GDN - XBook</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -214,7 +214,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../cli/01_connect_gdn%28CLI%29.html">
-     CLI01 - Connecting to GDN Using the CLI
+     CLI01 - Connecting to GDN
     </a>
    </li>
    <li class="toctree-l2">
@@ -268,7 +268,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     PyXX - Building an Address Book App
+     PyXX - Address Book App
     </a>
    </li>
   </ul>
@@ -397,8 +397,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-our-apps-restql-crud-apis">
-   5. Create our Apps RESTQL CRUD APIs
+  <a class="reference internal nav-link" href="#create-our-apps-query-workers-crud-apis">
+   5. Create our Apps Query Workers CRUD APIs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -407,8 +407,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-restql-apis">
-     5.2 Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#creating-the-query-worker-apis">
+     5.2 Creating the Query Worker APIs
     </a>
    </li>
   </ul>
@@ -433,7 +433,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>PyXX - Building an Address Book App</h1>
+                <h1>PyXX - Address Book App</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -464,8 +464,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-our-apps-restql-crud-apis">
-   5. Create our Apps RESTQL CRUD APIs
+  <a class="reference internal nav-link" href="#create-our-apps-query-workers-crud-apis">
+   5. Create our Apps Query Workers CRUD APIs
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -474,8 +474,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-the-restql-apis">
-     5.2 Creating the RESTQL APIs
+    <a class="reference internal nav-link" href="#creating-the-query-worker-apis">
+     5.2 Creating the Query Worker APIs
     </a>
    </li>
   </ul>
@@ -499,8 +499,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="pyxx-building-an-address-book-app">
-<h1>PyXX - Building an Address Book App<a class="headerlink" href="#pyxx-building-an-address-book-app" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pyxx-address-book-app">
+<h1>PyXX - Address Book App<a class="headerlink" href="#pyxx-address-book-app" title="Permalink to this headline">¶</a></h1>
 <p>Let’s take 5 minutes to create a stateful-serverless backend for a simple Address Book. It’s going to run across the Macrometa Global PaaS Federation distributed with local read-write latencies around ?ms.</p>
 <p>We are going to walk through 4 steps:</p>
 <ol class="simple">
@@ -595,9 +595,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="create-our-apps-restql-crud-apis">
-<h2>5. Create our Apps RESTQL CRUD APIs<a class="headerlink" href="#create-our-apps-restql-crud-apis" title="Permalink to this headline">¶</a></h2>
-<p>In this section we are going to define five RESTQL Query APIs
+<div class="section" id="create-our-apps-query-workers-crud-apis">
+<h2>5. Create our Apps Query Workers CRUD APIs<a class="headerlink" href="#create-our-apps-query-workers-crud-apis" title="Permalink to this headline">¶</a></h2>
+<p>In this section we are going to define five Query Worker APIs
 …</p>
 <div class="section" id="defining-our-queries">
 <h3>5.1 Defining our Queries<a class="headerlink" href="#defining-our-queries" title="Permalink to this headline">¶</a></h3>
@@ -633,9 +633,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="section" id="creating-the-restql-apis">
-<h3>5.2 Creating the RESTQL APIs<a class="headerlink" href="#creating-the-restql-apis" title="Permalink to this headline">¶</a></h3>
-<p>The Following Code will create a set of RESTQL APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
+<div class="section" id="creating-the-query-worker-apis">
+<h3>5.2 Creating the Query Worker APIs<a class="headerlink" href="#creating-the-query-worker-apis" title="Permalink to this headline">¶</a></h3>
+<p>The Following Code will create a set of Query Worker APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(&quot;\n ------- CREATE RESTQLs  ------&quot;)</span>

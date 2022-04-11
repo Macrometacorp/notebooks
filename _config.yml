@@ -3,6 +3,7 @@
 
 title: GDN - XBook
 author: The Macrometa Team
+copyright: "2022"
 logo: logo-moc-blue.png
 
 # Force re-execution of notebooks on each build.

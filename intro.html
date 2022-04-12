@@ -371,8 +371,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-you-will-use">
-   Software you will use
+  <a class="reference internal nav-link" href="#the-software-that-will-be-used">
+   The software that will be used
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -411,8 +411,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#software-you-will-use">
-   Software you will use
+  <a class="reference internal nav-link" href="#the-software-that-will-be-used">
+   The software that will be used
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -436,40 +436,40 @@ const thebe_selector_output = ".output, .cell_output"
 <ol class="simple">
 <li><p>How do I get started?</p></li>
 <li><p>What is Macrometa GDN?</p></li>
-<li><p>Software you will use</p></li>
+<li><p>The Software that will be used</p></li>
 <li><p>What you will learn</p></li>
 </ol>
-<p>Welcome to <em>Distributed Systems &amp; Edge Cloud for Developers.</em> This Book takes you on a journey of discovery into the world of distributed systems and edge computing.</p>
-<p>Together we will experience the art of the possible with Macrometa GDN. This Book provides a series of short tutorials to cover basic and advanced concepts, ranging from simple tasks like connecting to Macrometa GDN and creating a collection or a RestQL API, or more complex tasks like configuring distributed systems and complex event processing (CEP).</p>
+<p>Welcome to <em>Distributed Systems &amp; Edge Cloud for Developers.</em> This Book has been created to take you on a journey of discovery into the world of distributed systems and edge computing.</p>
+<p>Together we will experience the art of the possible with Macrometa GDN through a series of short tutorials spanning basic concepts of how to connect to Macrometa GDN and create a collection, to creating and updating RESTQL APIS, to more advanced concepts like distributed systems and Complex Event Processing!</p>
 <p>Hope you enjoy it!</p>
 <p>from, <strong>the Macrometa Team</strong></p>
 <p><img alt="smallocto" src="_images/Octo10.png" /></p>
 <hr class="docutils" />
 <div class="section" id="how-do-i-get-started">
 <h2>How do I get started?<a class="headerlink" href="#how-do-i-get-started" title="Permalink to this headline">¶</a></h2>
-<p>To get started we recommend one of the following options:</p>
+<p>To get started we recommend one of the following options:-</p>
 <ol class="simple">
-<li><p><strong>Local Host:</strong> Download this Book to your computer and work with the tutorials locally, allowing you to access Macrometa GDN from anywhere in the world. This option connects to the most local GDN point of presence for a P90 50ms RTT. In effect, this simulates how an end device would connect to GDN via an Access Network or ISP.</p></li>
-<li><p><strong>Macrometa Compute:</strong> Run this Book in Macrometa Compute via Jupyter Hub. This allows you to run workbooks and tutorials from Macrometa GDN. The code of the Tutorials and Workbooks run in the edge cloud itself in the same way a microservice would run on Macrometa Compute (CaaS)</p></li>
-<li><p><strong>CoLab:</strong> Run this Book in the free service from Google. This lets the Tutorial Code run in a Public Cloud environment, which simulates a more complete picture of how distributed systems can be deployed.</p></li>
+<li><p><strong>Local Host:</strong> Download this Book to your computer and work with the tutorials locally. This will allow you to access Macrometa GDN from where ever you are in the world. You will connect to the most local GDN point of presence for a P90 50ms RTT. In effect, simulating how an end device or Human (with App) would connect to GDN via an Access Network or ISP.</p></li>
+<li><p><strong>Macrometa Compute:</strong> Run this Book in Macrometa Compute via Jupiter Hub. This will allow you to run workbooks and tutorials from within Macrometa GDN. The code of the Tutorials and Workbooks will execute in the edge cloud itself, in exactly the same way a Micro Service would run on Macrometa Compute (CaaS)</p></li>
+<li><p><strong>CoLab:</strong> Run this Book in the free service from Google. This lets the Tutorial Code run in a Public Cloud environment, to complete the picture of how distributed systems can be deployed.</p></li>
 </ol>
 <p>If you need help you can join our community slack channel here</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="what-is-macrometa-gdn">
 <h2>What is Macrometa GDN?<a class="headerlink" href="#what-is-macrometa-gdn" title="Permalink to this headline">¶</a></h2>
-<p>Macrometa GDN is a first-of-its-kind Edge Cloud. GDN is a converged platform that includes a Multi-Model NoSQL database, pub/sub, event processing, and serverless global data platform for building geo-distributed and real-time applications.</p>
+<p>Macrometa GDN is a first-of-its-kind Edge Cloud. It is a converged platform that includes a Multi-Model NoSQL database, pub/sub, event processing, and serverless global data platform for building geo-distributed and real-time applications.</p>
 <p><img alt="map" src="_images/map.png" /></p>
 <p>Macrometa’s Global Data Network (GDN) allows organizations to tier, cache, process, and serve data with a global P90 roundtrip response time of 50ms. With 175+ points of presence (PoPs) around the world, Macrometa brings data and consistency closer to users while maintaining a coordination-free architecture.</p>
 </div>
 <hr class="docutils" />
-<div class="section" id="software-you-will-use">
-<h2>Software you will use<a class="headerlink" href="#software-you-will-use" title="Permalink to this headline">¶</a></h2>
-<p>In this book, you will use Macrometa Python (<a class="reference external" href="https://github.com/Macrometacorp/pyC8">PYC8</a>) &amp; JavaScript (<a class="reference external" href="https://github.com/Macrometacorp/jsC8">JSC8</a>) drivers as well as the Macrometa Command Line Interface (GDNSL).</p>
-<p>Each method of accessing Macrometa GDN is covered in the tutorials, so if you are familiar with coding in Python, you can try that first before having a go with JavaScript. Each Tutorial accomplishes the same goal using different drivers or GDNSL.</p>
-<p>As you progress in your understanding, you can determine which method works best for your application or use case. You might want to focus on Python when building your edge application that I based around Machine Learning or Edge AI.</p>
-<p>Perhaps you will focus on an application that is built with React.js, and you will find the JavaScript Driver lets you do cool things there. You may be super interested in Automation and CI/CD, in which case you may find the GDNSL makes the most sense.</p>
-<p>But don’t worry about that now, just jump in, have fun, and start building cool edge applications with Macrometa GDN!</p>
+<div class="section" id="the-software-that-will-be-used">
+<h2>The software that will be used<a class="headerlink" href="#the-software-that-will-be-used" title="Permalink to this headline">¶</a></h2>
+<p>In this book, you will be using Macrometa Python (<a class="reference external" href="https://github.com/Macrometacorp/pyC8">PYC8</a>) &amp; Javascript (<a class="reference external" href="https://github.com/Macrometacorp/jsC8">JSC8</a>) Drivers as well as  Macrometa Command Line Interface (GDNSL)</p>
+<p>Each method of accessing and using Macrometa GDN in this is covered in the tutorials, so if you are familiar say, with coding in Python, you can try that first, and then have a go with Javascript. The Tutorials are built so you can accomplish the same end results but using different drivers or CLI.</p>
+<p>As you progress in your understanding you will start to see which method makes the most sense for your specific application or use case. you might want to focus on Python when building your edge application that I based around Machine Learning or Edge AI.</p>
+<p>Perhaps you will focus on an application that is built with React.js, and you will find the javascript Driver he’s you do cool things there. You may be super interested in Automation and CI/CD, in which case you may find the GDNSL makes the most sense.</p>
+<p>But don’t worry about that now, just jump in, have fun and start building cool edge apps with Macrometa GDN!</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="what-you-will-learn">

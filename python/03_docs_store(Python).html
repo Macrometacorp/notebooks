@@ -533,7 +533,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
 <ul class="simple">
-<li><p>tenant name is [email protected] and</p></li>
+<li><p>tenant name is an email address</p></li>
 <li><p>user password is xxxxx.</p></li>
 </ul>
 <p>if you need to install pyc8, you can run the cell below, otherwise you may skip it.</p>
@@ -633,12 +633,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s insert documents to the employees collection as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#client.insert_document(collection_name=&#39;employees&#39;, document={&#39;_key&#39;:&#39;Alan&#39;, &#39;firstname&#39;: &#39;Alan&#39;, &#39;lastname&#39;:&#39;Evans&#39;, &#39;email&#39;:&#39;[email protected]&#39;})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#client.insert_document(collection_name=&#39;employees&#39;, document={&#39;_key&#39;:&#39;Alan&#39;, &#39;firstname&#39;: &#39;Alan&#39;, &#39;lastname&#39;:&#39;Evans&#39;, &#39;email&#39;:&#39;email&#39;})</span>
 
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Kirk&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Solo&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">},</span>
-  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;[email protected]&#39;</span><span class="p">}</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;James&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Kirk&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;email&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Han&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Solo&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;email&#39;</span><span class="p">},</span>
+  <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Bruce&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Wayne&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;email&#39;</span><span class="p">}</span>
 <span class="p">]</span>
 
 <span class="n">client</span><span class="o">.</span><span class="n">insert_document</span><span class="p">(</span><span class="n">collection_name</span><span class="o">=</span><span class="s1">&#39;employees&#39;</span><span class="p">,</span> <span class="n">document</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>

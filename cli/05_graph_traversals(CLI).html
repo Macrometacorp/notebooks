@@ -403,8 +403,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inserting-data-singles">
-   4. Inserting Data - “Singles”
+  <a class="reference internal nav-link" href="#inserting-data-friends">
+   4. Inserting Data - “Friends”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -418,18 +418,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-a-traversal-find-singles-who-liked-lou">
-   7. Execute a Traversal - “Find Singles who liked Lou?”
+  <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-liked-lou">
+   7. Execute a Traversal - “Find friends who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-a-traversal-find-singles-who-lou-liked">
-   8. Execute a Traversal - “Find Singles who Lou Liked?”
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delete-data-and-collections">
-   9. Delete Data and Collections
+  <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-lou-liked">
+   8. Execute a Traversal - “Find friends who Lou Liked?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -483,8 +478,8 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inserting-data-singles">
-   4. Inserting Data - “Singles”
+  <a class="reference internal nav-link" href="#inserting-data-friends">
+   4. Inserting Data - “Friends”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -498,18 +493,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-a-traversal-find-singles-who-liked-lou">
-   7. Execute a Traversal - “Find Singles who liked Lou?”
+  <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-liked-lou">
+   7. Execute a Traversal - “Find friends who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#execute-a-traversal-find-singles-who-lou-liked">
-   8. Execute a Traversal - “Find Singles who Lou Liked?”
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#delete-data-and-collections">
-   9. Delete Data and Collections
+  <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-lou-liked">
+   8. Execute a Traversal - “Find friends who Lou Liked?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -531,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
-<p>In this tutorial we will build a simple dating application called “Hopefulls”, and then use graph traversals to see who has liked whom.</p>
+<p>In this tutorial we will build a simple application for people to find new friends called MacroFriends, and then use graph traversals to see who would like to meet whom.</p>
 </div>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
@@ -554,13 +544,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables</span>
-<span class="nv">collection_singles</span><span class="o">=</span><span class="s2">&quot;Singles&quot;</span><span class="p">;</span>
+<span class="nv">collection_friends</span><span class="o">=</span><span class="s2">&quot;Friends&quot;</span><span class="p">;</span>
 <span class="nv">collection_likes</span><span class="o">=</span><span class="s2">&quot;Likes&quot;</span><span class="p">;</span>
-<span class="nv">collection_graph</span><span class="o">=</span><span class="s2">&quot;Hopefulls_graph&quot;</span>
-<span class="nv">read_singles</span><span class="o">=</span><span class="s2">&quot;FOR singles IN Singles RETURN singles&quot;</span><span class="p">;</span>
+<span class="nv">collection_graph</span><span class="o">=</span><span class="s2">&quot;Friends_Graph&quot;</span>
+<span class="nv">read_friends</span><span class="o">=</span><span class="s2">&quot;FOR friends IN Friends RETURN friends&quot;</span><span class="p">;</span>
 <span class="nv">read_likes</span><span class="o">=</span><span class="s2">&quot;FOR likes IN Likes RETURN like&quot;</span><span class="p">;</span>
-<span class="nv">Hopefulls_Client</span><span class="o">=</span><span class="s2">&quot;SanJoseLou&quot;</span><span class="p">;</span>
-<span class="nv">Hopefulls_Client2</span><span class="o">=</span><span class="s2">&quot;StocktonPeria&quot;</span><span class="p">;</span>
+
+<span class="nv">MacroFriends_Client</span><span class="o">=</span><span class="s2">&quot;SanJoseLou&quot;</span><span class="p">;</span>
+<span class="nv">MacroFriends_Client2</span><span class="o">=</span><span class="s2">&quot;StocktonPeria&quot;</span><span class="p">;</span>
 
 <span class="c1"># Login credentials</span>
 <span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
@@ -598,8 +589,8 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create collections if not exists</span>
-<span class="nb">echo</span> <span class="s2">&quot;2a. CREATE_SINGLES_VERTEX_COLLECTION collection: </span><span class="nv">$collection_singles</span><span class="s2">&quot;</span>
-gdnsl collection create <span class="nv">$collection_singles</span> --type doc 
+<span class="nb">echo</span> <span class="s2">&quot;2a. CREATE_FRIENDS_VERTEX_COLLECTION collection: </span><span class="nv">$collection_friends</span><span class="s2">&quot;</span>
+gdnsl collection create <span class="nv">$collection_friends</span> --type doc
 
 <span class="nb">echo</span> <span class="s2">&quot;2b. CREATE_LIKES_EDGE_COLLECTION collection: </span><span class="nv">$collection_likes</span><span class="s2">&quot;</span>
 gdnsl collection create <span class="nv">$collection_likes</span> --type edge
@@ -608,14 +599,14 @@ gdnsl collection create <span class="nv">$collection_likes</span> --type edge
 </div>
 </div>
 </div>
-<div class="section" id="inserting-data-singles">
-<h2>4. Inserting Data - “Singles”<a class="headerlink" href="#inserting-data-singles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inserting-data-friends">
+<h2>4. Inserting Data - “Friends”<a class="headerlink" href="#inserting-data-friends" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert data into collections.</span>
-<span class="nb">echo</span> <span class="s2">&quot;3a. INSERT_SINGLES_DATA collection: </span><span class="nv">$collection_singles</span><span class="s2">&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;3a. INSERT_FRIENDS_DATA collection: </span><span class="nv">$collection_friends</span><span class="s2">&quot;</span>
 
-gdnsl import <span class="nv">$collection_singles</span> --json <span class="s2">&quot;[{\&quot;full_name\&quot;:\&quot;Kiel Dummer\&quot;,\&quot;first_name\&quot;:\&quot;Kiel\&quot;,\&quot;last_name\&quot;:\&quot;Dummer\&quot;,\&quot;city\&quot;:\&quot;Burbank\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;40317 5th Crossing\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;BurbankKeil\&quot;,\&quot;_key\&quot;:\&quot;BurbankKeil\&quot;},{\&quot;full_name\&quot;:\&quot;Pernell Winspare\&quot;,\&quot;first_name\&quot;:\&quot;Pernell\&quot;,\&quot;last_name\&quot;:\&quot;Winspare\&quot;,\&quot;city\&quot;:\&quot;San Diego\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;596 Packers Pass\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;SanDiegoPernell\&quot;,\&quot;_key\&quot;:\&quot;SanDiegoPernell\&quot;},{\&quot;full_name\&quot;:\&quot;Ava Kermath\&quot;,\&quot;first_name\&quot;:\&quot;Ava\&quot;,\&quot;last_name\&quot;:\&quot;Kermath\&quot;,\&quot;city\&quot;:\&quot;Berkeley\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;2 Doe Crossing Junction\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;BerkeleyAva\&quot;,\&quot;_key\&quot;:\&quot;BerkeleyAva\&quot;},{\&quot;full_name\&quot;:\&quot;Tremain McGrah\&quot;,\&quot;first_name\&quot;:\&quot;Tremain\&quot;,\&quot;last_name\&quot;:\&quot;McGrah\&quot;,\&quot;city\&quot;:\&quot;Torrance\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;079 Russell Street\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;TorranceTremain\&quot;,\&quot;_key\&quot;:\&quot;TorranceTremain\&quot;},{\&quot;full_name\&quot;:\&quot;Vidovik Boddam\&quot;,\&quot;first_name\&quot;:\&quot;Vidovik\&quot;,\&quot;last_name\&quot;:\&quot;Boddam\&quot;,\&quot;city\&quot;:\&quot;Los Angeles\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;3 Brentwood Crossing\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;LosAngelesVidovik\&quot;,\&quot;_key\&quot;:\&quot;LosAngelesVidovik\&quot;},{\&quot;full_name\&quot;:\&quot;Oralie Goward\&quot;,\&quot;first_name\&quot;:\&quot;Oralie\&quot;,\&quot;last_name\&quot;:\&quot;Goward\&quot;,\&quot;city\&quot;:\&quot;Los Angeles\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;922 Columbus Park\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;LosAngelesOralie\&quot;,\&quot;_key\&quot;:\&quot;LosAngelesOralie\&quot;},{\&quot;full_name\&quot;:\&quot;Lou Feaveer\&quot;,\&quot;first_name\&quot;:\&quot;Lou\&quot;,\&quot;last_name\&quot;:\&quot;Feaveer\&quot;,\&quot;city\&quot;:\&quot;San Jose\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;55223 Hooker Crossing\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;SanJoseLou\&quot;,\&quot;_key\&quot;:\&quot;SanJoseLou\&quot;},{\&quot;full_name\&quot;:\&quot;Peria King\&quot;,\&quot;first_name\&quot;:\&quot;Peria\&quot;,\&quot;last_name\&quot;:\&quot;King\&quot;,\&quot;city\&quot;:\&quot;Stockton\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;8 Troy Plaza\&quot;,\&quot;hopefulls_user_name\&quot;:\&quot;StocktonPeria\&quot;,\&quot;_key\&quot;:\&quot;StocktonPeria\&quot;}]&quot;</span>
+gdnsl import <span class="nv">$collection_friends</span> --json <span class="s2">&quot;[{\&quot;full_name\&quot;:\&quot;Kiel Dummer\&quot;,\&quot;first_name\&quot;:\&quot;Kiel\&quot;,\&quot;last_name\&quot;:\&quot;Dummer\&quot;,\&quot;city\&quot;:\&quot;Burbank\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;40317 5th Crossing\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;BurbankKeil\&quot;,\&quot;_key\&quot;:\&quot;BurbankKeil\&quot;},{\&quot;full_name\&quot;:\&quot;Pernell Winspare\&quot;,\&quot;first_name\&quot;:\&quot;Pernell\&quot;,\&quot;last_name\&quot;:\&quot;Winspare\&quot;,\&quot;city\&quot;:\&quot;San Diego\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;596 Packers Pass\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;SanDiegoPernell\&quot;,\&quot;_key\&quot;:\&quot;SanDiegoPernell\&quot;},{\&quot;full_name\&quot;:\&quot;Ava Kermath\&quot;,\&quot;first_name\&quot;:\&quot;Ava\&quot;,\&quot;last_name\&quot;:\&quot;Kermath\&quot;,\&quot;city\&quot;:\&quot;Berkeley\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;2 Doe Crossing Junction\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;BerkeleyAva\&quot;,\&quot;_key\&quot;:\&quot;BerkeleyAva\&quot;},{\&quot;full_name\&quot;:\&quot;Tremain McGrah\&quot;,\&quot;first_name\&quot;:\&quot;Tremain\&quot;,\&quot;last_name\&quot;:\&quot;McGrah\&quot;,\&quot;city\&quot;:\&quot;Torrance\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;079 Russell Street\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;TorranceTremain\&quot;,\&quot;_key\&quot;:\&quot;TorranceTremain\&quot;},{\&quot;full_name\&quot;:\&quot;Vidovik Boddam\&quot;,\&quot;first_name\&quot;:\&quot;Vidovik\&quot;,\&quot;last_name\&quot;:\&quot;Boddam\&quot;,\&quot;city\&quot;:\&quot;Los Angeles\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;3 Brentwood Crossing\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;LosAngelesVidovik\&quot;,\&quot;_key\&quot;:\&quot;LosAngelesVidovik\&quot;},{\&quot;full_name\&quot;:\&quot;Oralie Goward\&quot;,\&quot;first_name\&quot;:\&quot;Oralie\&quot;,\&quot;last_name\&quot;:\&quot;Goward\&quot;,\&quot;city\&quot;:\&quot;Los Angeles\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;922 Columbus Park\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;LosAngelesOralie\&quot;,\&quot;_key\&quot;:\&quot;LosAngelesOralie\&quot;},{\&quot;full_name\&quot;:\&quot;Lou Feaveer\&quot;,\&quot;first_name\&quot;:\&quot;Lou\&quot;,\&quot;last_name\&quot;:\&quot;Feaveer\&quot;,\&quot;city\&quot;:\&quot;San Jose\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;55223 Hooker Crossing\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;SanJoseLou\&quot;,\&quot;_key\&quot;:\&quot;SanJoseLou\&quot;},{\&quot;full_name\&quot;:\&quot;Peria King\&quot;,\&quot;first_name\&quot;:\&quot;Peria\&quot;,\&quot;last_name\&quot;:\&quot;King\&quot;,\&quot;city\&quot;:\&quot;Stockton\&quot;,\&quot;state\&quot;:\&quot;CA\&quot;,\&quot;address\&quot;:\&quot;8 Troy Plaza\&quot;,\&quot;macrofriend_user_name\&quot;:\&quot;StocktonPeria\&quot;,\&quot;_key\&quot;:\&quot;StocktonPeria\&quot;}]&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -628,7 +619,7 @@ gdnsl import <span class="nv">$collection_singles</span> --json <span class="s2"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert data into collections.</span>
 <span class="nb">echo</span> <span class="s2">&quot;3a. INSERT_LIKES_DATA collection: </span><span class="nv">$collection_likes</span><span class="s2">&quot;</span>
 
-gdnsl import <span class="nv">$collection_likes</span> --json <span class="s2">&quot;[{\&quot;hopefulls_user_name\&quot;:\&quot;BurbankKeil\&quot;,\&quot;singles_liked\&quot;:\&quot;SanJoseLou\&quot;,\&quot;_from\&quot;:\&quot;Singles/BurbankKeil\&quot;,\&quot;_to\&quot;:\&quot;Singles/SanJoseLou\&quot;,\&quot;liked_date\&quot;:\&quot;1/4/2020\&quot;,\&quot;liked_time\&quot;:\&quot;13:33\&quot;,\&quot;liked_amount\&quot;:30},{\&quot;hopefulls_user_name\&quot;:\&quot;SanJoseLou\&quot;,\&quot;singles_liked\&quot;:\&quot;StocktonPeria\&quot;,\&quot;_from\&quot;:\&quot;Singles/SanJoseLou\&quot;,\&quot;_to\&quot;:\&quot;Singles/StocktonPeria\&quot;,\&quot;liked_date\&quot;:\&quot;1/28/2020\&quot;,\&quot;liked_time\&quot;:\&quot;3:02\&quot;,\&quot;liked_amount\&quot;:18},{\&quot;hopefulls_user_name\&quot;:\&quot;BerkeleyAva\&quot;,\&quot;singles_liked\&quot;:\&quot;StocktonPeria\&quot;,\&quot;_from\&quot;:\&quot;Singles/BerkeleyAva\&quot;,\&quot;_to\&quot;:\&quot;Singles/StocktonPeria\&quot;,\&quot;liked_date\&quot;:\&quot;1/28/2020\&quot;,\&quot;liked_time\&quot;:\&quot;3:02\&quot;,\&quot;liked_amount\&quot;:18}]&quot;</span> 
+gdnsl import <span class="nv">$collection_likes</span> --json <span class="s2">&quot;[{\&quot;macrofriend_user_name\&quot;:\&quot;BurbankKeil\&quot;,\&quot;friends_liked\&quot;:\&quot;SanJoseLou\&quot;,\&quot;_from\&quot;:\&quot;Friends/BurbankKeil\&quot;,\&quot;_to\&quot;:\&quot;Friends/SanJoseLou\&quot;,\&quot;liked_date\&quot;:\&quot;1/4/2020\&quot;,\&quot;liked_time\&quot;:\&quot;13:33\&quot;,\&quot;liked_amount\&quot;:30},{\&quot;macrofriend_user_name\&quot;:\&quot;SanJoseLou\&quot;,\&quot;friends_liked\&quot;:\&quot;StocktonPeria\&quot;,\&quot;_from\&quot;:\&quot;Friends/SanJoseLou\&quot;,\&quot;_to\&quot;:\&quot;Friends/StocktonPeria\&quot;,\&quot;liked_date\&quot;:\&quot;1/28/2020\&quot;,\&quot;liked_time\&quot;:\&quot;3:02\&quot;,\&quot;liked_amount\&quot;:18},{\&quot;macrofriend_user_name\&quot;:\&quot;BerkeleyAva\&quot;,\&quot;friends_liked\&quot;:\&quot;StocktonPeria\&quot;,\&quot;_from\&quot;:\&quot;Friends/BerkeleyAva\&quot;,\&quot;_to\&quot;:\&quot;Friends/StocktonPeria\&quot;,\&quot;liked_date\&quot;:\&quot;1/28/2020\&quot;,\&quot;liked_time\&quot;:\&quot;3:02\&quot;,\&quot;liked_amount\&quot;:18}]&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -639,42 +630,39 @@ gdnsl import <span class="nv">$collection_likes</span> --json <span class="s2">&
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a graph</span>
-<span class="nb">echo</span> <span class="s2">&quot;4. CREATE_GRAPH...Hopefulls_graph&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;4. CREATE_GRAPH...macrofriend_graph&quot;</span>
 
-gdnsl graph create <span class="nv">$collection_graph</span> --edge-definition <span class="s2">&quot;</span><span class="nv">$collection_likes</span><span class="s2">:</span><span class="nv">$collection_singles</span><span class="s2">:</span><span class="nv">$collection_singles</span><span class="s2">&quot;</span> 
+gdnsl graph create <span class="nv">$collection_graph</span> --edge-definition <span class="s2">&quot;</span><span class="nv">$collection_likes</span><span class="s2">:</span><span class="nv">$collection_friends</span><span class="s2">:</span><span class="nv">$collection_friends</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="execute-a-traversal-find-singles-who-liked-lou">
-<h2>7. Execute a Traversal - “Find Singles who liked Lou?”<a class="headerlink" href="#execute-a-traversal-find-singles-who-liked-lou" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="execute-a-traversal-find-friends-who-liked-lou">
+<h2>7. Execute a Traversal - “Find friends who liked Lou?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-liked-lou" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find Singles who liked: </span><span class="nv">$Hopefulls_Client2</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find friends who liked: </span><span class="nv">$MacroFriends_Client2</span><span class="s2">&quot;</span>
 
 <span class="c1"># Explain a cursor with filter based on bindvar</span>
-gdnsl query <span class="s2">&quot;FOR c IN </span><span class="nv">$collection_singles</span><span class="s2"> FILTER c.hopefulls_user_name == @hopefulls_user_name FOR v IN 1..1 INBOUND c </span><span class="nv">$collection_likes</span><span class="s2"> RETURN v&quot;</span> --param <span class="s2">&quot;hopefulls_user_name=</span><span class="nv">$Hopefulls_Client</span><span class="s2">&quot;</span> 
+gdnsl query <span class="s2">&quot;FOR c IN </span><span class="nv">$collection_friends</span><span class="s2"> FILTER c.macrofriend_user_name == @macrofriend_user_name FOR v IN 1..1 INBOUND c </span><span class="nv">$collection_likes</span><span class="s2"> RETURN v&quot;</span> --param <span class="s2">&quot;macrofriend_user_name=</span><span class="nv">$MacroFriends_Client</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="execute-a-traversal-find-singles-who-lou-liked">
-<h2>8. Execute a Traversal - “Find Singles who Lou Liked?”<a class="headerlink" href="#execute-a-traversal-find-singles-who-lou-liked" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="execute-a-traversal-find-friends-who-lou-liked">
+<h2>8. Execute a Traversal - “Find friends who Lou Liked?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-lou-liked" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find Singles whole were liked from: </span><span class="nv">$Hopefulls_Client</span><span class="s2">&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find friends whole were liked from: </span><span class="nv">$MacroFriends_Client</span><span class="s2">&quot;</span>
 
 <span class="c1"># Explain a cursor with filter based on bindvar</span>
-gdnsl query <span class="s2">&quot;FOR c IN </span><span class="nv">$collection_singles</span><span class="s2"> FILTER c.hopefulls_user_name == @hopefulls_user_name FOR v IN 1..1 OUTBOUND c </span><span class="nv">$collection_likes</span><span class="s2"> RETURN v&quot;</span> --param <span class="s2">&quot;hopefulls_user_name=</span><span class="nv">$Hopefulls_Client</span><span class="s2">&quot;</span> 
+gdnsl query <span class="s2">&quot;FOR c IN </span><span class="nv">$collection_friends</span><span class="s2"> FILTER c.macrofriend_user_name == @macrofriend_user_name FOR v IN 1..1 OUTBOUND c </span><span class="nv">$collection_likes</span><span class="s2"> RETURN v&quot;</span> --param <span class="s2">&quot;macrofriend_user_name=</span><span class="nv">$MacroFriends_Client</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="delete-data-and-collections">
-<h2>9. Delete Data and Collections<a class="headerlink" href="#delete-data-and-collections" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Delete Data</span>

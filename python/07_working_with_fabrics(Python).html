@@ -652,21 +652,19 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="py07-geofabrics">
 <h1>Py07 - GeoFabrics<a class="headerlink" href="#py07-geofabrics" title="Permalink to this headline">¶</a></h1>
-<blockquote>
-<div><p>Note: This tutorial is designed for developers working with the pyc8 Python driver</p>
-</div></blockquote>
-<p>Each <code class="docutils literal notranslate"><span class="pre">tenant</span></code> on the C8 Data Fabric server can have an arbitrary number of fabrics. Each fabric has its own set of <code class="docutils literal notranslate"><span class="pre">collections</span></code>, <code class="docutils literal notranslate"><span class="pre">graphs</span></code> and <code class="docutils literal notranslate"><span class="pre">streams</span></code>.</p>
-<p>There is a special fabric named <code class="docutils literal notranslate"><span class="pre">_system</span></code> for each tenant, which cannot be dropped and provides operations for managing users, permissions, and other fabrics. Most of the operations can only be executed by admin users. See <code class="docutils literal notranslate"><span class="pre">user</span></code> for more information.</p>
-<p>Each fabric in the C8 fabric can be replicated to one or more additional edge locations in the fabric. For example, suppose a change is made to such a replicated fabric in one edge Location. In that case, that change will be automatically propagated to, and visible in, all other Edge Locations to which that fabric has been replicated.</p>
-<p>Each fabric in the C8 fabric can publish real-time changes to any clients connected to that fabric. Any clients with connections to that fabric will receive changes via a push-based mechanism rather than having to continuously poll the fabric for any changes which may have occurred. The Python driver can listen in realtime to changes in fabric by calling the <code class="docutils literal notranslate"><span class="pre">fabric.on_change()</span></code> method for the fabric referred to by the fabric object.</p>
+<p><strong>This tutorial is designed for developers working with the pyc8 Python driver</strong></p>
+<p>Each :doc:<code class="docutils literal notranslate"><span class="pre">tenant</span> <span class="pre">&lt;tenant&gt;</span></code> on the C8 Data Fabric server can have an arbitrary number of fabrics. Each fabric has its own set of :doc:<code class="docutils literal notranslate"><span class="pre">collections</span> <span class="pre">&lt;collection&gt;</span></code>, :doc:<code class="docutils literal notranslate"><span class="pre">graphs</span> <span class="pre">&lt;graph&gt;</span></code> and :doc:<code class="docutils literal notranslate"><span class="pre">streams</span> <span class="pre">&lt;stream&gt;</span></code>.</p>
+<p>For each tenant, there is a special fabric named _system, which cannot be dropped and provides operations for managing users, permissions and other fabrics. Most of the operations can only be executed by admin users. See :doc:<code class="docutils literal notranslate"><span class="pre">user</span></code> for more information.</p>
+<p>Each fabric in the C8 Fabric can be replicated to one or more additional edge Locations in the fabric. If a change is made to such a replicated fabric in one edge Location, that change will be automatically propagated to, and visible in, all other Edge Locations to which that fabric has been replicated.</p>
+<p>Each fabric in the C8 Fabric can publish changes in realtime to any clients which are connected to that fabric. Any clients with connections to that fabric will receive changes via a push-based mechanism rather than having to continuously poll the fabric for any changes which may have occurred. This python driver can listen in realtime to changes in fabric by calling the fabric.on_change() method for the fabric referred to by the fabric object.</p>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
 <ul class="simple">
 <li><p>tenant name is an email address</p></li>
-<li><p>user password is xxxxx</p></li>
+<li><p>user password is xxxxx.</p></li>
 </ul>
-<p>If you need to install pyc8, you can run the cell below; otherwise, you may skip it.</p>
+<p>if you need to install pyc8, you can run the cell below, otherwise you may skip it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pyC8
@@ -724,7 +722,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="list-all-fabrics-accessable-by-admin">
 <h2>4. List all Fabrics accessable by Admin<a class="headerlink" href="#list-all-fabrics-accessable-by-admin" title="Permalink to this headline">¶</a></h2>
-<p>At this point in the tutorial this should only show the default ‘system’ fabric which will have all the available datacenters.</p>
+<p>At this point in the tutorial this should only show the defualt ‘system’ fabric which will have all the avaiailble datacenters</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List all fabrics in the &#39;mytenant&#39; tenant</span>
@@ -737,10 +735,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="list-all-details-of-datacenters">
 <h2>5. List all details of Datacenters<a class="headerlink" href="#list-all-details-of-datacenters" title="Permalink to this headline">¶</a></h2>
-<p>Now lets have a look at those data centers.</p>
+<p>Now lets have a look at those data centers</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Returns the list of details of Datacenters</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Returns the list of details of Datacenters</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">dclist</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Tip try changing details to = &quot;True&quot; to see more details..</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span> 
@@ -779,7 +777,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="list-permissions-of-the-new-user">
 <h2>8. List permissions of the new user<a class="headerlink" href="#list-permissions-of-the-new-user" title="Permalink to this headline">¶</a></h2>
-<p>Let’s take a look at the permission of our newly created user. At this point, they should be read-only or ‘ro’.</p>
+<p>Lets take a look at the permission of our newly created user, at this point they should be read only or ‘ro’</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permissions for all fabrics and collections.</span>
@@ -793,7 +791,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="create-a-new-fabric">
 <h2>9. Create a new Fabric<a class="headerlink" href="#create-a-new-fabric" title="Permalink to this headline">¶</a></h2>
 <p>While we are still connected as the Admin, we can create a new Fabric.</p>
-<p>The code block below checks to see what the local datacenter is to you using the <code class="docutils literal notranslate"><span class="pre">localdc()</span></code> method.</p>
+<p>The code block below checks to see what the local datacenter is to you using the “localdc()” method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylocal_dc_response</span> <span class="o">=</span> <span class="n">sys_fabric</span><span class="o">.</span><span class="n">localdc</span><span class="p">()</span> <span class="c1">#&lt;--- Returns the datacenter thats closest to you</span>
@@ -816,7 +814,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="check-permissions-of-new-user-on-new-fabric">
 <h2>10. Check permissions of new user on new fabric<a class="headerlink" href="#check-permissions-of-new-user-on-new-fabric" title="Permalink to this headline">¶</a></h2>
-<p>We have created a new user and a new geofabric. When this is first created the user should have no permissions.</p>
+<p>We have created a new user, and a new geofabric. Wjhen this is first created the user should have no permissions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permission for &quot;test&quot; fabric.</span>
@@ -847,7 +845,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="change-permissions-of-new-user-to-none-for-the-system-fabric">
 <h2>12. Change permissions of new user to “none” for the “_system” fabric<a class="headerlink" href="#change-permissions-of-new-user-to-none-for-the-system-fabric" title="Permalink to this headline">¶</a></h2>
-<p>We might also want to reduce the users access to the <code class="docutils literal notranslate"><span class="pre">_system</span></code> fabric, and we can do this as follows.</p>
+<p>We might also want to reduce the users access to the _system fabric, we can do this as follows…</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update user permission for &quot;_system&quot; fabric.</span>
@@ -863,7 +861,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="check-permissions-of-new-user-after-changes">
 <h2>13. Check permissions of new user after changes<a class="headerlink" href="#check-permissions-of-new-user-after-changes" title="Permalink to this headline">¶</a></h2>
-<p>Ok, so now that we have updated our users permissions, let’s take a look to see our changes.</p>
+<p>Ok, so now that we have updated our users permissions, lets take a look to see our changes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Retrieve user permissions for all fabrics and collections.</span>
@@ -876,7 +874,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric">
 <h2>14. Connect to GDN as the new user “JohnDoe” on the new GeoFabric<a class="headerlink" href="#connect-to-gdn-as-the-new-user-johndoe-on-the-new-geofabric" title="Permalink to this headline">¶</a></h2>
-<p>Now, it’s time to connect to our new geofabric as our new user.</p>
+<p>Right, now its time to connect to our new GeoFabric as our new user.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">demo_email</span> <span class="o">=</span> <span class="s1">&#39;johndoe@gmail.com&#39;</span>
@@ -906,7 +904,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="check-the-datacenters-for-the-new-geofabric">
 <h2>15. Check the Datacenters for the new geofabric<a class="headerlink" href="#check-the-datacenters-for-the-new-geofabric" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have connected as our new user, let’s see what datacenters we have access to in our geofabric.</p>
+<p>Now that we have connected as our new user, lets see what datacenters we have access to in our geofabric</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">demo_fabric</span><span class="o">.</span><span class="n">dclist</span><span class="p">(</span><span class="n">detail</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># Tip try changing details to = &quot;True&quot; to see more details..</span>
@@ -921,7 +919,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>16. Let’s test our new fabric with a collection<a class="headerlink" href="#let-s-test-our-new-fabric-with-a-collection" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="first-create-the-collection">
 <h3>16.1 First create the collection<a class="headerlink" href="#first-create-the-collection" title="Permalink to this headline">¶</a></h3>
-<p>You will likely remember this step from an earlier tutorial. First, we define a collection name and check to see if it exists. If it doesn’t exist, then we will create it.</p>
+<p>You will likely remember this step from an earlier tutorial. First we define a collection name, then we check to see if it exists. If it doesnt exist then we will create it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;employees&#39;</span>
@@ -939,7 +937,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="let-s-add-some-records">
 <h3>16.2 Let’s add some records<a class="headerlink" href="#let-s-add-some-records" title="Permalink to this headline">¶</a></h3>
-<p>A collection is excellent, but let’s add some records to it.</p>
+<p>A collection is great, but lets add some records to it..</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
@@ -958,7 +956,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="let-s-build-a-query-worker-called-getrecords">
 <h3>16.3 Let’s build a Query Worker called “getRecords”<a class="headerlink" href="#let-s-build-a-query-worker-called-getrecords" title="Permalink to this headline">¶</a></h3>
-<p>You likely recall how to create a Query Worker from the earlier tutorial. So let’s set up a basic query to show the records in a collection</p>
+<p>You likely recall how to create a Query Worker from the earlier tutorial. So lets set up a basic query to show the records in a collection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create Query Worker</span>
@@ -999,7 +997,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="time-to-tidy-up">
 <h2>17. Time to tidy up!<a class="headerlink" href="#time-to-tidy-up" title="Permalink to this headline">¶</a></h2>
-<p>That was great! Now let’s tidy up by removing our fabric, the new user, and the collection we created.</p>
+<p>That was great!, now lets tidy up by removing our fabric, the new user, and the collection we created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete Query Worker</span>
@@ -1035,7 +1033,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations! You’ve completed another tutorial.</p>
+<p>Congratulations!, another tutorial completed.</p>
 </div>
 </div>
 

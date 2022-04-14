@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -80,7 +81,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../_static/logo-moc-blue.png" class="logo" alt="logo">
+      <img src="../_static/logo-macrometa.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">GDN - XBook</h1>
@@ -536,7 +537,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections, and edges are stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
-<p>In this tutorial we will build a simple application for people to find new friends called MacroFriends, and then use graph traversals to see who would like to meet whom.</p>
+<p>In this tutorial, we will build a simple application for people to find new friends called “friendfinder”, and then use graph traversals to see who would like to meet whom.</p>
 </div>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
@@ -570,17 +571,17 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">collection_friends</span> <span class="o">=</span> <span class="s2">&quot;Friends&quot;</span>
 <span class="n">collection_likes</span> <span class="o">=</span> <span class="s2">&quot;Likes&quot;</span>
 
-<span class="n">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;Friends_graph&quot;</span>
+<span class="n">collection_graph</span> <span class="o">=</span> <span class="s2">&quot;FriendFinder_graph&quot;</span>
 <span class="n">read_friends</span> <span class="o">=</span> <span class="s2">&quot;FOR friends IN Friends RETURN friends&quot;</span>
 <span class="n">read_likes</span> <span class="o">=</span> <span class="s2">&quot;FOR likes IN Likes RETURN like&quot;</span>
 
-<span class="n">MacroFriends_Client</span> <span class="o">=</span> <span class="s2">&quot;SanJoseLou&quot;</span>
-<span class="c1"># MacroFriends_Client = &quot;StocktonPeria&quot;</span>
+<span class="n">FF_Client</span> <span class="o">=</span> <span class="s2">&quot;SanJoseLou&quot;</span>
+<span class="c1"># FF_Client = &quot;StocktonPeria&quot;</span>
 
 
-<span class="n">graph_traversal1</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Friends FILTER c.macrofriend_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 INBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MacroFriends_Client</span><span class="p">)</span>
+<span class="n">graph_traversal1</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Friends FILTER c.ff_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 INBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FF_Client</span><span class="p">)</span>
 
-<span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Friends FILTER c.macrofriend_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MacroFriends_Client</span><span class="p">)</span>
+<span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Friends FILTER c.ff_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FF_Client</span><span class="p">)</span>
 
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
@@ -638,7 +639,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Burbank&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;40317 5th Crossing&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -648,7 +649,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;596 Packers Pass&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;SanDiegoPernell&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -658,7 +659,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;2 Doe Crossing Junction&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -668,7 +669,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Torrance&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;079 Russell Street&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;TorranceTremain&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;TorranceTremain&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;TorranceTremain&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -678,7 +679,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;3 Brentwood Crossing&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesVidovik&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -688,7 +689,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;922 Columbus Park&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;LosAngelesOralie&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -698,7 +699,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Jose&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;55223 Hooker Crossing&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span>
   <span class="p">},</span>
   <span class="p">{</span>
@@ -708,7 +709,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Stockton&quot;</span><span class="p">,</span>
     <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
     <span class="s2">&quot;address&quot;</span><span class="p">:</span> <span class="s2">&quot;8 Troy Plaza&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_key&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span>
   <span class="p">}</span>
 <span class="p">]</span>
@@ -725,7 +726,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3a. INSERT_LIKES_DATA: region: </span><span class="si">{}</span><span class="s2">, collection: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">global_url</span><span class="p">,</span> <span class="n">collection_likes</span><span class="p">))</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">{</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BurbankKeil&quot;</span><span class="p">,</span>
     <span class="s2">&quot;friends_liked&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;Friends/BurbankKeil&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;Friends/SanJoseLou&quot;</span><span class="p">,</span>
@@ -734,7 +735,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;liked_amount&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SanJoseLou&quot;</span><span class="p">,</span>
     <span class="s2">&quot;friends_liked&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;Friends/SanJoseLou&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;Friends/StocktonPeria&quot;</span><span class="p">,</span>
@@ -743,7 +744,7 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="s2">&quot;liked_amount&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
   <span class="p">},</span>
   <span class="p">{</span>
-    <span class="s2">&quot;macrofriend_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ff_user_name&quot;</span><span class="p">:</span> <span class="s2">&quot;BerkeleyAva&quot;</span><span class="p">,</span>
     <span class="s2">&quot;friends_liked&quot;</span><span class="p">:</span> <span class="s2">&quot;StocktonPeria&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_from&quot;</span><span class="p">:</span> <span class="s2">&quot;Friends/BerkeleyAva&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_to&quot;</span><span class="p">:</span> <span class="s2">&quot;Friends/StocktonPeria&quot;</span><span class="p">,</span>
@@ -763,7 +764,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Create a graph</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. CREATE_GRAPH...Friends_graph&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. CREATE_GRAPH...FriendFinder_graph&quot;</span><span class="p">)</span>
 <span class="n">graph</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_graph</span><span class="p">(</span><span class="n">collection_graph</span><span class="p">)</span>
 <span class="n">register</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">create_edge_definition</span><span class="p">(</span>
         <span class="n">edge_collection</span><span class="o">=</span><span class="n">collection_likes</span><span class="p">,</span>
@@ -780,7 +781,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Read Data</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find Friends who would like to meet: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MacroFriends_Client</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find Friends who would like to meet: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FF_Client</span><span class="p">))</span>
 <span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">graph_traversal1</span><span class="p">)</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
 <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>
@@ -793,7 +794,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>8. Execute a Traversal - “Find Friends who Lou would like to meet?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-lou-would-like-to-meet" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find Friends who were liked by Lou: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MacroFriends_Client</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find Friends who were liked by Lou: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FF_Client</span><span class="p">))</span>
 <span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="n">graph_traversal2</span><span class="p">)</span>
 <span class="n">docs</span> <span class="o">=</span> <span class="p">[</span><span class="n">document</span> <span class="k">for</span> <span class="n">document</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">]</span>
 <span class="n">pp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">docs</span><span class="p">)</span>

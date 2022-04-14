@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -656,15 +656,15 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="py06-query-workers">
 <h1>Py06 - Query Workers<a class="headerlink" href="#py06-query-workers" title="Permalink to this headline">¶</a></h1>
-<p>Query as API (aka Query Workers) enables developers to convert saved C8QL queries into geo-distributed REST APIs quickly. This eliminates the need for separate backend servers &amp; containers for CRUD operations.</p>
+<p>Query as API (aka Query Workers) enables developers to convert saved C8QL queries into geo-distributed REST APIs quickly. Query Workers eliminate the need for separate backend servers and containers for CRUD operations.</p>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
 <ul class="simple">
-<li><p>tenant name is an email address</p></li>
-<li><p>user password is xxxxx</p></li>
+<li><p>Tenant name is an email address</p></li>
+<li><p>User password is xxxxx</p></li>
 </ul>
-<p>If you need to install pyc8, you can run the cell below; otherwise, you may skip it.</p>
+<p>If you need to install pyC8, you can run the cell below; otherwise, you may skip it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pyC8
@@ -708,7 +708,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="connect-to-gdn">
 <h2>4. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">¶</a></h2>
-<p>Now that you have added your login credentials, lets connect to GDN</p>
+<p>Now that you have added your login credentials, let’s connect to GDN:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CONNECTION SETUP  ------&quot;</span><span class="p">)</span>
@@ -723,7 +723,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-a-geo-replicated-collection">
 <h2>5. Create a Geo Replicated Collection<a class="headerlink" href="#create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
-<p>Before we create the Query Workers, let’s create a collection that we can work with</p>
+<p>Before we create the Query Workers, let’s create a collection that we can work with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s2">&quot;person&quot;</span>
@@ -744,7 +744,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>6. Create Query Workers<a class="headerlink" href="#create-query-workers" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="defining-our-queries">
 <h3>6.1. Defining our Queries<a class="headerlink" href="#defining-our-queries" title="Permalink to this headline">¶</a></h3>
-<p>In this section, we are going to define five Query Worker APIs</p>
+<p>In this section, we are going to define five Query Worker APIs:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;_key&#39;: &#39;key101&#39;} IN </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">collection_name</span>
@@ -762,7 +762,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="creating-the-query-worker-apis">
 <h3>6.2. Creating the Query Worker APIs<a class="headerlink" href="#creating-the-query-worker-apis" title="Permalink to this headline">¶</a></h3>
-<p>The Following Code will create a set of Query Workers in GDN – once complete, you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”.</p>
+<p>The Following Code will create a set of Query Workers in GDN. Once complete, you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CREATE RESTQLs  ------&quot;</span><span class="p">)</span>
@@ -782,7 +782,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="execute-query-workers">
 <h2>7. Execute Query Workers<a class="headerlink" href="#execute-query-workers" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>Note: We will skip testing the <code class="docutils literal notranslate"><span class="pre">deleteRecord</span></code> API in this section - so that we can demonstrate how to update a Query Worker API first.</p>
+<div><p>Note: We will skip testing the <code class="docutils literal notranslate"><span class="pre">deleteRecord</span></code> API in this section to demonstrate how to update a Query Worker API first.</p>
 </div></blockquote>
 <div class="section" id="test-the-insertrecord-query-worker">
 <h3>7.1. Test the “insertRecord” Query Worker<a class="headerlink" href="#test-the-insertrecord-query-worker" title="Permalink to this headline">¶</a></h3>
@@ -849,7 +849,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="test-that-we-can-query-gdn-and-see-the-document">
 <h3>8.1. Test that we can query GDN and see the document<a class="headerlink" href="#test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
 <p>A common requirement when building an application is to make a change to an API and update it.</p>
-<p>To demonstrate this, let’s first query the database using the “execute_query” method we learned in an earlier section.</p>
+<p>To demonstrate this, let’s first query the database using the <code class="docutils literal notranslate"><span class="pre">execute_query</span></code> method we learned in an earlier section.</p>
 <p>Once run, we should see the document in the cell output in JSON format so we can read it easily.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -885,7 +885,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="testing-the-updated-query-worker-api">
 <h3>8.3. Testing the updated Query Worker API<a class="headerlink" href="#testing-the-updated-query-worker-api" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have updated the Query, let’s add a new record to test that it works.</p>
+<p>Now that we have updated the query, let’s add a new record to test that it works:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Insert data with updated query worker&quot;</span><span class="p">)</span>
@@ -901,13 +901,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="checking-the-data-in-the-collection">
 <h3>8.4. Checking the data in the collection<a class="headerlink" href="#checking-the-data-in-the-collection" title="Permalink to this headline">¶</a></h3>
-<p>Now, let’s check that the data has been updated in the record by using the “execute_query” method - we should see two documents.</p>
+<p>Now, let’s check that the data has been updated in the record by using the <code class="docutils literal notranslate"><span class="pre">execute_query</span></code> method - we should see two documents.</p>
 <ol class="simple">
-<li><p>the original document without a phone number, and</p></li>
-<li><p>a second document, but now with a phone number added</p></li>
+<li><p>The original document without a phone number, and</p></li>
+<li><p>A second document, but now with a phone number added</p></li>
 </ol>
 <blockquote>
-<div><p>Hint: If you would like to return to the step “countRecords” and re-run the code, you should see the count value increase by 1</p>
+<div><p>Hint: If you would like to return to the step “countRecords” and re-run the code, the count value should increase by 1.</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,7 +940,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="delete-all-query-workers">
 <h2>10. Delete all Query Workers<a class="headerlink" href="#delete-all-query-workers" title="Permalink to this headline">¶</a></h2>
 <p>We might want to delete our RESTQL APIs completely.</p>
-<p>For each Query Worker we want to remove, we use the <code class="docutils literal notranslate"><span class="pre">delete_restql</span></code> method as shown in the cell below</p>
+<p>For each Query Worker, we want to remove, we use the <code class="docutils literal notranslate"><span class="pre">delete_restql</span></code> method as shown in the cell below</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- DELETE RESTQLs ------&quot;</span><span class="p">)</span>
@@ -958,7 +958,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="delete-the-collection">
 <h2>11. Delete the Collection<a class="headerlink" href="#delete-the-collection" title="Permalink to this headline">¶</a></h2>
-<p>Now let us remove the collection we added during this tutorial</p>
+<p>Now let us remove the collection we added during this tutorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span><span class="n">client</span><span class="o">.</span><span class="n">delete_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
@@ -969,12 +969,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations!, another tutorial completed.</p>
+<p>Congratulations! You’ve completed this tutorial.</p>
 <blockquote>
-<div><p>Note: To use the created Query Worker APIs you should use the API reference documentation for detailed instructions.</p>
+<div><p>Note: To use the created Query Worker APIs, you should use the API reference documentation for detailed instructions.</p>
 </div></blockquote>
-<p>e.g. /_fabric/{fabric}/_api/restql/{name}</p>
-<p>where {name} is the name of your Query Worker API e.g. “insertRecord”</p>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">/_fabric/{fabric}/_api/restql/{name}</span></code></p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">{name}</span></code> is the name of your Query Worker API, e.g., “insertRecord”.</p>
 </div>
 </div>
 

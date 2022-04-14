@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -488,8 +488,8 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
 <ul class="simple">
-<li><p>tenant name is an email address</p></li>
-<li><p>user password is xxxxx</p></li>
+<li><p>Tenant name is an email address</p></li>
+<li><p>User password is xxxxx</p></li>
 </ul>
 <p>If you need to install pyc8, you can run the cell below; otherwise, you may skip it.</p>
 <div class="cell docutils container">
@@ -502,7 +502,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="connect-to-gdn">
 <h2>1. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">¶</a></h2>
-<p>The first step in using GDN is to establish a connection to a local region. When this code executes, it initializes the server connection to the region URL you specified. Next, you can create an API key from the GUI or REST API.</p>
+<p>The first step in using GDN is to connect to a local region. When this code executes, it initializes the server connection to the region URL you specified. Next, you can create an API key from the GUI or REST API.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
@@ -517,7 +517,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="check-if-an-api-exists">
 <h2>2. Check if an API Exists<a class="headerlink" href="#check-if-an-api-exists" title="Permalink to this headline">¶</a></h2>
-<p>If you have used this tutorial, you may have already created an API Key before. Run the next cell to see if you already have the API Key <code class="docutils literal notranslate"><span class="pre">id1</span></code> ?</p>
+<p>If you have used this tutorial, you may have already created an API Key before. Run the next cell to see if you already have the API Key <code class="docutils literal notranslate"><span class="pre">id1</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">client</span><span class="o">.</span><span class="n">list_all_api_keys</span><span class="p">()</span>
@@ -564,7 +564,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="workbook-completed">
 <h2>Workbook Completed!<a class="headerlink" href="#workbook-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations, you have connected to GDN and checked to see what resources are available!</p>
+<p>Congratulations! You have connected to GDN and checked to see what resources are available.</p>
 </div>
 </div>
 

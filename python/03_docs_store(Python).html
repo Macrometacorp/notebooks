@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -530,8 +530,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>All documents contain special attributes:</p>
 <ul class="simple">
-<li><p>the document handle is stored as a string in <code class="docutils literal notranslate"><span class="pre">_id</span></code>,</p></li>
-<li><p>the document’s primary key in <code class="docutils literal notranslate"><span class="pre">_key</span></code> and</p></li>
+<li><p>the document handle is stored as a string in <code class="docutils literal notranslate"><span class="pre">_id</span></code></p></li>
+<li><p>the document’s primary key in <code class="docutils literal notranslate"><span class="pre">_key</span></code></p></li>
 <li><p>the document revision in <code class="docutils literal notranslate"><span class="pre">_rev</span></code></p></li>
 </ul>
 <p>The user can specify the value of the <code class="docutils literal notranslate"><span class="pre">_key</span></code> attribute when creating a document. <code class="docutils literal notranslate"><span class="pre">_id</span></code> and <code class="docutils literal notranslate"><span class="pre">_key</span></code> values are immutable once the document has been created. The <code class="docutils literal notranslate"><span class="pre">_rev</span></code> value is maintained by GDN automatically.</p>
@@ -539,10 +539,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Let’s assume your</p>
 <ul class="simple">
-<li><p>tenant name is an email address</p></li>
-<li><p>user password is xxxxx</p></li>
+<li><p>Tenant name is an email address</p></li>
+<li><p>User password is xxxxx</p></li>
 </ul>
-<p>If you need to install pyc8, you can run the cell below; otherwise, you may skip it.</p>
+<p>If you need to install pyC8, you can run the cell below; otherwise, you may skip it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install pyC8
@@ -575,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="get-geofabric-details">
 <h2>2. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">¶</a></h2>
-<p>To get details of fabric</p>
+<p>To get details of fabric:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># you might not need this, but if you wanted to select a </span>
@@ -598,7 +598,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="create-collection">
 <h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">¶</a></h2>
 <p>We can now create a collection in the fabric. First, you connect to fabric and then create a collection called employees.</p>
-<p>The below example shows the steps.</p>
+<p>The below example shows the steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;employees&#39;</span>
@@ -636,7 +636,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="insert-documents">
 <h2>5. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">¶</a></h2>
-<p>Let’s insert documents into the employee’s collection as shown below.</p>
+<p>Let’s insert documents into the employees collection as shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#client.insert_document(collection_name=&#39;employees&#39;, document={&#39;_key&#39;:&#39;Alan&#39;, &#39;firstname&#39;: &#39;Alan&#39;, &#39;lastname&#39;:&#39;Evans&#39;, &#39;email&#39;:&#39;email&#39;})</span>
@@ -674,9 +674,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="get-realtime-updates">
 <h2>7. Get realtime updates<a class="headerlink" href="#get-realtime-updates" title="Permalink to this headline">¶</a></h2>
 <p>Example for real-time updates from a collection in fabric:</p>
-<p><strong>Note: for this to work, you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, selecting collections, finding the collection named “employees” and selecting “enable Stream”</strong></p>
-<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. You should see the real-time updates below as soon as you hit save!</p>
-<p>The WebSocket will time out after 60sec if no updates are seen, so you might need to re-run the cell code if you see a timed-out message below.</p>
+<blockquote>
+<div><p>Note: You need to enable Stream from the Macrometa Dashboard for this to work. Do this by opening up the dashboard, selecting collections, finding the collection named “employees” and selecting “enable Stream”</p>
+</div></blockquote>
+<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. You should see the real-time updates below as soon as you hit save.</p>
+<p>The WebSocket will time out after 60 seconds if no updates are seen, so you might need to re-run the cell code if you see a timed-out message below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback_fn</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -690,7 +692,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations, another tutorial completed!</p>
+<p>Congratulations! You’ve completed this tutorial.</p>
 </div>
 </div>
 

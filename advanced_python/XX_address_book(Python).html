@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -507,7 +507,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="pyxx-address-book-app">
 <h1>PyXX - Address Book App<a class="headerlink" href="#pyxx-address-book-app" title="Permalink to this headline">¶</a></h1>
-<p>Let’s take 5 minutes to create a stateful-serverless backend for a simple Address Book. It’s going to run across the Macrometa Global PaaS Federation distributed with local read-write latencies around ?ms.</p>
+<p>Let’s take 5 minutes to create a stateful-serverless backend for a simple Address Book. It’s going to run across the Macrometa Global PaaS Federation distributed with local read-write latencies around 50ms.</p>
 <p>We are going to walk through 4 steps:</p>
 <ol class="simple">
 <li><p>Create a collection and add some data to it.</p></li>
@@ -515,7 +515,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Save the query (A saved query is called a Query Worker).</p></li>
 <li><p>Execute the Query Worker!</p></li>
 </ol>
-<p>First things first, if you don’t already have an account go create one and mosey on back.</p>
+<p>First things first, if you don’t already have an account, go create one and mosey on back.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this Cell so that you can output any C8QL results in JSON Format!</span>
@@ -544,8 +544,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-a-collection">
 <h2>2. Create a Collection<a class="headerlink" href="#create-a-collection" title="Permalink to this headline">¶</a></h2>
-<p>Let’s start by creating a Collection</p>
-<p>Note: The collection addresses that you just created is now distributed to every location in the fabric!</p>
+<p>Let’s start by creating a collection.</p>
+<blockquote>
+<div><p>Note: The collection addresses you just created are now distributed to every location in the fabric!</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;addresses&#39;</span>
@@ -563,7 +565,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="add-some-data-to-the-collection">
 <h2>3. Add some data to the Collection<a class="headerlink" href="#add-some-data-to-the-collection" title="Permalink to this headline">¶</a></h2>
-<p>ok, so rather than puting records in one at a time, here is a nice set of records in a doc that you can populate your new collection with.</p>
+<p>Rather than putting records in one at a time, here is a nice set of documents in a doc with which you can populate your new collection.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">docs</span> <span class="o">=</span> <span class="p">[</span> 
@@ -588,7 +590,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="lets-check-the-collection">
 <h2>4. Lets Check the collection<a class="headerlink" href="#lets-check-the-collection" title="Permalink to this headline">¶</a></h2>
-<p>We are just going to take a look at the collection to make sure we populated it with data.</p>
+<p>We will take a look at the collection to make sure we populated it with data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cursor</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">execute_query</span><span class="p">(</span><span class="s1">&#39;FOR address IN addresses RETURN address&#39;</span><span class="p">)</span>
@@ -603,16 +605,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-our-apps-query-workers-crud-apis">
 <h2>5. Create our Apps Query Workers CRUD APIs<a class="headerlink" href="#create-our-apps-query-workers-crud-apis" title="Permalink to this headline">¶</a></h2>
-<p>In this section we are going to define five Query Worker APIs
-…</p>
+<p>In this section we are going to define five Query Worker APIs:</p>
 <div class="section" id="defining-our-queries">
 <h3>5.1 Defining our Queries<a class="headerlink" href="#defining-our-queries" title="Permalink to this headline">¶</a></h3>
 <ol class="simple">
-<li><p>getAddresses</p></li>
-<li><p>saveContact</p></li>
-<li><p>readContact</p></li>
-<li><p>removeContact</p></li>
-<li><p>updateContact</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getAddresses</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">saveContact</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">readContact</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">removeContact</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">updateContact</span></code></p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -641,7 +642,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="creating-the-query-worker-apis">
 <h3>5.2 Creating the Query Worker APIs<a class="headerlink" href="#creating-the-query-worker-apis" title="Permalink to this headline">¶</a></h3>
-<p>The Following Code will create a set of Query Worker APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
+<p>The Following Code will create a set of Query Worker APIs in GDN - once complete, you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#print(&quot;\n ------- CREATE RESTQLs  ------&quot;)</span>
@@ -660,26 +661,28 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="using-the-nice-front-end-we-built-for-you">
 <h2>6. Using the nice Front End we built for you<a class="headerlink" href="#using-the-nice-front-end-we-built-for-you" title="Permalink to this headline">¶</a></h2>
-<p>Sweet, so now you have a fully functional API for your app. We made a front-end for you to take your new backend for a spin.</p>
+<p>Now you have a fully functional API for your app. We made a front-end for you to take your new backend for a spin.</p>
 <p>Follow this link and follow the instructions in the GitHub Repo</p>
 <p><a class="reference external" href="https://github.com/Macrometacorp/tutorial-addressbook-restql">https://github.com/Macrometacorp/tutorial-addressbook-restql</a></p>
 <p>On your development machine, run the following commands in a console:</p>
 <ol class="simple">
-<li><p>git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:Macrometacorp/tutorial-addressbook-restql.git</p></li>
-<li><p>cd tutorial-addressbook-restql</p></li>
-<li><p>git fetch</p></li>
-<li><p>npm install</p></li>
-<li><p>npm run start</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">git&#64;github.com:Macrometacorp/tutorial-addressbook-restql.git</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">tutorial-addressbook-restql</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">start</span></code></p></li>
 </ol>
-<p>Make sure you enable github page in settings</p>
+<p>Make sure you enable the Github page in settings.</p>
 <p>Rename .env.sample to .env and update the REACT_APP_GDN_URL with <a class="reference external" href="https://gdn.paas.macrometa.io">https://gdn.paas.macrometa.io</a></p>
-<p>Once you have the app running, you will be presented with a page to log in with your Macrometa account. Add your Macrometa account email and password you used with this tutorial, and you will then be asked to select one region in the GUI.</p>
+<p>Once you have the app running, you will be presented with a log-in page with your Macrometa account. Add your Macrometa account email and password you used with this tutorial, and you will then be asked to select one region in the GUI.</p>
 <p>Deploy on GH Pages:</p>
-<p>npm run deploy</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm run deploy
+</pre></div>
+</div>
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations, another Tutorial Completed!</p>
+<p>Congratulations! You have completed this tutorail.</p>
 </div>
 </div>
 

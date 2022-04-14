@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -464,18 +464,18 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>CLI00 - Working with the gdnsl CLI<a class="headerlink" href="#cli00-working-with-the-gdnsl-cli" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
 <h2>1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Welcome to the Working with gdnsl page for gdnsl, the Macrometa GDN Command Line Interface.</p>
+<p>Welcome to the Working with gdnsl, the Macrometa GDN Command Line Interface.</p>
 </div>
 <div class="section" id="features">
 <h2>2. Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Serverless command-line interface for the Macrometa Global Data Network</p></li>
-<li><p>Lightweight node.js NPM package</p></li>
+<li><p>Lightweight Node.js npm package</p></li>
 </ul>
 </div>
 <div class="section" id="prerequisite-to-running-this-notebook-install-the-jupyter-bash-kernel">
 <h2>3. Prerequisite to Running This Notebook - Install the Jupyter Bash Kernel<a class="headerlink" href="#prerequisite-to-running-this-notebook-install-the-jupyter-bash-kernel" title="Permalink to this headline">¶</a></h2>
-<p>The gdnsl CLI tutorials, including this tutorial, use the Jupyter bash kernel. For the commands in these tutorials to work properly, the bash kernel must be installed. After setting up the Python virtual environment for Jupyter, the bash_kernel module will be installed since it is included in the requirements.txt. To initialize the Bash module, run the following command within the Python virtual environment and restart your Jupyter server.</p>
+<p>The gdnsl CLI tutorials use the Jupyter bash kernel, including this tutorial. Therefore, the bash kernel must be installed for the commands in these tutorials to work properly. The <code class="docutils literal notranslate"><span class="pre">bash_kernel</span></code> module will be installed after setting up the Python virtual environment for Jupyter, and the <code class="docutils literal notranslate"><span class="pre">bash_kernel</span></code> module will be installed since it’s included in the <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>. To initialize the Bash module, run the following command within the Python virtual environment and restart your Jupyter server.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m bash_kernel.install
@@ -483,11 +483,13 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Note: The bash kernel will not be available until the Jupyter server is restarted. After restarting Jupyter, proceed with the rest of the notebook.</p>
+<blockquote>
+<div><p>Note: The bash kernel will not be available until the Jupyter server is restarted. After restarting Jupyter, proceed with the rest of the notebook.</p>
+</div></blockquote>
 </div>
 <div class="section" id="download-and-configure-the-gdnsl-cli">
 <h2>4. Download and Configure the gdnsl CLI<a class="headerlink" href="#download-and-configure-the-gdnsl-cli" title="Permalink to this headline">¶</a></h2>
-<p>To install gdnsl, simply run the following code in the cell below.</p>
+<p>To install the gdnsl CLI, run the following code in the cell below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm install -g gdnsl
@@ -495,7 +497,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>When installing the CLI outside of Jupyter, run the following command to interactively generate the gdns.yaml configuration file.</p>
+<p>When installing the CLI outside of Jupyter, run the following command to generate the <code class="docutils literal notranslate"><span class="pre">gdns.yaml</span></code> configuration file interactively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl init
@@ -503,8 +505,10 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>Jupyter does not support interactive terminal sessions so when working within this notebook, create the configuration file using the following commands. Replace the variable placeholder values with your email and api key.</p>
-<p>Note, this only needs to be done once.</p>
+<p>Jupyter does not support interactive terminal sessions, so when working within this notebook, create the configuration file using the following commands. Replace the variable placeholder values with your email and API key.</p>
+<blockquote>
+<div><p>Note: This only needs to be done once.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Login credentials</span>
@@ -528,7 +532,7 @@ cat <span class="s">&lt;&lt; EOF</span>
 </div>
 <div class="section" id="workbook-completed">
 <h2>Workbook Completed!<a class="headerlink" href="#workbook-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations you should now have the Macrometa gdnsl CLI installed.</p>
+<p>Congratulations! You have installed the Macrometa gdnsl CLI.</p>
 </div>
 </div>
 

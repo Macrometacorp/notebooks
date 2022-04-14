@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -506,14 +506,16 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>CLI04 - Working with Graphs<a class="headerlink" href="#cli04-working-with-graphs" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-<p>Today’s applications are required to be highly responsive and always online. They need to be deployed in datacenters closer to their users and can access data instantly across the globe.</p>
-<p>Macrometa global data network (GDN) is a fully managed realtime materialized view engine that provides access to data instantly to Apps &amp; APIs in a simple &amp; single interface.</p>
+<p>Today’s applications are required to be highly responsive and always online. They need to be deployed in data centers closer to their users and can access data instantly across the globe.</p>
+<p>Macrometa global data network (GDN) is a fully managed real-time materialized view engine that provides access to data instantly to Apps &amp; APIs in a single and straightforward interface.</p>
 <p>This article is an introduction to working with documents in GDN with GDNSL.</p>
 <p>In the drivers, a document is a dictionary/object that is JSON serializable with the following properties:</p>
-<p>Contains the _key field, which identifies the document uniquely within a specific collection.
-Contains the _id field (also called the handle), which identifies the document uniquely across all collections within a fabric. This ID is a combination of the collection name and the document key using the format {collection}/{key} (see example below).
-Contains the _rev field. GDN supports MVCC (Multiple Version Concurrency Control) and is capable of storing each document in multiple revisions. Latest revision of a document is indicated by this field. The field is populated by GDN and is not required as input unless you want to validate a document against its current revision.
-Here is an example of a valid document:</p>
+<ul class="simple">
+<li><p>It contains the _key field, which identifies the document uniquely within a specific collection.</p></li>
+<li><p>It contains the <code class="docutils literal notranslate"><span class="pre">_id</span></code> field (also called the handle), which identifies the document uniquely across all collections within a fabric. This ID is a combination of the collection name and the document key using the format <code class="docutils literal notranslate"><span class="pre">{collection}/{key}</span></code> (see example below).</p></li>
+<li><p>It contains the <code class="docutils literal notranslate"><span class="pre">_rev</span></code> field. GDN supports MVCC (Multiple Version Concurrency Control) and can store each document in multiple revisions. This field indicates the latest revision of a document. The field is populated by GDN and is not required as input unless you want to validate a document against its current revision.</p></li>
+</ul>
+<p>Here is an example of a valid document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
@@ -534,7 +536,7 @@ Here is an example of a valid document:</p>
 </div>
 </div>
 </div>
-<p>Edge documents (edges) are similar to standard documents but with two additional required fields _from and _to. Values of these fields must be the handles of “from” and “to” vertex documents linked by the edge document in question. Here is an example of a valid edge document:</p>
+<p>Edge documents (edges) are similar to standard documents but with two additional required fields <code class="docutils literal notranslate"><span class="pre">_from</span></code> and <code class="docutils literal notranslate"><span class="pre">_to</span></code>. Values of these fields must be the handles of “from” and “to” vertex documents linked by the edge document in question. Here is an example of a valid edge document:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
@@ -549,23 +551,23 @@ Here is an example of a valid document:</p>
 </div>
 </div>
 </div>
-<p>A Graph consists of vertices and edges. Edges are stored as documents in edge collections. A vertex can be a document of a document collection or of an edge collection (so edges can be used as vertices). Which collections are used within a named graph is defined via edge definitions. A named graph can contain more than one edge definition, at least one is needed. Graphs allow you to structure your models in line with your domain and group them logically in collections and giving you the power to query them in the same graph queries.</p>
-<p>In SQL you commonly have the construct of a relation table to store n:m relations between two data tables. An edge collection is somewhat similar to these relation tables. Vertex collections resemble the data tables with the objects to connect.</p>
-<p>While simple graph queries with fixed number of hops via the relation table may be doable in SQL with several nested joins, graph databases can handle an arbitrary number of these hops over edge collections - this is called traversal. Also edges in one edge collection may point to several vertex collections. Its common to have attributes attached to edges, i.e. a label naming this interconnection.</p>
-<p>Edges have a direction, with their relations _from and _to pointing from one document to another document stored in vertex collections. In queries you can define in which directions the edge relations may be followed i.e.,</p>
+<p>A Graph consists of vertices and edges. Edges are stored as documents in edge collections. A vertex can be a document of a document collection or of an edge collection (so edges can be used as vertices). Which collections are used within a named graph is defined via edge definitions. A named graph can contain more than one edge definition. At least one is needed. Graphs allow you to structure your models in line with your domain and group them logically in collections, giving you the power to query them in the same graph queries.</p>
+<p>In SQL, you commonly have the construct of a relation table to store n:m relations between two data tables. An edge collection is somewhat similar to these relation tables. Vertex collections resemble the data tables with the objects to connect.</p>
+<p>While simple graph queries with a fixed number of hops via the relation table may be doable in SQL with several nested joins, graph databases can handle an arbitrary number of these hops over edge collections - this is called traversal. Also, edges in one edge collection may point to several vertex collections. It’s common to have attributes attached to edges, i.e., a label naming this interconnection.</p>
+<p>Edges have a direction, with their relations <code class="docutils literal notranslate"><span class="pre">_from</span></code> and <code class="docutils literal notranslate"><span class="pre">_to</span></code> pointing from one document to another document stored in vertex collections. In queries, you can define in which directions the edge relations may be followed, i.e.,</p>
 <ul class="simple">
-<li><p>OUTBOUND: _from → _to</p></li>
-<li><p>INBOUND: _from ← _to</p></li>
-<li><p>ANY: _from ↔ _to.</p></li>
+<li><p>OUTBOUND: <code class="docutils literal notranslate"><span class="pre">_from</span></code> → <code class="docutils literal notranslate"><span class="pre">_to</span></code></p></li>
+<li><p>INBOUND: <code class="docutils literal notranslate"><span class="pre">_from</span></code> ← <code class="docutils literal notranslate"><span class="pre">_to</span></code></p></li>
+<li><p>ANY: <code class="docutils literal notranslate"><span class="pre">_from</span></code> ↔ <code class="docutils literal notranslate"><span class="pre">_to</span></code></p></li>
 </ul>
 </div>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
-<p>Lets Assume</p>
+<p>Let’s assume</p>
 <ul class="simple">
-<li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed the Macrometa CLI as explained in section 01</p></li>
-<li><p>you have generated an API Key as explained in section 01</p></li>
+<li><p>You have already made a tenant account and have a username and password</p></li>
+<li><p>You have installed the Macrometa CLI as explained in section 01</p></li>
+<li><p>You have generated an API Key as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -609,7 +611,7 @@ Here is an example of a valid document:</p>
 </div>
 <div class="section" id="get-geofabric-details">
 <h2>2. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">¶</a></h2>
-<p>To get details of fabric,</p>
+<p>To get the details of a fabric:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># you might not need this, but if you wanted to select a</span>
@@ -623,7 +625,7 @@ gdnsl fabric list
 </div>
 <div class="section" id="create-collection">
 <h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">¶</a></h2>
-<p>We can now create collection in the fabric. To do this, first you connect to fabric and then create a collection called employees.</p>
+<p>We can now create a collection in the fabric. First, you connect to fabric and then create a collection called employees.</p>
 <p>The below example shows the steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -640,8 +642,8 @@ gdnsl collection create <span class="nv">$collection_name</span> --type doc
 <h2>4. Create an Edge Collection<a class="headerlink" href="#create-an-edge-collection" title="Permalink to this headline">¶</a></h2>
 <p>An edge collection contains edge documents and shares its namespace with all other types of collections. You can manage edge documents via standard collection API wrappers, but using edge collection API wrappers provides additional safeguards:</p>
 <ul class="simple">
-<li><p>All modifications are executed in transactions.</p></li>
-<li><p>Edge documents are checked against the edge definitions on insert.</p></li>
+<li><p>All modifications are executed in transactions</p></li>
+<li><p>Edge documents are checked against the edge definitions upon insert</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -656,7 +658,7 @@ gdnsl collection create <span class="nv">$edge_name</span> --type edge
 </div>
 <div class="section" id="insert-documents">
 <h2>5. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">¶</a></h2>
-<p>Let’s insert documents to the students collection as shown below.</p>
+<p>Let’s insert documents into the students collection as shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl import <span class="nv">$collection_name</span> --json <span class="s2">&quot;[{\&quot;_key\&quot;:\&quot;Jenny\&quot;,\&quot;firstname\&quot;:\&quot;Jenney\&quot;,\&quot;lastname\&quot;:\&quot;Jones\&quot;,\&quot;email\&quot;:\&quot;email\&quot;},{\&quot;_key\&quot;:\&quot;Bob\&quot;,\&quot;firstname\&quot;:\&quot;Bob\&quot;,\&quot;lastname\&quot;:\&quot;Billy\&quot;,\&quot;email\&quot;:\&quot;email\&quot;},{\&quot;_key\&quot;:\&quot;Alan\&quot;,\&quot;firstname\&quot;:\&quot;Alan\&quot;,\&quot;lastname\&quot;:\&quot;Evans\&quot;,\&quot;email\&quot;:\&quot;email\&quot;}]&quot;</span>
@@ -668,7 +670,7 @@ gdnsl collection create <span class="nv">$edge_name</span> --type edge
 </div>
 <div class="section" id="create-graph">
 <h2>6. Create Graph<a class="headerlink" href="#create-graph" title="Permalink to this headline">¶</a></h2>
-<p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections and edges stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
+<p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections, and edges are stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl graph create school
@@ -679,7 +681,7 @@ gdnsl collection create <span class="nv">$edge_name</span> --type edge
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations!, another tutorial completed.</p>
+<p>Congratulations! You’ve completed this tutorial.</p>
 </div>
 </div>
 

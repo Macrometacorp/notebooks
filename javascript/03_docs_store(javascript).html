@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -504,7 +504,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="js03-documents-store">
 <h1>JS03 - Documents Store<a class="headerlink" href="#js03-documents-store" title="Permalink to this headline">¶</a></h1>
-<p>Documents in GDN are JSON objects. These objects can be nested (to any depth) and may contain lists. Each document has a unique primary key which identifies it within its collection. Furthermore, each document is uniquely identified by its document handle across all collections. Different revisions of the same document (identified by its handle) can be distinguished by their document revision. Any transaction only ever sees a single revision of a document.</p>
+<p>Documents in GDN are JSON objects. These objects can be nested (to any depth) and may contain lists. Each document has a unique primary key that identifies it within its collection. Furthermore, each document is uniquely identified by its document handle across all collections. Different revisions of the same document (identified by its handle) can be distinguished by their document revision. Any transaction only ever sees a single revision of a document.</p>
 <p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,18 +530,18 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>All documents contain special attributes:</p>
 <ul class="simple">
-<li><p>the document handle is stored as a string in _id,</p></li>
-<li><p>the document’s primary key in _key and</p></li>
-<li><p>the document revision in _rev.</p></li>
+<li><p>the document handle is stored as a string in <code class="docutils literal notranslate"><span class="pre">_id</span></code></p></li>
+<li><p>the document’s primary key in <code class="docutils literal notranslate"><span class="pre">_key</span></code></p></li>
+<li><p>the document revision in <code class="docutils literal notranslate"><span class="pre">_rev</span></code></p></li>
 </ul>
-<p>The value of the _key attribute can be specified by the user when creating a document. _id and _key values are immutable once the document has been created. The _rev value is maintained by GDN automatically.</p>
+<p>The user can specify the value of the <code class="docutils literal notranslate"><span class="pre">_key</span></code> attribute when creating a document. The <code class="docutils literal notranslate"><span class="pre">_id</span></code> and <code class="docutils literal notranslate"><span class="pre">_key</span></code> values are immutable once the document has been created. The <code class="docutils literal notranslate"><span class="pre">_rev</span></code> value is maintained by GDN automatically.</p>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
-<p>Lets Assume</p>
+<p>Let’s assume:</p>
 <ul class="simple">
-<li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed the jsc8 drivers as explained in section 01</p></li>
-<li><p>you have generated an API Key as explained in section 01</p></li>
+<li><p>You have already made a tenant account, and have a username and password</p></li>
+<li><p>You have installed the jsC8 drivers as explained in section 01</p></li>
+<li><p>You have generated an API Key as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,7 +575,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="get-geofabric-details">
 <h2>2. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">¶</a></h2>
-<p>To get details of fabric,</p>
+<p>To get the details of fabric:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// you might not need this, but if you wanted to select a</span>
@@ -600,8 +600,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-collection">
 <h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">¶</a></h2>
-<p>We can now create collection in the fabric. To do this, first you connect to fabric and then create a collection called employees.</p>
-<p>The below example shows the steps.</p>
+<p>We can now create a collection in the fabric. To do this, first, you connect to fabric and then create a collection called employees.</p>
+<p>The below example shows the steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">collection_name</span> <span class="o">=</span> <span class="s2">&quot;employees&quot;</span><span class="p">;</span>
@@ -629,7 +629,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-index">
 <h2>4. Create Index<a class="headerlink" href="#create-index" title="Permalink to this headline">¶</a></h2>
-<p>Let’s add a hash_index called emails to our collection employees. Please refer to reference guide for details on other available index types.</p>
+<p>Let’s add a <code class="docutils literal notranslate"><span class="pre">hash_index</span></code> called emails to our collection employees. Please refer to the reference guide for details on other available index types.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">addHashIndex</span><span class="p">()</span> <span class="p">{</span>
@@ -654,7 +654,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="insert-documents">
 <h2>5. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">¶</a></h2>
-<p>Let’s insert documents to the employees collection as shown below.</p>
+<p>Let’s insert documents into the employees collection as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="p">[</span>
@@ -692,8 +692,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="query-documents-using-c8ql">
 <h2>6. Query documents using C8QL<a class="headerlink" href="#query-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
-<p>8QL is C8’s query language. You can execute C8QL query on our newly created collection employees to get its contents.</p>
-<p>The query “FOR employee IN employees RETURN employee” is equivalent to SQL’s SELECT query.</p>
+<p>C8QL is C8’s query language. You can execute C8QL query on our newly created collection employees to get its contents.</p>
+<p>The query <code class="docutils literal notranslate"><span class="pre">FOR</span> <span class="pre">employee</span> <span class="pre">IN</span> <span class="pre">employees</span> <span class="pre">RETURN</span> <span class="pre">employee</span></code> is equivalent to SQL’s SELECT query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">c8Queries</span><span class="p">()</span> <span class="p">{</span>
@@ -712,9 +712,11 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="get-realtime-updates">
 <h2>7. Get realtime updates<a class="headerlink" href="#get-realtime-updates" title="Permalink to this headline">¶</a></h2>
 <p>Example for real-time updates from a collection in fabric:</p>
-<p>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, select collections, find the collection named “employees” and select “enable Stream”</p>
-<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. you should see the real time updates below as soon as you hit save!.</p>
-<p>the websocket will time out after 60sec if no updates are seen, so you might need to re run the cell code if you see a timed out message below. :)</p>
+<blockquote>
+<div><p>Note: You need to enable Stream from the Macrometa Dashboard for this to work. Do this by opening up the dashboard, selecting collections, finding the collection named “employees” and selecting “enable Stream”</p>
+</div></blockquote>
+<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. You should see the real-time updates below as soon as you hit save.</p>
+<p>The WebSocket will time out after 60 seconds if no updates are seen, so you might need to re-run the cell code if you see a timed-out message below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">callback_fn</span><span class="p">(</span><span class="nx">collection</span><span class="p">)</span> <span class="p">{</span>

@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -474,7 +474,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#delete-the-collection">
-   9. - Delete the Collection
+   9. Delete the Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -593,7 +593,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#delete-the-collection">
-   9. - Delete the Collection
+   9. Delete the Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -612,14 +612,14 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="cli06-query-workers">
 <h1>CLI06 - Query Workers<a class="headerlink" href="#cli06-query-workers" title="Permalink to this headline">¶</a></h1>
-<p>Query as API (aka Query Workers) enables developers to quickly convert saved C8QL queries into geo-distributed REST APIs. This eliminates the need for separate backend servers &amp; containers for CRUD operations</p>
+<p>Query as API (aka Query Workers) enables developers to convert saved C8QL queries into geo-distributed REST APIs quickly. Query Workers eliminate the need for separate backend servers &amp; containers for CRUD operations</p>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
-<p>Lets Assume</p>
+<p>Lets assume</p>
 <ul class="simple">
-<li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed the Macrometa CLI as explained in section 01</p></li>
-<li><p>you have generated an API Key as explained in section 01</p></li>
+<li><p>You have already made a tenant account and have a username and password</p></li>
+<li><p>You have installed the Macrometa CLI as explained in section 01</p></li>
+<li><p>You have generated an API Key as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -646,7 +646,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="connect-to-gdn">
 <h2>2. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">¶</a></h2>
-<p>Now that you have added your login credentials, lets connect to GDN</p>
+<p>Now that you have added your login credentials, lets connect to GDN:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
@@ -667,7 +667,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="create-a-geo-replicated-collection">
 <h2>3. Create a Geo Replicated Collection<a class="headerlink" href="#create-a-geo-replicated-collection" title="Permalink to this headline">¶</a></h2>
-<p>Before we create the Query Workers lets create a collection that we can work with</p>
+<p>Before we create the Query Workers lets create a collection that we can work with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">collection_name</span><span class="o">=</span><span class="s2">&quot;person&quot;</span>
@@ -682,7 +682,7 @@ gdnsl collection create <span class="nv">$collection_name</span> --type doc
 </div>
 <div class="section" id="create-query-workers">
 <h2>4. Create Query Workers<a class="headerlink" href="#create-query-workers" title="Permalink to this headline">¶</a></h2>
-<p>The Following Code will create a set of Query Worker APIs in GDN - once complete you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”</p>
+<p>The Following Code will create a set of Query Worker APIs in GDN - once complete, you can check that they exist from your console access, under Queries, and navigate to “Saved Queries”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; ------- CREATE RESTQLs  ------&quot;</span>
@@ -699,7 +699,9 @@ gdnsl query-worker create countRecords --value  <span class="s2">&quot;RETURN CO
 </div>
 <div class="section" id="execute-query-workers">
 <h2>5. Execute Query Workers<a class="headerlink" href="#execute-query-workers" title="Permalink to this headline">¶</a></h2>
-<p><strong>Note: we are going to skip testing the “deleteRecord” API in this section - so that we can demonstrate how to update a Query Worker API first.</strong></p>
+<blockquote>
+<div><p>Note: We will skip testing the <code class="docutils literal notranslate"><span class="pre">deleteRecord</span></code> API in this section so that we can demonstrate how to update a Query Worker API first.</p>
+</div></blockquote>
 <div class="section" id="test-the-insertrecord-query-worker">
 <h3>5.1. Test the “insertRecord” Query Worker<a class="headerlink" href="#test-the-insertrecord-query-worker" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
@@ -755,7 +757,7 @@ gdnsl query-worker run countRecords
 <div class="section" id="test-that-we-can-query-gdn-and-see-the-document">
 <h3>6.1. Test that we can query GDN and see the document<a class="headerlink" href="#test-that-we-can-query-gdn-and-see-the-document" title="Permalink to this headline">¶</a></h3>
 <p>A common requirement when building an application is to make a change to an API and update it.</p>
-<p>To demonstrate this, lets first query the database using the “execute_query” method we learnt in an earlier section</p>
+<p>To demonstrate this, let’s first query the database using the <code class="docutils literal notranslate"><span class="pre">execute_query</span></code> method we learned in an earlier section</p>
 <p>Once run, we should see the document in the cell output in JSON format so we can read it easily.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -769,7 +771,7 @@ gdnsl query <span class="s2">&quot;FOR doc IN person RETURN doc&quot;</span>
 </div>
 <div class="section" id="id1">
 <h3>6.2. Updating a Query Worker API<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>The follow cell show us how to add a new parameter to the Query, in this example we are going to add a the parameter “phone” to the query.</p>
+<p>The following cell shows us how to add a new parameter to the Query. In this example, we will add the parameter “phone” to the query.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl query-worker update insertRecord --value <span class="s2">&quot;INSERT {&#39;firstname&#39;:@firstname, &#39;lastname&#39;:@lastname, &#39;email&#39;:@email, &#39;zipcode&#39;:@zipcode, &#39;phone&#39;: @phone} IN </span><span class="nv">$collection_name</span><span class="s2">&quot;</span>
@@ -780,7 +782,7 @@ gdnsl query <span class="s2">&quot;FOR doc IN person RETURN doc&quot;</span>
 </div>
 <div class="section" id="testing-the-updated-query-worker-api">
 <h3>6.4. Testing the updated Query Worker API<a class="headerlink" href="#testing-the-updated-query-worker-api" title="Permalink to this headline">¶</a></h3>
-<p>Now that we have updated the Query, lets add a new record using it to test that it works.</p>
+<p>Now that we have updated the query, let’s add a new record using it to test that it works.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Insert data with updated query worker&quot;</span>
@@ -792,12 +794,14 @@ gdnsl query-worker run insertRecord --param <span class="s2">&quot;firstname=joh
 </div>
 <div class="section" id="checking-the-data-in-the-collection">
 <h3>6.5. Checking the data in the collection<a class="headerlink" href="#checking-the-data-in-the-collection" title="Permalink to this headline">¶</a></h3>
-<p>Now lets check that the data has been updated in the record by using the “execute_query” method - we should see two documents.</p>
+<p>Now, let’s check that the data has been updated in the record by using the <code class="docutils literal notranslate"><span class="pre">execute_query</span></code> method - we should see two documents.</p>
 <ol class="simple">
 <li><p>the original document without a phone number, and</p></li>
 <li><p>a second document, but now with a phone number added</p></li>
 </ol>
-<p><strong>Hint: If you would like to return to the step “countRecords” and re run the code, you should see the count value increase by 1</strong></p>
+<blockquote>
+<div><p>Hint: If you would like to return to the step “countRecords” and re-run the code, the count value should increase by 1.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Get docs in \&quot;person\&quot; collection, after executing the updated query&quot;</span>
@@ -823,7 +827,7 @@ gdnsl query-worker run deleteRecord
 <div class="section" id="delete-query-workers">
 <h2>8. Delete Query Workers<a class="headerlink" href="#delete-query-workers" title="Permalink to this headline">¶</a></h2>
 <p>We might want to delete our Query Worker APIs completely.</p>
-<p>For each Query Worker we want to remove we use the “delete_restql” method as shown in the cell below</p>
+<p>For each Query Worker we want to remove, we use the <code class="docutils literal notranslate"><span class="pre">delete_restql</span></code> method as shown in the cell below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;------- DELETE RESTQLs ------&quot;</span>
@@ -839,8 +843,8 @@ gdnsl query-worker delete deleteRecord
 </div>
 </div>
 <div class="section" id="delete-the-collection">
-<h2>9. - Delete the Collection<a class="headerlink" href="#delete-the-collection" title="Permalink to this headline">¶</a></h2>
-<p>Now let us remove the collection we added during this Tutorial</p>
+<h2>9. Delete the Collection<a class="headerlink" href="#delete-the-collection" title="Permalink to this headline">¶</a></h2>
+<p>Now let us remove the collection we added during this tutorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl collection delete <span class="nv">$collection_name</span>
@@ -851,10 +855,10 @@ gdnsl query-worker delete deleteRecord
 </div>
 <div class="section" id="section-completed">
 <h2>Section Completed!<a class="headerlink" href="#section-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations!, another tutorial completed.</p>
+<p>Congratulations! You have completed this tutorial.</p>
 <p><strong>Note: To use the created Query Worker APIs you should use the API reference documentation for detailed instructions.</strong></p>
-<p>e.g. /_fabric/{fabric}/_api/restql/{name}</p>
-<p>where {name} is the name of your Query Worker API e.g. “insertRecord”</p>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">/_fabric/{fabric}/_api/restql/{name}</span></code></p>
+<p>Where <code class="docutils literal notranslate"><span class="pre">{name}</span></code> is the name of your Query Worker API, e.g. “insertRecord”.</p>
 </div>
 </div>
 

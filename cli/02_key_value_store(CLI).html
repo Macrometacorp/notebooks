@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../javascript/00_working_with_jsc8%28javascript%29.html">
-     JS00 - Working with JSC8
+     JS00 - Working with jsC8
     </a>
    </li>
    <li class="toctree-l2">
@@ -514,18 +514,18 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="cli02-key-value-store">
 <h1>CLI02 - Key Value Store<a class="headerlink" href="#cli02-key-value-store" title="Permalink to this headline">¶</a></h1>
-<p>Macrometa GDN is a geodistributed real-time coordination-free materialized views engine that supports multiple data models. You can use GDN as a geo-replicated real-time key-value datastore or database.</p>
+<p>Macrometa GDN is a geo-distributed real-time coordination-free materialized views engine that supports multiple data models. You can use GDN as a geo-replicated real-time key-value datastore or database.</p>
 <p>If you are new to Macrometa GDN, start by reading the essentials of Macrometa GDN.</p>
-<p>Each document stored in a collection (or table) contains a primary key _key. The rest of the document is considered a value. The collection behaves like a simple key-value (KV) store if it has no secondary indexes.</p>
-<p>The key-value store has no query languages. The permissible operations are key look-ups (single &amp; batch) and key-value pair insertions, updates and deletions. If you don’t specify a sharding attribute, we use _key to shard the data. The simplicity of this model makes a key-value store fast, easy to use, scalable, portable, and flexible.</p>
-<p>You can enable time_to_live (TTL) during collection creation and add an expireAt value to specify the expiration time for each document in the KV collection.</p>
+<p>Each document stored in a collection (or table) contains a primary key, <code class="docutils literal notranslate"><span class="pre">_key</span></code>. The rest of the document is considered a value. If it has no secondary indexes, the collection behaves like a simple key-value (KV) store.</p>
+<p>The key-value store has no query languages. The permissible operations are key look-ups (single and batch) and key-value pair insertions, updates, and deletions. If you don’t specify a sharding attribute, we use <code class="docutils literal notranslate"><span class="pre">_key</span></code> to shard the data. The simplicity of this model makes a key-value store fast, easy to use, scalable, portable, and flexible.</p>
+<p>You can enable <code class="docutils literal notranslate"><span class="pre">time_to_live</span></code> (TTL) during collection creation and add an <code class="docutils literal notranslate"><span class="pre">expireAt</span></code> value to specify the expiration time for each document in the KV collection.</p>
 <p>For the following examples, assume these credentials:</p>
 <div class="section" id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">¶</a></h2>
 <p>Lets Assume</p>
 <ul class="simple">
-<li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed and configured the Macrometa CLI as explained in section 01</p></li>
+<li><p>You have already made a tenant account, and have a username and password</p></li>
+<li><p>You have installed and configured the Macrometa CLI as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -547,7 +547,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="insert-key-value-pairs">
 <h2>2. Insert Key Value Pairs<a class="headerlink" href="#insert-key-value-pairs" title="Permalink to this headline">¶</a></h2>
-<p>Insert key-value pairs into the collection.</p>
+<p>Insert key-value pairs into the collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Inserting keys into the &#39;students&#39; collection:&quot;</span>
@@ -562,7 +562,7 @@ gdnsl kv <span class="nb">set</span> students --key Monika --value Chemistry --t
 </div>
 <div class="section" id="get-a-value">
 <h2>3. Get a Value<a class="headerlink" href="#get-a-value" title="Permalink to this headline">¶</a></h2>
-<p>Get value for a given key.</p>
+<p>Get the value for a given key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Value of key &#39;John&#39;&quot;</span>
@@ -574,7 +574,7 @@ gdnsl kv get students --key John
 </div>
 <div class="section" id="get-key-value-count">
 <h2>4. Get Key-Value Count<a class="headerlink" href="#get-key-value-count" title="Permalink to this headline">¶</a></h2>
-<p>Get key-value count from a given collection</p>
+<p>Get the key-value count from a given collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Number of kv pairs in your collection:&quot;</span>
@@ -586,7 +586,7 @@ gdnsl kv get students --count
 </div>
 <div class="section" id="update-value">
 <h2>5. Update Value<a class="headerlink" href="#update-value" title="Permalink to this headline">¶</a></h2>
-<p>Update value for a given key</p>
+<p>Update a value for a given key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Update value for a key&quot;</span>
@@ -599,7 +599,7 @@ gdnsl kv <span class="nb">set</span> students --key John --value Biology --ttl <
 </div>
 <div class="section" id="delete-a-key-value">
 <h2>6. Delete a Key-Value<a class="headerlink" href="#delete-a-key-value" title="Permalink to this headline">¶</a></h2>
-<p>Delete key-value pairs from a collection</p>
+<p>Delete key-value pairs from a collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Deleted Entry for the specified Key:&quot;</span>
@@ -611,7 +611,7 @@ gdnsl kv delete students --key John
 </div>
 <div class="section" id="id1">
 <h2>7. Delete a Key-Value<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Delete entry for multiple key-value pairs from a collection</p>
+<p>Delete an entry for multiple key-value pairs from a collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Deleting multiple keys:&quot;</span>
@@ -623,7 +623,7 @@ gdnsl kv delete students --keyarray <span class="s2">&quot;Monika, Alex, Alice&q
 </div>
 <div class="section" id="delete-a-collection">
 <h2>8. Delete a Collection<a class="headerlink" href="#delete-a-collection" title="Permalink to this headline">¶</a></h2>
-<p>Delete the key-value collection</p>
+<p>Delete the key-value collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Deleting collection: &quot;</span>
@@ -635,8 +635,8 @@ gdnsl kv delete cities
 </div>
 <div class="section" id="workbook-completed">
 <h2>Workbook Completed!<a class="headerlink" href="#workbook-completed" title="Permalink to this headline">¶</a></h2>
-<p>Congratulations you should have successfully create a collection, inserted values, updated a value, deleted an entry, deleted all entries and finally deleted the collection.</p>
-<p>Dont forget you can log into your GDN account and check the console to see what is happening from the dashboard at the same time!</p>
+<p>Congratulations! You have successfully created a collection, inserted values, updated a value, deleted an entry, deleted all entries, and finally deleted the collection.</p>
+<p>Don’t forget you can log into your GDN account and check the console to see what is happening from the dashboard at the same time!</p>
 </div>
 </div>
 

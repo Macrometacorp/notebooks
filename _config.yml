@@ -1,10 +1,10 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: GDN - XBook
+title: Powered by Macrometa GDN
 author: The Macrometa Team
 copyright: "2022"
-logo: logo-macrometa.png
+logo: logo-verizon.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

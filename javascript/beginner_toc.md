@@ -1,7 +1,7 @@
 (structure:index)=
 # Javascript
 
-These sections describe javascript version of Macrometa GDN beginner tutorials.
+These sections describe the Javascript version of Macrometa GDN beginner tutorials.
 
 ```{tableofcontents}
 ```

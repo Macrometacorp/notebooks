@@ -36,6 +36,7 @@ parts:
       - file: cli/05_graph_traversals(CLI)
       - file: cli/06_building_restql_apis(CLI)
       - file: cli/07_working_with_fabrics(CLI)
+      - file: cli/08_stream_worker(CLI)
 - caption: Advanced
   chapters:
   - file: advanced_python/advanced_toc

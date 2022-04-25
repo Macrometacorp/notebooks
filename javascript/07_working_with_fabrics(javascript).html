@@ -155,6 +155,11 @@ const thebe_selector_output = ".output, .cell_output"
      Py07 - GeoFabrics
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/08_stream_worker%28Python%29.html">
+     PY08 - Stream Workers
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -669,7 +674,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>1. Import Libraries to Workbook<a class="headerlink" href="#import-libraries-to-workbook" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jsc8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -679,10 +684,10 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>2. Create and Define Login details<a class="headerlink" href="#create-and-define-login-details" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">fed_url</span> <span class="o">=</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">admin_email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">admin_password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">fed_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">geo_fabric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_system&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">admin_email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">admin_password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -692,31 +697,31 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>3. Connect to GDN as Admin<a class="headerlink" href="#connect-to-gdn-as-admin" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize the C8 Data Fabric client.</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Initialize the C8 Data Fabric client.</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CONNECTION SETUP  ------&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`tenant: </span><span class="si">${</span><span class="nx">admin_email</span><span class="si">}</span><span class="sb">, geofabric: </span><span class="si">${</span><span class="nx">geo_fabric</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CONNECTION SETUP  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`tenant: </span><span class="si">${</span><span class="nx">admin_email</span><span class="si">}</span><span class="sb">, geofabric: </span><span class="si">${</span><span class="nx">geo_fabric</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Simple Way</span>
-<span class="c1">// const client = new jsc8({url: fed_url, token: &quot;XXXX&quot;, fabricName: geo_fabric});</span>
+<span class="c1">// Simple Way</span><span class="w"></span>
+<span class="c1">// const client = new jsc8({url: fed_url, token: &quot;XXXX&quot;, fabricName: geo_fabric});</span><span class="w"></span>
 
-<span class="c1">// ----- OR -----</span>
-<span class="c1">// const client = new jsc8({url: fed_url, apiKey: &quot;XXXX&quot;, fabricName: geo_fabric});</span>
+<span class="c1">// ----- OR -----</span><span class="w"></span>
+<span class="c1">// const client = new jsc8({url: fed_url, apiKey: &quot;XXXX&quot;, fabricName: geo_fabric});</span><span class="w"></span>
 
-<span class="c1">// To use advanced options</span>
-<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span>
-  <span class="nx">url</span><span class="o">:</span> <span class="nx">fed_url</span><span class="p">,</span>
-  <span class="nx">fabricName</span><span class="o">:</span> <span class="nx">geo_fabric</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="c1">// To use advanced options</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nx">fed_url</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">fabricName</span><span class="o">:</span><span class="w"> </span><span class="nx">geo_fabric</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="c1">// For the &quot;mytenant&quot; tenant, connect to &quot;_system&quot; fabric as tenant admin.</span>
-<span class="c1">// This returns an API wrapper for the &quot;_system&quot; fabric on tenant &#39;mytenant&#39;</span>
-<span class="c1">// Note that the &#39;mytenant&#39; tenant should already exist.</span>
+<span class="c1">// For the &quot;mytenant&quot; tenant, connect to &quot;_system&quot; fabric as tenant admin.</span><span class="w"></span>
+<span class="c1">// This returns an API wrapper for the &quot;_system&quot; fabric on tenant &#39;mytenant&#39;</span><span class="w"></span>
+<span class="c1">// Note that the &#39;mytenant&#39; tenant should already exist.</span><span class="w"></span>
 
-<span class="nx">client</span>
-  <span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">admin_email</span><span class="p">,</span> <span class="nx">admin_password</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">))</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
+<span class="nx">client</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">admin_email</span><span class="p">,</span><span class="w"> </span><span class="nx">admin_password</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -727,19 +732,19 @@ const thebe_selector_output = ".output, .cell_output"
 <p>At this point in the tutorial, this should only show the default <code class="docutils literal notranslate"><span class="pre">system</span></code> fabric with all the available data centers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// List all fabrics in the &#39;mytenant&#39; tenant</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getGeoFabricList</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric list...&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// List all fabrics in the &#39;mytenant&#39; tenant</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getGeoFabricList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get geo fabric list...&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">fabricList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listFabrics</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabricList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric list&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">fabricList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">listFabrics</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fabricList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching GeoFabric list&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getGeoFabricList</span><span class="p">();</span>
+<span class="nx">getGeoFabricList</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -750,19 +755,19 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now lets have a look at those data centers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns the list of details of Data Centers</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getDcList</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get data center list...&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Returns the list of details of Data Centers</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getDcList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get data center list...&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">dcList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getDcList</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dcList</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mf">2</span><span class="p">));</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching data center list&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dcList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getDcList</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dcList</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching data center list&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getDcList</span><span class="p">();</span>
+<span class="nx">getDcList</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -772,25 +777,25 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>6. Create a new user called “johndoe”<a class="headerlink" href="#create-a-new-user-called-johndoe" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a new user.</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">createUser</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Creating new user...&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Create a new user.</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createUser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Creating new user...&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">client</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span>
-      <span class="s2">&quot;johndoe&quot;</span><span class="p">,</span> <span class="c1">// username</span>
-      <span class="s2">&quot;johndoe@gmail.com&quot;</span><span class="p">,</span> <span class="c1">// email</span>
-      <span class="s2">&quot;first_password&quot;</span><span class="p">,</span> <span class="c1">// password</span>
-      <span class="kc">true</span><span class="p">,</span> <span class="c1">// active</span>
-      <span class="p">{</span> <span class="nx">team</span><span class="o">:</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;engineer&quot;</span> <span class="p">}</span> <span class="c1">// extra</span>
-    <span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;New user created!....&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while creating user &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">client</span><span class="p">.</span><span class="nx">createUser</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// username</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;johndoe@gmail.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// email</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;first_password&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// password</span><span class="w"></span>
+<span class="w">      </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// active</span><span class="w"></span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nx">team</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;backend&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;engineer&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// extra</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;New user created!....&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while creating user &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">createUser</span><span class="p">();</span>
+<span class="nx">createUser</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -800,19 +805,19 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>7. List details of the new user<a class="headerlink" href="#list-details-of-the-new-user" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve details of a user.</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getUser</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get data center list...&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve details of a user.</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getUser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get data center list...&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">userDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userDetails</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user details :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getUser</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userDetails</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user details :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getUser</span><span class="p">();</span>
+<span class="nx">getUser</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -823,19 +828,19 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now let’s take a look at the permission of our newly created user. At this point, they should be read-only, or roles have a look at those data centers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve user permissions for all fabrics and collections.</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getPermissions</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get user&#39;s permissions list...&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve user permissions for all fabrics and collections.</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getPermissions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get user&#39;s permissions list...&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">permissionsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getPermissions</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user&#39;s permissions :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">permissionsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getPermissions</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user&#39;s permissions :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getPermissions</span><span class="p">();</span>
+<span class="nx">getPermissions</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -847,45 +852,45 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The code block below checks to see what the local data center is to you using the <code class="docutils literal notranslate"><span class="pre">localdc()</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">myLocalDcName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">myLocalDcName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">createNewFabric</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">myLocalDc</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getLocalDc</span><span class="p">();</span> <span class="c1">// Returns the datacenter thats closest to you</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createNewFabric</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">myLocalDc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getLocalDc</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns the datacenter thats closest to you</span><span class="w"></span>
 
-    <span class="kd">const</span> <span class="nx">allDcList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getDcList</span><span class="p">();</span> <span class="c1">// Returns all the data centers list</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">allDcList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getDcList</span><span class="p">();</span><span class="w"> </span><span class="c1">// Returns all the data centers list</span><span class="w"></span>
 
-    <span class="kd">const</span> <span class="nx">globalDcList</span> <span class="o">=</span> <span class="nx">allDcList</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">dcInfo</span>
-      <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">_key</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="mf">2</span><span class="p">);</span> <span class="c1">// Picking any 2 random data centers from all the data center</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">globalDcList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">allDcList</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">dcInfo</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">data</span><span class="p">.</span><span class="nx">_key</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// Picking any 2 random data centers from all the data center</span><span class="w"></span>
 
-    <span class="nx">myLocalDcName</span> <span class="o">=</span> <span class="nx">myLocalDc</span><span class="p">[</span><span class="s2">&quot;_key&quot;</span><span class="p">];</span> <span class="c1">// Selects the name of that datacenter</span>
+<span class="w">    </span><span class="nx">myLocalDcName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">myLocalDc</span><span class="p">[</span><span class="s2">&quot;_key&quot;</span><span class="p">];</span><span class="w"> </span><span class="c1">// Selects the name of that datacenter</span><span class="w"></span>
 
-    <span class="kd">const</span> <span class="nx">dcl</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">globalDcList</span><span class="p">,</span> <span class="nx">myLocalDcName</span><span class="p">];</span> <span class="c1">// Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dcl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="nx">globalDcList</span><span class="p">,</span><span class="w"> </span><span class="nx">myLocalDcName</span><span class="p">];</span><span class="w"> </span><span class="c1">// Create a DataCenter List for the New GeoFabric (Macrometa GDN)</span><span class="w"></span>
 
-    <span class="kd">const</span> <span class="nx">fabricList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listFabrics</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">fabricList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">listFabrics</span><span class="p">();</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">fabricList</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">))</span> <span class="p">{</span>
-      <span class="c1">// Checks the geofabric doesnt already exist</span>
-      <span class="kd">const</span> <span class="nx">demo_fabric</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createFabric</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="p">{</span>
-        <span class="nx">dcList</span><span class="o">:</span> <span class="nx">dcl</span><span class="p">,</span>
-      <span class="p">});</span> <span class="c1">// Create a geofabric</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created new fabric with name demofabric&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="c1">// Setting jsc8 client to use demofabric just to get current fabric details</span>
-    <span class="nx">client</span><span class="p">.</span><span class="nx">useFabric</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">fabricList</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="c1">// Checks the geofabric doesnt already exist</span><span class="w"></span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">demo_fabric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createFabric</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nx">dcList</span><span class="o">:</span><span class="w"> </span><span class="nx">dcl</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="p">});</span><span class="w"> </span><span class="c1">// Create a geofabric</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created new fabric with name demofabric&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Setting jsc8 client to use demofabric just to get current fabric details</span><span class="w"></span>
+<span class="w">    </span><span class="nx">client</span><span class="p">.</span><span class="nx">useFabric</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">);</span><span class="w"></span>
 
-    <span class="kd">const</span> <span class="nx">all_fabric_details</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span> <span class="c1">// Get details of new geofabric</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">all_fabric_details</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// Get details of new geofabric</span><span class="w"></span>
 
-    <span class="c1">// Resetting client to use _system fabric as default fabric</span>
-    <span class="nx">client</span><span class="p">.</span><span class="nx">useFabric</span><span class="p">(</span><span class="s2">&quot;_system&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Resetting client to use _system fabric as default fabric</span><span class="w"></span>
+<span class="w">    </span><span class="nx">client</span><span class="p">.</span><span class="nx">useFabric</span><span class="p">(</span><span class="s2">&quot;_system&quot;</span><span class="p">);</span><span class="w"></span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">all_fabric_details</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while creating new fabric&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="nx">createNewFabric</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">all_fabric_details</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while creating new fabric&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">createNewFabric</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -896,22 +901,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p>We have created a new user and a new geofabric. When this is first created the user should have no permissions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve user permission for &quot;test&quot; fabric.</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getPermissions</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get user&#39;s permissions list for &#39;test&#39; fabric..&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve user permission for &quot;test&quot; fabric.</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getPermissions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get user&#39;s permissions list for &#39;test&#39; fabric..&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">permissionsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getPermission</span><span class="p">(</span>
-      <span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;demofabric&quot;</span>
-    <span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user&#39;s permissions :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">permissionsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getPermission</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;demofabric&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user&#39;s permissions :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getPermissions</span><span class="p">();</span>
+<span class="nx">getPermissions</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -922,24 +927,24 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Let’s change our new users permissions to “read/right” so when we connect at this user they can work with the database and create a collection. We have created a new user and a new geofabric. When this is first created the user should have no permissions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Update user permission for &quot;test&quot; fabric.</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Update user permission for &quot;test&quot; fabric.</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">updatePermission</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Update user&#39;s permissions list for &#39;test&#39; fabric..&quot;</span><span class="p">);</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">updatePermission</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Update user&#39;s permissions list for &#39;test&#39; fabric..&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">permissionsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">updatePermission</span><span class="p">(</span>
-      <span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;demofabric&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;rw&quot;</span>
-    <span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating user&#39;s permissions :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">permissionsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">updatePermission</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;demofabric&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;rw&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating user&#39;s permissions :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">updatePermission</span><span class="p">();</span>
+<span class="nx">updatePermission</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -950,23 +955,23 @@ const thebe_selector_output = ".output, .cell_output"
 <p>We might also want to reduce the users access to the <code class="docutils literal notranslate"><span class="pre">_system</span></code> fabric. We can do this as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Update user permission for &quot;_system&quot; fabric.</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">updatePermission</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Update user&#39;s permissions list for &#39;_system&#39; fabric..&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Update user permission for &quot;_system&quot; fabric.</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">updatePermission</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Update user&#39;s permissions list for &#39;_system&#39; fabric..&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">permissionsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">updatePermission</span><span class="p">(</span>
-      <span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;_system&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;none&quot;</span>
-    <span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating user&#39;s permissions :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">permissionsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">updatePermission</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;_system&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;none&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating user&#39;s permissions :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">updatePermission</span><span class="p">();</span>
+<span class="nx">updatePermission</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -977,20 +982,20 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Ok, so now that we have updated our users permissions, let’s take a look to see our changes. We might also want to reduce the users access to the <code class="docutils literal notranslate"><span class="pre">_system</span></code> fabric. We can do this as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve user permissions for all fabrics and collections.</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Retrieve user permissions for all fabrics and collections.</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getPermissions</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get user&#39;s permissions list..&quot;</span><span class="p">);</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getPermissions</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get user&#39;s permissions list..&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">permissionsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getPermissions</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user&#39;s permissions :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">permissionsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getPermissions</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">permissionsList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching user&#39;s permissions :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getPermissions</span><span class="p">();</span>
+<span class="nx">getPermissions</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1001,22 +1006,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now, it’s time to connect to our new geofabric as our new user:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">demo_email</span> <span class="o">=</span> <span class="s2">&quot;johndoe@gmail.com&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">demo_password</span> <span class="o">=</span> <span class="s2">&quot;first_password&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">new_geofabric</span> <span class="o">=</span> <span class="s2">&quot;demofabric&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">demo_email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;johndoe@gmail.com&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">demo_password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;first_password&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">new_geofabric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;demofabric&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CONNECTION SETUP  ------&quot;</span><span class="p">);</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`tenant: </span><span class="si">${</span><span class="nx">fed_url</span><span class="si">}</span><span class="sb">, geofabric: </span><span class="si">${</span><span class="nx">new_geofabric</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CONNECTION SETUP  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`tenant: </span><span class="si">${</span><span class="nx">fed_url</span><span class="si">}</span><span class="sb">, geofabric: </span><span class="si">${</span><span class="nx">new_geofabric</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 
-<span class="kd">const</span> <span class="nx">demo_fabric_client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span>
-  <span class="nx">url</span><span class="o">:</span> <span class="nx">fed_url</span><span class="p">,</span>
-  <span class="nx">fabricName</span><span class="o">:</span> <span class="nx">new_geofabric</span><span class="p">,</span>
-<span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">({</span><span class="w"></span>
+<span class="w">  </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nx">fed_url</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">fabricName</span><span class="o">:</span><span class="w"> </span><span class="nx">new_geofabric</span><span class="p">,</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 
-<span class="nx">demo_fabric_client</span>
-  <span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">demo_email</span><span class="p">,</span> <span class="nx">demo_password</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">))</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
+<span class="nx">demo_fabric_client</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">demo_email</span><span class="p">,</span><span class="w"> </span><span class="nx">demo_password</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1027,17 +1032,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Now that we have connected as our new user, let’s see what data centers we have access to in our geofabric. Let’s connect to our new geofabric as a new user.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">getDcList</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get data center list...&quot;</span><span class="p">);</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">dcList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">getDcList</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dcList</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mf">2</span><span class="p">))</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching data center list&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getDcList</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Get data center list...&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">dcList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">getDcList</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">dcList</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching data center list&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getDcList</span><span class="p">();</span>
+<span class="nx">getDcList</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1050,27 +1055,27 @@ const thebe_selector_output = ".output, .cell_output"
 <p>You will likely remember this step from an earlier tutorial. First, we define a collection name. Then we check to see if it exists. If it doesn’t exist, then we will create it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">collection_name</span> <span class="o">=</span> <span class="s1">&#39;employees&#39;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">collection_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;employees&#39;</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">createCollection</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// Create a new collection if it does not exist</span>
-    <span class="kd">const</span> <span class="nx">isExist</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">)</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">isExist</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name&quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span>
-      <span class="nx">collection_name</span>
-    <span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createCollection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">collectionDetails</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Create a new collection if it does not exist</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">isExist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isExist</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">collectionDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="nx">collection_name</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">createCollection</span><span class="p">();</span>
+<span class="nx">createCollection</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1081,34 +1086,34 @@ const thebe_selector_output = ".output, .cell_output"
 <p>A collection is great, but let’s add some records to it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">docs</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span>
-    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;James&quot;</span><span class="p">,</span>
-    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Kirk&quot;</span><span class="p">,</span>
-    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Han&quot;</span><span class="p">,</span>
-    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Han&quot;</span><span class="p">,</span>
-    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Solo&quot;</span><span class="p">,</span>
-    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Bruce&quot;</span><span class="p">,</span>
-    <span class="nx">firstname</span><span class="o">:</span> <span class="s2">&quot;Bruce&quot;</span><span class="p">,</span>
-    <span class="nx">lastname</span><span class="o">:</span> <span class="s2">&quot;Wayne&quot;</span><span class="p">,</span>
-    <span class="nx">email</span><span class="o">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;James&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">firstname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;James&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">lastname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Kirk&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Han&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">firstname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Han&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">lastname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Solo&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bruce&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">firstname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bruce&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">lastname</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Wayne&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="p">];</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">insertDocument</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">docs</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">insertDocument</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">insertDocument</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="nx">docs</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">insertDocument</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">))</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
+<span class="nx">insertDocument</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Documents inserted&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1119,24 +1124,24 @@ const thebe_selector_output = ".output, .cell_output"
 <p>You likely recall how to create a Query Worker from the earlier tutorial. So let’s set up a basic query to show the records in a collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// crete restql</span>
-<span class="kd">const</span> <span class="nx">get_data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">query</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;getRecords&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="sb">`FOR doc IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb"> RETURN doc`</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">};</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// crete restql</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">get_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">query</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;getRecords&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="sb">`FOR doc IN </span><span class="si">${</span><span class="nx">collection_name</span><span class="si">}</span><span class="sb"> RETURN doc`</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">createRestQL</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CREATE RESTQLs  ------&quot;</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">createRestql</span><span class="p">(</span>
-    <span class="nx">get_data</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span>
-    <span class="nx">get_data</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">value</span>
-  <span class="p">);</span> <span class="c1">// name: getRecords</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CREATED RESTQLs  ------&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createRestQL</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CREATE RESTQLs  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">createRestql</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="nx">get_data</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">get_data</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">value</span><span class="w"></span>
+<span class="w">  </span><span class="p">);</span><span class="w"> </span><span class="c1">// name: getRecords</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- CREATED RESTQLs  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">createRestQL</span><span class="p">();</span>
+<span class="nx">createRestQL</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1146,20 +1151,20 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>16.4. Let’s check our Query Worker is saved<a class="headerlink" href="#let-s-check-our-query-worker-is-saved" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// get all restql</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// get all restql</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">getRestqls</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fetching list of restql&quot;</span><span class="p">);</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getRestqls</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Fetching list of restql&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">restqlList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">getRestqls</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">restqlList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching list of restql :&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">restqlList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">getRestqls</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">restqlList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching list of restql :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getRestqls</span><span class="p">();</span>
+<span class="nx">getRestqls</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1169,16 +1174,16 @@ const thebe_selector_output = ".output, .cell_output"
 <h3>16.5. Let’s execute the Query Worker “getRecords”<a class="headerlink" href="#let-s-execute-the-query-worker-getrecords" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// execute restql without bindVars</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// execute restql without bindVars</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">executeRestQL</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- EXECUTE RESTQLs ------&quot;</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n Get Data&quot;</span><span class="p">);</span>
-  <span class="kd">let</span> <span class="nx">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">executeRestql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">executeRestQL</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- EXECUTE RESTQLs ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n Get Data&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">resp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">executeRestql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">result</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">executeRestQL</span><span class="p">();</span>
+<span class="nx">executeRestQL</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1190,43 +1195,43 @@ const thebe_selector_output = ".output, .cell_output"
 <p>That was great! Now let’s tidy up by removing our fabric, the new user, and the collection we created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// delete restql</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteRestQL</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DELETE RESTQLs ------&quot;</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">deleteRestql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DONE  ------&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// delete restql</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">deleteRestQL</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DELETE RESTQLs ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">demo_fabric_client</span><span class="p">.</span><span class="nx">deleteRestql</span><span class="p">(</span><span class="s2">&quot;getRecords&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DONE  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">deleteRestQL</span><span class="p">();</span>
+<span class="nx">deleteRestQL</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// delete new user</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteUser</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DELETE User ------&quot;</span><span class="p">);</span>
-  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteUser</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DONE  ------&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// delete new user</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">deleteUser</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DELETE User ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteUser</span><span class="p">(</span><span class="s2">&quot;johndoe&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DONE  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">deleteUser</span><span class="p">();</span>
+<span class="nx">deleteUser</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// delete the fabric</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">dropFabric</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DELETE User ------&quot;</span><span class="p">);</span>
-  <span class="c1">// now delete the demo geo fabric we created earlier</span>
-  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">dropFabric</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DONE  ------&quot;</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// delete the fabric</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">dropFabric</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DELETE User ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// now delete the demo geo fabric we created earlier</span><span class="w"></span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">dropFabric</span><span class="p">(</span><span class="s2">&quot;demofabric&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n ------- DONE  ------&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">dropFabric</span><span class="p">();</span>
+<span class="nx">dropFabric</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

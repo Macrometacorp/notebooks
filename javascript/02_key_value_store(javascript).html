@@ -155,6 +155,11 @@ const thebe_selector_output = ".output, .cell_output"
      Py07 - GeoFabrics
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/08_stream_worker%28Python%29.html">
+     PY08 - Stream Workers
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -564,17 +569,17 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The first step in using GDN is to connect to a local region. When this code executes, it initializes the server connection to the region URL you specified. You can create an API key from the GUI or REST API.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jsc8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// Simple Way</span>
-<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span><span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">,</span> <span class="nx">token</span><span class="o">:</span> <span class="s2">&quot;XXXX&quot;</span><span class="p">,</span> <span class="nx">fabricName</span><span class="o">:</span> <span class="s1">&#39;_system&#39;</span><span class="p">});</span>
+<span class="c1">// Simple Way</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">({</span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;XXXX&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">fabricName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;_system&#39;</span><span class="p">});</span><span class="w"></span>
 
-<span class="c1">// ----- OR -----</span>
-<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
+<span class="c1">// ----- OR -----</span><span class="w"></span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span><span class="w"></span>
 
-<span class="c1">// To use advanced options</span>
-<span class="c1">// const client = new jsc8(&quot;https://gdn.paas.macrometa.io&quot;); </span>
-<span class="c1">// client.login(email, password).then(result =&gt; console.log(&quot;Login successfully&quot;, result)).catch(err =&gt; console.error(&quot;Error while login&quot;, err.message))</span>
+<span class="c1">// To use advanced options</span><span class="w"></span>
+<span class="c1">// const client = new jsc8(&quot;https://gdn.paas.macrometa.io&quot;); </span><span class="w"></span>
+<span class="c1">// client.login(email, password).then(result =&gt; console.log(&quot;Login successfully&quot;, result)).catch(err =&gt; console.error(&quot;Error while login&quot;, err.message))</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -584,23 +589,23 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Step 02-B - Create a Collection<a class="headerlink" href="#step-02-b-create-a-collection" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">collection_name</span> <span class="o">=</span> <span class="s2">&quot;students&quot;</span><span class="p">;</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">collection_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;students&quot;</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">createCollection</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">let</span> <span class="nx">collectionDetails</span><span class="p">;</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span> <span class="p">{</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-      <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nx">collectionDetails</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s2">&quot;Collection creation did not succeed due to &quot;</span> <span class="o">+</span> <span class="nx">e</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createCollection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">collectionDetails</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">hasCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">collectionDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">createCollection</span><span class="p">();</span>
+<span class="nx">createCollection</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -611,36 +616,36 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Insert key-value pairs into the collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;Science&quot;</span><span class="p">,</span>
-    <span class="nx">expireAt</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;Maths&quot;</span><span class="p">,</span>
-    <span class="nx">expireAt</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Alex&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;Physics&quot;</span><span class="p">,</span>
-    <span class="nx">expireAt</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="p">},</span>
-  <span class="p">{</span>
-    <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;Monika&quot;</span><span class="p">,</span>
-    <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;Chemistry&quot;</span><span class="p">,</span>
-    <span class="nx">expireAt</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="p">},</span>
-<span class="p">];</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Science&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">expireAt</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Maths&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">expireAt</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Physics&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">expireAt</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Monika&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Chemistry&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">expireAt</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="p">},</span><span class="w"></span>
+<span class="p">];</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">insertKVPairs</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertKVPairs</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">insertKVPairs</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">insertKVPairs</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">insertKVPairs</span><span class="p">()</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;KV pairs inserted&quot;</span><span class="p">))</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting KV pairs&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
+<span class="nx">insertKVPairs</span><span class="p">()</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;KV pairs inserted&quot;</span><span class="p">))</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while inserting KV pairs&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -651,16 +656,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Get a value for a given key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">getValueForKey</span><span class="p">()</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">monikaKV</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getValueForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="s2">&quot;Monika&quot;</span><span class="p">);</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value for the provided key Monika: &quot;</span><span class="p">,</span> <span class="nx">monikaKV</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getValueForKey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">monikaKV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getValueForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Monika&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value for the provided key Monika: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">monikaKV</span><span class="p">);</span><span class="w"></span>
 
-  <span class="kd">const</span> <span class="nx">johnKV</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getValueForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">johnKV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">getValueForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">);</span><span class="w"></span>
 
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value for the provided key John: &quot;</span><span class="p">,</span> <span class="nx">johnKV</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Value for the provided key John: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">johnKV</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getValueForKey</span><span class="p">();</span>
+<span class="nx">getValueForKey</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -671,12 +676,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Get the key-value count from a given collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">client</span>
-  <span class="p">.</span><span class="nx">getKVCount</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="p">=&gt;</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Number of kv pairs in your collection: &quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span>
-  <span class="p">)</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching kv count &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">client</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">getKVCount</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Number of kv pairs in your collection: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while fetching kv count &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -687,21 +692,21 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Update a value for a given key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">_key</span><span class="o">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="s2">&quot;Biology&quot;</span><span class="p">,</span>
-  <span class="nx">expireAt</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-<span class="p">};</span>
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">insertKeyValuePair</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">insertKVPairs</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Updated the specified KV pair&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating KV pair&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">_key</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Biology&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nx">expireAt</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">insertKeyValuePair</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">insertKVPairs</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Updated the specified KV pair&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while updating KV pair&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">insertKeyValuePair</span><span class="p">();</span>
+<span class="nx">insertKeyValuePair</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -712,18 +717,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Delete key-value pairs from a collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Delete entry for a key</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Delete entry for a key</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteEntryForKey</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteEntryForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted Entry for the specified Key John&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting KV pair&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">deleteEntryForKey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteEntryForKey</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted Entry for the specified Key John&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting KV pair&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">deleteEntryForKey</span><span class="p">();</span>
+<span class="nx">deleteEntryForKey</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -734,22 +739,22 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Delete an entry for multiple key-value pairs from a collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Delete entry for multiple keys</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Delete entry for multiple keys</span><span class="w"></span>
 
-<span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteEntryForKeys</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="kd">const</span> <span class="nx">values2</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteEntryForKeys</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span> <span class="p">[</span>
-      <span class="s2">&quot;Monika&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;Alex&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
-    <span class="p">]);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted Entries for the specified Key: &quot;</span><span class="p">,</span> <span class="nx">values2</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting KV pair&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">deleteEntryForKeys</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">values2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteEntryForKeys</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;Monika&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;Alex&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Deleted Entries for the specified Key: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">values2</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting KV pair&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">deleteEntryForKeys</span><span class="p">();</span>
+<span class="nx">deleteEntryForKeys</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -760,16 +765,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Delete the key-value collection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">deleteKVCollection</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">deleteKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span> <span class="nx">collection_name</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting collection &quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">deleteKVCollection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteKVCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting collection &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">deleteKVCollection</span><span class="p">();</span>
+<span class="nx">deleteKVCollection</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

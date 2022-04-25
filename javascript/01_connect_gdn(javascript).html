@@ -155,6 +155,11 @@ const thebe_selector_output = ".output, .cell_output"
      Py07 - GeoFabrics
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../python/08_stream_worker%28Python%29.html">
+     PY08 - Stream Workers
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -506,16 +511,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>To install the jsC8 driver with npm, run the code in the cell below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Run this code to install jsc8</span>
-<span class="kd">var</span> <span class="p">{</span> <span class="nx">spawn</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;child_process&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">sh</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cmd</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> 
-    <span class="nx">$$</span><span class="p">.</span><span class="k">async</span><span class="p">();</span>
-    <span class="kd">var</span> <span class="nx">sp</span> <span class="o">=</span> <span class="nx">spawn</span><span class="p">(</span><span class="nx">cmd</span><span class="p">,</span> <span class="p">{</span> <span class="nx">cwd</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span> <span class="nx">stdio</span><span class="o">:</span> <span class="s1">&#39;pipe&#39;</span><span class="p">,</span> <span class="nx">shell</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nx">encoding</span><span class="o">:</span> <span class="s1">&#39;utf-8&#39;</span> <span class="p">});</span>
-    <span class="nx">sp</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="nx">data</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
-    <span class="nx">sp</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="nx">data</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span>
-    <span class="nx">sp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">$$</span><span class="p">.</span><span class="nx">done</span><span class="p">());</span>
-<span class="p">};</span>
-<span class="nx">sh</span><span class="p">(</span><span class="s1">&#39;npm install jsc8&#39;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Run this code to install jsc8</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">spawn</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s1">&#39;child_process&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="kd">var</span><span class="w"> </span><span class="nx">sh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">$$</span><span class="p">.</span><span class="k">async</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">sp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">spawn</span><span class="p">(</span><span class="nx">cmd</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cwd</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">cwd</span><span class="p">(),</span><span class="w"> </span><span class="nx">stdio</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pipe&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">shell</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">encoding</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;utf-8&#39;</span><span class="w"> </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="nx">sp</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span><span class="w"></span>
+<span class="w">    </span><span class="nx">sp</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">()));</span><span class="w"></span>
+<span class="w">    </span><span class="nx">sp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">$$</span><span class="p">.</span><span class="nx">done</span><span class="p">());</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="nx">sh</span><span class="p">(</span><span class="s1">&#39;npm install jsc8&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -526,19 +531,19 @@ const thebe_selector_output = ".output, .cell_output"
 <p>The first step in using GDN is to connect to a local region. When this code executes, it initializes the server connection to the region URL you specified. You can create an API key from the GUI or REST API.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">jsc8</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jsc8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span><span class="w"></span>
 
-<span class="c1">// ----- simple way  ----- </span>
-<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">jsc8</span><span class="p">({</span>
-    <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
-<span class="p">});</span>
-<span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span> <span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+<span class="c1">// ----- simple way  ----- </span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">({</span><span class="w"></span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span><span class="w"></span>
 
-<span class="c1">// ----- with token -----</span>
-<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, token: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
+<span class="c1">// ----- with token -----</span><span class="w"></span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, token: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span><span class="w"></span>
 
-<span class="c1">// ----- with apikey-----</span>
-<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span>
+<span class="c1">// ----- with apikey-----</span><span class="w"></span>
+<span class="c1">// const client = new jsc8({url: &quot;https://gdn.paas.macrometa.io&quot;, apiKey: &quot;XXXX&quot;, fabricName: &#39;_system&#39;});</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -551,11 +556,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createApiKey</span><span class="p">(</span><span class="nx">keyName</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">createApiKey</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created API Key: &quot;</span><span class="p">,</span> <span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while creating API key&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span>
+<span class="nx">createApiKey</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Created API Key: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">)).</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while creating API key&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -565,25 +570,25 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>4. Get Accessible Resources<a class="headerlink" href="#get-accessible-resources" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span> <span class="kd">function</span> <span class="nx">getResources</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// Fetch List of accessible databases</span>
-    <span class="kd">const</span> <span class="nx">databaseList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleDatabases</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Databases: &quot;</span><span class="p">,</span> <span class="nx">databaseList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accessible databases&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">getResources</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Fetch List of accessible databases</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">databaseList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleDatabases</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Databases: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">databaseList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accessible databases&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
 
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// Fetch List of accessible streams</span>
-    <span class="kd">const</span> <span class="nx">streamsList</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleStreams</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">,</span> <span class="s2">&quot;_system&quot;</span><span class="p">);</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Streams of a db: &quot;</span><span class="p">,</span> <span class="nx">streamsList</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accessible streams&quot;</span><span class="p">,</span> <span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Fetch List of accessible streams</span><span class="w"></span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">streamsList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">listAccessibleStreams</span><span class="p">(</span><span class="s2">&quot;id1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;_system&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Accessible Streams of a db: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">streamsList</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while listing accessible streams&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="nx">getResources</span><span class="p">();</span>
+<span class="nx">getResources</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

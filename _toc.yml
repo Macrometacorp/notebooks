@@ -30,6 +30,7 @@ parts:
       - file: javascript/08_stream_worker(javascript)
   - file: cli/beginner_toc
     sections:
+      - file: cli/00_working_with_gdnsl(CLI)
       - file: cli/01_connect_gdn(CLI)
       - file: cli/02_key_value_store(CLI)
       - file: cli/03_docs_store(CLI)

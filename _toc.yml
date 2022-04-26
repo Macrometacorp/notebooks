@@ -16,6 +16,7 @@ parts:
       - file: python/05_graph_traversals(Python)
       - file: python/06_building_restql_apis(Python)
       - file: python/07_working_with_fabrics(Python)
+      - file: python/08_stream_worker(Python)
   - file: javascript/beginner_toc
     sections:
       - file: javascript/00_working_with_jsc8(javascript)
@@ -26,6 +27,7 @@ parts:
       - file: javascript/05_graph_traversals(javascript)
       - file: javascript/06_building_restql_apis(javascript)
       - file: javascript/07_working_with_fabrics(javascript)
+      - file: javascript/08_stream_worker(javascript)
   - file: cli/beginner_toc
     sections:
       - file: cli/01_connect_gdn(CLI)
@@ -35,6 +37,7 @@ parts:
       - file: cli/05_graph_traversals(CLI)
       - file: cli/06_building_restql_apis(CLI)
       - file: cli/07_working_with_fabrics(CLI)
+      - file: cli/08_stream_worker(CLI)
 - caption: Advanced
   chapters:
   - file: advanced_python/advanced_toc

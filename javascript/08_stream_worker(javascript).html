@@ -686,17 +686,22 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jsc8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// Simple Way</span><span class="w"></span>
-<span class="c1">// const client = new jsc8({</span><span class="w"></span>
-<span class="c1">//   url: global_url,</span><span class="w"></span>
-<span class="c1">//   token: token,</span><span class="w"></span>
-<span class="c1">//   fabricName: geo_fabric,</span><span class="w"></span>
-<span class="c1">// });</span><span class="w"></span>
+<span class="cm">/* const client = new jsc8({</span>
+<span class="cm">  url: global_url,</span>
+<span class="cm">  token: token,</span>
+<span class="cm">  fabricName: geo_fabric,</span>
+<span class="cm">}); */</span><span class="w"></span>
 
 <span class="c1">// ----- OR -----</span><span class="w"></span>
-<span class="c1">// const client = new jsc8({url: global_url, apiKey: apiKey, fabricName: geo_fabric});</span><span class="w"></span>
+<span class="cm">/* const client = new jsc8({</span>
+<span class="cm">  url: global_url,</span>
+<span class="cm">  apiKey: apiKey,</span>
+<span class="cm">  fabricName: geo_fabric,</span>
+<span class="cm">}); */</span><span class="w"></span>
 
 <span class="c1">// To use advanced options</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">(</span><span class="nx">global_url</span><span class="p">);</span><span class="w"></span>
+
 <span class="nx">client</span><span class="p">.</span><span class="nx">useFabric</span><span class="p">(</span><span class="nx">geo_fabric</span><span class="p">);</span><span class="w"></span>
 <span class="nx">client</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"></span>
@@ -711,7 +716,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>3. Creating Collections<a class="headerlink" href="#creating-collections" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createCollection</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">createCollection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n 3. CREATE_COLLECTION&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -732,10 +737,10 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">isCollectionExists</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">heart_rates_statistics_collection</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="nx">createCollection</span><span class="p">();</span><span class="w"></span>
 </pre></div>
@@ -803,7 +808,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="sb">js:eval(&quot;[&#39;Vasili&#39;, &#39;Rivalee&#39;, &#39;Betty&#39;, &#39;Jennifer&#39;, &#39;Alane&#39;, &#39;Sarena&#39;, &#39;Bruno&#39;, &#39;Carolee&#39;, &#39;Emmott&#39;, &#39;Andre&#39;][Math.floor(Math.random() * 10)]&quot;,&quot;string&quot;) as name,</span>
 <span class="sb">js:eval(&quot;Math.floor(Math.random() * 40) + 40&quot;,&quot;int&quot;) as bpm</span>
 <span class="sb">FROM HeartRateDataGeneratorTrigger;</span>
-<span class="sb">`</span><span class="w"></span>
+<span class="sb">`</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -835,25 +840,27 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="sb">group by name</span>
 <span class="sb">`</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">validateStreamApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 4. VALIDATE_STREAM_WORKERS ... region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">validateStreamApp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 4. VALIDATE_STREAM_WORKERS ... region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;--- Validating Stream Application Definition&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">validateStreamApp</span><span class="p">(</span><span class="nx">statisticAppDefinition</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="sb">`--- Validated Stream Application Definition </span><span class="si">${</span><span class="nx">heart_rate_statistics_worker</span><span class="si">}</span><span class="sb"> ---`</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">result</span><span class="p">.</span><span class="nx">message</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">validateStreamApp</span><span class="p">(</span><span class="nx">dataGeneratorAppDefinition</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="sb">`--- Validated Stream Application Definition </span><span class="si">${</span><span class="nx">mock_heart_rate_data_generator</span><span class="si">}</span><span class="sb"> ---`</span><span class="p">,</span><span class="w"></span>
-<span class="w">    </span><span class="nx">result</span><span class="p">.</span><span class="nx">message</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;--- Validating Stream Application Definition&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">validateStreamApp</span><span class="p">(</span><span class="nx">statisticAppDefinition</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="sb">`--- Validated Stream Application Definition </span><span class="si">${</span><span class="nx">heart_rate_statistics_worker</span><span class="si">}</span><span class="sb"> ---`</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">result</span><span class="p">.</span><span class="nx">message</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">validateStreamApp</span><span class="p">(</span><span class="nx">dataGeneratorAppDefinition</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="sb">`--- Validated Stream Application Definition </span><span class="si">${</span><span class="nx">mock_heart_rate_data_generator</span><span class="si">}</span><span class="sb"> ---`</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">result</span><span class="p">.</span><span class="nx">message</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while validating streamApp :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="nx">validateStreamApp</span><span class="p">().</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while validating streamApp :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="nx">validateStreamApp</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -864,33 +871,35 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>5. Save Stream Application<a class="headerlink" href="#save-stream-application" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createStreamApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 5. CREATE_STREAM_WORKERS ... region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">createStreamApp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 5. CREATE_STREAM_WORKERS ... region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;--- Creating Stream Application&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">streamAppList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">retrieveStreamApp</span><span class="p">();</span><span class="w"></span>
-<span class="w">  </span><span class="nx">streamAppList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">streamAppList</span><span class="p">.</span><span class="nx">streamApps</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">streamApp</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">streamApp</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="c1">// The stream app will be created by default in the local region. Optionally, you can send dclist to deploy stream</span><span class="w"></span>
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">streamAppList</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">heart_rate_statistics_worker</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createStreamApp</span><span class="p">([],</span><span class="w"> </span><span class="nx">statisticAppDefinition</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
-<span class="w">      </span><span class="sb">`--- Created Stream Application </span><span class="si">${</span><span class="nx">heart_rate_statistics_worker</span><span class="si">}</span><span class="sb"> ---`</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;--- Creating Stream Application&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">streamAppList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">retrieveStreamApp</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="nx">streamAppList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">streamAppList</span><span class="p">.</span><span class="nx">streamApps</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">streamApp</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">streamApp</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// The stream app will be created by default in the local region. Optionally, you can send dclist to deploy stream</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">streamAppList</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">heart_rate_statistics_worker</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createStreamApp</span><span class="p">([],</span><span class="w"> </span><span class="nx">statisticAppDefinition</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="sb">`--- Created Stream Application </span><span class="si">${</span><span class="nx">heart_rate_statistics_worker</span><span class="si">}</span><span class="sb"> ---`</span><span class="w"></span>
+<span class="w">      </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">streamAppList</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">mock_heart_rate_data_generator</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createStreamApp</span><span class="p">([],</span><span class="w"> </span><span class="nx">dataGeneratorAppDefinition</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">        </span><span class="sb">`--- Created Stream Application </span><span class="si">${</span><span class="nx">mock_heart_rate_data_generator</span><span class="si">}</span><span class="sb"> ---`</span><span class="w"></span>
+<span class="w">      </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while creating streamApp :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">streamAppList</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">mock_heart_rate_data_generator</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createStreamApp</span><span class="p">([],</span><span class="w"> </span><span class="nx">dataGeneratorAppDefinition</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
-<span class="w">      </span><span class="sb">`--- Created Stream Application </span><span class="si">${</span><span class="nx">mock_heart_rate_data_generator</span><span class="si">}</span><span class="sb"> ---`</span><span class="w"></span>
-<span class="w">    </span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="nx">createStreamApp</span><span class="p">().</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while creating streamApp :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="nx">createStreamApp</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -900,16 +909,18 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>6. Publish Stream Application<a class="headerlink" href="#publish-stream-application" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">activateStreamApp</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 6. Activating Stream Workers`</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">activateStreamApp</span><span class="p">(</span><span class="nx">heart_rate_statistics_worker</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">activateStreamApp</span><span class="p">(</span><span class="nx">mock_heart_rate_data_generator</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`6. Activated Stream Workers`</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">activateStreamApp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 6. Activating Stream Workers`</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">activateStreamApp</span><span class="p">(</span><span class="nx">heart_rate_statistics_worker</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">activateStreamApp</span><span class="p">(</span><span class="nx">mock_heart_rate_data_generator</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`6. Activated Stream Workers`</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while publishing streamApp :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="nx">activateStreamApp</span><span class="p">().</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while publishing streamApp :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">)</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="nx">activateStreamApp</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -920,13 +931,17 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Please wait for 1 minute after executing above step as we used sliding window of 1 minute</span><span class="w"></span>
-<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">c8Queries</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 7. LIST_HEART_RATE_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="sb">`FOR doc IN </span><span class="si">${</span><span class="nx">heart_rates_collection</span><span class="si">}</span><span class="sb"> LIMIT 0, 5 RETURN doc`</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">c8Queries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 7. LIST_HEART_RATE_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="sb">`FOR doc IN </span><span class="si">${</span><span class="nx">heart_rates_collection</span><span class="si">}</span><span class="sb"> LIMIT 0, 5 RETURN doc`</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while fetching documents :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="nx">c8Queries</span><span class="p">();</span><span class="w"></span>
 </pre></div>
@@ -938,13 +953,19 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>8. Checking HeartRateStatistics documents using C8QL<a class="headerlink" href="#checking-heartratestatistics-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">c8Queries</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 8. LIST_HEART_RATE_STATISTICS_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="w"></span>
-<span class="w">    </span><span class="sb">`FOR doc IN </span><span class="si">${</span><span class="nx">heart_rates_statistics_collection</span><span class="si">}</span><span class="sb"> RETURN doc`</span><span class="w"></span>
-<span class="w">  </span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">c8Queries</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="sb">`\n 8. LIST_HEART_RATE_STATISTICS_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">executeQuery</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="sb">`FOR doc IN </span><span class="si">${</span><span class="nx">heart_rates_statistics_collection</span><span class="si">}</span><span class="sb"> RETURN doc`</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">docs</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while fetching documents :&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
 <span class="nx">c8Queries</span><span class="p">();</span><span class="w"></span>
 </pre></div>
@@ -956,18 +977,23 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>9.  Delete StreamApp and Collections<a class="headerlink" href="#delete-streamapp-and-collections" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">deleteData</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n 9. DELETE_DATA&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteStreamApp</span><span class="p">(</span><span class="nx">heart_rate_statistics_worker</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteStreamApp</span><span class="p">(</span><span class="nx">mock_heart_rate_data_generator</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteCollection</span><span class="p">(</span><span class="nx">heart_rates_collection</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteCollection</span><span class="p">(</span><span class="nx">heart_rates_statistics_collection</span><span class="p">);</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;StreamApp and Collection deleted&quot;</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">deleteData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;\n 9. DELETE_DATA&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteStreamApp</span><span class="p">(</span><span class="nx">heart_rate_statistics_worker</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteStreamApp</span><span class="p">(</span><span class="nx">mock_heart_rate_data_generator</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteCollection</span><span class="p">(</span><span class="nx">heart_rates_collection</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">deleteCollection</span><span class="p">(</span><span class="nx">heart_rates_statistics_collection</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;StreamApp and Collection deleted&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="s2">&quot;Error while deleting streamApp and collection:&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="w"></span>
+<span class="w">    </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="nx">deleteData</span><span class="p">().</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Error while deleting streamApp and collection:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">)</span><span class="w"></span>
-<span class="p">);</span><span class="w"></span>
+<span class="nx">deleteData</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 </div>

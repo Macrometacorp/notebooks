@@ -451,15 +451,15 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validating-heart-rate-statistics-stream-worker">
-     4.2 Validating heart rate statistics stream worker
+    <a class="reference internal nav-link" href="#validating-stream-worker">
+     4.2 Validating stream worker
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-stream-application">
-   5. Create Stream Application
+  <a class="reference internal nav-link" href="#save-stream-application">
+   5. Save Stream Application
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -579,15 +579,15 @@ const thebe_selector_output = ".output, .cell_output"
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#validating-heart-rate-statistics-stream-worker">
-     4.2 Validating heart rate statistics stream worker
+    <a class="reference internal nav-link" href="#validating-stream-worker">
+     4.2 Validating stream worker
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#create-stream-application">
-   5. Create Stream Application
+  <a class="reference internal nav-link" href="#save-stream-application">
+   5. Save Stream Application
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -705,6 +705,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="importing-libraries-define-variables">
 <h2>1. Importing Libraries &amp; Define Variables<a class="headerlink" href="#importing-libraries-define-variables" title="Permalink to this headline">¶</a></h2>
+<p>The first step is to import the libraries we need and define the variables we will be using in this tutorial. This is also the right place to add your GDN login credentials. i.e. your email and password. You will also need to make sure you have specified the correct federation URL. In this example it is “<a class="reference external" href="http://gdn.paas.macrometa.io">gdn.paas.macrometa.io</a>” and we are using the default geo fabric “_system”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables - Queries</span>
@@ -724,6 +725,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="connecting-to-gdn">
 <h2>2. Connecting to GDN<a class="headerlink" href="#connecting-to-gdn" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have imported the required libraries and added our login details, we can connect to GDN. do this by running the cell bellow.</p>
+<p>You will see the cell output reflect a successful connection. If not go back to the first step and check the details you entered.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
@@ -744,6 +747,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="creating-collections">
 <h2>3. Creating Collections<a class="headerlink" href="#creating-collections" title="Permalink to this headline">¶</a></h2>
+<p>For this Tutorial we require the creating of two collections. The first will be a collection for the heart rates, which will hold our input data. The second will be the collection for the stream worker output which will hold the statistics.</p>
+<p>Run the next cell to create these two collections. Note the If-Else statements that are included in this cell. This lets us check to see if the collections exist already in the federation you are using, if they dont exist we will create them.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; ------- CREATE GEO-REPLICATED COLLECTION  ------&quot;</span>
@@ -755,14 +760,25 @@ gdnsl collection create <span class="nv">$heart_rates_statistics_collection</spa
 </div>
 </div>
 </div>
+<p><strong>Note: for this to work you need to enable Stream from the Macrometa Dashboard. Do this by opening up the dashboard, select collections, find the collection named “HeartRates” and select “enable Stream”</strong></p>
+<p><img alt="disabledstream" src="../_images/disabled_stream.png" /></p>
+<p><img alt="enabledstream" src="../_images/enabled_stream.png" /></p>
 </div>
 <div class="section" id="validate-stream-application">
 <h2>4. Validate Stream Application<a class="headerlink" href="#validate-stream-application" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have created our collections we need to decide how we want to simulate the heart rate information. in this section we offer two approaches for simulating this data.</p>
+<p>Option 1, is to use a 3rd party tool called “Mockaroo” that will let you generate the data stream as an external source to Macrometa GDN. This would be closest to a “real world” use case showing data coming into GDN (and our streamworker) from an external source.</p>
+<p>Option 2. demostrates how Macrometa GDN Stream Workers can also be used to provide simulation data, or indeed the streaming of data from a collection.</p>
+<p>The end result will be the same, however for simplicity please select one option or the other, not both.</p>
+<p>Select the option you are going to use, and run the code in the corresponding cell.</p>
 <div class="section" id="validating-heart-rate-simulator-definition">
 <h3>4.1 Validating heart rate simulator definition<a class="headerlink" href="#validating-heart-rate-simulator-definition" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="option1-use-mockaroo-api-to-generate-the-mock-heart-rate-data">
 <h4>Option1: Use mockaroo api to generate the mock heart rate data<a class="headerlink" href="#option1-use-mockaroo-api-to-generate-the-mock-heart-rate-data" title="Permalink to this headline">¶</a></h4>
 <p>NOTE: If you are using mockaroo API then you need to signup to mockaroo and paste the API Key. You can find API key here <a class="reference external" href="https://www.mockaroo.com/myaccount">https://www.mockaroo.com/myaccount</a></p>
+<p>In this Stream Worker we have created a trigger that triggers every 10 seconds and connects to the Mockaroo API Service and passes the current time stamp to trigger the Mockaroo data generation.</p>
+<p>Then the Stream Worker consumes data recived from the external Mockaroo service, selects the persons name and their heart rate and puts it into the collection “HeartRates”.</p>
+<p>Stream Workers are written in JavaScript, the Cell bellow has two variables one for yor Mackroo API Key, and the other “dataGeneratorAppDefinition”, both are strings that are passed the Key and StreamWorker code, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">mockarooAPIKey</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span><span class="p">;</span>
@@ -787,6 +803,8 @@ gdnsl stream-worker create --name <span class="nv">$mock_heart_rate_data_generat
 </div>
 <div class="section" id="option2-use-custom-stream-worker-to-generate-the-heart-rate-data">
 <h4>Option2: Use custom stream worker to generate the heart rate data<a class="headerlink" href="#option2-use-custom-stream-worker-to-generate-the-heart-rate-data" title="Permalink to this headline">¶</a></h4>
+<p>In this Stream Worker we have created a trigger that triggers every 10 seconds and creates random data from a short list of people and possible heart rates and puts it into the collection “HeartRates”.</p>
+<p>Stream Workers are written in JavaScript, the Cell bellow has one variables, “dataGeneratorAppDefinition”, it is a string type variable that is passed StreamWorker code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;--- Validate </span><span class="nv">$mock_heart_rate_data_generator</span><span class="s2"> Application&quot;</span><span class="p">;</span>
@@ -808,8 +826,11 @@ gdnsl stream-worker create --name <span class="nv">$mock_heart_rate_data_generat
 </div>
 </div>
 </div>
-<div class="section" id="validating-heart-rate-statistics-stream-worker">
-<h3>4.2 Validating heart rate statistics stream worker<a class="headerlink" href="#validating-heart-rate-statistics-stream-worker" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="validating-stream-worker">
+<h3>4.2 Validating stream worker<a class="headerlink" href="#validating-stream-worker" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have selected and run the cell code for our chosen menthod of generating data, we can move on to the next stream worker, and then validate them for correctness, before we publish them, and make them active.</p>
+<p>This next cell introduces the second stream worker that reads the heart rates from the collection “HeartRates” in a sliding window of 1 min, and then calculates the min max and averages for that window, and inserts them into the collection “HeartRateStatistics”. it is defined as a string and assigned to the “statisticsAppDefinition” variable.</p>
+<p>We then validate the streams by using the “validate_stream_app” method, as shown below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;--- Validate </span><span class="nv">$heart_rate_statistics_worker</span><span class="s2"> Application&quot;</span><span class="p">;</span>
@@ -836,8 +857,9 @@ gdnsl stream-worker create --name <span class="nv">$heart_rate_statistics_worker
 </div>
 </div>
 </div>
-<div class="section" id="create-stream-application">
-<h2>5. Create Stream Application<a class="headerlink" href="#create-stream-application" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="save-stream-application">
+<h2>5. Save Stream Application<a class="headerlink" href="#save-stream-application" title="Permalink to this headline">¶</a></h2>
+<p>Upon a successful validation we can save our streamworkers by running the following cell.</p>
 <div class="section" id="creating-heart-rate-simulator-definition">
 <h3>5.1 Creating heart rate simulator definition<a class="headerlink" href="#creating-heart-rate-simulator-definition" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id1">
@@ -911,6 +933,7 @@ gdnsl stream-worker create --name <span class="nv">$heart_rate_statistics_worker
 </div>
 <div class="section" id="publish-stream-application">
 <h2>6. Publish Stream Application<a class="headerlink" href="#publish-stream-application" title="Permalink to this headline">¶</a></h2>
+<p>A saved stream worker does not mean it is active. For the Stream Worker to be active it needs to be Published. Run the code in the next cell to publish the strem worker and make it active.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Activating Stream Workers&quot;</span>
@@ -924,7 +947,10 @@ gdnsl stream-worker <span class="nv">$mock_heart_rate_data_generator</span> --en
 </div>
 <div class="section" id="checking-heartrates-documents-using-c8ql">
 <h2>7. Checking HeartRates documents using C8QL<a class="headerlink" href="#checking-heartrates-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
-<p>Note: Please wait atlist 1 minute before running this. As we used sliding window of 1 minute for data aggrigation</p>
+<p>Now we have activated our stream workers the application is live. However, because we are using a 1 min window, we need to wait that time before we check for records being created.</p>
+<p>A good way to do this rather than counting 60sec, is to load the GDN dashboard, select the “HeartRate” Collection, then “stream” and monitor the console. as soon as their are changes, you will see them reflected here.</p>
+<p><img alt="monitoring_heart_rate" src="../_images/monitoring-HR-stream.png" /></p>
+<p>Alternatively, wait 60 sec, and run the code in the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl query <span class="s2">&quot;FOR doc IN </span><span class="nv">$heart_rates_collection</span><span class="s2"> LIMIT 0, 5 RETURN doc&quot;</span>
@@ -935,6 +961,7 @@ gdnsl stream-worker <span class="nv">$mock_heart_rate_data_generator</span> --en
 </div>
 <div class="section" id="checking-heartratestatistics-documents-using-c8ql">
 <h2>8. Checking HeartRateStatistics documents using C8QL<a class="headerlink" href="#checking-heartratestatistics-documents-using-c8ql" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have started to collect data in the heartrate collection, we want to see our analysis. run the cell below to see the output from our stream worker!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl query <span class="s2">&quot;FOR doc IN </span><span class="nv">$heart_rates_statistics_collection</span><span class="s2"> LIMIT 0, 5 RETURN doc&quot;</span>
@@ -945,6 +972,7 @@ gdnsl stream-worker <span class="nv">$mock_heart_rate_data_generator</span> --en
 </div>
 <div class="section" id="delete-streamapp-and-collections">
 <h2>9.  Delete StreamApp and Collections<a class="headerlink" href="#delete-streamapp-and-collections" title="Permalink to this headline">¶</a></h2>
+<p>Almost done. Lets clean up after ourselves and remove the tutorial from GDN.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; DELETE_DATA&quot;</span>

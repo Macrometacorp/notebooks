@@ -744,7 +744,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>NOTE: If you are using mockaroo API then you need to signup to mockaroo and paste the API Key. You can find API key here <a class="reference external" href="https://www.mockaroo.com/myaccount">https://www.mockaroo.com/myaccount</a></p>
 <p>In this Stream Worker we have created a trigger that triggers every 10 seconds and connects to the Mockaroo API Service and passes the current time stamp to trigger the Mockaroo data generation.</p>
 <p>Then the Stream Worker consumes data received from the external Mockaroo service, selects the persons name and their heart rate and puts it into the collection “HeartRates”.</p>
-<p>Stream Workers are written in JavaScript, the Cell bellow has two variables: one for yor Mackroo API Key, and the other “dataGeneratorAppDefinition”, both are strings that are passed the Key and StreamWorker code, respectively.</p>
+<p>Stream Workers are written in JavaScript, the Cell bellow has two variables: one for your Mackroo API Key, and the other “dataGeneratorAppDefinition”, both are strings that are passed the Key and StreamWorker code, respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mockarooAPIKey</span> <span class="o">=</span> <span class="s2">&quot;XXXX&quot;</span><span class="p">;</span>

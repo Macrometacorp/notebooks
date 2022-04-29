@@ -778,7 +778,7 @@ gdnsl collection create <span class="nv">$heart_rates_statistics_collection</spa
 <p>NOTE: If you are using mockaroo API then you need to signup to mockaroo and paste the API Key. You can find API key here <a class="reference external" href="https://www.mockaroo.com/myaccount">https://www.mockaroo.com/myaccount</a></p>
 <p>In this Stream Worker we have created a trigger that triggers every 10 seconds and connects to the Mockaroo API Service and passes the current time stamp to trigger the Mockaroo data generation.</p>
 <p>Then the Stream Worker consumes data received from the external Mockaroo service, selects the persons name and their heart rate and puts it into the collection “HeartRates”.</p>
-<p>Stream Workers are written in JavaScript, the Cell bellow has two variables: one for yor Mackroo API Key, and the other “dataGeneratorAppDefinition”, both are strings that are passed the Key and StreamWorker code, respectively.</p>
+<p>Stream Workers are written in JavaScript, the Cell bellow has two variables: one for your Mackroo API Key, and the other “dataGeneratorAppDefinition” is passed as input for the StreamWorker code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">mockarooAPIKey</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span><span class="p">;</span>
@@ -804,7 +804,7 @@ gdnsl stream-worker create --name <span class="nv">$mock_heart_rate_data_generat
 <div class="section" id="option2-use-custom-stream-worker-to-generate-the-heart-rate-data">
 <h4>Option2: Use custom stream worker to generate the heart rate data<a class="headerlink" href="#option2-use-custom-stream-worker-to-generate-the-heart-rate-data" title="Permalink to this headline">¶</a></h4>
 <p>In this Stream Worker we have created a trigger that triggers every 10 seconds and creates random data from a short list of people and possible heart rates and puts it into the collection “HeartRates”.</p>
-<p>Stream Workers are written in JavaScript, the Cell bellow has one variables, “dataGeneratorAppDefinition”, it is a string type variable that is passed StreamWorker code.</p>
+<p>Stream Workers are written in JavaScript, the Cell bellow has one variables, “dataGeneratorAppDefinition”, it is a string type that passed as input for the StreamWorker code.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;--- Validate </span><span class="nv">$mock_heart_rate_data_generator</span><span class="s2"> Application&quot;</span><span class="p">;</span>
@@ -850,7 +850,6 @@ gdnsl stream-worker create --name <span class="nv">$heart_rate_statistics_worker
 <span class="s2">                FROM HeartRates window sliding_time(1 min)</span>
 <span class="s2">                group by name&quot;</span> <span class="se">\</span>
 --validate
-                
 </pre></div>
 </div>
 </div>

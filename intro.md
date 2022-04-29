@@ -15,7 +15,7 @@ Hope you enjoy it!
 
 from, **the Macrometa Team**
 
-![smallocto](Octo10.png)
+![smallocto](./images/Octo10.png)
 
 ---
 
@@ -23,7 +23,7 @@ from, **the Macrometa Team**
 
 Macrometa GDN is a first-of-its-kind Edge Cloud. GDN is a converged platform that includes a Multi-Model NoSQL database, pub/sub, event processing, and serverless global data platform for building geo-distributed and real-time applications.
 
-![map](map.png)
+![map](./images/map.png)
 
 Macrometa's Global Data Network (GDN) allows organizations to tier, cache, process, and serve data with a global P90 roundtrip response time of 50ms. With 175+ points of presence (PoPs) worldwide, Macrometa brings data and consistency closer to users while maintaining a coordination-free architecture.
 

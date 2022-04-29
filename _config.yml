@@ -4,7 +4,7 @@
 title: GDN - XBook
 author: The Macrometa Team
 copyright: "2022"
-logo: logo-macrometa.png
+logo: ./images/logo-macrometa.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

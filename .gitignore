@@ -5,3 +5,4 @@ gdnsl.yaml
 .idea
 venv/
 .DS_Store/
+.DS_Store

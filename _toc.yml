@@ -28,6 +28,7 @@ parts:
       - file: javascript/06_building_restql_apis(javascript)
       - file: javascript/07_working_with_fabrics(javascript)
       - file: javascript/08_stream_worker(javascript)
+      - file: javascript/09_ci_cd_workbook(javascript)
   - file: cli/beginner_toc
     sections:
       - file: cli/00_working_with_gdnsl(CLI)

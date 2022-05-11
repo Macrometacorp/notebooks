@@ -17,6 +17,7 @@ parts:
       - file: python/06_building_restql_apis(Python)
       - file: python/07_working_with_fabrics(Python)
       - file: python/08_stream_worker(Python)
+      - file: python/09_ci_cd_workbook(Python)
   - file: javascript/beginner_toc
     sections:
       - file: javascript/00_working_with_jsc8(javascript)
@@ -28,6 +29,7 @@ parts:
       - file: javascript/06_building_restql_apis(javascript)
       - file: javascript/07_working_with_fabrics(javascript)
       - file: javascript/08_stream_worker(javascript)
+      - file: javascript/09_ci_cd_workbook(javascript)
   - file: cli/beginner_toc
     sections:
       - file: cli/00_working_with_gdnsl(CLI)

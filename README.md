@@ -1,6 +1,6 @@
 # docs-xbook
 
-### **GitHub page:** https://macrometacorp.github.io/docs-xbook/
+### **GitHub page:** https://macrometacorp.github.io/notebooks/
 
 ## Setup
 

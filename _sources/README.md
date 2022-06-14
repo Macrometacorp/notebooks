@@ -1,4 +1,4 @@
-# docs-xbook
+# Macrometa Jupyter Book
 
 ### **GitHub page:** https://macrometacorp.github.io/notebooks/
 

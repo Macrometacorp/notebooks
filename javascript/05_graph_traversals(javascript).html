@@ -374,7 +374,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://colab.research.google.com/github/Macrometacorp/notebooks/blob/main/javascript/05_graph_traversals(javascript).ipynb"
+        <a href="https://colab.research.google.com/github/Macrometacorp/docs-xbook/blob/main/javascript/05_graph_traversals(javascript).ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -417,7 +417,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/Macrometacorp/notebooks"
+        <a href="https://github.com/Macrometacorp/docs-xbook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -434,7 +434,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Macrometacorp/notebooks/issues/new?title=Issue%20on%20page%20%2Fjavascript/05_graph_traversals(javascript).html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Macrometacorp/docs-xbook/issues/new?title=Issue%20on%20page%20%2Fjavascript/05_graph_traversals(javascript).html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -701,11 +701,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Variables - Queries</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">global_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &lt;-- Token goes here if applicable</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">apiKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &lt;-- apiKey goes here if applicable</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;email&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &lt;-- Email goes here</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// &lt;-- password goes here</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">geo_fabric</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;_system&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">collection_friends</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Friends&quot;</span><span class="p">;</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">collection_likes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Likes&quot;</span><span class="p">;</span><span class="w"></span>
@@ -719,6 +716,9 @@ title="Print to PDF"
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">graph_traversal1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`FOR c IN Friends FILTER c.macrofriend_user_name == \&quot;</span><span class="si">${</span><span class="nx">macrofriends_client</span><span class="si">}</span><span class="sb">\&quot; FOR v IN 1..1 INBOUND c Likes RETURN v`</span><span class="p">;</span><span class="w"></span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">graph_traversal2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`FOR c IN Friends FILTER c.macrofriend_user_name == \&quot;</span><span class="si">${</span><span class="nx">macrofriends_client</span><span class="si">}</span><span class="sb">\&quot; FOR v IN 1..1 OUTBOUND c Likes RETURN v`</span><span class="p">;</span><span class="w"></span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">emailId</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">fed_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -728,17 +728,55 @@ title="Print to PDF"
 <h2>2. Connecting to GDN<a class="headerlink" href="#connecting-to-gdn" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$$</span><span class="p">.</span><span class="nx">input</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">prompt</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please, type fedration url, leave blank to use default and press enter: &quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="nx">fed_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">url</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">$$</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$$</span><span class="p">.</span><span class="nx">input</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">prompt</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please, type your email and press enter: &quot;</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">emailId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">email</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">$$</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">$$</span><span class="p">.</span><span class="nx">input</span><span class="p">(</span><span class="w"></span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="nx">prompt</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Please, type your password and press enter: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="w"> </span><span class="nx">pass</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pass</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="nx">$$</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">jsc8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// ----- simple way  -----</span><span class="w"></span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">(</span><span class="nx">global_url</span><span class="p">);</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">jsc8</span><span class="p">(</span><span class="nx">fed_url</span><span class="p">);</span><span class="w"></span>
 
 <span class="nx">client</span><span class="w"></span>
-<span class="w">  </span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="p">.</span><span class="nx">login</span><span class="p">(</span><span class="nx">emailId</span><span class="p">,</span><span class="w"> </span><span class="nx">password</span><span class="p">)</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">))</span><span class="w"></span>
 <span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while login&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">));</span><span class="w"></span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nx">jsc8</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">require</span><span class="p">(</span><span class="s2">&quot;jsc8&quot;</span><span class="p">);</span><span class="w"></span>
 
 <span class="c1">// ----- with token -----</span><span class="w"></span>
 <span class="cm">/* const client = new jsc8({</span>
@@ -881,8 +919,9 @@ title="Print to PDF"
 
 <span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">insertDocumentMany</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_FRIENDS_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_FRIENDS_DATA in region </span><span class="si">${</span><span class="nx">fed_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">insertDocumentMany</span><span class="p">(</span><span class="nx">collection_friends</span><span class="p">,</span><span class="w"> </span><span class="nx">documents</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Data inserted: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_friends</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
@@ -930,8 +969,9 @@ title="Print to PDF"
 
 <span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">insertDocumentMany</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_LIKES_DATA in region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 3a. INSERT_LIKES_DATA in region </span><span class="si">${</span><span class="nx">fed_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">insertDocumentMany</span><span class="p">(</span><span class="nx">collection_likes</span><span class="p">,</span><span class="w"> </span><span class="nx">documents</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Data inserted: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_likes</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error while inserting documents&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
@@ -948,7 +988,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">createGraph</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 4. CREATE_GRAPH ... FriendFinder_graph region </span><span class="si">${</span><span class="nx">global_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`\n 4. CREATE_GRAPH ... FriendFinder_graph region </span><span class="si">${</span><span class="nx">fed_url</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"></span>
 
 <span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createGraph</span><span class="p">(</span><span class="nx">collection_graph</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>

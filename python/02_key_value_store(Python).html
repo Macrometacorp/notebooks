@@ -689,12 +689,35 @@ title="Print to PDF"
 <p>The first step in using GDN is to connect to a local region. When this code executes, it initializes the server connection to the region URL you specified. You can create an API key from the GUI or REST API.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please type the federation host, leave it blank to use the default and press enter:&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, type your email and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Please, type your password and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">fed_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                        <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
                         <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
 </pre></div>
 </div>

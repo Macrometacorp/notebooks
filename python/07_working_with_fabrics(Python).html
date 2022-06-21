@@ -825,6 +825,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
 </pre></div>
 </div>
 </div>
@@ -834,10 +835,28 @@ title="Print to PDF"
 <h2>2. Create and Define Login details<a class="headerlink" href="#create-and-define-login-details" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
-<span class="n">admin_email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span>
-<span class="n">admin_password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
-<span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please type the federation host, leave it blank to use the default and press enter:&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">admin_email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, type your email and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">admin_password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Please, type your password and press enter:&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1157,15 +1176,14 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#delete new user</span>
 <span class="n">tenant</span><span class="o">.</span><span class="n">delete_user</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;johndoe&#39;</span><span class="p">)</span>
-
-<span class="c1"># delete the fabric</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first connect to the _system fabric</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete the fabric</span>
+<span class="c1"># first connect to the _system fabric</span>
 
 <span class="n">sys_fabric</span> <span class="o">=</span> <span class="n">tenant</span><span class="o">.</span><span class="n">useFabric</span><span class="p">(</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
 

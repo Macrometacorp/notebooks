@@ -562,6 +562,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   7. Time to tidy up!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#section-completed">
    Section Completed!
   </a>
@@ -623,6 +628,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-graph">
    6. Create Graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   7. Time to tidy up!
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -727,10 +737,33 @@ title="Print to PDF"
 <h2>1. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please type the federation host, leave it blank to use the default and press enter:&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, type your email and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">getpass</span>
+
+<span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Please, type your password and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 
-<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s1">&#39;gdn.paas.macrometa.io&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                        <span class="n">email</span><span class="o">=</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">fed_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                        <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
                         <span class="n">geofabric</span><span class="o">=</span><span class="s1">&#39;_system&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -767,7 +800,7 @@ title="Print to PDF"
 <p>The below example shows the steps.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s1">&#39;students&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">collection_name</span> <span class="o">=</span> <span class="s2">&quot;students&quot;</span>
 
 <span class="c1"># Create a new collection if it does not exist</span>
 <span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">):</span>
@@ -789,7 +822,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_name</span><span class="o">=</span><span class="s1">&#39;school&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_name</span><span class="o">=</span><span class="s2">&quot;school&quot;</span>
 
 <span class="k">if</span> <span class="n">client</span><span class="o">.</span><span class="n">has_collection</span><span class="p">(</span><span class="n">edge_name</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Graph exists&quot;</span><span class="p">)</span>
@@ -812,7 +845,7 @@ title="Print to PDF"
   <span class="p">{</span><span class="s1">&#39;_key&#39;</span><span class="p">:</span><span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">:</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;lastname&#39;</span><span class="p">:</span><span class="s1">&#39;Evans&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span><span class="s1">&#39;email&#39;</span><span class="p">}</span>
 <span class="p">]</span>
 
-<span class="n">client</span><span class="o">.</span><span class="n">insert_document</span><span class="p">(</span><span class="n">collection_name</span><span class="o">=</span><span class="s1">&#39;students&#39;</span><span class="p">,</span> <span class="n">document</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">insert_document</span><span class="p">(</span><span class="n">collection_name</span><span class="o">=</span><span class="s2">&quot;students&quot;</span><span class="p">,</span> <span class="n">document</span><span class="o">=</span><span class="n">docs</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">docs</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
@@ -831,6 +864,19 @@ title="Print to PDF"
 <span class="k">else</span><span class="p">:</span>
     <span class="n">school</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_graph</span><span class="p">(</span><span class="s1">&#39;school&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Graph Created&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="time-to-tidy-up">
+<h2>7. Time to tidy up!<a class="headerlink" href="#time-to-tidy-up" title="Permalink to this headline">#</a></h2>
+<p>That was great! Now let’s tidy up by removing the graph we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Collection Deleted: &quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_collection</span><span class="p">(</span><span class="n">collection_name</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Edge Collection Deleted: &quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_collection</span><span class="p">(</span><span class="n">edge_name</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Graph Deleted: &quot;</span><span class="p">,</span> <span class="n">client</span><span class="o">.</span><span class="n">delete_graph</span><span class="p">(</span><span class="s2">&quot;school&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>

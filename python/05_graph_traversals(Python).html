@@ -700,11 +700,9 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">c8</span> <span class="kn">import</span> <span class="n">C8Client</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 <span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
 
 <span class="c1"># Variables - Queries</span>
-<span class="n">global_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
-<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span> <span class="c1"># &lt;-- Email goes here</span>
-<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span> <span class="c1"># &lt;-- password goes here</span>
 <span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
 <span class="n">collection_friends</span> <span class="o">=</span> <span class="s2">&quot;Friends&quot;</span>
 <span class="n">collection_likes</span> <span class="o">=</span> <span class="s2">&quot;Likes&quot;</span>
@@ -722,6 +720,27 @@ title="Print to PDF"
 <span class="n">graph_traversal2</span> <span class="o">=</span> <span class="s2">&quot;FOR c IN Friends FILTER c.macrofriend_user_name == </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2"> FOR v IN 1..1 OUTBOUND c Likes RETURN v&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">MacroFriends_Client</span><span class="p">)</span>
 
 <span class="n">pp</span> <span class="o">=</span> <span class="n">pprint</span><span class="o">.</span><span class="n">PrettyPrinter</span><span class="p">(</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">global_url</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please type the federation host, leave it blank to use the default and press enter:&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, type your email and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Please, type your password and press enter:&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

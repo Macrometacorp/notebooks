@@ -816,6 +816,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">getpass</span>
 </pre></div>
 </div>
 </div>
@@ -835,10 +836,28 @@ title="Print to PDF"
 <h2>3. Define Login Credentials<a class="headerlink" href="#define-login-credentials" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
-<span class="n">guest_mail</span> <span class="o">=</span> <span class="s2">&quot;email&quot;</span>
-<span class="n">guest_password</span> <span class="o">=</span> <span class="s2">&quot;password&quot;</span>
-<span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_fabric</span> <span class="o">=</span> <span class="s2">&quot;_system&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fed_url</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please type the federation host, leave it blank to use the default and press enter:&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="s2">&quot;gdn.paas.macrometa.io&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">guest_mail</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please, type your email and press enter:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">guest_password</span> <span class="o">=</span> <span class="n">getpass</span><span class="o">.</span><span class="n">getpass</span><span class="p">(</span><span class="s2">&quot;Please, type your password and press enter:&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

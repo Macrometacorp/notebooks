@@ -37,7 +37,7 @@ To get started, we recommend one of the following options:
 2. **Macrometa Compute:** Running this Book in Macrometa Compute via Jupyter Hub allows you to run workbooks and tutorials from Macrometa GDN. The code of the Tutorials and Workbooks runs in the edge cloud itself in the same way a microservice would run on Macrometa Compute (CaaS).
 3. **CoLab:** If you utilize the free CoLab service from Google to run this book, the Tutorial Code will run in a Public Cloud environment, which simulates a complete picture of how distributed systems can be deployed.
 
-If you need help with getting started (or anything else!), you can join our community slack channel [here]()
+If you need help with getting started (or anything else!), please visit [here](https://support.macrometa.com/hc/en-us)
 
 ---
 

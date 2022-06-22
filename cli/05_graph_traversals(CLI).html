@@ -537,38 +537,38 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connecting-to-gdn">
-   2. Connecting to GDN
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-collections">
-   3. Creating Collections
+   2. Creating Collections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inserting-data-friends">
-   4. Inserting Data - “Friends”
+   3. Inserting Data - “Friends”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inserting-data-who-likes-whom">
-   5. Inserting Data - “Who Likes Whom”
+   4. Inserting Data - “Who Likes Whom”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-graph">
-   6. Creating a Graph
+   5. Creating a Graph
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-liked-lou">
-   7. Execute a Traversal - “Find friends who liked Lou?”
+   6. Execute a Traversal - “Find friends who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-lou-liked">
-   8. Execute a Traversal - “Find friends who Lou Liked?”
+   7. Execute a Traversal - “Find friends who Lou Liked?”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   8. Time to tidy up!
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -611,38 +611,38 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connecting-to-gdn">
-   2. Connecting to GDN
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-collections">
-   3. Creating Collections
+   2. Creating Collections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inserting-data-friends">
-   4. Inserting Data - “Friends”
+   3. Inserting Data - “Friends”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#inserting-data-who-likes-whom">
-   5. Inserting Data - “Who Likes Whom”
+   4. Inserting Data - “Who Likes Whom”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-graph">
-   6. Creating a Graph
+   5. Creating a Graph
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-liked-lou">
-   7. Execute a Traversal - “Find friends who liked Lou?”
+   6. Execute a Traversal - “Find friends who liked Lou?”
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#execute-a-traversal-find-friends-who-lou-liked">
-   8. Execute a Traversal - “Find friends who Lou Liked?”
+   7. Execute a Traversal - “Find friends who Lou Liked?”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   8. Time to tidy up!
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -669,11 +669,10 @@ title="Print to PDF"
 </section>
 <section id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">#</a></h2>
-<p>Lets assume</p>
+<p>Let’s Assume</p>
 <ul class="simple">
 <li><p>You have already made a tenant account, and have a username and password</p></li>
-<li><p>You have installed the Macrometa CLI as explained in section 01</p></li>
-<li><p>You have generated an API Key as explained in section 01</p></li>
+<li><p>You have installed and configured the Macrometa CLI as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,40 +695,13 @@ title="Print to PDF"
 
 <span class="nv">MacroFriends_Client</span><span class="o">=</span><span class="s2">&quot;SanJoseLou&quot;</span><span class="p">;</span>
 <span class="nv">MacroFriends_Client2</span><span class="o">=</span><span class="s2">&quot;StocktonPeria&quot;</span><span class="p">;</span>
-
-<span class="c1"># Login credentials</span>
-<span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
-<span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
-<span class="nv">api_key</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span>
-<span class="c1"># You can either use LOCAL or ALL also Please enter the name of the regions. For multiple regions enter comma-separated names. For example: region1, region2.</span>
-<span class="nv">regions</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="connecting-to-gdn">
-<h2>2. Connecting to GDN<a class="headerlink" href="#connecting-to-gdn" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
-
-<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
-<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
-<span class="s2">apikey: </span><span class="nv">$api_key</span><span class="s2"></span>
-<span class="s2">regions:</span>
-<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
-
-<span class="nb">echo</span> <span class="s2">&quot;------- CONNECTION SETUP  ------&quot;</span>
-<span class="c1"># if you are running this from terminal then you can ignore above step and run below command</span>
-<span class="c1"># gdnsl init</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="creating-collections">
-<h2>3. Creating Collections<a class="headerlink" href="#creating-collections" title="Permalink to this headline">#</a></h2>
+<h2>2. Creating Collections<a class="headerlink" href="#creating-collections" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create collections if not exists</span>
@@ -744,7 +716,7 @@ gdnsl collection create <span class="nv">$collection_likes</span> --type edge
 </div>
 </section>
 <section id="inserting-data-friends">
-<h2>4. Inserting Data - “Friends”<a class="headerlink" href="#inserting-data-friends" title="Permalink to this headline">#</a></h2>
+<h2>3. Inserting Data - “Friends”<a class="headerlink" href="#inserting-data-friends" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert data into collections.</span>
@@ -757,7 +729,7 @@ gdnsl import <span class="nv">$collection_friends</span> --json <span class="s2"
 </div>
 </section>
 <section id="inserting-data-who-likes-whom">
-<h2>5. Inserting Data - “Who Likes Whom”<a class="headerlink" href="#inserting-data-who-likes-whom" title="Permalink to this headline">#</a></h2>
+<h2>4. Inserting Data - “Who Likes Whom”<a class="headerlink" href="#inserting-data-who-likes-whom" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Insert data into collections.</span>
@@ -770,7 +742,7 @@ gdnsl import <span class="nv">$collection_likes</span> --json <span class="s2">&
 </div>
 </section>
 <section id="creating-a-graph">
-<h2>6. Creating a Graph<a class="headerlink" href="#creating-a-graph" title="Permalink to this headline">#</a></h2>
+<h2>5. Creating a Graph<a class="headerlink" href="#creating-a-graph" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a graph</span>
@@ -783,7 +755,7 @@ gdnsl graph create <span class="nv">$collection_graph</span> --edge-definition <
 </div>
 </section>
 <section id="execute-a-traversal-find-friends-who-liked-lou">
-<h2>7. Execute a Traversal - “Find friends who liked Lou?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-liked-lou" title="Permalink to this headline">#</a></h2>
+<h2>6. Execute a Traversal - “Find friends who liked Lou?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-liked-lou" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;5a. GRAPH_TRAVERSAL: Find friends who liked: </span><span class="nv">$MacroFriends_Client2</span><span class="s2">&quot;</span>
@@ -796,7 +768,7 @@ gdnsl query <span class="s2">&quot;FOR c IN </span><span class="nv">$collection_
 </div>
 </section>
 <section id="execute-a-traversal-find-friends-who-lou-liked">
-<h2>8. Execute a Traversal - “Find friends who Lou Liked?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-lou-liked" title="Permalink to this headline">#</a></h2>
+<h2>7. Execute a Traversal - “Find friends who Lou Liked?”<a class="headerlink" href="#execute-a-traversal-find-friends-who-lou-liked" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;5b. GRAPH_TRAVERSAL: Find friends whole were liked from: </span><span class="nv">$MacroFriends_Client</span><span class="s2">&quot;</span>
@@ -807,6 +779,10 @@ gdnsl query <span class="s2">&quot;FOR c IN </span><span class="nv">$collection_
 </div>
 </div>
 </div>
+</section>
+<section id="time-to-tidy-up">
+<h2>8. Time to tidy up!<a class="headerlink" href="#time-to-tidy-up" title="Permalink to this headline">#</a></h2>
+<p>That was great! Now let’s tidy up by removing the collections and graph we created.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Delete Data</span>

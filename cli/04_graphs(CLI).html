@@ -532,33 +532,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connect-to-gdn">
-   1. Connect to GDN
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-geofabric-details">
-   2. Get GeoFabric Details
+   1. Get GeoFabric Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-collection">
-   3. Create Collection
+   2. Create Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-an-edge-collection">
-   4. Create an Edge Collection
+   3. Create an Edge Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#insert-documents">
-   5. Insert Documents
+   4. Insert Documents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-graph">
-   6. Create Graph
+   5. Create Graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   6. Time to tidy up!
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -596,33 +596,33 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connect-to-gdn">
-   1. Connect to GDN
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#get-geofabric-details">
-   2. Get GeoFabric Details
+   1. Get GeoFabric Details
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-collection">
-   3. Create Collection
+   2. Create Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-an-edge-collection">
-   4. Create an Edge Collection
+   3. Create an Edge Collection
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#insert-documents">
-   5. Insert Documents
+   4. Insert Documents
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-graph">
-   6. Create Graph
+   5. Create Graph
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-to-tidy-up">
+   6. Time to tidy up!
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -701,11 +701,10 @@ title="Print to PDF"
 </section>
 <section id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">#</a></h2>
-<p>Let’s assume</p>
+<p>Let’s Assume</p>
 <ul class="simple">
-<li><p>You have already made a tenant account and have a username and password</p></li>
-<li><p>You have installed the Macrometa CLI as explained in section 01</p></li>
-<li><p>You have generated an API Key as explained in section 01</p></li>
+<li><p>You have already made a tenant account, and have a username and password</p></li>
+<li><p>You have installed and configured the Macrometa CLI as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -715,40 +714,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="connect-to-gdn">
-<h2>1. Connect to GDN<a class="headerlink" href="#connect-to-gdn" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Login credentials</span>
-<span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
-<span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
-<span class="nv">api_key</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span>
-<span class="c1"># You can either use LOCAL or ALL also Please enter the name of the regions. For multiple regions enter comma-separated names. For example: region1, region2.</span>
-<span class="nv">regions</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
-
-<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
-<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
-<span class="s2">apikey: </span><span class="nv">$api_key</span><span class="s2"></span>
-<span class="s2">regions:</span>
-<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
-
-<span class="nb">echo</span> <span class="s2">&quot;------- CONNECTION SETUP  ------&quot;</span>
-<span class="c1"># if you are running this from terminal then you can ignore above step and run below command</span>
-<span class="c1"># gdnsl init</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="get-geofabric-details">
-<h2>2. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">#</a></h2>
+<h2>1. Get GeoFabric Details<a class="headerlink" href="#get-geofabric-details" title="Permalink to this headline">#</a></h2>
 <p>To get the details of a fabric:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -762,7 +729,7 @@ gdnsl fabric list
 </div>
 </section>
 <section id="create-collection">
-<h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">#</a></h2>
+<h2>2. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">#</a></h2>
 <p>We can now create a collection in the fabric. First, you connect to fabric and then create a collection called employees.</p>
 <p>The below example shows the steps.</p>
 <div class="cell docutils container">
@@ -777,7 +744,7 @@ gdnsl collection create <span class="nv">$collection_name</span> --type doc
 </div>
 </section>
 <section id="create-an-edge-collection">
-<h2>4. Create an Edge Collection<a class="headerlink" href="#create-an-edge-collection" title="Permalink to this headline">#</a></h2>
+<h2>3. Create an Edge Collection<a class="headerlink" href="#create-an-edge-collection" title="Permalink to this headline">#</a></h2>
 <p>An edge collection contains edge documents and shares its namespace with all other types of collections. You can manage edge documents via standard collection API wrappers, but using edge collection API wrappers provides additional safeguards:</p>
 <ul class="simple">
 <li><p>All modifications are executed in transactions</p></li>
@@ -795,7 +762,7 @@ gdnsl collection create <span class="nv">$edge_name</span> --type edge
 </div>
 </section>
 <section id="insert-documents">
-<h2>5. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">#</a></h2>
+<h2>4. Insert Documents<a class="headerlink" href="#insert-documents" title="Permalink to this headline">#</a></h2>
 <p>Let’s insert documents into the students collection as shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -807,11 +774,25 @@ gdnsl collection create <span class="nv">$edge_name</span> --type edge
 </div>
 </section>
 <section id="create-graph">
-<h2>6. Create Graph<a class="headerlink" href="#create-graph" title="Permalink to this headline">#</a></h2>
+<h2>5. Create Graph<a class="headerlink" href="#create-graph" title="Permalink to this headline">#</a></h2>
 <p>A graph consists of vertices and edges. Vertices are stored as documents in vertex collections, and edges are stored as documents in edge collections. The collections used in a graph and their relations are specified with edge definitions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gdnsl graph create school
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="time-to-tidy-up">
+<h2>6. Time to tidy up!<a class="headerlink" href="#time-to-tidy-up" title="Permalink to this headline">#</a></h2>
+<p>That was great! Now let’s tidy up by removing the collections and graph we created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Deleting collection: &quot;</span>
+gdnsl collection delete <span class="nv">$collection_name</span>
+gdnsl collection delete <span class="nv">$edge_name</span>
+gdnsl graph delete school
 </pre></div>
 </div>
 </div>

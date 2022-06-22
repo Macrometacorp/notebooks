@@ -655,16 +655,18 @@ title="Print to PDF"
 <span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span>
 <span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
 <span class="nv">api_key</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span>
+<span class="c1"># You can either use LOCAL or ALL also Please enter the name of the regions. For multiple regions enter comma-separated names. For example: region1, region2.</span>
+<span class="nv">regions</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span>
 
 <span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span>
 
-cat <span class="s">&lt;&lt; EOF</span>
-<span class="s">url: $url</span>
-<span class="s">email: $email</span>
-<span class="s">apikey: $api_key</span>
-<span class="s">regions:</span>
-<span class="s">  - $regions\</span>
-<span class="s">EOF</span> &gt; gdnsl.yaml
+<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
+<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
+<span class="s2">apikey: </span><span class="nv">$api_key</span><span class="s2"></span>
+<span class="s2">regions:</span>
+<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
+
+<span class="nb">echo</span> <span class="s2">&quot;Created gdnsl.yaml file&quot;</span>
 </pre></div>
 </div>
 </div>

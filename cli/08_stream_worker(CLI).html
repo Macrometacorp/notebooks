@@ -537,18 +537,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connecting-to-gdn">
-   2. Connecting to GDN
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-collections">
-   3. Creating Collections
+   2. Creating Collections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#validate-stream-application">
-   4. Validate Stream Application
+   3. Validate Stream Application
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -664,18 +659,13 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#connecting-to-gdn">
-   2. Connecting to GDN
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-collections">
-   3. Creating Collections
+   2. Creating Collections
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#validate-stream-application">
-   4. Validate Stream Application
+   3. Validate Stream Application
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -808,11 +798,10 @@ title="Print to PDF"
 </section>
 <section id="pre-requisite">
 <h2>Pre-requisite<a class="headerlink" href="#pre-requisite" title="Permalink to this headline">#</a></h2>
-<p>Lets Assume</p>
+<p>Let’s Assume</p>
 <ul class="simple">
-<li><p>you have already made a tenant account, and have a username and password</p></li>
-<li><p>you have installed the Macrometa CLI as explained in section 01</p></li>
-<li><p>you have generated an API Key as explained in section 01</p></li>
+<li><p>You have already made a tenant account, and have a username and password</p></li>
+<li><p>You have installed and configured the Macrometa CLI as explained in section 01</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,11 +817,6 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables - Queries</span>
-<span class="nv">url</span><span class="o">=</span><span class="s2">&quot;https://gdn.paas.macrometa.io&quot;</span><span class="p">;</span>
-<span class="nv">apiKey</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span><span class="p">;</span> <span class="c1"># apiKey goes here if applicable</span>
-<span class="nv">email</span><span class="o">=</span><span class="s2">&quot;email&quot;</span><span class="p">;</span> <span class="c1"># Email goes here</span>
-<span class="c1"># You can either use LOCAL or ALL also Please enter the name of the regions. For multiple regions enter comma-separated names. For example: region1, region2.</span>
-<span class="nv">regions</span><span class="o">=</span><span class="s2">&quot;ALL&quot;</span>
 <span class="nv">heart_rates_collection</span><span class="o">=</span><span class="s2">&quot;HeartRates&quot;</span><span class="p">;</span>
 <span class="nv">heart_rates_statistics_collection</span><span class="o">=</span><span class="s2">&quot;HeartRateStatistics&quot;</span><span class="p">;</span>
 <span class="nv">heart_rate_statistics_worker</span><span class="o">=</span><span class="s2">&quot;HeartRateStatisticsWorker&quot;</span><span class="p">;</span>
@@ -842,30 +826,8 @@ title="Print to PDF"
 </div>
 </div>
 </section>
-<section id="connecting-to-gdn">
-<h2>2. Connecting to GDN<a class="headerlink" href="#connecting-to-gdn" title="Permalink to this headline">#</a></h2>
-<p>Now that we have imported the required libraries and added our login details, we can connect to GDN. Do this by running the cell bellow.</p>
-<p>You will see the cell output reflect a successful connection. If not go back to the first step and check the details you entered.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Creating gdnsl.yaml file&quot;</span> 
-
-<span class="nb">echo</span> <span class="s2">&quot;url: </span><span class="nv">$url</span><span class="s2"></span>
-<span class="s2">email: </span><span class="nv">$email</span><span class="s2"></span>
-<span class="s2">apikey: </span><span class="nv">$apiKey</span><span class="s2"></span>
-<span class="s2">regions:</span>
-<span class="s2">  - </span><span class="nv">$regions</span><span class="s2">&quot;</span> &gt; gdnsl.yaml
-
-<span class="nb">echo</span> <span class="s2">&quot;------- CONNECTION SETUP  ------&quot;</span>
-<span class="c1"># if you are running this from terminal then you can ignore above step and run below command</span>
-<span class="c1"># gdnsl init</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="creating-collections">
-<h2>3. Creating Collections<a class="headerlink" href="#creating-collections" title="Permalink to this headline">#</a></h2>
+<h2>2. Creating Collections<a class="headerlink" href="#creating-collections" title="Permalink to this headline">#</a></h2>
 <p>For this Tutorial we require the creation of two collections. The first will be a collection for the heart rates, which will hold our input data. The second will be a collection for the stream worker output which will hold the statistics.</p>
 <p>Run the next cell to create these two collections. Note the If-Else statements that are included in this cell. This lets us check to see if the collections exist already in the federation you are using, if they dont exist we will create them.</p>
 <div class="cell docutils container">
@@ -884,7 +846,7 @@ gdnsl collection create <span class="nv">$heart_rates_statistics_collection</spa
 <p><img alt="enabledstream" src="../_images/enabled_stream.png" /></p>
 </section>
 <section id="validate-stream-application">
-<h2>4. Validate Stream Application<a class="headerlink" href="#validate-stream-application" title="Permalink to this headline">#</a></h2>
+<h2>3. Validate Stream Application<a class="headerlink" href="#validate-stream-application" title="Permalink to this headline">#</a></h2>
 <p>Now that we have created our collections we need to decide how we want to simulate the heart rate information. in this section we offer two approaches for simulating this data.</p>
 <p>Option 1, is to use a 3rd party tool called “Mockaroo” that will let you generate the data stream as an external source to Macrometa GDN. This would be closest to a “real world” use case showing data coming into GDN (and our streamworker) from an external source.</p>
 <p>Option 2. demonstrates how Macrometa GDN Stream Workers can also be used to provide simulation data, or indeed the streaming of data from a collection.</p>
@@ -1093,7 +1055,7 @@ gdnsl stream-worker <span class="nv">$mock_heart_rate_data_generator</span> --en
 <p>Almost done. Lets clean up after ourselves and remove the tutorial from GDN.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot; DELETE_DATA&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;DELETE_DATA&quot;</span>
 gdnsl stream-worker delete <span class="nv">$heart_rate_statistics_worker</span><span class="p">;</span>
 gdnsl stream-worker delete <span class="nv">$mock_heart_rate_data_generator</span><span class="p">;</span>
 gdnsl collection delete <span class="nv">$heart_rates_collection</span><span class="p">;</span>

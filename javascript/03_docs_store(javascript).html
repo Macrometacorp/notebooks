@@ -810,7 +810,7 @@ title="Print to PDF"
 </section>
 <section id="create-collection">
 <h2>3. Create Collection<a class="headerlink" href="#create-collection" title="Permalink to this headline">#</a></h2>
-<p>We can now create a collection in the fabric. To do this, first, you connect to fabric and then create a collection called employees.</p>
+<p>We can now create a collection with enable stream in the fabric. To do this, first, you connect to fabric and then create a collection called employees.</p>
 <p>The below example shows the steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -824,7 +824,9 @@ title="Print to PDF"
 <span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection exists with name &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
 <span class="w">      </span><span class="k">return</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="nx">collectionDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="nx">collectionDetails</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">client</span><span class="p">.</span><span class="nx">createCollection</span><span class="p">(</span><span class="nx">collection_name</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="nx">stream</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="p">});</span><span class="w"></span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Collection created! &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">collection_name</span><span class="p">);</span><span class="w"></span>
 <span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Collection creation did not succeed due to &quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span><span class="w"></span>
@@ -929,10 +931,7 @@ title="Print to PDF"
 <section id="get-realtime-updates">
 <h2>7. Get realtime updates<a class="headerlink" href="#get-realtime-updates" title="Permalink to this headline">#</a></h2>
 <p>Example for real-time updates from a collection in fabric:</p>
-<blockquote>
-<div><p>Note: You need to enable Stream from the Macrometa Dashboard for this to work. Do this by opening up the dashboard, selecting collections, finding the collection named “employees” and selecting “enable Stream”</p>
-</div></blockquote>
-<p>Now run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. You should see the real-time updates below as soon as you hit save.</p>
+<p>Run the cell below, return to the Macrometa Dashboard and modify and save fields in the collection. You should see the real-time updates below as soon as you hit save.</p>
 <p>The WebSocket will time out after 60 seconds if no updates are seen, so you might need to re-run the cell code if you see a timed-out message below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

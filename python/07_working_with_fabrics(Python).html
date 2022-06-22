@@ -869,9 +869,14 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialize the C8 Data Fabric client.</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ------- CONNECTION SETUP  ------&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;tenant: </span><span class="si">{}</span><span class="s2">, geofabric:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">admin_email</span><span class="p">,</span> <span class="n">geo_fabric</span><span class="p">))</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">fed_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-                <span class="n">email</span><span class="o">=</span><span class="n">admin_email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">admin_password</span><span class="p">,</span>
-                <span class="n">geofabric</span><span class="o">=</span><span class="n">geo_fabric</span><span class="p">)</span>  
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">C8Client</span><span class="p">(</span><span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;https&#39;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">fed_url</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
+                    <span class="n">email</span><span class="o">=</span><span class="n">admin_email</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">admin_password</span><span class="p">,</span>
+                    <span class="n">geofabric</span><span class="o">=</span><span class="n">geo_fabric</span><span class="p">)</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Login successfully&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error while login: &quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
 
 <span class="c1"># For the &quot;mytenant&quot; tenant, connect to &quot;_system&quot; fabric as tenant admin.</span>
 <span class="c1"># This returns an API wrapper for the &quot;_system&quot; fabric on tenant &#39;mytenant&#39;</span>

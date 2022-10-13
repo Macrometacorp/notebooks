@@ -649,7 +649,7 @@ found <span class=" -Color -Color-Bold -Color-Bold-Green">0</span> vulnerabiliti
 <span class="k">if</span> <span class="n">prefixBool</span><span class="p">:</span>
     <span class="n">prefixText</span> <span class="o">=</span> <span class="s2">&quot;gdnlocal.&quot;</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">prefixText</span> <span class="o">=</span> <span class="s2">&quot;gdnglobals.&quot;</span>
+    <span class="n">prefixText</span> <span class="o">=</span> <span class="s2">&quot;gdnglobal.&quot;</span>
 
 
 <span class="n">streamName</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;stream-id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
@@ -667,8 +667,9 @@ found <span class=" -Color -Color-Bold -Color-Bold-Green">0</span> vulnerabiliti
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NEW Producer = c8locals.streamQuickstart
-Get Streams:  []
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Stream already exists
+OLD Producer = gdnlocal.streamQuickstart
+Get Streams:  [{&#39;name&#39;: &#39;c8globals.streamQuickstart&#39;, &#39;topic&#39;: &#39;c8globals.streamQuickstart&#39;, &#39;local&#39;: False, &#39;db&#39;: &#39;diana.payton_macrometa.com._system&#39;, &#39;tenant&#39;: &#39;diana.payton_macrometa.com&#39;, &#39;type&#39;: &#39;persistent&#39;, &#39;status&#39;: &#39;active&#39;}]
 </pre></div>
 </div>
 </div>
@@ -683,7 +684,7 @@ Get Streams:  []
 <span class="k">if</span> <span class="n">prefixBool</span><span class="p">:</span>
     <span class="n">prefixText</span> <span class="o">=</span> <span class="s2">&quot;gdnlocal.&quot;</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">prefixText</span> <span class="o">=</span> <span class="s2">&quot;gdnglobals.&quot;</span>
+    <span class="n">prefixText</span> <span class="o">=</span> <span class="s2">&quot;gdnglobal.&quot;</span>
 
 
 <span class="n">streamName</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;stream-id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}</span>
@@ -703,6 +704,140 @@ Get Streams:  []
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NEW Producer = c8globals.streamQuickstart
 Get Streams:  [{&#39;name&#39;: &#39;c8globals.streamQuickstart&#39;, &#39;topic&#39;: &#39;c8globals.streamQuickstart&#39;, &#39;local&#39;: False, &#39;db&#39;: &#39;diana.payton_macrometa.com._system&#39;, &#39;tenant&#39;: &#39;diana.payton_macrometa.com&#39;, &#39;type&#39;: &#39;persistent&#39;, &#39;status&#39;: &#39;active&#39;}]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">producer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_stream_producer</span><span class="p">(</span><span class="n">demo_stream</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="n">prefixBool</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">msg1</span> <span class="o">=</span> <span class="s2">&quot;Persistent Hello from &quot;</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;)&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;payload&quot;</span> <span class="p">:</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">six</span><span class="o">.</span><span class="n">b</span><span class="p">(</span><span class="n">msg1</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stream: &quot;</span><span class="p">,</span> <span class="n">msg1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">producer</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Calling has steram from create_producer:  c8locals.streamQuickstart True
+wss://api-gdn-us-west.paas.macrometa.io/_ws/ws/v2/producer/persistent/diana.payton_macrometa.com/c8local._system/c8locals.streamQuickstart
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">SSLCertVerificationError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">producer</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">create_stream_producer</span><span class="p">(</span><span class="n">demo_stream</span><span class="p">,</span> <span class="n">local</span><span class="o">=</span><span class="n">prefixBool</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">msg1</span> <span class="o">=</span> <span class="s2">&quot;Persistent Hello from &quot;</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span><span class="s2">&quot;)&quot;</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/c8/client.py:1224,</span> in <span class="ni">C8Client.create_stream_producer</span><span class="nt">(self, stream, isCollectionStream, local, producer_name, initial_sequence_id, send_timeout_millis, compression_type, max_pending_messages, batching_enabled, batching_max_messages, batching_max_allowed_size_in_bytes, batching_max_publish_delay_ms, message_routing_mode)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span> <span class="sd">&quot;&quot;&quot;Create a new producer on a given stream.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span><span class="sd"> **Args**</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1221</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1222</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1223</span> <span class="n">_stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fabric</span><span class="o">.</span><span class="n">stream</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1224</span> <span class="k">return</span> <span class="n">_stream</span><span class="o">.</span><span class="n">create_producer</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">isCollectionStream</span><span class="o">=</span><span class="n">isCollectionStream</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1225</span>                                <span class="n">local</span><span class="o">=</span><span class="n">local</span><span class="p">,</span> <span class="n">producer_name</span><span class="o">=</span><span class="n">producer_name</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1226</span>                                <span class="n">initial_sequence_id</span><span class="o">=</span><span class="n">initial_sequence_id</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1227</span>                                <span class="n">send_timeout_millis</span><span class="o">=</span><span class="n">send_timeout_millis</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1228</span>                                <span class="n">compression_type</span><span class="o">=</span><span class="n">compression_type</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1229</span>                                <span class="n">max_pending_messages</span><span class="o">=</span><span class="n">max_pending_messages</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1230</span>                                <span class="n">batching_enabled</span><span class="o">=</span><span class="n">batching_enabled</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1231</span>                                <span class="n">batching_max_messages</span><span class="o">=</span><span class="n">batching_max_messages</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1232</span>                                <span class="n">batching_max_allowed_size_in_bytes</span><span class="o">=</span><span class="n">batching_max_allowed_size_in_bytes</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1233</span>                                <span class="n">batching_max_publish_delay_ms</span><span class="o">=</span><span class="n">batching_max_publish_delay_ms</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1234</span>                                <span class="n">message_routing_mode</span><span class="o">=</span><span class="n">message_routing_mode</span><span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/c8/stream_collection.py:155,</span> in <span class="ni">StreamCollection.create_producer</span><span class="nt">(self, stream, isCollectionStream, local, producer_name, initial_sequence_id, send_timeout_millis, compression_type, max_pending_messages, batching_enabled, batching_max_messages, batching_max_allowed_size_in_bytes, batching_max_publish_delay_ms, message_routing_mode)</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span>     <span class="n">url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ws_url</span> <span class="o">+</span> <span class="n">topic</span> 
+<span class="g g-Whitespace">    </span><span class="mi">154</span>     <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">155</span>     <span class="k">return</span> <span class="n">websocket</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Authorization&#39;</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]},</span> <span class="n">class_</span><span class="o">=</span><span class="n">Base64Socket</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="k">raise</span> <span class="n">ex</span><span class="o">.</span><span class="n">StreamProducerError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="s2">&quot;No stream present with name:&quot;</span> <span class="o">+</span> <span class="n">stream</span> <span class="o">+</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>     <span class="s2">&quot;. Please create a stream and then stream producer&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span> <span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/websocket/_core.py:515,</span> in <span class="ni">create_connection</span><span class="nt">(url, timeout, class_, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span> <span class="n">websock</span> <span class="o">=</span> <span class="n">class_</span><span class="p">(</span><span class="n">sockopt</span><span class="o">=</span><span class="n">sockopt</span><span class="p">,</span> <span class="n">sslopt</span><span class="o">=</span><span class="n">sslopt</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>                  <span class="n">fire_cont_frame</span><span class="o">=</span><span class="n">fire_cont_frame</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span>                  <span class="n">enable_multithread</span><span class="o">=</span><span class="n">enable_multithread</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">513</span>                  <span class="n">skip_utf8_validation</span><span class="o">=</span><span class="n">skip_utf8_validation</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span> <span class="n">websock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span> <span class="k">if</span> <span class="n">timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">getdefaulttimeout</span><span class="p">())</span>
+<span class="ne">--&gt; </span><span class="mi">515</span> <span class="n">websock</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span> <span class="k">return</span> <span class="n">websock</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/websocket/_core.py:222,</span> in <span class="ni">WebSocket.connect</span><span class="nt">(self, url, **options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="c1"># FIXME: &quot;subprotocols&quot; are getting lost, not passed down</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span> <span class="c1"># FIXME: &quot;header&quot;, &quot;cookie&quot;, &quot;origin&quot; and &quot;host&quot; too</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock_opt</span><span class="o">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;timeout&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock_opt</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">222</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">,</span> <span class="n">addrs</span> <span class="o">=</span> <span class="n">connect</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock_opt</span><span class="p">,</span> <span class="n">proxy_info</span><span class="p">(</span><span class="o">**</span><span class="n">options</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>                            <span class="n">options</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;socket&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="bp">self</span><span class="o">.</span><span class="n">handshake_response</span> <span class="o">=</span> <span class="n">handshake</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="p">,</span> <span class="o">*</span><span class="n">addrs</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/websocket/_http.py:127,</span> in <span class="ni">connect</span><span class="nt">(url, options, proxy, socket)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="k">if</span> <span class="n">is_secure</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="k">if</span> <span class="n">HAVE_SSL</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">127</span>         <span class="n">sock</span> <span class="o">=</span> <span class="n">_ssl_socket</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">sslopt</span><span class="p">,</span> <span class="n">hostname</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="k">raise</span> <span class="n">WebSocketException</span><span class="p">(</span><span class="s2">&quot;SSL not available.&quot;</span><span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/websocket/_http.py:264,</span> in <span class="ni">_ssl_socket</span><span class="nt">(sock, user_sslopt, hostname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="n">check_hostname</span> <span class="o">=</span> <span class="n">sslopt</span><span class="p">[</span><span class="s2">&quot;cert_reqs&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">ssl</span><span class="o">.</span><span class="n">CERT_NONE</span> <span class="ow">and</span> <span class="n">sslopt</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">261</span>     <span class="s1">&#39;check_hostname&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="k">if</span> <span class="n">_can_use_sni</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">264</span>     <span class="n">sock</span> <span class="o">=</span> <span class="n">_wrap_sni_socket</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">sslopt</span><span class="p">,</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">check_hostname</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">265</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">266</span>     <span class="n">sslopt</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;check_hostname&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/websocket/_http.py:239,</span> in <span class="ni">_wrap_sni_socket</span><span class="nt">(sock, sslopt, hostname, check_hostname)</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span> <span class="k">if</span> <span class="s1">&#39;ecdh_curve&#39;</span> <span class="ow">in</span> <span class="n">sslopt</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">context</span><span class="o">.</span><span class="n">set_ecdh_curve</span><span class="p">(</span><span class="n">sslopt</span><span class="p">[</span><span class="s1">&#39;ecdh_curve&#39;</span><span class="p">])</span>
+<span class="ne">--&gt; </span><span class="mi">239</span> <span class="k">return</span> <span class="n">context</span><span class="o">.</span><span class="n">wrap_socket</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">sock</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="n">sslopt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;do_handshake_on_connect&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="n">sslopt</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;suppress_ragged_eofs&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">server_hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">244</span> <span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py:513,</span> in <span class="ni">SSLContext.wrap_socket</span><span class="nt">(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span> <span class="k">def</span> <span class="nf">wrap_socket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sock</span><span class="p">,</span> <span class="n">server_side</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>                 <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span>                 <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>                 <span class="n">server_hostname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>     <span class="c1"># SSLSocket class handles server_hostname encoding before it calls</span>
+<span class="g g-Whitespace">    </span><span class="mi">512</span>     <span class="c1"># ctx._wrap_socket()</span>
+<span class="ne">--&gt; </span><span class="mi">513</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sslsocket_class</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">514</span>         <span class="n">sock</span><span class="o">=</span><span class="n">sock</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span>         <span class="n">server_side</span><span class="o">=</span><span class="n">server_side</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">516</span>         <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="n">do_handshake_on_connect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">517</span>         <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="n">suppress_ragged_eofs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span>         <span class="n">server_hostname</span><span class="o">=</span><span class="n">server_hostname</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span>         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">520</span>         <span class="n">session</span><span class="o">=</span><span class="n">session</span>
+<span class="g g-Whitespace">    </span><span class="mi">521</span>     <span class="p">)</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py:1071,</span> in <span class="ni">SSLSocket._create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1068</span>         <span class="k">if</span> <span class="n">timeout</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1069</span>             <span class="c1"># non-blocking</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1071</span>         <span class="bp">self</span><span class="o">.</span><span class="n">do_handshake</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1072</span> <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1073</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nn">File /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py:1342,</span> in <span class="ni">SSLSocket.do_handshake</span><span class="nt">(self, block)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1340</span>     <span class="k">if</span> <span class="n">timeout</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1341</span>         <span class="bp">self</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1342</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">do_handshake</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1343</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1344</span>     <span class="bp">self</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+
+<span class="nn">SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate</span> in <span class="ni">certificate chain </span><span class="nt">(_ssl.c:997)</span>
 </pre></div>
 </div>
 </div>
